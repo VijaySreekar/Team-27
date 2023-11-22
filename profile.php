@@ -5,7 +5,6 @@
     session_start();
     include("connectdb.php");
     ?>
-
   <head>
     <meta charset="UTF-8" />
     <title>Your Profile</title>
