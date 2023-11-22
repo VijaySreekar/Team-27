@@ -1,12 +1,12 @@
 <?php
 
-$dbhost = '';
-$dbname = '';
-$dbusername = '';
+$dbhost = 'localhost';
+$dbname = 'treakers';
+$dbusername = 'root';
 $dbpassword = '';
 
-$mysqli = new mysqli("", "", "", "");
-$conn = mysqli_connect("", "", "", "");
+$mysqli = new mysqli("localhost", "root", "", "treakers");
+$conn = mysqli_connect("localhost", "root", "", "treakers");
 
 if(!$conn){
     echo "Connection Error";
