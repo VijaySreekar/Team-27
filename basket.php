@@ -3,7 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <title>Your Basket</title>
- 
+ <style>
+    body{
+        font-family:Arial,sans-serif;
+margine:0;
+padding:0;
+    }
+
+    header{
+        background-color:#333;
+        color:#fff;
+        test-align:center;
+        padding:10px;
+    }
+    h2{
+        text-align:center;
+        font-weight:bold;
+    }
+    
+    .basket.container{
+        display:flex;
+        justify-content:space-between;
+        margin:20px;
+    }
+    .basket-item-heading{
+        flex:1;
+        text-align:center;
+        margin:10px;
+    }
+    .basket-item{
+        display:flex;
+        justify-content:space-between;
+        border-bottom:1px solid #ccc;
+        padding:10px;
+    }
+    .basket-item-detail{
+        flex:1;
+        text-align:center;
+    }
+    .total-price{
+        text-align:center;
+        margin-top:10px;
+        font-weight:bold;
+    }
+    form{
+        text-align:center;
+        margin-top:20px;
+    }
+    button{
+        padding:10px;
+        background-color:#4CAF50;
+        color:white;
+        border:none;
+        border-radius:5px;
+        cursor:pointer;
+    }
+    button:hover{
+        background-color:#45a049;
+    }
+    </style>
 </head>
 <body>
     <header id="main-header">
