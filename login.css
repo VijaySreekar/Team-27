@@ -1,0 +1,226 @@
+/* Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fbfef9;
+    padding: 30px;
+}
+.container{
+    position: relative;
+    max-width: 850px;
+    width: 100%;
+    background: #fbfef9;
+    padding: 40px 30px;
+    box-shadow: 0 5px 10px rgb(12, 98, 145);
+    perspective: 2700px;
+}
+
+.container .cover{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 50%;
+    z-index: 98;
+    transition: all 1s ease;
+    transform-origin: left;
+    transform-style: preserve-3d;
+}
+
+.container #change:checked ~ .cover{
+    transform: rotateY(-180deg);
+}
+
+.cover .login, .cover .register {
+    backface-visibility: hidden;
+}
+
+
+.container .cover .login,
+.container .cover .register{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.cover .register{
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+.container .cover::before,
+.container .cover::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #a63446;
+    opacity: 0.4;
+    z-index: 12;
+}
+.container .cover::after{
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+
+.container .cover img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 10;
+}
+.container .cover .text{
+    position: absolute;
+    z-index: 13;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.cover .text .slogan-1,
+.cover .text .slogan-2{
+    font-size: 26px;
+    font-weight: 600;
+    color: #fbfef9;
+    text-align: center;
+}
+.cover .text .slogan-2{
+    font-size: 15px;
+    font-weight: 500;
+}
+.container .loginregister_form{
+    height: 100%;
+    width: 100%;
+    background: #fbfef9;
+}
+.container .content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.content .login_form,
+.content .signup_form{
+    width: calc(100% / 2 - 25px);
+}
+.loginregister_form .content .title{
+    position: relative;
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+}
+.loginregister_form .content .title:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 25px;
+    background: #0c6291;
+}
+.loginregister_form .signup_form  .title:before{
+    width: 20px;
+}
+.loginregister_form .content .input-boxes{
+    margin-top: 30px;
+}
+.loginregister_form .content .input-box{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    margin: 10px 0;
+    position: relative;
+}
+.content .input-box input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 0 30px;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+.content .input-box input:focus,
+.content .input-box input:valid{
+    border-color: #0c6291;
+}
+.content .input-box i{
+    position: absolute;
+    color: #0c6291;
+    font-size: 17px;
+}
+.loginregister_form .content .text{
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+.loginregister_form .content .text a{
+    text-decoration: none;
+}
+.loginregister_form .content .text a:hover{
+    text-decoration: underline;
+}
+.loginregister_form .content .button{
+    color: #fff;
+    margin-top: 40px;
+}
+.loginregister_form .content .button input{
+    color: #fff;
+    background: #0c6291;
+    border-radius: 6px;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+.loginregister_form .content .button input:hover{
+    background: #0c6291;
+}
+.loginregister_form .content label{
+    color: #0c6291;
+    cursor: pointer;
+}
+.loginregister_form .content label:hover{
+    text-decoration: underline;
+}
+.loginregister_form .content .login-text,
+.loginregister_form .content .sign-up-text{
+    text-align: center;
+    margin-top: 25px;
+}
+.container #change{
+    display: none;
+}
+@media (max-width: 730px) {
+    .container .cover{
+        display: none;
+    }
+    .content .login_form,
+    .content .signup_form{
+        width: 100%;
+    }
+    .content .signup_form{
+        display: none;
+    }
+    .container #change:checked ~ .loginregister_form .signup_form{
+        display: block;
+    }
+    .container #change:checked ~ .loginregister_form .login_form{
+        display: none;
+    }
+}
