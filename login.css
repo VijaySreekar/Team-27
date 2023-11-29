@@ -224,3 +224,157 @@ body{
         display: none;
     }
 }
+
+/*NAVBAR*/
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 5px 10px rgb(166, 52, 70);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    /* Adjust the logo height as needed */
+}
+
+.company-name {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.navbar-center {
+    flex-grow: 1;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0 12px;
+}
+
+.nav-links li a {
+    position: relative;
+    color: #333;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 6px 0;
+    text-decoration: none;
+}
+
+.nav-links li a:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: #0c6291;
+    border-radius: 12px;
+    transition: all 0.4s ease;
+}
+
+.nav-links li a:hover:before {
+    width: 100%;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Basket icon */
+.basket i {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+/* Login/Signup icon */
+.login-signup i {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+/* Search button icon */
+.search-button i {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.login-signup,
+.basket {
+    margin-right: 10px;
+    padding: 8px 12px;
+    background: #0c6291;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.search-button {
+    padding: 8px 12px;
+    background: #0c6291;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style for the basket icon */
+.basket i {
+    font-size: 24px; /* Adjust the font size as needed */
+    color: #fff; /* Set the color to white or any other color that contrasts with the background */
+}
+/* Style for the basket count */
+/* Style for the basket count */
+.basket-count {
+    position: absolute; /* Position the count element */
+    top: -8px; /* Adjust the top position as needed */
+    right: 5px; /* Adjust the right position as needed */
+    background-color: #0077ff; /* Background color of the count */
+    color: white; /* Text color of the count */
+    border-radius: 50%; /* Make it a circle */
+    padding: 4px 8px; /* Adjust padding as needed */
+    font-size: 12px; /* Adjust font size as needed */
+}
+
+
+
+
+
