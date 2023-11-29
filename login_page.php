@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+    // Redirect to the user's dashboard or another authenticated page if they are already logged in
+    header("location: dashboard.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -79,7 +89,7 @@
             </div>
             <div class="signup_form">
                 <div class="title">Signup</div>
-                <form action="RegisterUser.php" method="post">
+                <form action="VerifyUser.php" method="post">
                     <div class="input-boxes">
                         <div class="input-box">
                             <i class="fas fa-user"></i>
