@@ -1,12 +1,12 @@
 <?php
 
 $dbhost = 'localhost';
-$dbname = 'treakers';
-$dbusername = 'u-230185247';
+$dbname = 'u_230185247_treakers';
+$dbusername = 'u-230185247@localhost';
 $dbpassword = 'z3mlfs8WdS1hxvH';
 
-$mysqli = new mysqli("localhost", "u-230185247", "z3mlfs8WdS1hxvH", "treakers");
-$conn = mysqli_connect("localhost", "u-230185247", "z3mlfs8WdS1hxvH", "treakers");
+$mysqli = new mysqli("localhost", "u-230185247@localhost", "z3mlfs8WdS1hxvH", "u_230185247_treakers");
+$conn = mysqli_connect("localhost", "u-230185247@localhost", "z3mlfs8WdS1hxvH", "u_230185247_treakers");
 
 if(!$conn){
     echo "Connection Error";
