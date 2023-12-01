@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
     <style>
-        /* CSS styles here, gonna change em later */
+        /* CSS styles here, gonna change em later so all pages have the same */
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
