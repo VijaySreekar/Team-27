@@ -1,134 +1,89 @@
+<?php
+// Sample basket items (you can replace this with your logic to fetch items from a database, for example)
+$basketItems = [
+    ['Product 1', 20.00, 2],
+    ['Product 2', 15.00, 1],
+];
+
+// Function to calculate the total price
+function calculateTotal($basketItems) {
+    $total = 0;
+    foreach ($basketItems as $item) {
+        $total += $item[1] * $item[2];
+    }
+    return $total;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Your Basket</title>
- <style>
-    body{
-        font-family:Arial,sans-serif;
-margine:0;
-padding:0;
-    }
-
-    header{
-        background-color:#333;
-        color:#fff;
-        test-align:center;
-        padding:10px;
-    }
-    h2{
-        text-align:center;
-        font-weight:bold;
-    }
-    
-    .basket.container{
-        display:flex;
-        justify-content:space-between;
-        margin:20px;
-    }
-    .basket-item-heading{
-        flex:1;
-        text-align:center;
-        margin:10px;
-    }
-    .basket-item{
-        display:flex;
-        justify-content:space-between;
-        border-bottom:1px solid #ccc;
-        padding:10px;
-    }
-    .basket-item-detail{
-        flex:1;
-        text-align:center;
-    }
-    .total-price{
-        text-align:center;
-        margin-top:10px;
-        font-weight:bold;
-    }
-    form{
-        text-align:center;
-        margin-top:20px;
-    }
-    button{
-        padding:10px;
-        background-color:#4CAF50;
-        color:white;
-        border:none;
-        border-radius:5px;
-        cursor:pointer;
-    }
-    button:hover{
-        background-color:#45a049;
-    }
-    </style>
+    <link rel="stylesheet" href="basket.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-    <header id="main-header">
-        <nav>
-           
-        </nav>
-    </header>
-    <main>
-        <h2>Basket</h2>
-        <div class="basket-container">
-            <div class="basket-item-heading">
-                <h3>Item</h3>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <div class="logo">
+                <img src="Images/YourLogo.png" alt="Your Logo">
             </div>
-            <div class="basket-item-heading">
-                <h3>Price</h3>
-            </div>
-            <div class="basket-item-heading">
-                <h3>Quantity</h3>
-            </div>
-            <div class="basket-item-heading">
-                <h3>Total</h3>
-            
-            <?php
-            session_start();
-            include("connectdb.php");
-
-            // Check if the user is logged in
-            if (isset($_SESSION['username'])) {
-                // Retrieve the user's basket information from the database
-                $userId = $_SESSION['id'];
-                $query = "SELECT b.product_id, p.product_name, p.price, b.quantity 
-                          FROM basket b
-                          INNER JOIN products p ON b.product_id = p.product_id
-                          WHERE b.user_id = $userId";
-                $result = mysqli_query($conn, $query);
-
-                // Display basket items
-                $totalPrice = 0;
-
-                while ($row = mysqli_fetch_assoc($result)) {
-                    $productName = $row['product_name'];
-                    $productPrice = $row['price'] * $row['quantity'];
-                    $totalPrice += $productPrice;
-
-                    echo '<div class="basket-item">';
-                    echo "<div class='basket-item-detail'>$productName</div>";
-                    echo "<div class='basket-item-detail'>$productPrice</div>";
-                    echo "<div class='basket-item-detail'>{$row['quantity']}</div>";
-                    echo '</div>';
-                }
-
-                // Display total price
-                echo "<div class='total-price'>Total Price: $totalPrice</div>";
-
-                // "Pay Now" button
-                echo '<form action="payment.php" method="post">';
-                echo '<button type="submit">Pay Now</button>';
-                echo '</form>';
-            } else {
-                echo "<h3>You aren't logged in.</h3>";
-            }
-
-            // Close the database connection
-            mysqli_close($conn);
-            ?>
         </div>
-    </main>
-    
+        <div class="navbar-center">
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li class="center"><a href="#">Products</a></li>
+                <li class="upward"><a href="#">About</a></li>
+                <li class="forward"><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="navbar-right">
+            <div class="buttons">
+                <button class="basket">
+                    <i class="fas fa-shopping-basket"></i> Basket
+                </button>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="basket-container">
+        <div class="basket-heading">
+            <h2>Your Basket</h2>
+        </div>
+        <div class="basket-item-heading">
+            <h3>Item</h3>
+            <h3>Price</h3>
+            <h3>Quantity</h3>
+            <h3>Total</h3>
+        </div>
+
+        <!-- Dynamically generate basket items -->
+        <?php foreach ($basketItems as $item): ?>
+            <div class="basket-item">
+                <div class="basket-item-detail"><?= $item[0] ?></div>
+                <div class="basket-item-detail">$<?= number_format($item[1], 2) ?></div>
+                <div class="basket-item-detail"><?= $item[2] ?></div>
+                <div class="basket-item-detail">$<?= number_format($item[1] * $item[2], 2) ?></div>
+            </div>
+        <?php endforeach; ?>
+
+        <!-- Total price -->
+        <div class="total-price">Total Price: $<?= number_format(calculateTotal($basketItems), 2) ?></div>
+
+        <!-- Pay Now button -->
+        <form action="payment.php" method="post">
+            <button type="submit">Pay Now</button>
+        </form>
+        
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2023 Your Company. All rights reserved.</p>
+</footer>
+    </div>
 </body>
 </html>
