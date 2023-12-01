@@ -3,7 +3,9 @@
 
   <?php 
     session_start();
+    include("Nav Bar\\nav.php");
     include("connectdb.php");
+    
     ?>
   <head>
     <meta charset="UTF-8" />
