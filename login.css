@@ -1,0 +1,380 @@
+/* Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fbfef9;
+    padding: 30px;
+}
+.container{
+    position: relative;
+    max-width: 850px;
+    width: 100%;
+    background: #fbfef9;
+    padding: 40px 30px;
+    box-shadow: 0 5px 10px rgb(12, 98, 145);
+    perspective: 2700px;
+}
+
+.container .cover{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 50%;
+    z-index: 98;
+    transition: all 1s ease;
+    transform-origin: left;
+    transform-style: preserve-3d;
+}
+
+.container #change:checked ~ .cover{
+    transform: rotateY(-180deg);
+}
+
+.cover .login, .cover .register {
+    backface-visibility: hidden;
+}
+
+
+.container .cover .login,
+.container .cover .register{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.cover .register{
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+.container .cover::before,
+.container .cover::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #a63446;
+    opacity: 0.4;
+    z-index: 12;
+}
+.container .cover::after{
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+
+.container .cover img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 10;
+}
+.container .cover .text{
+    position: absolute;
+    z-index: 13;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.cover .text .slogan-1,
+.cover .text .slogan-2{
+    font-size: 26px;
+    font-weight: 600;
+    color: #fbfef9;
+    text-align: center;
+}
+.cover .text .slogan-2{
+    font-size: 15px;
+    font-weight: 500;
+}
+.container .loginregister_form{
+    height: 100%;
+    width: 100%;
+    background: #fbfef9;
+}
+.container .content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.content .login_form,
+.content .signup_form{
+    width: calc(100% / 2 - 25px);
+}
+.loginregister_form .content .title{
+    position: relative;
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+}
+.loginregister_form .content .title:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 25px;
+    background: #0c6291;
+}
+.loginregister_form .signup_form  .title:before{
+    width: 20px;
+}
+.loginregister_form .content .input-boxes{
+    margin-top: 30px;
+}
+.loginregister_form .content .input-box{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    margin: 10px 0;
+    position: relative;
+}
+.content .input-box input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 0 30px;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+.content .input-box input:focus,
+.content .input-box input:valid{
+    border-color: #0c6291;
+}
+.content .input-box i{
+    position: absolute;
+    color: #0c6291;
+    font-size: 17px;
+}
+.loginregister_form .content .text{
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+.loginregister_form .content .text a{
+    text-decoration: none;
+}
+.loginregister_form .content .text a:hover{
+    text-decoration: underline;
+}
+.loginregister_form .content .button{
+    color: #fff;
+    margin-top: 40px;
+}
+.loginregister_form .content .button input{
+    color: #fff;
+    background: #0c6291;
+    border-radius: 6px;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+.loginregister_form .content .button input:hover{
+    background: #0c6291;
+}
+.loginregister_form .content label{
+    color: #0c6291;
+    cursor: pointer;
+}
+.loginregister_form .content label:hover{
+    text-decoration: underline;
+}
+.loginregister_form .content .login-text,
+.loginregister_form .content .sign-up-text{
+    text-align: center;
+    margin-top: 25px;
+}
+.container #change{
+    display: none;
+}
+@media (max-width: 730px) {
+    .container .cover{
+        display: none;
+    }
+    .content .login_form,
+    .content .signup_form{
+        width: 100%;
+    }
+    .content .signup_form{
+        display: none;
+    }
+    .container #change:checked ~ .loginregister_form .signup_form{
+        display: block;
+    }
+    .container #change:checked ~ .loginregister_form .login_form{
+        display: none;
+    }
+}
+
+/*NAVBAR*/
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 5px 10px rgb(166, 52, 70);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    /* Adjust the logo height as needed */
+}
+
+.company-name {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.navbar-center {
+    flex-grow: 1;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0 12px;
+}
+
+.nav-links li a {
+    position: relative;
+    color: #333;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 6px 0;
+    text-decoration: none;
+}
+
+.nav-links li a:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: #0c6291;
+    border-radius: 12px;
+    transition: all 0.4s ease;
+}
+
+.nav-links li a:hover:before {
+    width: 100%;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Basket icon */
+.basket i {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+/* Login/Signup icon */
+.login-signup i {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+/* Search button icon */
+.search-button i {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.login-signup,
+.basket {
+    margin-right: 10px;
+    padding: 8px 12px;
+    background: #0c6291;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.search-button {
+    padding: 8px 12px;
+    background: #0c6291;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style for the basket icon */
+.basket i {
+    font-size: 24px; /* Adjust the font size as needed */
+    color: #fff; /* Set the color to white or any other color that contrasts with the background */
+}
+/* Style for the basket count */
+/* Style for the basket count */
+.basket-count {
+    position: absolute; /* Position the count element */
+    top: -8px; /* Adjust the top position as needed */
+    right: 5px; /* Adjust the right position as needed */
+    background-color: #0077ff; /* Background color of the count */
+    color: white; /* Text color of the count */
+    border-radius: 50%; /* Make it a circle */
+    padding: 4px 8px; /* Adjust padding as needed */
+    font-size: 12px; /* Adjust font size as needed */
+}
+
+
+
+
+
