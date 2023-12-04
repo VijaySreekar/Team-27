@@ -1,19 +1,9 @@
-<?php
-session_start();
-
-if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-    // Redirect to the user's dashboard or another authenticated page if they are already logged in
-    header("location: dashboard.php");
-    exit;
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <title>Login/Register</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -22,7 +12,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 <nav class="navbar navbar-fixed-top">
     <div class="navbar-left">
         <div class="logo">
-            <img src="Images/Treakers%20Logo.png" alt="Company Logo">
+            <img src="../Images/Treakers%20Logo.png" alt="Company Logo">
         </div>
     </div>
     <div class="navbar-center">
@@ -51,18 +41,14 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     <input type="checkbox" id="change">
     <div class="cover">
         <div class="login">
-            <img class="backImg" src="Images/Shoe%201%20(Login).png" alt="">
+            <img class="backImg" src="../Images/Shoe%201%20(Login).png" alt="">
             <div class="text">
                 <span class="slogan-1">Start your Adventure <br> Here</span>
                 <span class="slogan-2">Login and Discover!</span>
             </div>
         </div>
         <div class="register">
-            <img class="backImg" src="Images/Shoe%202%20(Registration).png" alt="">
-<!--            <div class="text">-->
-<!--                <span class="slogan-1">Complete miles of journey <br> with one step</span>-->
-<!--                <span class="slogan-2">Let's get started</span>-->
-<!--            </div>-->
+            <img class="backImg" src="../Images/Shoe%202%20(Registration).png" alt="">
         </div>
     </div>
     <div class="loginregister_form">
@@ -73,15 +59,15 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
                     <div class="input-boxes">
                         <div class="input-box">
                             <i class="fas fa-envelope"></i>
-                            <input type="text" placeholder="Enter your email" required>
+                            <input type="text" placeholder="Enter your email" name="email" id="email" required>
                         </div>
                         <div class="input-box">
                             <i class="fas fa-lock"></i>
-                            <input type="password" placeholder="Enter your password" required>
+                            <input type="password" name="password" id="password" placeholder="Enter your password" required>
                         </div>
                         <div class="text"><a href="#">Forgot password?</a></div>
                         <div class="button input-box">
-                            <input type="submit" value="Submit">
+                            <input type="submit" value="Login">
                         </div>
                         <div class="text sign-up-text">Don't have an account? <label for="change">Signup now</label></div>
                     </div>
@@ -89,22 +75,22 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
             </div>
             <div class="signup_form">
                 <div class="title">Signup</div>
-                <form action="VerifyUser.php" method="post">
+                <form action="RegisterUser.php" method="post">
                     <div class="input-boxes">
                         <div class="input-box">
                             <i class="fas fa-user"></i>
-                            <input type="text" placeholder="Enter your name" required>
+                            <input type="text" name="name" id="name" placeholder="Enter your name" required>
                         </div>
                         <div class="input-box">
                             <i class="fas fa-envelope"></i>
-                            <input type="text" placeholder="Enter your email" required>
+                            <input type="text" name="email" id="email" placeholder="Enter your email" required>
                         </div>
                         <div class="input-box">
                             <i class="fas fa-lock"></i>
-                            <input type="password" placeholder="Enter your password" required>
+                            <input type="password" name="password" id="password" placeholder="Enter your password" required>
                         </div>
                         <div class="button input-box">
-                            <input type="submit" value="Sumbit">
+                            <input type="submit" value="Register">
                         </div>
                         <div class="text sign-up-text">Already have an account? <label for="change">Login now</label></div>
                     </div>
