@@ -35,8 +35,10 @@
             <input type="text" placeholder="Search" name="search" />
           </form>
         </li>
+        <li><a href="aboutus.php">About Us</a></li>
         <li><a href="basket.php">Basket</a></li>
-        <li><a href="profile.php">Profile</a></li>
+      
+        <li><a href="profile.php">Profile</a></li>        
       </ul>
     </div>
   </body>
