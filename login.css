@@ -132,6 +132,13 @@ body{
     width: 25px;
     background: #0c6291;
 }
+
+.username {
+    font-weight: bold;
+    color: #333;
+    /* Add other styling as needed */
+}
+
 .loginregister_form .signup_form  .title:before{
     width: 20px;
 }

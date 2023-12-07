@@ -43,7 +43,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             $_SESSION['email'] = $retrieved_email;
 
             // Redirect to a logged-in page or dashboard
-            header("Location: dashboard.php");
+            header("Location: login_page.php");
             exit();
         } else {
             // Password is incorrect

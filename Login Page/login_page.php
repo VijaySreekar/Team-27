@@ -1,3 +1,7 @@
+<?php
+session_start(); // Start the session
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -25,7 +29,16 @@
     </div>
     <div class="navbar-right">
         <div class="buttons">
-            <button class="login-signup"><i class="fas fa-user"></i> Login/Signup</button>
+            <?php
+            // Check if the user is logged in and has a valid session
+            if (isset($_SESSION['user_id']) && isset($_SESSION['name'])) {
+                // Display the username with a class
+                echo '<span class="username"><i class="fas fa-user"></i> ' . $_SESSION['name'] . '</span>';
+            } else {
+                // Display the "Login/Signup" button with a class
+                echo '<button class="login-signup-btn"><i class="fas fa-user"></i> Login/Signup</button>';
+            }
+            ?>
             <button class="basket">
                 <i class="fas fa-shopping-basket"></i>
             </button>
