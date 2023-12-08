@@ -60,10 +60,10 @@
             - And if no specific product is requested, it displays products by category
             - And finally, it also handles sorting by price if the 'sort_order' $_GET parameter is given-->
         <?php
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "teamprojectproducttable";
+        $dbhost = 'localhost';
+        $dbname = 'u_230185247_treaker';
+        $dbusername = 'u-230185247';
+        $dbpassword = 'z3mlfs8WdS1hxvH';
         $conn = new mysqli($servername, $username, $password, $dbname);
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
