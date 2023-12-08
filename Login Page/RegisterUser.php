@@ -6,7 +6,7 @@ session_start();
 $host = "localhost";
 $username = "u-230185247";
 $password = "z3mlfs8WdS1hxvH";
-$dbname = "u_230185247_db";
+$dbname = "u_230185247_treaker";
 
 $conn = mysqli_connect($host, $username, $password, $dbname);
 
@@ -20,7 +20,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['name'])
     $name = $_POST['name'];
 
     // Check if the email already exists in the database
-    $check_sql = "SELECT id FROM accounts WHERE email = ?";
+    $check_sql = "SELECT user_id FROM accounts WHERE email = ?";
     $check_stmt = mysqli_prepare($conn, $check_sql);
     mysqli_stmt_bind_param($check_stmt, "s", $email);
     mysqli_stmt_execute($check_stmt);
@@ -30,7 +30,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['name'])
         echo "Email already exists. Please use a different email.";
     } else {
         // Insert the new user data into the database
-        $insert_sql = "INSERT INTO accounts (name, email, password) VALUES (?, ?, ?)";
+        $insert_sql = "INSERT INTO accounts (username, email, password) VALUES (?, ?, ?)";
         $insert_stmt = mysqli_prepare($conn, $insert_sql);
         mysqli_stmt_bind_param($insert_stmt, "sss", $name, $email, $password);
 

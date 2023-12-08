@@ -1,14 +1,14 @@
 /* Google Font Link */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -19,8 +19,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: #dfdada;
-    box-shadow: 0 5px 10px rgb(166, 52, 70);
+    background: rgb(255, 255, 255);
+    box-shadow: 0 5px 20px rgb(23, 22, 22);
     z-index: 1000;
     display: flex;
     justify-content: space-between;
@@ -54,7 +54,7 @@ body {
 
 .nav-links li a {
     position: relative;
-    color: #333; /* Change text color to black */
+    color: #131111; /* Change text color to black */
     font-size: 20px;
     font-weight: 500;
     padding: 6px 0;
@@ -96,8 +96,8 @@ body {
 
 .search-button {
     padding: 8px 12px;
-    background: #091008; /* Change background color */
-    color: #fff; /* Change text color to white */
+    background: #eceeec; /* Change background color */
+    color: #0f0d0d; /* Change text color to white */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -108,14 +108,15 @@ body {
     max-width: 800px;
     margin: 180px auto 20px; /* Add space at the top for the fixed navbar */
     padding: 20px;
-    background: rgb(233, 230, 230);
-    box-shadow: 0 0 10px rgba(9, 9, 9, 0.1);
+    background: rgb(255, 255, 255);
+    box-shadow: 0 10px 30px rgba(44, 40, 40, 0.1);
 }
 
 .basket-heading h2 {
     text-align: center;
     color: #333;
     margin-bottom: 20px;
+    
 }
 
 .basket-item-heading {
@@ -162,7 +163,7 @@ button {
     background: #dcdbdb;
     color: #040404;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
     position: fixed;
     bottom: 0;
     width: 100%;

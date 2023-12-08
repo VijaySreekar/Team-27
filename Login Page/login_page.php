@@ -1,3 +1,15 @@
+<?php
+session_start(); // Start the session
+$error_message = "";
+
+// Check if there's an error message set in the session
+if (isset($_SESSION['error_message'])) {
+    $error_message = $_SESSION['error_message'];
+    // Clear the message from the session
+    unset($_SESSION['error_message']);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -8,7 +20,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
+
 <body>
+<div id="error-message"><?php echo htmlspecialchars($error_message); ?></div>
+<script>
+    function showErrorPopup() {
+        var errorMessage = document.getElementById("error-message").innerText;
+        if (errorMessage.trim() !== "") {
+            alert(errorMessage);
+        }
+    }
+
+    window.onload = showErrorPopup;
+</script>
 <nav class="navbar navbar-fixed-top">
     <div class="navbar-left">
         <div class="logo">
@@ -25,7 +49,16 @@
     </div>
     <div class="navbar-right">
         <div class="buttons">
-            <button class="login-signup"><i class="fas fa-user"></i> Login/Signup</button>
+            <?php
+            // Check if the user is logged in and has a valid session
+            if (isset($_SESSION['user_id']) && isset($_SESSION['name'])) {
+                // Display the username with a class
+                echo '<span class="username"><i class="fas fa-user"></i> ' . $_SESSION['name'] . '</span>';
+            } else {
+                // Display the "Login/Signup" button with a class
+                echo '<button class="login-signup-btn"><i class="fas fa-user"></i> Login/Signup</button>';
+            }
+            ?>
             <button class="basket">
                 <i class="fas fa-shopping-basket"></i>
             </button>
@@ -99,5 +132,46 @@
         </div>
     </div>
 </div>
+<footer class="footer">
+    <div class="fcontainer">
+        <div class="row">
+            <div class="footer-col">
+                <h4>Treakers</h4>
+                <ul>
+                    <li><a href="#">about us</a></li>
+                    <li><a href="#">our products</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">returns</a></li>
+                    <li><a href="#">Basket</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>online shop</h4>
+                <ul>
+                    <li><a href="#">Sneakers</a></li>
+                    <li><a href="#">Trainers</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>follow us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
 </body>
 </html>
