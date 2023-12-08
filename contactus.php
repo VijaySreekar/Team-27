@@ -17,6 +17,8 @@
 </head>
 <body>
 
+<?php include 'nav.php'; ?>
+
 <div class="contact-form">
     <h2>Contact Us</h2>
     <form action="process_contact_form.php" method="post">

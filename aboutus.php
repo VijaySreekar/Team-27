@@ -13,6 +13,8 @@
 </head>
 <body>
 
+<?php include 'nav.php'; ?>
+
 <div>
     <h1>About Us</h1>
     <p>
