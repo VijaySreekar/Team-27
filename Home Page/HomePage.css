@@ -1,0 +1,138 @@
+html {
+  overflow-y: scroll;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  font-family: "Euclid Circular A", "Poppins";
+}
+
+body {
+  margin: 0;
+  background: #222222;
+}
+
+section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  color: white;
+  text-shadow: 1px 1px 3px black;
+  z-index: 1;
+  font-size: 3em;
+  font-weight: 400;
+  position: absolute;
+}
+
+p {
+  color: rgb(3, 227, 7);
+  text-shadow: 1px 1px 3px black;
+  z-index: 1;
+  font-size: 3em;
+  font-weight: 400;
+  position: absolute;
+}
+
+h1 {
+  margin-bottom: 150px;
+}
+
+/* Adjust font size for smaller screens */
+@media screen and (max-width: 768px) {
+  h1,
+  p {
+    font-size: 2em;
+  }
+}
+
+/* Add styles for smaller screens if needed */
+@media screen and (max-width: 480px) {
+  /* Additional styles for screens smaller than 480px */
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+/*Navbar Menu*/
+body {
+  color: #4c4b5b;
+  font-family: "Euclid Circular A", "Poppins";
+  padding-top: 72px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+a {
+  cursor: pointer;
+  transition: 0.3s;
+  color: inherit;
+  font-weight: 600;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  translate: 0 -72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 20px;
+  width: 100%;
+  height: 72px;
+  box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
+  background: transparent;
+  transition: 0.3s;
+}
+
+nav.visible {
+  top: 0;
+  translate: 0;
+}
+
+nav > img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-items > a {
+  text-decoration: none;
+  color: rgb(255 255 255 / 96%);
+  height: 72px;
+  display: grid;
+  place-items: center;
+}
+
+.nav-items > a:hover {
+  color: rgb(255 255 255 / 96%);
+}
