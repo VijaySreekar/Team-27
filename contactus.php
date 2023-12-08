@@ -10,7 +10,7 @@
 
 <body>
 
-<?php include 'nav.php'; ?>
+<?php include("Nav Bar\\nav.php"); ?>
 
 <div class="contact-form">
     <h2>Contact Us</h2>
