@@ -1,5 +1,13 @@
 <?php
 session_start(); // Start the session
+$error_message = "";
+
+// Check if there's an error message set in the session
+if (isset($_SESSION['error_message'])) {
+    $error_message = $_SESSION['error_message'];
+    // Clear the message from the session
+    unset($_SESSION['error_message']);
+}
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +20,19 @@ session_start(); // Start the session
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
+
 <body>
+<div id="error-message"><?php echo htmlspecialchars($error_message); ?></div>
+<script>
+    function showErrorPopup() {
+        var errorMessage = document.getElementById("error-message").innerText;
+        if (errorMessage.trim() !== "") {
+            alert(errorMessage);
+        }
+    }
+
+    window.onload = showErrorPopup;
+</script>
 <nav class="navbar navbar-fixed-top">
     <div class="navbar-left">
         <div class="logo">
@@ -151,6 +171,7 @@ session_start(); // Start the session
         </div>
     </div>
 </footer>
+
 
 </body>
 </html>

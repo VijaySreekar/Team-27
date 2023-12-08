@@ -10,8 +10,6 @@ $conn = mysqli_connect($host, $username, $password, $dbname);
 
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
-} else {
-    echo "Connected successfully";
 }
 
 if (isset($_POST['email']) && isset($_POST['password'])) {
@@ -43,15 +41,19 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             $_SESSION['email'] = $retrieved_email;
 
             // Redirect to a logged-in page or dashboard
-            header("Location: login_page.php");
+            header("Location: profile.php");
             exit();
         } else {
             // Password is incorrect
-            echo "Incorrect password";
+            $_SESSION['error_message'] = "Incorrect password";
+            header("Location: login_page.php"); // Redirect back to the login page
+            exit();
         }
     } else {
         // Email not found
-        echo "Email not found";
+        $_SESSION['error_message'] = "Email not found";
+        header("Location: login_page.php"); // Redirect back to the login page
+        exit();
     }
 
     // Close the statement
