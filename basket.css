@@ -19,8 +19,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: #0e0e0e;
-    box-shadow: 0 5px 10px rgb(115, 110, 111);
+    background: rgb(255, 255, 255);
+    box-shadow: 0 5px 20px rgb(23, 22, 22);
     z-index: 1000;
     display: flex;
     justify-content: space-between;
@@ -54,7 +54,7 @@ body {
 
 .nav-links li a {
     position: relative;
-    color: #f5ebeb; /* Change text color to black */
+    color: #131111; /* Change text color to black */
     font-size: 20px;
     font-weight: 500;
     padding: 6px 0;
@@ -109,7 +109,7 @@ body {
     margin: 180px auto 20px; /* Add space at the top for the fixed navbar */
     padding: 20px;
     background: rgb(255, 255, 255);
-    box-shadow: 0 0 30px rgba(44, 40, 40, 0.1);
+    box-shadow: 0 10px 30px rgba(44, 40, 40, 0.1);
 }
 
 .basket-heading h2 {
