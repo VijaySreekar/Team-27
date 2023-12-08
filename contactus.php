@@ -1,24 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include 'nav.php'; ?>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .contact-form {
-            max-width: 400px;
-            margin: 20px auto;
-        }
-    </style>
+    <link rel="stylesheet" href="custom-styles.css">
 </head>
+
 <body>
+
+<?php include 'nav.php'; ?>
 
 <div class="contact-form">
     <h2>Contact Us</h2>

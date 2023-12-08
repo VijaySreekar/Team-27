@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include 'nav.php'; ?>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="custom-styles.css">
 </head>
+
 <body>
 
 <?php include 'nav.php'; ?>
