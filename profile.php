@@ -1,6 +1,7 @@
 <?php
 session_start(); // Start the session
 include("../../connectdb.php");
+include("../../edit_user.php");
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +26,7 @@ include("../../connectdb.php");
         $result = mysqli_query($mysqli, $sql);
         $row = mysqli_fetch_assoc($result);
        
-        $username=$_SESSION['username'];
+        $username=$row['username'];
         $email=$row['email'];
         $password=$row['passwordhash'];
         $phone=$row['phone'];
