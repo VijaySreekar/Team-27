@@ -1,32 +1,8 @@
 <?php
-session_start();
-
-$host = "cs2410-web01pvm.aston.ac.uk";  // Update this with your actual host
-$username = "u-230185247";
-$password = "z3mlfs8WdS1hxvH";
-$dbname = "u_230185247_treaker";
-
-// Create database connection
-$conn = mysqli_connect($host, $username, $password, $dbname);
-
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-// Fetch basket items from the database
-$basketItemsQuery = $conn->query("SELECT basket_item_id, basket_id, product_id, quantity FROM basket_item");
-$basketItems = $basketItemsQuery->fetch_all(MYSQLI_ASSOC);
-
-// Function to calculate the total price
-function calculateTotal($basketItems) {
-    $total = 0;
-    foreach ($basketItems as $item) {
-        // Assuming there's a 'price' column in the 'basket_item' table
-        $total += $item['price'] * $item['quantity'];
-    }
-    return $total;
-}
+session_start(); // Start the session
+include("../../connectdb.php");
+include("Nav Bar\\nav.php"); 
+?>
 ?>
 
 
@@ -43,32 +19,7 @@ function calculateTotal($basketItems) {
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="navbar-left">
-            <div class="logo">
-                <img src="Images/Treakers%20Logo.png" alt="Your Logo">
-            </div>
-        </div>
-        <div class="navbar-center">
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li class="center"><a href="#">Products</a></li>
-                <li class="upward"><a href="#">About</a></li>
-                <li class="forward"><a href="#">Contact Us</a></li>
-            </ul>
-        </div>
-        <div class="navbar-right">
-            <div class="buttons">
-                <button class="basket">
-                    <i class="fas fa-shopping-basket"></i> Basket
-                </button>
-            </div>
-            <div class="search-bar">
-                <input type="text" placeholder="Search">
-                <button class="search-button"><i class="fas fa-search"></i></button>
-            </div>
-        </div>
-    </nav>
+   
 
     <div class="basket-container">
         <div class="basket-heading">
