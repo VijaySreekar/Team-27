@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include("Nav Bar\\nav.php"); ?>
+<?php 
+session_start();
+include("Nav Bar\\nav.php"); 
+?>
 
 <head>
     <meta charset="UTF-8">

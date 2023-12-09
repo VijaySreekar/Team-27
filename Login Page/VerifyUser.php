@@ -1,65 +1,53 @@
 <?php
-session_start(); // Start the session
+session_start();
 
 $host = "localhost";
 $username = "u-230185247";
 $password = "z3mlfs8WdS1hxvH";
-$dbname = "u_230185247_db";
+$dbname = "u_230185247_treaker";
 
+// Create database connection
 $conn = mysqli_connect($host, $username, $password, $dbname);
 
+// Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-if (isset($_POST['email']) && isset($_POST['password'])) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST["login_email"]) && isset($_POST["login_password"])) {
+        $login_email = $_POST["login_email"];
+        $login_password = $_POST["login_password"];
 
-    // Prepare a SQL query to retrieve user data
-    $sql = "SELECT id, name, email, password FROM accounts WHERE email = ?";
+        // Validate user credentials
+        $sql = "SELECT user_id, passwordhash, email FROM user WHERE email = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $login_email);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-    // Create a prepared statement
-    $stmt = mysqli_prepare($conn, $sql);
+        if ($result->num_rows == 1) {
+            $row = $result->fetch_assoc();
+            $stored_password = $row["passwordhash"];
+            $user_id = $row["user_id"];
 
-    // Bind the email parameter
-    mysqli_stmt_bind_param($stmt, "s", $email);
+            // Verify the provided password against the stored hash
+            if (password_verify($login_password, $stored_password)) {
+                echo json_encode(["success" => true, "message" => "Login successful"]);
 
-    // Execute the statement
-    mysqli_stmt_execute($stmt);
+                // You can set session variables here to track user sessions
+                $_SESSION["user_id"] = $user_id;
+                $_SESSION["username"] = $login_email;
 
-    // Bind the result variables
-    mysqli_stmt_bind_result($stmt, $id, $name, $retrieved_email, $plain_password);
-
-    // Fetch the result
-    if (mysqli_stmt_fetch($stmt)) {
-        // Verify the password
-        if ($password === $plain_password) {
-            // Password is correct, user is authenticated
-            $_SESSION['user_id'] = $id;
-            $_SESSION['name'] = $name;
-            $_SESSION['email'] = $retrieved_email;
-
-            // Redirect to a logged-in page or dashboard
-            header("Location: profile.php");
-            exit();
+                // Redirect to a protected page or perform other actions
+                // header("Location: dashboard.php");
+            } else {
+                echo json_encode(["success" => false, "message" => "Incorrect password. Please try again."]);
+            }
         } else {
-            // Password is incorrect
-            $_SESSION['error_message'] = "Incorrect password";
-            header("Location: login_page.php"); // Redirect back to the login page
-            exit();
+            echo json_encode(["success" => false, "message" => "User not found. Please check your username."]);
         }
-    } else {
-        // Email not found
-        $_SESSION['error_message'] = "Email not found";
-        header("Location: login_page.php"); // Redirect back to the login page
-        exit();
+        $stmt->close();
     }
-
-    // Close the statement
-    mysqli_stmt_close($stmt);
 }
-
-// Close the database connection
-mysqli_close($conn);
 ?>
