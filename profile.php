@@ -19,13 +19,17 @@ include("../../connectdb.php");
     include '../NavBar/nav.php';
     ?>
     <div class="user-info">
-      <?php
-        $id=$_SESSION['id'];
+      <?php 
+        $id=$_SESSION['user_id'];
+        $sql ="SELECT * FROM user WHERE user_id=$id";
+        $result = mysqli_query($mysqli, $sql);
+        $row = mysqli_fetch_assoc($result);
+       
         $username=$_SESSION['username'];
-        $email=$_SESSION['email'];
-        $password=$_SESSION['passwordhash'];
-        $phone=$_SESSION['phone'];
-
+        $email=$row['email'];
+        $password=$row['passwordhash'];
+        $phone=$row['phone'];
+        
         if(isset($username)){
           echo "<div class=\"container\">";
           echo "<h3> Hi there, ". $username .".</h3>";
@@ -34,7 +38,7 @@ include("../../connectdb.php");
           echo "<br/>Email: ".$email;
           echo "<br/>Phone: ".$phone;
           echo "<br/>Password: ".$password;
-          echo "<br/><button><a href=\"edit_user.php?id=".$id."\">Edit Details</a></button>";
+          echo "<br/><button><a href='edit_user.php?updateid={$row['user_id']}'>Edit Details</a></button>";
           echo "</div>";
         } else {
           echo "<p>Please log in to see this page.</p>";
