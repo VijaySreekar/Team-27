@@ -40,8 +40,28 @@ window.addEventListener(
     } else if (pageYOffset < lastScrollTop) {
       // upward scroll
       navbar.classList.add("visible");
-    } // else was horizontal scroll
+    } // else horizontal scroll
     lastScrollTop = pageYOffset <= 0 ? 0 : pageYOffset;
   },
   { passive: true }
 );
+
+var swiper = new Swiper(".swiper", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: 2,
+  speed: 600,
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 0,
+    depth: 100,
+    modifier: 3,
+    slideShadows: true,
+  },
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: false,
+  },
+});

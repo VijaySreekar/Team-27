@@ -9,31 +9,64 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
   </head>
   <body>
   <!--Navigation Bar-->
-    <nav class="navbar visible" id="navbar">
-      <img src="Treakers Logo.png" />
-      <div class="nav-items">
-        <a href="#">Home</a>
-        <a href="#">Our Products</a>
-        <a href="#">About Us</a>
-      </div>
-      <div class="search-bar">
-        <input type="text" placeholder="Search...">
-        <button type="submit">Search</button>
-      </div>
-    </nav>
+  <?php include("Nav Bar\\nav.php"); ?>
 <!--Text on picture--> 
     <section>
       <div class="bg" style="background-image: url('Sneaker Wallpaper.jpeg')"></div>
       <h1>Treakers</h1>
       <p>Welcomes you to the family</p>
     </section>
-    <section>
-      <div class="bg" style="background-image: url('Air Jordan 6.jpg.webp')"></div>
-      <h1>Who we are</h1>
+<!--Trending items section-->
+  <body>
+    <section class="trending-section">
+      <h1>Trending Items</h1>
+          <!-- Add other swiper-slide elements as needed -->
     </section>
+    <section>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide swiper-slide--one">
+            <div>
+              <h2>Air Jordan 5</h2>
+              <a>Buy Now</a>
+            </div>
+          </div>
+          <div class="swiper-slide swiper-slide--two">
+            <div>
+              <h2>Air Jordan 6</h2>
+              <a>Buy Now</a>
+            </div>
+          </div>
+          <div class="swiper-slide swiper-slide--three">
+            <div>
+              <h2>Air Jordan 4</h2>
+              <a>Buy Now</a>
+            </div>
+          </div>
+          <div class="swiper-slide swiper-slide--four">
+            <div>
+              <h2>White Air Force 1</h2>
+              <a>Buy Now</a>
+            </div>
+          </div>
+          <div class="swiper-slide swiper-slide--five">
+            <div>
+              <h2>Air Jordan 1</h2>
+              <a>Buy Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  </body>
+<!--Trending items section-->
     <section>
       <div class="bg" style="background-image: url('Air Jordan 11.jpg.avif')"></div>
       <h1>Join us today</h1>
@@ -59,5 +92,4 @@
     </footer>
   </body>
 
-  
-</html>
+
