@@ -1,19 +1,16 @@
 <?php
-// Sample basket items (you can replace this with your logic to fetch items from a database, for example)
-$basketItems = [
-    ['id' => 1, 'name' => 'Nike AirForce', 'price' => 70, 'quantity' => 2],
-    ['id' => 2, 'name' => 'New Balance', 'price' => 30, 'quantity' => 1],
-    
-];
+$dbhost = 'localhost';
+$dbname = 'u_230185247_treaker';
+$dbusername = 'u-230185247';
+$dbpassword = 'z3mlfs8WdS1hxvH';
 
-// Function to calculate the total price
-function calculateTotal($basketItems) {
-    $total = 0;
-    foreach ($basketItems as $item) {
-        $total += $item['price'] * $item['quantity'];
-    }
-    return $total;
+try {
+    $mysqli = new mysqli($dbhost, $dbusername, $dbpassword, $dbname);
+} catch (mysqli_sql_exception $e) {
+    die("Connection failed: " . $e->getMessage());
 }
+
+echo "Connected successfully!";
 ?>
 
 <!DOCTYPE html>
