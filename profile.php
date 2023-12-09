@@ -38,7 +38,7 @@ include("../../edit_user.php");
           echo "Username: ".$username;
           echo "<br/>Email: ".$email;
           echo "<br/>Phone: ".$phone;
-          echo "<br/>Password: ".$password;
+          // echo "<br/>Password: ".$password;
           echo "<br/><button><a href='edit_user.php?updateid={$row['user_id']}'>Edit Details</a></button>";
           echo "</div>";
         } else {

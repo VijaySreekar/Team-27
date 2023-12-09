@@ -15,7 +15,7 @@
         $username=$_POST["username"];
         $email=$_POST["email"];
         $phone=$_POST["phone"];
-        $password=$_POST["password"];
+        $password=password_hash($_POST["password"], PASSWORD_BCRYPT);
         $sql="UPDATE user SET username='$username', email='$email', phone='$phone', passwordhash='$password'
         WHERE user_id=$id";
         $result= mysqli_query($mysqli, $sql);
