@@ -1,16 +1,18 @@
 <?php
-$dbhost = 'localhost';
-$dbname = 'u_230185247_treaker';
-$dbusername = 'u-230185247';
-$dbpassword = 'z3mlfs8WdS1hxvH';
+include("connectdb.php");
 
-try {
-    $mysqli = new mysqli($dbhost, $dbusername, $dbpassword, $dbname);
-} catch (mysqli_sql_exception $e) {
-    die("Connection failed: " . $e->getMessage());
+// Fetch basket items from the database
+$basketItemsQuery = $mysqli->query("SELECT id, name, price, quantity FROM your_basket_table");
+$basketItems = $basketItemsQuery->fetch_all(MYSQLI_ASSOC);
+
+// Function to calculate the total price
+function calculateTotal($basketItems) {
+    $total = 0;
+    foreach ($basketItems as $item) {
+        $total += $item['price'] * $item['quantity'];
+    }
+    return $total;
 }
-
-echo "Connected successfully!";
 ?>
 
 <!DOCTYPE html>
