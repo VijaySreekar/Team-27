@@ -1,8 +1,13 @@
 <?php
+
 include("connectdb.php");
 
 // Fetch basket items from the database
-$basketItemsQuery = $mysqli->query("SELECT id, name, price, quantity FROM your_basket_table");
+$basketItemsQuery = $mysqli->query("SELECT * FROM basket");
+if (!$basketItemsQuery) {
+    die('Error in SQL query: ' . $mysqli->error);
+}
+
 $basketItems = $basketItemsQuery->fetch_all(MYSQLI_ASSOC);
 
 // Function to calculate the total price
