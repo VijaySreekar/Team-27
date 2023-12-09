@@ -20,7 +20,7 @@
       <nav class="navbar navbar-fixed-top">
           <div class="navbar-left">
               <div class="logo">
-                  <img src="../Images/Treakers%20Logo.png" alt="Company Logo">
+                  <img src="Treakers Logo.png" alt="Company Logo">
               </div>
           </div>
           <div class="navbar-center">
