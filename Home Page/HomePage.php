@@ -67,7 +67,7 @@
  
     <body>
     <section class="trending-section">
-      <h1>Trending Items</h1>
+      <h1>Trending Products</h1>
           <!-- Add other swiper-slide elements as needed -->
     </section>
     <section>
