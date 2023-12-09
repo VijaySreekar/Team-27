@@ -64,7 +64,7 @@
         $dbname = 'u_230185247_treaker';
         $dbusername = 'u-230185247';
         $dbpassword = 'z3mlfs8WdS1hxvH';
-        $conn = new mysqli($servername, $username, $password, $dbname);
+        $conn = new mysqli($dbhost, $dbname, $dbusername, $dbpassword);
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }

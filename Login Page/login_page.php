@@ -1,13 +1,5 @@
 <?php
 session_start(); // Start the session
-$error_message = "";
-
-// Check if there's an error message set in the session
-if (isset($_SESSION['error_message'])) {
-    $error_message = $_SESSION['error_message'];
-    // Clear the message from the session
-    unset($_SESSION['error_message']);
-}
 ?>
 
 <!DOCTYPE html>
@@ -18,109 +10,68 @@ if (isset($_SESSION['error_message'])) {
     <link rel="stylesheet" href="../login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
 </head>
 
 <body>
-<div id="error-message"><?php echo htmlspecialchars($error_message); ?></div>
-<script>
-    function showErrorPopup() {
-        var errorMessage = document.getElementById("error-message").innerText;
-        if (errorMessage.trim() !== "") {
-            alert(errorMessage);
-        }
-    }
-
-    window.onload = showErrorPopup;
-</script>
-<nav class="navbar navbar-fixed-top">
-    <div class="navbar-left">
-        <div class="logo">
-            <img src="../Images/Treakers%20Logo.png" alt="Company Logo">
-        </div>
-    </div>
-    <div class="navbar-center">
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li class="center"><a href="#">Products</a></li>
-            <li class="upward"><a href="#">About</a></li>
-            <li class="forward"><a href="#">Contact Us</a></li>
-        </ul>
-    </div>
-    <div class="navbar-right">
-        <div class="buttons">
-            <?php
-            // Check if the user is logged in and has a valid session
-            if (isset($_SESSION['user_id']) && isset($_SESSION['name'])) {
-                // Display the username with a class
-                echo '<span class="username"><i class="fas fa-user"></i> ' . $_SESSION['name'] . '</span>';
-            } else {
-                // Display the "Login/Signup" button with a class
-                echo '<button class="login-signup-btn"><i class="fas fa-user"></i> Login/Signup</button>';
-            }
-            ?>
-            <button class="basket">
-                <i class="fas fa-shopping-basket"></i>
-            </button>
-        </div>
-        <div class="search-bar">
-            <input type="text" placeholder="Search">
-            <button class="search-button"><i class="fas fa-search"></i></button>
-        </div>
-    </div>
-</nav>
-
+<?php
+include '../Nav Bar/nav.php';
+?>
 <div class="container">
     <input type="checkbox" id="change">
     <div class="cover">
         <div class="login">
-            <img class="backImg" src="../Images/Shoe%201%20(Login).png" alt="">
+            <img class="backImg" src="../../Images/Shoe%201%20(Login).png" alt="">
             <div class="text">
                 <span class="slogan-1">Start your Adventure <br> Here</span>
                 <span class="slogan-2">Login and Discover!</span>
             </div>
         </div>
         <div class="register">
-            <img class="backImg" src="../Images/Shoe%202%20(Registration).png" alt="">
+            <img class="backImg" src="../../Images/Shoe%202%20(Registration).png" alt="">
         </div>
     </div>
     <div class="loginregister_form">
         <div class="content">
             <div class="login_form">
                 <div class="title">Login</div>
-                <form action="VerifyUser.php" method="post">
+                <form id="login-form" action="VerifyUser.php" method="post">
                     <div class="input-boxes">
                         <div class="input-box">
                             <i class="fas fa-envelope"></i>
-                            <input type="text" placeholder="Enter your email" name="email" id="email" required>
+                            <input type="text" placeholder="Enter your email" name="login_email" required>
                         </div>
                         <div class="input-box">
                             <i class="fas fa-lock"></i>
-                            <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                            <input type="password" name="login_password" placeholder="Enter your password" required>
                         </div>
-                        <div class="text"><a href="#">Forgot password?</a></div>
+                        <a href="#" data-toggle="modal" data-target="#forgotPasswordModal">Forgot password?</a>
                         <div class="button input-box">
                             <input type="submit" value="Login">
                         </div>
                         <div class="text sign-up-text">Don't have an account? <label for="change">Signup now</label></div>
                     </div>
                 </form>
+                <div id="error-message" style="color:red;"></div>
             </div>
             <div class="signup_form">
                 <div class="title">Signup</div>
-                <form action="RegisterUser.php" method="post">
+                <form id="signup-form" action="RegisterUser.php" method="post">
                     <div class="input-boxes">
                         <div class="input-box">
                             <i class="fas fa-user"></i>
-                            <input type="text" name="name" id="name" placeholder="Enter your name" required>
+                            <input type="text" name="reg_name" placeholder="Enter your name" required>
                         </div>
                         <div class="input-box">
                             <i class="fas fa-envelope"></i>
-                            <input type="text" name="email" id="email" placeholder="Enter your email" required>
+                            <input type="text" name="reg_email"  placeholder="Enter your email" required>
                         </div>
                         <div class="input-box">
                             <i class="fas fa-lock"></i>
-                            <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                            <input type="password" name="reg_password"  placeholder="Enter your password" required>
                         </div>
                         <div class="button input-box">
                             <input type="submit" value="Register">
@@ -128,6 +79,7 @@ if (isset($_SESSION['error_message'])) {
                         <div class="text sign-up-text">Already have an account? <label for="change">Login now</label></div>
                     </div>
                 </form>
+                <div id="signup-error-message" style="color:red;"></div>
             </div>
         </div>
     </div>
@@ -171,6 +123,57 @@ if (isset($_SESSION['error_message'])) {
         </div>
     </div>
 </footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#login-form").on("submit", function(event){
+            event.preventDefault();
+            console.log("Form submitted");
+
+            $.ajax({
+                url: "VerifyUser.php",
+                type: "post",
+                data: $(this).serialize(),
+                dataType: "json",
+                success: function(response){
+                    if(response.success){
+                        window.location.href = 'dashboard.php';
+                    } else {
+                        $("#error-message").text(response.message);
+                    }
+                },
+                error: function(xhr, status, error){
+                    console.error("AJAX error: " + status + ": " + error); // Log AJAX errors
+                }
+            });
+        });
+    });
+
+    $(document).ready(function(){
+        $("#signup-form").on("submit", function(event){
+            event.preventDefault();
+            console.log("Signup form submitted");
+
+            $.ajax({
+                url: "RegisterUser.php",
+                type: "post",
+                data: $(this).serialize(),
+                dataType: "json",
+                success: function(response){
+                    if(response.success){
+                        alert("Registration successful!"); // Or handle as needed
+                    } else {
+                        $("#signup-error-message").text(response.message);
+                    }
+                },
+                error: function(xhr, status, error){
+                    console.error("AJAX error: " + status + ": " + error);
+                    $("#signup-error-message").text("An error occurred during registration.");
+                }
+            });
+        });
+    });
+</script>
 
 
 </body>
