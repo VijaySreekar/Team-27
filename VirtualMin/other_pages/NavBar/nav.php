@@ -25,9 +25,13 @@
         <div class="buttons">
             <?php
             // Check if the user is logged in and has a valid session
-            if (isset($_SESSION['user_id']) && isset($_SESSION['name'])) {
+            if (isset($_SESSION['user_id'])) {
                 // Display the user-signed buttons with the same style as basket and search buttons
-                echo '<button class="navbar-button"><i class="fas fa-user"></i> ' . $_SESSION['name'] . '</button>';
+                //echo '<button class="navbar-button"><i class="fas fa-user"></i> ' . $_SESSION['name'] . '</button>';
+               
+                echo "<button>"; 
+                echo "<a href='../ProfilePage/profile.php'>Your Profile";
+                echo "</a></button>";
             } else {
                 // Display the "Login/Signup" button with a class
                 echo '<button class="navbar-button"><i class="fas fa-user"></i> Login/Signup</button>';
