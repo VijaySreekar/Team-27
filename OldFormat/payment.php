@@ -1,4 +1,4 @@
-<!-- payment.php -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -106,7 +106,7 @@
         ?>
         <h2>Payment Details</h2>
 
-        <!-- Customer Details Section -->
+      
         <div class="payment-section">
             <h3>1. Customer Details</h3>
             <form class="payment-form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" onsubmit="return validateForm()">
@@ -125,7 +125,6 @@
             </form>
         </div>
 
-        <!-- Payment Options Section -->
         <div class="payment-section">
             <h3>2. Payment Options</h3>
             <form class="payment-form" action="process_payment.php" method="post" onsubmit="return validateForm()">
@@ -145,9 +144,7 @@
                     <option value="paypal">PayPal</option>
                 </select>
 
-                <!-- Apple Pay and PayPal buttons -->
-                <img src="apple_pay_icon.png" alt="Apple Pay" width="50" height="50">
-                <img src="paypal_icon.png" alt="PayPal" width="50" height="50">
+         
 
                 <button type="submit">Place Order</button>
             </form>

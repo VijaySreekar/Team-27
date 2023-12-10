@@ -1,11 +1,11 @@
-<!-- thank_you.php -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Thank You</title>
     <style>
-        /* Your styles go here */
+       
     </style>
 </head>
 <body>
