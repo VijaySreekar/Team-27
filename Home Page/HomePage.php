@@ -55,7 +55,7 @@
       </nav>
   </body>
 
-    <!--Text on picture--> 
+    <!--Text on 1st picture--> 
     
     <section>
       <div class="bg" style="background-image: url('Sneaker Wallpaper.jpeg')"></div>
@@ -63,55 +63,65 @@
       <p>Welcomes you to the family</p>
     </section>
 
-    <!--Trending items section-->
+    <!--Trending products section start-->
  
     <body>
     <section class="trending-section">
       <h1>Trending Products</h1>
-          <!-- Add other swiper-slide elements as needed -->
     </section>
     <section>
+      
       <div class="swiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide swiper-slide--one">
+          
+          <div class="swiper-slide swiper-slide-1">
             <div>
               <h2>Air Jordan 5</h2>
               <a>Buy Now</a>
             </div>
           </div>
-          <div class="swiper-slide swiper-slide--two">
+
+          <div class="swiper-slide swiper-slide-2">
             <div>
               <h2>Air Jordan 6</h2>
               <a>Buy Now</a>
             </div>
           </div>
-          <div class="swiper-slide swiper-slide--three">
+
+          <div class="swiper-slide swiper-slide-3">
             <div>
               <h2>Air Jordan 4</h2>
               <a>Buy Now</a>
             </div>
           </div>
-          <div class="swiper-slide swiper-slide--four">
+
+          <div class="swiper-slide swiper-slide-4">
             <div>
               <h2>White Air Force 1</h2>
               <a>Buy Now</a>
             </div>
           </div>
-          <div class="swiper-slide swiper-slide--five">
+
+          <div class="swiper-slide swiper-slide-5">
             <div>
               <h2>Air Jordan 1</h2>
               <a>Buy Now</a>
             </div>
           </div>
+
         </div>
         <div class="swiper-pagination"></div>
       </div>
     </section>
+
+    <!-- Add other swiper-slide elements as needed (DON'T FORGET TO ADD CSS TO ANY SLIDES ADDED HERE)-->
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   </body>
 
-  <!--Trending items section-->
-    
+  <!--Trending items section end-->
+  
+  <!--Text on 3rd picture--> 
   <section>
       <div class="bg" style="background-image: url('Air Jordan 11.jpg.avif')"></div>
       <h1>Join us today</h1>
@@ -119,16 +129,13 @@
   
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
-      integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"
+      integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
       integrity="sha512-A64Nik4Ql7/W/PJk2RNOmVyC/Chobn5TY08CiKEX50Sdw+33WTOpPJ/63bfWPl0hxiRv1trPs5prKO8CpA7VNQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+
 
     <script src="HomePage.js"></script>
 
@@ -138,5 +145,3 @@
       <p2>&copy; 2023 Treakers. All rights reserved.</p2>
     </footer>
   </body>
-
-

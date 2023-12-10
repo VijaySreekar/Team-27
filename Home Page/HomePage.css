@@ -227,7 +227,7 @@ footer {
   padding: 20px;
 }
 
-/*Trending items section*/
+/* Trending items section */
 * {
   margin: 0;
   padding: 0;
@@ -260,7 +260,7 @@ section {
   margin: 0 auto;
 }
 
-/*Buy Now Button*/
+/* Buy Now Button */
 section a {
   display: inline-block;
   text-decoration: none;
@@ -305,7 +305,7 @@ section a {
   filter: grayscale(0.6);
 }
 
-/*Item name properties*/
+/* Item name properties */
 .swiper-slide h2 {
   color: #fff;
   font-weight: 400;
@@ -321,7 +321,7 @@ section a {
 }
 
 
-/*Buy Now changes colour when mouse hovering over*/
+/* Buy Now changes colour when mouse hovering over */
 .swiper-slide, a:hover {
   color: rgb(3, 156, 227);
 }
@@ -335,37 +335,43 @@ section a {
   opacity: 1;
 }
 
-.swiper-slide--one {
-  /*Air Jordan 5*/
+/* Trending product images go here (START) */
+/* If you've added any new items into the HTML file,
+please copy and paste any of these css styles and make changes accordingly, thank you :) */
+
+.swiper-slide-1 {
+  /* Air Jordan 5 */
   background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
     url("AJ5Navy.webp") no-repeat 50% 50% / cover;
 }
 
-.swiper-slide--two {
-    /*Air Jordan 6*/
+.swiper-slide-2 {
+    /* Air Jordan 6 */
   background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
     url("AJ6Travis.webp") no-repeat 50% 50% / cover;
 }
 
-.swiper-slide--three {
-    /*Air Jordan 4*/
+.swiper-slide-3 {
+    /* Air Jordan 4 */
   background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
     url("AJ4Neon.jpg") no-repeat 50% 50% / cover;
 }
 
-.swiper-slide--four {
-    /*White Air Force 1*/
+.swiper-slide-4 {
+    /* White Air Force 1 */
   background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
     url("AF1White.jpeg") no-repeat 50% 50% / cover;
 }
 
-.swiper-slide--five {
-    /*Air Jordan 1*/
+.swiper-slide-5 {
+    /* Air Jordan 1 */
   background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
     url("AJ1HighBlueChill.webp") no-repeat 50% 50% / cover;
 }
 
-/*Trending Section Text*/
+/* Trending product images go here (END) */
+
+/* Trending Section Text */
 .trending-section {
   position: absolute;
   top: 0;
