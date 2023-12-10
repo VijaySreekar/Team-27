@@ -35,54 +35,30 @@ include '../NavBar/nav.php';
             <img class="backImg" src="../../Images/Shoe%202%20(Registration).png" alt="">
         </div>
     </div>
-    <div class="loginregister_form">
-        <div class="content">
-            <div class="login_form">
-                <div class="title">Login</div>
-                <form id="login-form" action="VerifyUser.php" method="post">
-                    <div class="input-boxes">
-                        <div class="input-box">
-                            <i class="fas fa-envelope"></i>
-                            <input type="text" placeholder="Enter your email" name="login_email" required>
-                        </div>
-                        <div class="input-box">
-                            <i class="fas fa-lock"></i>
-                            <input type="password" name="login_password" placeholder="Enter your password" required>
-                        </div>
-                        <a href="forgot_password.php" class="forgot-password-link">Forgot Password?</a>
-                        <div class="button input-box">
-                            <input type="submit" value="Login">
-                        </div>
-                        <div class="text sign-up-text">Don't have an account? <label for="change">Signup now</label></div>
-                    </div>
-                </form>
-                <div id="error-message" style="color:red;"></div>
-            </div>
-            <div class="signup_form">
-                <div class="title">Signup</div>
-                <form id="signup-form" action="RegisterUser.php" method="post">
+    <div class="content">
+            <div class="passwordreset_form">
+                <div class="title">Password Recovery</div>
+                <form id="passwordreset-form" action="handle_reset_password.php" method="post">
                     <div class="input-boxes">
                         <div class="input-box">
                             <i class="fas fa-user"></i>
-                            <input type="text" name="reg_name" placeholder="Enter your name" required>
+                            <input type="text" name="email" placeholder="Enter your Email" required>
                         </div>
                         <div class="input-box">
                             <i class="fas fa-envelope"></i>
-                            <input type="text" name="reg_email"  placeholder="Enter your email" required>
+                            <input type="text" name="new_password"  placeholder="New Password" required>
                         </div>
                         <div class="input-box">
                             <i class="fas fa-lock"></i>
-                            <input type="password" name="reg_password"  placeholder="Enter your password" required>
+                            <input type="password" name="confirm_password"  placeholder="Confirm Password" required>
                         </div>
                         <div class="button input-box">
-                            <input type="submit" value="Register">
+                            <input type="submit" value="Reset Password">
                         </div>
-                        <div class="text sign-up-text">Already have an account? <label for="change">Login now</label></div>
                     </div>
                 </form>
                 <div id="signup-error-message" style="color:red;"></div>
             </div>
-        </div>
     </div>
 </div>
 <footer class="footer">
@@ -179,3 +155,4 @@ include '../NavBar/nav.php';
 
 </body>
 </html>
+

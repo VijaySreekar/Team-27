@@ -66,13 +66,16 @@ body {
 .category-link {
     margin: 0 10px;
     padding: 5px 10px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
+    background-color: transparent; 
+    border: none; 
+    color: inherit; 
+    text-decoration: none;
     cursor: pointer;
 }
 
 .category-link:hover {
     background-color: #ddd;
+    text-decoration: underline;
 }
 
 .content {

@@ -1,8 +1,7 @@
 <?php
-global $mysqli;
 session_start(); // Start the session
 include("../../connectdb.php");
-include("edit_user.php");
+include("../../edit_user.php");
 ?>
 
 <!DOCTYPE html>
@@ -48,8 +47,27 @@ include("edit_user.php");
         }
       ?>
     </div>
-    <div class="container">
-        previous orders here
+        <?php
+          $id=$_SESSION['user_id'];
+          $sql = "SELECT * FROM product, order_history WHERE
+                  order_history.product_id = product.product_id AND order_history.user_id = $id";
+          $result = mysqli_query($mysqli, $sql);
+          $row = mysqli_fetch_assoc($result);
+
+          $name=$row['name'];
+          $date = $row['date'];
+          $price=$row['price'];
+
+          if(isset($username)){
+            echo "<div class='container'>";
+            echo "<h3> Your Previous Orders</h3>";
+            echo "<p>On ".$date.", you ordered: </p>";
+            echo "<p>".$name."</p>";
+            echo "<p> Price: ".$price.".</p>";
+            echo "</div>";
+          }
+
+        ?>
     </div>
     </div>
   </body>
