@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbf2f922-5ce0-4d3b-977e-7c8bbdfdd3ac" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/HomePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/HomePage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AboutUsPage/aboutus.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AboutUsPage/aboutus.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/basket.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/basket.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ContactUsPage/contactus.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ContactUsPage/contactus.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar/nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar/nav.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar/nav.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/productstyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/productstyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProfilePage/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProfilePage/profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/payment.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,6 +221,7 @@
       <workItem from="1702188032691" duration="22000" />
       <workItem from="1702188062455" duration="109000" />
       <workItem from="1702188192677" duration="1805000" />
+      <workItem from="1702227429497" duration="3751000" />
     </task>
     <servers />
   </component>
