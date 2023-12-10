@@ -11,6 +11,7 @@ session_start();
     <link rel="icon" type="image/x-icon" href="">
     <link rel="stylesheet" type="text/css" href="productstyles.css">
     <link rel="stylesheet" href="../Nav%20Bar/nav.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         /* Base styling for the product detail section */
         .product-detail {
@@ -128,12 +129,57 @@ session_start();
                 fetchProductDetails(productId);
             };
         });
+
+        // This function gets the selected category from the category links
+        function getSelectedCategory() {
+            const categoryLinks = document.querySelectorAll('.category-link');
+            for (const link of categoryLinks) {
+                if (link.classList.contains('active')) {
+                    return link.getAttribute('data-category');
+                }
+            }
+            return 'all'; // Default to 'all' if no category is selected
+        }
+
+        // Add this function to sort the products
+        function sortProducts(sortOrder) {
+            const selectedCategory = getSelectedCategory();
+            const productItems = document.querySelectorAll('.product-item');
+            const productGrid = document.querySelector('.product-grid');
+
+            // Convert NodeList to an array for easier manipulation
+            const productArray = Array.from(productItems);
+
+            productArray.sort((a, b) => {
+                const priceA = parseFloat(a.querySelector('.product-price').textContent.replace('Price: £', ''));
+                const priceB = parseFloat(b.querySelector('.product-price').textContent.replace('Price: £', ''));
+
+                if (sortOrder === 'low_to_high') {
+                    return priceA - priceB;
+                } else {
+                    return priceB - priceA;
+                }
+            });
+
+            // Clear the current product grid
+            productGrid.innerHTML = '';
+
+            // Append sorted products back to the grid
+            for (const product of productArray) {
+                productGrid.appendChild(product);
+            }
+        }
+
+        // Add this function to handle sort order change
+        function updateSortOrder(sortOrder) {
+            sortProducts(sortOrder);
+        }
     </script>
 </head>
 
 <body>
 <!--Navigation Bar-->
-<?php //include '../Nav Bar/nav.php'; ?>
+<?php include '../Nav Bar/nav.php'; ?>
 <div class="product-page">
     <header class="page-header">
         <h1>Our Trainers Collection</h1>
@@ -179,25 +225,22 @@ session_start();
     }
 
     // Fetching products based on category and sort order
-    $selectedCategory = 'all'; // Default category
-    if (isset($_GET['category']) && $_GET['category'] !== '') {
-        $selectedCategory = $conn->real_escape_string($_GET['category']);
-    }
+    $selectedCategory = isset($_GET['category']) ? mysqli_real_escape_string($conn, $_GET['category']) : 'all';
     $sortOrder = isset($_GET['sort_order']) && $_GET['sort_order'] === 'high_to_low' ? 'DESC' : 'ASC';
 
     if ($selectedCategory == 'all') {
         $productSql = "SELECT p.product_id, p.name, p.description, p.price, p.image_link, c.name AS category_name
-                   FROM product p
-                   LEFT JOIN product_category pc ON p.product_id = pc.product_id
-                   LEFT JOIN category c ON pc.category_id = c.category_id
-                   ORDER BY p.price $sortOrder";
+               FROM product p
+               LEFT JOIN product_category pc ON p.product_id = pc.product_id
+               LEFT JOIN category c ON pc.category_id = c.category_id
+               ORDER BY p.price $sortOrder";
     } else {
         $productSql = "SELECT p.product_id, p.name, p.description, p.price, p.image_link, c.name AS category_name
-                   FROM product p
-                   LEFT JOIN product_category pc ON p.product_id = pc.product_id
-                   LEFT JOIN category c ON pc.category_id = c.category_id
-                   WHERE c.name = '$selectedCategory'
-                   ORDER BY p.price $sortOrder";
+               FROM product p
+               LEFT JOIN product_category pc ON p.product_id = pc.product_id
+               LEFT JOIN category c ON pc.category_id = c.category_id
+               WHERE c.name = '$selectedCategory'
+               ORDER BY p.price $sortOrder";
     }
 
     // Displaying products in a grid layout
@@ -214,7 +257,7 @@ session_start();
             echo "<img src='" . $product["image_link"] . "' alt='" . htmlspecialchars($product["name"], ENT_QUOTES) . "' />";
             echo "<div class='product-info'>";
             echo "<h4>" . htmlspecialchars($product["name"], ENT_QUOTES) . "</h4>";
-            echo "<p>Price: £" . htmlspecialchars($product["price"], ENT_QUOTES) . "</p>";
+            echo "<p class='product-price'>Price: £" . htmlspecialchars($product["price"], ENT_QUOTES) . "</p>";
             echo "</div>"; // end product-info
             echo "</div>"; // end product-item
         }

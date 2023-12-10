@@ -34,4 +34,6 @@ if (isset($_GET['product_id'])) {
     }
     $conn->close();
 }
+
+
 ?>
