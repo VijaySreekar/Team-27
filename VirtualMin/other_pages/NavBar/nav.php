@@ -35,7 +35,7 @@
                     echo "</a></button>";
                 } else {
                     // Display the "Login/Signup" button with a class
-                    echo '<button class="navbar-button"><i class="fas fa-user"></i> Login/Signup</button>';
+                    echo '<button class="navbar-button"><a href=\'../LoginPage/login_page.php\'><i class="fas fa-user"></i> Login/Signup</a></button>';
                 }
                 ?>
                 <a href="../BasketPage/basket.php">
