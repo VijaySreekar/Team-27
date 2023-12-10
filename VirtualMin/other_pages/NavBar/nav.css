@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+#navigation .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #e7e4e4;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+#navigation .navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+#navigation .logo img {
+  height: 40px;
+}
+
+#navigation .navbar-center {
+  flex-grow: 1;
+}
+
+#navigation .nav-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#navigation .nav-links li {
+  margin: 0 15px;
+}
+
+#navigation .nav-links li a {
+  color: #333;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+}
+
+#navigation .nav-links li a:before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: #0c6291;
+  transition: width 0.2s ease;
+}
+
+#navigation .nav-links li a:hover:before {
+  width: 100%;
+}
+
+#navigation .navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+#navigation .buttons {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+#navigation .login-signup,
+#navigation .basket {
+  padding: 8px 12px;
+  background: #0c6291;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#navigation .search-bar {
+  display: flex;
+  align-items: center;
+}
+
+#navigation .search-bar input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+#navigation .search-button {
+  padding: 8px 12px;
+  background: #0c6291;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#navigation .basket i,
+#navigation .login-signup i,
+#navigation .search-button i {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+input, button, select {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
