@@ -144,7 +144,9 @@
                     <option value="paypal">PayPal</option>
                 </select>
 
-         
+                <!-- Apple Pay and PayPal buttons -->
+                <img src="apple_pay_icon.png" alt="Apple Pay" width="50" height="50">
+                <img src="paypal_icon.png" alt="PayPal" width="50" height="50">
 
                 <button type="submit">Place Order</button>
             </form>
