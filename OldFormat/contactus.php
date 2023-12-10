@@ -1,10 +1,11 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
-<?php 
-session_start();
-include("Nav Bar\\nav.php"); 
-?>
+
 
 <head>
     <meta charset="UTF-8">
@@ -14,6 +15,9 @@ include("Nav Bar\\nav.php");
 </head>
 
 <body>
+<?php 
+include("Nav Bar\\nav.php"); 
+?>
 
 <div class="contact-form">
     <h2>Contact Us</h2>
