@@ -52,18 +52,23 @@ include("../../edit_user.php");
           $sql = "SELECT * FROM product, order_history WHERE
                   order_history.product_id = product.product_id AND order_history.user_id = $id";
           $result = mysqli_query($mysqli, $sql);
-          $row = mysqli_fetch_assoc($result);
-
-          $name=$row['name'];
-          $date = $row['date'];
-          $price=$row['price'];
-
-          if(isset($username)){
+          if($result){
             echo "<div class='container'>";
             echo "<h3> Your Previous Orders</h3>";
-            echo "<p>On ".$date.", you ordered: </p>";
-            echo "<p>".$name."</p>";
-            echo "<p> Price: ".$price.".</p>";
+            while($row = mysqli_fetch_assoc($result)){
+              $name=$row['name'];
+              $date = $row['date'];
+              $price=$row['price'];
+            
+              if(isset($username)){
+            
+              echo "<p>On ".$date.", you ordered: </p>";
+              echo "<p>".$name."</p>";
+              echo "<p> Price: £".$price.".00.</p>";
+              echo "<br/><br/>";
+            
+              }
+            }
             echo "</div>";
           }
 
