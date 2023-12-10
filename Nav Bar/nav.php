@@ -33,9 +33,11 @@
                 echo '<button class="navbar-button"><i class="fas fa-user"></i> Login/Signup</button>';
             }
             ?>
-            <button class="navbar-button">
-                <i class="fas fa-shopping-basket"></i>
-            </button>
+            <a href="../Products%20Page/basket.php">
+                <button class="navbar-button">
+                    <i class="fas fa-shopping-basket"></i>
+                </button>
+            </a>
         </div>
         <div class="search-bar">
             <input type="text" placeholder="Search">

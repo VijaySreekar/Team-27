@@ -118,6 +118,51 @@ session_start();
         function updateSortOrder(sortOrder) {
             sortProducts(sortOrder);
         }
+
+        window.showProductDetail = function(productId) {
+            $.ajax({
+                url: 'fetch_product_details.php?product_id=' + productId,
+                type: 'GET',
+                success: function(response) {
+                    // Update the product detail section with the response
+                    $('.product-detail').html(response);
+
+                    // Add click event listener for "Add to Cart" button
+                    $('.product-detail-button').on('click', function() {
+                        var quantity = 1; // Modify as needed for dynamic quantity
+                        $.ajax({
+                            url: 'fetch_product_details.php?action=add_to_cart&product_id=' + productId + '&quantity=' + quantity,
+                            type: 'GET',
+                            success: function(cartResponse) {
+                                // Handle the updated cart - you can update a cart icon, display a message, etc.
+                                console.log('Cart updated:', cartResponse);
+                            },
+                            error: function() {
+                                alert('Error adding to cart');
+                            }
+                        });
+                    });
+                },
+                error: function() {
+                    alert('Failed to fetch product details.');
+                }
+            });
+        };
+
+        function addToCart(productId, quantity) {
+            $.ajax({
+                url: 'fetch_product_details.php',
+                type: 'GET',
+                data: { 'action': 'add_to_cart', 'product_id': productId, 'quantity': quantity },
+                success: function(response) {
+                    alert("Product added to cart!");
+                    // Optionally, update cart icon or count here
+                },
+                error: function() {
+                    alert("Error adding product to cart.");
+                }
+            });
+        }
     </script>
 </head>
 
@@ -196,6 +241,7 @@ session_start();
             echo "<div class='product-info'>";
             echo "<h4>" . htmlspecialchars($product["name"], ENT_QUOTES) . "</h4>";
             echo "<p class='product-price'>Price: £" . htmlspecialchars($product["price"], ENT_QUOTES) . "</p>";
+            echo "<button onclick='addToCart(" . $product["product_id"] . ", 1)'>Add to Cart</button>";
             echo "</div>"; // end product-info
             echo "</div>"; // end product-item
         }
