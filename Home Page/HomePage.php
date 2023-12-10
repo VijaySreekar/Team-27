@@ -77,35 +77,35 @@
           <div class="swiper-slide swiper-slide-1">
             <div>
               <h2>Air Jordan 5</h2>
-              <a>Buy Now</a>
+              <!-- <a>Buy Now</a> (Remove Comment tags for later use) -->
             </div>
           </div>
 
           <div class="swiper-slide swiper-slide-2">
             <div>
               <h2>Air Jordan 6</h2>
-              <a>Buy Now</a>
+              <!-- <a>Buy Now</a> (Remove Comment tags for later use) -->
             </div>
           </div>
 
           <div class="swiper-slide swiper-slide-3">
             <div>
               <h2>Air Jordan 4</h2>
-              <a>Buy Now</a>
+              <!-- <a>Buy Now</a> (Remove Comment tags for later use) -->
             </div>
           </div>
 
           <div class="swiper-slide swiper-slide-4">
             <div>
               <h2>White Air Force 1</h2>
-              <a>Buy Now</a>
+              <!-- <a>Buy Now</a> (Remove Comment tags for later use) -->              
             </div>
           </div>
 
           <div class="swiper-slide swiper-slide-5">
             <div>
               <h2>Air Jordan 1</h2>
-              <a>Buy Now</a>
+              <!-- <a>Buy Now</a> (Remove Comment tags for later use) -->
             </div>
           </div>
 

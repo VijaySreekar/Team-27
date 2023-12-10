@@ -260,7 +260,7 @@ section {
   margin: 0 auto;
 }
 
-/* Buy Now Button */
+/* Buy Now Button (Remove comment tags for later use)
 section a {
   display: inline-block;
   text-decoration: none;
@@ -275,11 +275,11 @@ section a {
   transition: 0.3s ease-in-out;
 
   position: absolute;
-  bottom: 65px; /* Adjust this value to position it at the desired distance from the bottom */
+  bottom: 65px;
   left: 50%;
   transform: translateX(-50%);
 }
-
+*/
 
 .swiper {
   width: 50%;
