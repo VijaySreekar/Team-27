@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #e7e4e4; /* Use a muted background color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter box shadow */
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px; /* Slightly increased padding for better spacing */
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px; /* Slightly smaller logo */
+}
+
+.navbar-center {
+  flex-grow: 1;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  margin: 0 15px; /* Increased margin for better spacing */
+}
+
+.nav-links li a {
+  color: #333;
+  font-size: 18px; /* Slightly smaller font size */
+  font-weight: 500;
+  text-decoration: none;
+  position: relative; /* Added for the underline effect */
+}
+
+.nav-links li a:before {
+  content: "";
+  position: absolute;
+  bottom: -2px; /* Adjust the distance from the text */
+  left: 0;
+  height: 2px; /* Underline height */
+  width: 0;
+  background: #0c6291; /* Use an accent color for the underline */
+  transition: width 0.2s ease; /* Smooth width transition */
+}
+
+.nav-links li a:hover:before {
+  width: 100%; /* Display full width on hover */
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.basket i,
+.login-signup i,
+.search-button i {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.login-signup,
+.basket {
+  padding: 8px 12px;
+  background: #0c6291; /* Use a minimalistic accent color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.search-button {
+  padding: 8px 12px;
+  background: #0c6291; /* Use the same accent color for the search button */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.basket i {
+  font-size: 24px;
+  color: #fff;
+}
+
+input, button, select {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+

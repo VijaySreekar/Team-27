@@ -1,0 +1,40 @@
+
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 100px;
+}
+
+h1, h2, p, a, label, textarea, input {
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #0c6291;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.contact-form {
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+h2, label, textarea, input {
+    color: #333;
+}
+
+input[type="submit"] {
+    color: #fff;
+    background: #0c6291;
+    border-radius: 6px;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+input[type="submit"]:hover {
+    background: #0c6291;
+}
