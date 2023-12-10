@@ -50,7 +50,7 @@ include("../../edit_user.php");
         <?php
           $id=$_SESSION['user_id'];
           $sql = "SELECT * FROM product, order_history WHERE
-                  order_history.product_id = product.product_id";
+                  order_history.product_id = product.product_id AND order_history.user_id = $id";
           $result = mysqli_query($mysqli, $sql);
           $row = mysqli_fetch_assoc($result);
 
