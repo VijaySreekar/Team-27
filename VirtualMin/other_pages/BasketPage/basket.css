@@ -1,0 +1,171 @@
+/* Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* NAVIGATION STYLES */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 5px 20px rgb(23, 22, 22);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.navbar-center {
+    flex-grow: 1;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0 12px;
+}
+
+.nav-links li a {
+    position: relative;
+    color: #131111; /* Change text color to black */
+    font-size: 20px;
+    font-weight: 500;
+    padding: 6px 0;
+    text-decoration: none;
+}
+
+.nav-links li a:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: #a63446; /* Change background color */
+    border-radius: 12px;
+    transition: all 0.4s ease;
+}
+
+.nav-links li a:hover:before {
+    width: 100%;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.basket i {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.search-button {
+    padding: 8px 12px;
+    background: #eceeec; /* Change background color */
+    color: #0f0d0d; /* Change text color to white */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* BASKET PAGE STYLES */
+.basket-container {
+    max-width: 800px;
+    margin: 180px auto 20px; /* Add space at the top for the fixed navbar */
+    padding: 20px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 10px 30px rgba(44, 40, 40, 0.1);
+}
+
+.basket-heading h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    
+}
+
+.basket-item-heading {
+    display: flex;
+    justify-content: space-between;
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.basket-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.basket-item-detail {
+    flex: 1;
+    text-align: center;
+}
+
+.total-price {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form {
+    text-align: center;
+    margin-top: 30px;
+}
+
+button {
+    padding: 10px;
+    background-color: #131c13;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.footer {
+    background: #dcdbdb;
+    color: #040404;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0; /* Added left: 0 to stretch across the entire width */
+}
