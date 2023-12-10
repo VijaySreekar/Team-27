@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,159 +9,222 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Treakers</title>
     <link rel="icon" type="image/x-icon" href="">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="productstyles.css">
+    <link rel="stylesheet" href="../Nav%20Bar/nav.css">
+    <style>
+        /* Base styling for the product detail section */
+        .product-detail {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
 
-    <!-- The script below basically works so that when a category link is clicked, it loops 
-    through all product categories and either shows or hides them based on whether their 
+        .product-detail h3 {
+            margin-top: 0;
+            color: #333;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .product-detail img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        /* Styling for the price and add to cart button */
+        .product-detail p {
+            margin: 10px 0;
+            color: #555;
+            font-size: 18px;
+        }
+
+        .product-detail select {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+        }
+
+        .product-detail button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-detail button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+    <!-- The script below basically works so that when a category link is clicked, it loops
+    through all product categories and either shows or hides them based on whether their
     ID matches the selected category (and if all is selected, then all are shown)-->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const categoryLinks = document.querySelectorAll('.category-link');
-            const categories = document.querySelectorAll('.product-category');
+            const productItems = document.querySelectorAll('.product-item');
+            const productDetail = document.querySelector('.product-detail');
 
             categoryLinks.forEach(link => {
-                link.addEventListener('click', function() {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
                     const selectedCategory = this.getAttribute('data-category');
-                    categories.forEach(category => {
-                        if (selectedCategory === 'all' || category.id === 'category-' + selectedCategory) {
-                            category.style.display = '';
+
+                    productItems.forEach(item => {
+                        if (selectedCategory === 'all' || item.classList.contains('category-' + selectedCategory)) {
+                            item.style.display = '';
                         } else {
-                            category.style.display = 'none';
+                            item.style.display = 'none';
                         }
                     });
+
+                    // Hide the product detail when a category link is clicked
+                    productDetail.style.display = 'none';
                 });
             });
+
+            function fetchProductDetails(productId) {
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', 'fetch_product_details.php?product_id=' + productId, true);
+                xhr.onload = function() {
+                    if (this.status === 200) {
+                        const productDetail = document.querySelector('.product-detail');
+                        productDetail.innerHTML = this.responseText;
+                    } else {
+                        alert('Failed to fetch product details.');
+                    }
+                }
+                xhr.send();
+            }
+
+            // Make showProductDetail globally accessible
+            window.showProductDetail = function(productId) {
+                const productDetail = document.querySelector('.product-detail');
+                const productItems = document.querySelectorAll('.product-item');
+
+                // Hide all product items
+                productItems.forEach(item => {
+                    item.style.display = 'none';
+                });
+
+                // Show the product detail
+                productDetail.style.display = 'block';
+
+                // Fetch product details
+                fetchProductDetails(productId);
+            };
         });
     </script>
 </head>
 
-
 <body>
-    <div class="product-page">
-        <header class="page-header">
-            <h1>Our Trainers Collection</h1>
-            <!-- These are all the category links, as well as the price filter-->
-            <div class="category-links">
-                <a href="products-page.php?category=all" class="category-link">All Categories</a>
-                <a href="products-page.php?category=trainers" class="category-link">Trainers</a>
-                <a href="products-page.php?category=basketball-shoes" class="category-link">Basketball Shoes</a>
-                <a href="products-page.php?category=football-shoes" class="category-link">Football Shoes</a>
-                <a href="products-page.php?category=running-shoes" class="category-link">Running Shoes</a>
-                <a href="products-page.php?category=gym-shoes" class="category-link">Gym Shoes</a>
-                <select id="price-sort" onchange="updateSortOrder(this.value);">
-                    <option value="low_to_high">Price: Low to High</option>
-                    <option value="high_to_low">Price: High to Low</option>
-                </select>
-            </div>
-        </header>
+<!--Navigation Bar-->
+<?php //include '../Nav Bar/nav.php'; ?>
+<div class="product-page">
+    <header class="page-header">
+        <h1>Our Trainers Collection</h1>
+        <!-- These are all the category links, as well as the price filter-->
+        <div class="category-links">
+            <a href="products-page.php?category=all" class="category-link" data-category="all">All Categories</a>
+            <a href="products-page.php?category=trainers" class="category-link" data-category="trainers">Trainers</a>
+            <a href="products-page.php?category=basketball-shoes" class="category-link" data-category="basketball-shoes">Basketball Shoes</a>
+            <a href="products-page.php?category=football-shoes" class="category-link" data-category="football-shoes">Football Shoes</a>
+            <a href="products-page.php?category=running-shoes" class="category-link" data-category="running-shoes">Running Shoes</a>
+            <a href="products-page.php?category=gym-shoes" class="category-link" data-category="gym-shoes">Gym Shoes</a>
+            <select id="price-sort" onchange="updateSortOrder(this.value);">
+                <option value="low_to_high">Price: Low to High</option>
+                <option value="high_to_low">Price: High to Low</option>
+            </select>
+        </div>
+    </header>
 
-
-        <!-- Absolutely WHAM code section, but it does 4 things:
-            - Connects the database (needs to get changed to the server one since i only hooked it to my local)
-            - Helps display product pages dynamically (so basically if a specific product ID is selected,
-                                                        it fetches and displays details of that specific product 
-                                                        via the $_GET parameter)
-            - And if no specific product is requested, it displays products by category
-            - And finally, it also handles sorting by price if the 'sort_order' $_GET parameter is given-->
-        <?php
-        $dbhost = "localhost";
-        $dbusername = "u-230185247";
-        $dbpassword = "z3mlfs8WdS1hxvH";
-        $dbname = "u_230185247_treaker";
-        $conn = new mysqli($dbhost, $dbname, $dbusername, $dbpassword);
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-
-        if (isset($_GET['product_id'])) {
-            $product_id = $_GET['product_id'];
-            $detailSql = "SELECT * FROM product WHERE product_id = $product_id";
-            $detailResult = $conn->query($detailSql);
-            if ($detailResult->num_rows > 0) {
-                $product = $detailResult->fetch_assoc();
-                echo "<div class='product-detail'>";
-                echo "<img src='" . $product["image_link"] . "' alt='" . $product["name"] . "' width='200' height='190' />";
-                echo "<div class='product-info'>";
-                echo "<h2>" . $product["name"] . "</h2>";
-                echo "<p>Price: £" . $product["price"] . "</p>";
-                echo "<p>Description: " . $product["description"] . "</p>";
-                echo "</div>"; 
-                echo "</div>"; 
-            } else {
-                echo "Product not found.";
-            }
-        } else {
-            $selectedCategory = isset($_GET['category']) ? $_GET['category'] : 'all';
-            $sortOrder = isset($_GET['sort_order']) ? $_GET['sort_order'] : 'low_to_high';
-        
-            $categorySql = "SELECT * FROM category";
-            $categoryResult = $conn->query($categorySql);
-        
-            if ($categoryResult->num_rows > 0) {
-                while ($category = $categoryResult->fetch_assoc()) {
-                    $categoryName = $category['name'];
-                    $categoryId = $category['category_id'];
-                    $formattedCategory = strtolower(str_replace(' ', '-', $categoryName));
-        
-                    if ($selectedCategory == 'all' || $selectedCategory == $formattedCategory) {
-                        echo "<div class='product-category' id='category-$formattedCategory'>";
-                        echo "<h3>" . ucfirst($categoryName) . "</h3>";
-                        echo "<div class='product-items'>";
-        
-                        $productSql = "SELECT product_id, name, description, price, image_link FROM product WHERE category_id = $categoryId";
-                        $productSql .= $sortOrder === 'low_to_high' ? ' ORDER BY price ASC' : ' ORDER BY price DESC';
-                        $productResult = $conn->query($productSql);
-        
-                        if ($productResult->num_rows > 0) {
-                            while ($product = $productResult->fetch_assoc()) {
-                                echo "<a href='products-page.php?product_id=" . $product["product_id"] . "' class='product-item' data-category='$formattedCategory'>";
-                                echo "<img src='" . $product["image_link"] . "' alt='" . $product["name"] . "' width='200' height='190' />";
-                                echo "<h4>" . $product["name"] . "</h4>";
-                                echo "<p>Price: £" . $product["price"] . "</p>";
-                                echo "</a>"; 
-                            }
-                        } else {
-                            echo "<p>No items in this category.</p>";
-                        }
-        
-                        echo "</div>"; 
-                        echo "</div>"; 
-                    }
-                }
-            } else {
-                echo "No categories found";
-            }
-        }
-        $conn->close();
-        ?>
-
-        <!-- This code section manages the price sorting functionality, so it basically sets the value
-        of the price sorting dropdown based on the current URL parameter. It also lets the user change the sorting order
-        bc of an event listener, and then reconstructs the url so it displays right-->
-
-        <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const sortSelect = document.getElementById('price-sort');
-            var currentSortOrder = new URLSearchParams(window.location.search).get('sort_order');
-            if (currentSortOrder) {
-                sortSelect.value = currentSortOrder;
-            }
-            sortSelect.addEventListener('change', function() {
-                updateSortOrder(this.value);
-            });
-        });
-        function updateSortOrder(sortOrder) {
-            var currentCategory = new URLSearchParams(window.location.search).get('category');
-            var newUrl = 'products-page.php?';
-            if (currentCategory) {
-                newUrl += 'category=' + currentCategory + '&';
-            }
-            newUrl += 'sort_order=' + sortOrder;
-            window.location.href = newUrl;
-            }
-            </script>
-
-
+    <!-- Product detail container -->
+    <div class="product-detail" id="product-detail">
+        <!-- Product details will be displayed here -->
     </div>
+
+    <!-- Absolutely WHAM code section, but it does 4 things:
+        - Connects the database (needs to get changed to the server one since i only hooked it to my local)
+        - Helps display product pages dynamically (so basically if a specific product ID is selected,
+                                                    it fetches and displays details of that specific product
+                                                    via the $_GET parameter)
+        - And if no specific product is requested, it displays products by category
+        - And finally, it also handles sorting by price if the 'sort_order' $_GET parameter is given-->
+
+    <?php
+    // Database connection details
+    $host = "localhost";
+    $username = "u-230185247";
+    $password = "z3mlfs8WdS1hxvH";
+    $dbname = "u_230185247_treaker";
+
+    // Create database connection
+    $conn = mysqli_connect($host, $username, $password, $dbname);
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    // Fetching products based on category and sort order
+    $selectedCategory = 'all'; // Default category
+    if (isset($_GET['category']) && $_GET['category'] !== '') {
+        $selectedCategory = $conn->real_escape_string($_GET['category']);
+    }
+    $sortOrder = isset($_GET['sort_order']) && $_GET['sort_order'] === 'high_to_low' ? 'DESC' : 'ASC';
+
+    if ($selectedCategory == 'all') {
+        $productSql = "SELECT p.product_id, p.name, p.description, p.price, p.image_link, c.name AS category_name
+                   FROM product p
+                   LEFT JOIN product_category pc ON p.product_id = pc.product_id
+                   LEFT JOIN category c ON pc.category_id = c.category_id
+                   ORDER BY p.price $sortOrder";
+    } else {
+        $productSql = "SELECT p.product_id, p.name, p.description, p.price, p.image_link, c.name AS category_name
+                   FROM product p
+                   LEFT JOIN product_category pc ON p.product_id = pc.product_id
+                   LEFT JOIN category c ON pc.category_id = c.category_id
+                   WHERE c.name = '$selectedCategory'
+                   ORDER BY p.price $sortOrder";
+    }
+
+    // Displaying products in a grid layout
+    echo "<div class='product-grid'>";
+
+    $productResult = $conn->query($productSql);
+    if ($productResult->num_rows > 0) {
+        while ($product = $productResult->fetch_assoc()) {
+            $categoryName = $product["category_name"] ?? 'unknown-category';
+            $categoryNameKebabCase = strtolower(str_replace(' ', '-', $categoryName));
+            $categoryClass = "category-" . $categoryNameKebabCase;
+
+            echo "<div class='product-item " . $categoryClass . "' onclick='showProductDetail(" . $product["product_id"] . ")'>";
+            echo "<img src='" . $product["image_link"] . "' alt='" . htmlspecialchars($product["name"], ENT_QUOTES) . "' />";
+            echo "<div class='product-info'>";
+            echo "<h4>" . htmlspecialchars($product["name"], ENT_QUOTES) . "</h4>";
+            echo "<p>Price: £" . htmlspecialchars($product["price"], ENT_QUOTES) . "</p>";
+            echo "</div>"; // end product-info
+            echo "</div>"; // end product-item
+        }
+    } else {
+        echo "<p>No products found.</p>";
+    }
+    ?>
+</div>
+<?php
+$conn->close();
+?>
 </body>
 </html>

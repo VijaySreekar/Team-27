@@ -15,10 +15,10 @@
             </div>
             <div class="navbar-center">
                 <ul class="nav-links">
-                    <li><a href="../index.html">Home</a></li>
-                    <li class="center"><a href="../products-page.php">Products</a></li>
-                    <li class="upward"><a href="../aboutus.php">About</a></li>
-                    <li class="forward"><a href="../contacatus.php">Contact Us</a></li>
+                    <li><a href="../HomePage/HomePage.php">Home</a></li>
+                    <li class="center"><a href="../ProductPage/products-page.php">Products</a></li>
+                    <li class="upward"><a href="../../aboutus.php">About</a></li>
+                    <li class="forward"><a href="../../contacatus.php">Contact Us</a></li>
                 </ul>
             </div>
             <div class="navbar-right">
