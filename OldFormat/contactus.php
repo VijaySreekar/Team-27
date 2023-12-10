@@ -16,7 +16,7 @@ session_start();
 
 <body>
 <?php 
-include("Nav Bar\\nav.php"); 
+include("../NavBar/nav.php"); 
 ?>
 
 <div class="contact-form">

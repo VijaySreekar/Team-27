@@ -1,21 +1,23 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
-<?php 
-session_start();
-include("../NavBar/nav.php");
-?>
+
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-    <link rel="stylesheet" href="../AboutUsPage/custom-styles.css">
-    <link rel="stylesheet" href="../NavBar/nav.css">
-
+    <link rel="stylesheet" href="custom-styles.css">
 </head>
 
 <body>
+<?php 
+include("../NavBar/nav.php"); 
+?>
 
 <div class="contact-form">
     <h2>Contact Us</h2>
