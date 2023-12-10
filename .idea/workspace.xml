@@ -5,70 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbf2f922-5ce0-4d3b-977e-7c8bbdfdd3ac" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home Page/AF1White.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home Page/AJ1HighBlueChill.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home Page/AJ4Neon.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home Page/AJ5Navy.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home Page/AJ6Travis.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home Page/Air Jordan 11.jpg.avif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home Page/Air Jordan 6.jpg.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home Page/HomePage.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home Page/HomePage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home Page/HomePage.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home Page/Sneaker Wallpaper.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home Page/Treakers Logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home Page/TrendingItems.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Shoe 1 (Login).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Shoe 2 (Registration).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Treakers Logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login Page/RegisterUser.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login Page/VerifyUser.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login Page/login_page.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Nav Bar/nav.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Nav Bar/nav.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OldFormat/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OldFormat/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OldFormat/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OldFormat/.idea/laravel-idea.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OldFormat/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OldFormat/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OldFormat/.idea/php.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OldFormat/.idea/phpunit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OldFormat/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OldFormat/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OldFormat/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OldFormat/Team-27.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products Page/basket.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products Page/basket.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products Page/fetch_product_details.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products Page/products lineup/Yeezy-Boost-350-V2-Beige-Black-HP7870-featured-image.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products Page/products lineup/adidas-mens-ultra-boost-20-EF1043-side.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products Page/products lineup/nikeairforce107.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products Page/products lineup/nikeairjordan1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products Page/products-page.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products Page/productstyles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products Page/remove_from_cart.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products Page/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products Page/update_cart.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar/nav.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aboutus.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/basket.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/basket.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/connectdb.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/contactus.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/custom-styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/edit_user.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/process_contact_form.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products lineup/nikeairforce107.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products-page.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/profile.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/profile.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/welcome.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/login_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/login_page.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,7 +219,7 @@
       <workItem from="1702157276766" duration="21114000" />
       <workItem from="1702188032691" duration="22000" />
       <workItem from="1702188062455" duration="109000" />
-      <workItem from="1702188192677" duration="561000" />
+      <workItem from="1702188192677" duration="1805000" />
     </task>
     <servers />
   </component>
