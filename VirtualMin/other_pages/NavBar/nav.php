@@ -33,6 +33,8 @@
                     echo "<button>";
                     echo "<a href='../ProfilePage/profile.php'>Your Profile";
                     echo "</a></button>";
+
+                    echo "<button><a href=\"../NavBar/logout.php\">Log out</a></button>";
                 } else {
                     // Display the "Login/Signup" button with a class
                     echo '<button class="navbar-button"><a href=\'../LoginPage/login_page.php\'><i class="fas fa-user"></i> Login/Signup</a></button>';
