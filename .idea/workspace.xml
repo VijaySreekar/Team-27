@@ -6,7 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="dbf2f922-5ce0-4d3b-977e-7c8bbdfdd3ac" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/login_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/login_page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/HomePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/HomePage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AboutUsPage/aboutus.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AboutUsPage/aboutus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/basket.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/basket.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ContactUsPage/contactus.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ContactUsPage/contactus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar/nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar/nav.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar/nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/productstyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/productstyles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProfilePage/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProfilePage/profile.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,29 +172,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.laravel-idea.search-composer-json": "true",
-    "RunOnceActivity.laravel-idea.update-module-directories": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/xampp/htdocs/Website/Team-27/VirtualMin",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.laravel-idea.search-composer-json&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.laravel-idea.update-module-directories&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/Website/Team-27/VirtualMin&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin" />

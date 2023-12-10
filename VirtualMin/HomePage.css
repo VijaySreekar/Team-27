@@ -1,8 +1,16 @@
+/* Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
 html {
   overflow-y: scroll;
   height: 100%;
   -webkit-overflow-scrolling: touch;
-  font-family: "Euclid Circular A", "Poppins";
 }
 
 body {
@@ -64,26 +72,25 @@ h1 {
   /* Additional styles for screens smaller than 480px */
 }
 
-/*NavBar*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: #fff;
-  box-shadow: 0 5px 10px rgb(166, 52, 70);
+  background: #e7e4e4; /* Use a muted background color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter box shadow */
   z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 15px;
+  padding: 10px 20px; /* Slightly increased padding for better spacing */
 }
 
 .navbar-left {
@@ -92,13 +99,7 @@ h1 {
 }
 
 .logo img {
-  height: 50px;
-  /* Adjust the logo height as needed */
-}
-
-.company-name {
-  font-size: 20px;
-  margin-left: 10px;
+  height: 40px; /* Slightly smaller logo */
 }
 
 .navbar-center {
@@ -113,50 +114,39 @@ h1 {
 }
 
 .nav-links li {
-  margin: 0 12px;
+  margin: 0 15px; /* Increased margin for better spacing */
 }
 
 .nav-links li a {
-  position: relative;
   color: #333;
-  font-size: 20px;
+  font-size: 18px; /* Slightly smaller font size */
   font-weight: 500;
-  padding: 6px 0;
   text-decoration: none;
+  position: relative; /* Added for the underline effect */
 }
 
 .nav-links li a:before {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -2px; /* Adjust the distance from the text */
   left: 0;
-  height: 3px;
-  width: 0%;
-  background: #0c6291;
-  border-radius: 12px;
-  transition: all 0.4s ease;
+  height: 2px; /* Underline height */
+  width: 0;
+  background: #0c6291; /* Use an accent color for the underline */
+  transition: width 0.2s ease; /* Smooth width transition */
 }
 
 .nav-links li a:hover:before {
-  width: 100%;
+  width: 100%; /* Display full width on hover */
 }
 
 .navbar-right {
   display: flex;
   align-items: center;
 }
-.basket i {
-  font-size: 20px;
-  margin-right: 5px;
-}
 
-/* Login/Signup icon */
-.login-signup i {
-  font-size: 20px;
-  margin-right: 5px;
-}
-
-/* Search button icon */
+.basket i,
+.login-signup i,
 .search-button i {
   font-size: 20px;
   margin-right: 5px;
@@ -170,9 +160,8 @@ h1 {
 
 .login-signup,
 .basket {
-  margin-right: 10px;
   padding: 8px 12px;
-  background: #0c6291;
+  background: #0c6291; /* Use a minimalistic accent color */
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -193,30 +182,36 @@ h1 {
 
 .search-button {
   padding: 8px 12px;
-  background: #0c6291;
+  background: #0c6291; /* Use the same accent color for the search button */
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-/* Style for the basket icon */
 .basket i {
-  font-size: 24px; /* Adjust the font size as needed */
-  color: #fff; /* Set the color to white or any other color that contrasts with the background */
+  font-size: 24px;
+  color: #fff;
 }
-/* Style for the basket count */
-/* Style for the basket count */
-.basket-count {
-  position: absolute; /* Position the count element */
-  top: -8px; /* Adjust the top position as needed */
-  right: 5px; /* Adjust the right position as needed */
-  background-color: #0077ff; /* Background color of the count */
-  color: white; /* Text color of the count */
-  border-radius: 50%; /* Make it a circle */
-  padding: 4px 8px; /* Adjust padding as needed */
-  font-size: 12px; /* Adjust font size as needed */
+
+input, button, select {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 5px 0;
 }
+
+button {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
 
 
 /* Footer styles */
@@ -228,12 +223,6 @@ footer {
 }
 
 /* Trending items section */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Euclid Circular A", "Poppins";
-}
 
 body {
   background: #16222a; /* fallback for old browsers */

@@ -5,119 +5,114 @@
   font-family: "Poppins", sans-serif;
 }
 
-.navbar {
+#navigation .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: #e7e4e4; /* Use a muted background color */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter box shadow */
+  background: #e7e4e4;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px; /* Slightly increased padding for better spacing */
+  padding: 10px 20px;
 }
 
-.navbar-left {
+#navigation .navbar-left {
   display: flex;
   align-items: center;
 }
 
-.logo img {
-  height: 40px; /* Slightly smaller logo */
+#navigation .logo img {
+  height: 40px;
 }
 
-.navbar-center {
+#navigation .navbar-center {
   flex-grow: 1;
 }
 
-.nav-links {
+#navigation .nav-links {
   display: flex;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.nav-links li {
-  margin: 0 15px; /* Increased margin for better spacing */
+#navigation .nav-links li {
+  margin: 0 15px;
 }
 
-.nav-links li a {
+#navigation .nav-links li a {
   color: #333;
-  font-size: 18px; /* Slightly smaller font size */
+  font-size: 18px;
   font-weight: 500;
   text-decoration: none;
-  position: relative; /* Added for the underline effect */
+  position: relative;
 }
 
-.nav-links li a:before {
+#navigation .nav-links li a:before {
   content: "";
   position: absolute;
-  bottom: -2px; /* Adjust the distance from the text */
+  bottom: -2px;
   left: 0;
-  height: 2px; /* Underline height */
+  height: 2px;
   width: 0;
-  background: #0c6291; /* Use an accent color for the underline */
-  transition: width 0.2s ease; /* Smooth width transition */
+  background: #0c6291;
+  transition: width 0.2s ease;
 }
 
-.nav-links li a:hover:before {
-  width: 100%; /* Display full width on hover */
+#navigation .nav-links li a:hover:before {
+  width: 100%;
 }
 
-.navbar-right {
+#navigation .navbar-right {
   display: flex;
   align-items: center;
 }
 
-.basket i,
-.login-signup i,
-.search-button i {
-  font-size: 20px;
-  margin-right: 5px;
-}
-
-.buttons {
+#navigation .buttons {
   display: flex;
   align-items: center;
   margin-right: 20px;
 }
 
-.login-signup,
-.basket {
+#navigation .login-signup,
+#navigation .basket {
   padding: 8px 12px;
-  background: #0c6291; /* Use a minimalistic accent color */
+  background: #0c6291;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.search-bar {
+#navigation .search-bar {
   display: flex;
   align-items: center;
 }
 
-.search-bar input[type="text"] {
+#navigation .search-bar input[type="text"] {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-right: 10px;
 }
 
-.search-button {
+#navigation .search-button {
   padding: 8px 12px;
-  background: #0c6291; /* Use the same accent color for the search button */
+  background: #0c6291;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.basket i {
-  font-size: 24px;
-  color: #fff;
+#navigation .basket i,
+#navigation .login-signup i,
+#navigation .search-button i {
+  font-size: 20px;
+  margin-right: 5px;
 }
 
 input, button, select {
@@ -136,4 +131,3 @@ button {
 button:hover {
   background-color: #0056b3;
 }
-
