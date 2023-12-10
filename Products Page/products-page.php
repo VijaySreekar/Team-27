@@ -12,73 +12,17 @@ session_start();
     <link rel="stylesheet" type="text/css" href="productstyles.css">
     <link rel="stylesheet" href="../Nav%20Bar/nav.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-        /* Base styling for the product detail section */
-        .product-detail {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: 20px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background-color: #f9f9f9;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .product-detail h3 {
-            margin-top: 0;
-            color: #333;
-            font-size: 24px;
-            font-weight: 600;
-        }
-
-        .product-detail img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 4px;
-            margin: 20px 0;
-        }
-
-        /* Styling for the price and add to cart button */
-        .product-detail p {
-            margin: 10px 0;
-            color: #555;
-            font-size: 18px;
-        }
-
-        .product-detail select {
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            background-color: white;
-        }
-
-        .product-detail button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .product-detail button:hover {
-            background-color: #0056b3;
-        }
-
-    </style>
     <!-- The script below basically works so that when a category link is clicked, it loops
     through all product categories and either shows or hides them based on whether their
     ID matches the selected category (and if all is selected, then all are shown)-->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+
             const categoryLinks = document.querySelectorAll('.category-link');
             const productItems = document.querySelectorAll('.product-item');
             const productDetail = document.querySelector('.product-detail');
+
+            productDetail.style.display = 'none';
 
             categoryLinks.forEach(link => {
                 link.addEventListener('click', function(event) {
@@ -197,12 +141,6 @@ session_start();
             </select>
         </div>
     </header>
-
-    <!-- Product detail container -->
-    <div class="product-detail" id="product-detail">
-        <!-- Product details will be displayed here -->
-    </div>
-
     <!-- Absolutely WHAM code section, but it does 4 things:
         - Connects the database (needs to get changed to the server one since i only hooked it to my local)
         - Helps display product pages dynamically (so basically if a specific product ID is selected,
@@ -269,5 +207,9 @@ session_start();
 <?php
 $conn->close();
 ?>
+
+<!-- Product detail container -->
+<div class="product-detail" id="product-detail">
+</div>
 </body>
 </html>

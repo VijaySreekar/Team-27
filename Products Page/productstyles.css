@@ -130,3 +130,72 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+/* CSS for product details */
+.product-details-container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-details-left {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+}
+
+.product-details-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-details-right {
+    flex: 2;
+    padding: 10px;
+}
+
+.product-detail-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-detail-description {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.product-detail-label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.product-detail-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.product-detail-price {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.product-detail-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-detail-button:hover {
+    background-color: #0056b3;
+}
