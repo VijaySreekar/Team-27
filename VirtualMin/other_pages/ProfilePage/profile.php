@@ -64,7 +64,7 @@ include("../../edit_user.php");
             
               echo "<p>On ".$date.", you ordered: </p>";
               echo "<p>".$name."</p>";
-              echo "<p> Price: £".$price.".00.</p>";
+              echo "<p> Price: £".$price.".</p>";
               echo "<br/><br/>";
             
               }
