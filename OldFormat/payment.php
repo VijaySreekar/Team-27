@@ -69,19 +69,21 @@
     </style>
     <script>
         function validateForm() {
-            var inputs = document.querySelectorAll('.payment-form input[required]');
+            var elements = document.querySelectorAll('.payment-form .required');
             var isValid = true;
 
-            inputs.forEach(function (input) {
-                if (input.value.trim() === '') {
+            elements.forEach(function (element) {
+                if (element.value.trim() === '') {
                     isValid = false;
-                    input.classList.add('invalid-input');
-                    input.setAttribute('title', 'This field is required');
+                    element.classList.add('invalid-input');
+                    element.setAttribute('title', 'This field is required');
                 } else {
-                    input.classList.remove('invalid-input');
-                    input.removeAttribute('title');
+                    element.classList.remove('invalid-input');
+                    element.removeAttribute('title');
                 }
             });
+
+            console.log('Form is valid:', isValid);
 
             return isValid;
         }
@@ -103,23 +105,23 @@
         } else {
             // Show the payment form
         ?>
-        <h2>Payment Details</h2>
-
+       
+        <h2 style="text-align: center;">Payment Details</h2>
       
         <div class="payment-section">
             <h3>1. Customer Details</h3>
             <form class="payment-form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" onsubmit="return validateForm()">
                 <label for="customer_name">Name:</label>
-                <input type="text" id="customer_name" name="customer_name" required>
+                <input type="text" id="customer_name" name="customer_name" class="required">
 
                 <label for="customer_surname">Surname:</label>
-                <input type="text" id="customer_surname" name="customer_surname" required>
+                <input type="text" id="customer_surname" name="customer_surname" class="required">
 
                 <label for="street_name">Street Name:</label>
-                <input type="text" id="street_name" name="street_name" required>
+                <input type="text" id="street_name" name="street_name" class="required">
 
                 <label for="postcode" title="Enter 6 digits/letters">Postcode:</label>
-                <input type="text" id="postcode" name="postcode" pattern="[A-Za-z0-9]{6}" required>
+                <input type="text" id="postcode" name="postcode" pattern="[A-Za-z0-9]{6}" class="required">
 
             </form>
         </div>
@@ -128,25 +130,22 @@
             <h3>2. Payment Options</h3>
             <form class="payment-form" action="process_payment.php" method="post" onsubmit="return validateForm()">
                 <label for="card_number" title="Enter 16 digits of your card">Card Number:</label>
-                <input type="text" id="card_number" name="card_number" pattern="\d{16}" required>
+                <input type="text" id="card_number" name="card_number" pattern="\d{16}" class="required">
 
                 <label for="cvv" title="Enter 3 digits">CVV:</label>
-                <input type="text" id="cvv" name="cvv" pattern="\d{3}" required>
+                <input type="text" id="cvv" name="cvv" pattern="\d{3}" class="required">
 
                 <label for="cardholder_name">Cardholder Name:</label>
-                <input type="text" id="cardholder_name" name="cardholder_name" required>
+                <input type="text" id="cardholder_name" name="cardholder_name" class="required">
 
                 <label for="payment_method">Payment Method:</label>
-                <select id="payment_method" name="payment_method" required>
+                <select id="payment_method" name="payment_method" class="required">
                     <option value="card">Credit/Debit Card</option>
-                    <option value="apple_pay">Apple Pay</option>
-                    <option value="paypal">PayPal</option>
+                  
                 </select>
 
-                <!-- Apple Pay and PayPal buttons -->
-                <img src="apple_pay_icon.png" alt="Apple Pay" width="50" height="50">
-                <img src="paypal_icon.png" alt="PayPal" width="50" height="50">
-
+               
+                <div style="text-align: center;">
                 <button type="submit">Place Order</button>
             </form>
         </div>
