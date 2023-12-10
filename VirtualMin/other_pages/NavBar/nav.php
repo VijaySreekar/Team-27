@@ -15,10 +15,10 @@
     </div>
     <div class="navbar-center">
         <ul class="nav-links">
-            <li><a href="../HomePage/HomePage.php">Home</a></li>
+            <li><a href="../../index.php">Home</a></li>
             <li><a href="../ProductPage/products-page.php">Products</a></li>
-            <li><a href="../../aboutus.php">About</a></li>
-            <li><a href="../../contacatus.php">Contact Us</a></li>
+            <li><a href="../AboutUsPage/aboutus.php">About</a></li>
+            <li><a href="../ContactUsPage/contactus.php">Contact Us</a></li>
         </ul>
     </div>
     <div class="navbar-right">
@@ -33,7 +33,7 @@
                 echo '<button class="navbar-button"><i class="fas fa-user"></i> Login/Signup</button>';
             }
             ?>
-            <a href="../Products%20Page/basket.php">
+            <a href="../BasketPage/basket.php">
                 <button class="navbar-button">
                     <i class="fas fa-shopping-basket"></i>
                 </button>

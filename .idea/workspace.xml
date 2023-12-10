@@ -4,7 +4,72 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dbf2f922-5ce0-4d3b-977e-7c8bbdfdd3ac" name="Changes" comment="" />
+    <list default="true" id="dbf2f922-5ce0-4d3b-977e-7c8bbdfdd3ac" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home Page/AF1White.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home Page/AJ1HighBlueChill.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home Page/AJ4Neon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home Page/AJ5Navy.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home Page/AJ6Travis.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home Page/Air Jordan 11.jpg.avif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home Page/Air Jordan 6.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home Page/HomePage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home Page/HomePage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home Page/HomePage.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home Page/Sneaker Wallpaper.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home Page/Treakers Logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home Page/TrendingItems.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Shoe 1 (Login).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Shoe 2 (Registration).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Treakers Logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login Page/RegisterUser.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login Page/VerifyUser.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login Page/login_page.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nav Bar/nav.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nav Bar/nav.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OldFormat/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OldFormat/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OldFormat/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OldFormat/.idea/laravel-idea.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OldFormat/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OldFormat/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OldFormat/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OldFormat/.idea/phpunit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OldFormat/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OldFormat/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OldFormat/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OldFormat/Team-27.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products Page/basket.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products Page/basket.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products Page/fetch_product_details.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products Page/products lineup/Yeezy-Boost-350-V2-Beige-Black-HP7870-featured-image.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products Page/products lineup/adidas-mens-ultra-boost-20-EF1043-side.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products Page/products lineup/nikeairforce107.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products Page/products lineup/nikeairjordan1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products Page/products-page.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products Page/productstyles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products Page/remove_from_cart.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products Page/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products Page/update_cart.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar/nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aboutus.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basket.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basket.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connectdb.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contactus.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/custom-styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/edit_user.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/process_contact_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/products lineup/nikeairforce107.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/products-page.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/welcome.php" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -161,43 +226,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.laravel-idea.search-composer-json&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.laravel-idea.update-module-directories&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/Website/Team-27/VirtualMin/Images&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.laravel-idea.search-composer-json": "true",
+    "RunOnceActivity.laravel-idea.update-module-directories": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/xampp/htdocs/Website/Team-27/VirtualMin",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin" />
       <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\Images" />
       <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\other_pages\AboutUsPage" />
       <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\other_pages\ContactUsPage" />
       <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\other_pages\ProductPage" />
-      <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\other_pages\ProfilePage" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Website\Team-27\OldFormat" />
+      <recent name="C:\xampp\htdocs\Website\Team-27" />
       <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\other_pages\BasketPage" />
       <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin" />
       <recent name="C:\xampp\htdocs\Website\Team-27\ContactPage" />
-      <recent name="C:\xampp\htdocs\Website\Team-27\Login Page" />
-      <recent name="C:\xampp\htdocs\Website\Team-27" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -216,6 +281,7 @@
       <workItem from="1702157276766" duration="21114000" />
       <workItem from="1702188032691" duration="22000" />
       <workItem from="1702188062455" duration="109000" />
+      <workItem from="1702188192677" duration="561000" />
     </task>
     <servers />
   </component>
