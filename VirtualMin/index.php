@@ -141,8 +141,44 @@
 
 <!--Footer Section-->
 
-<footer>
-  <p2>&copy; 2023 Treakers. All rights reserved.</p2>
+<footer class="footer">
+    <div class="fcontainer">
+        <div class="row">
+            <div class="footer-col">
+                <h4>Treakers</h4>
+                <ul>
+                    <li><a href="../AboutUsPage/aboutus.php">about us</a></li>
+                    <li><a href="../ProductPage/products-page.php">our products</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="../ContactUsPage/contactus.php">Contact Us</a></li>
+                    <li><a href="#">returns</a></li>
+                    <li><a href="../BasketPage/basket.php">Basket</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>online shop</h4>
+                <ul>
+                    <li><a href="../../index.php">Sneakers</a></li>
+                    <li><a href="../../index.php">Trainers</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>follow us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
 </body>
 </html>

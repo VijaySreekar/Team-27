@@ -8,30 +8,24 @@ function addToCart($productId, $quantity) {
         $_SESSION['cart'] = [];
     }
 
-    // Sanitize the input
     $productId = intval($productId);
     $quantity = intval($quantity);
 
-    // Add the item to the cart
     if (isset($_SESSION['cart'][$productId])) {
-        // If the item is already in the cart, update the quantity
         $_SESSION['cart'][$productId]['quantity'] += $quantity;
     } else {
-        // If the item is not in the cart, add it with the quantity
         $_SESSION['cart'][$productId] = ['quantity' => $quantity];
     }
 
-    // Return updated cart as JSON
     echo json_encode($_SESSION['cart']);
 }
 
 if (isset($_GET['action']) && $_GET['action'] === 'add_to_cart' && isset($_GET['product_id'])) {
     $productId = $_GET['product_id'];
-    $quantity = $_GET['quantity'] ?? 1; // Default quantity to 1 if not specified
+    $quantity = $_GET['quantity'] ?? 1;
 
-    // Call the addToCart function
     addToCart($productId, $quantity);
-    exit(); // Important to prevent further script execution
+    exit();
 }
 
 function getProductPriceFromDatabase($productId) {

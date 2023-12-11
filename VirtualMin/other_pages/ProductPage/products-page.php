@@ -11,7 +11,8 @@ session_start();
     <link rel="icon" type="image/x-icon" href="">
     <link rel="stylesheet" type="text/css" href="productstyles.css">
     <link rel="stylesheet" href="../NavBar/nav.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- The script below basically works so that when a category link is clicked, it loops
     through all product categories and either shows or hides them based on whether their
     ID matches the selected category (and if all is selected, then all are shown)-->
@@ -85,13 +86,13 @@ session_start();
             return 'all'; // Default to 'all' if no category is selected
         }
 
-        // Add this function to sort the products
+
         function sortProducts(sortOrder) {
             const selectedCategory = getSelectedCategory();
             const productItems = document.querySelectorAll('.product-item');
             const productGrid = document.querySelector('.product-grid');
 
-            // Convert NodeList to an array for easier manipulation
+
             const productArray = Array.from(productItems);
 
             productArray.sort((a, b) => {
@@ -105,16 +106,16 @@ session_start();
                 }
             });
 
-            // Clear the current product grid
+
             productGrid.innerHTML = '';
 
-            // Append sorted products back to the grid
+
             for (const product of productArray) {
                 productGrid.appendChild(product);
             }
         }
 
-        // Add this function to handle sort order change
+
         function updateSortOrder(sortOrder) {
             sortProducts(sortOrder);
         }
@@ -124,17 +125,16 @@ session_start();
                 url: 'fetch_product_details.php?product_id=' + productId,
                 type: 'GET',
                 success: function(response) {
-                    // Update the product detail section with the response
+
                     $('.product-detail').html(response);
 
-                    // Add click event listener for "Add to Cart" button
+
                     $('.product-detail-button').on('click', function() {
-                        var quantity = 1; // Modify as needed for dynamic quantity
+                        var quantity = 1;
                         $.ajax({
                             url: 'fetch_product_details.php?action=add_to_cart&product_id=' + productId + '&quantity=' + quantity,
                             type: 'GET',
                             success: function(cartResponse) {
-                                // Handle the updated cart - you can update a cart icon, display a message, etc.
                                 console.log('Cart updated:', cartResponse);
                             },
                             error: function() {
@@ -156,7 +156,6 @@ session_start();
                 data: { 'action': 'add_to_cart', 'product_id': productId, 'quantity': quantity },
                 success: function(response) {
                     alert("Product added to cart!");
-                    // Optionally, update cart icon or count here
                 },
                 error: function() {
                     alert("Error adding product to cart.");
@@ -167,12 +166,10 @@ session_start();
 </head>
 
 <body>
-<!--Navigation Bar-->
 <?php include '../NavBar/nav.php'; ?>
 <div class="product-page">
     <header class="page-header">
         <h1>Our Trainers Collection</h1>
-        <!-- These are all the category links, as well as the price filter-->
         <div class="category-links">
             <a href="products-page.php?category=all" class="category-link" data-category="all">All Categories</a>
             <a href="products-page.php?category=trainers" class="category-link" data-category="trainers">Trainers</a>
@@ -186,13 +183,6 @@ session_start();
             </select>
         </div>
     </header>
-    <!-- Absolutely WHAM code section, but it does 4 things:
-        - Connects the database (needs to get changed to the server one since i only hooked it to my local)
-        - Helps display product pages dynamically (so basically if a specific product ID is selected,
-                                                    it fetches and displays details of that specific product
-                                                    via the $_GET parameter)
-        - And if no specific product is requested, it displays products by category
-        - And finally, it also handles sorting by price if the 'sort_order' $_GET parameter is given-->
 
     <?php
     // Database connection details
@@ -242,8 +232,8 @@ session_start();
             echo "<h4>" . htmlspecialchars($product["name"], ENT_QUOTES) . "</h4>";
             echo "<p class='product-price'>Price: £" . htmlspecialchars($product["price"], ENT_QUOTES) . "</p>";
             echo "<button onclick='addToCart(" . $product["product_id"] . ", 1)'>Add to Cart</button>";
-            echo "</div>"; // end product-info
-            echo "</div>"; // end product-item
+            echo "</div>";
+            echo "</div>";
         }
     } else {
         echo "<p>No products found.</p>";
@@ -254,8 +244,44 @@ session_start();
 $conn->close();
 ?>
 
-<!-- Product detail container -->
-<div class="product-detail" id="product-detail">
-</div>
 </body>
+<footer class="footer">
+    <div class="fcontainer">
+        <div class="row">
+            <div class="footer-col">
+                <h4>Treakers</h4>
+                <ul>
+                    <li><a href="../AboutUsPage/aboutus.php">about us</a></li>
+                    <li><a href="../ProductPage/products-page.php">our products</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="../ContactUsPage/contactus.php">Contact Us</a></li>
+                    <li><a href="#">returns</a></li>
+                    <li><a href="../BasketPage/basket.php">Basket</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>online shop</h4>
+                <ul>
+                    <li><a href="../../index.php">Sneakers</a></li>
+                    <li><a href="../../index.php">Trainers</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>follow us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 </html>

@@ -91,8 +91,8 @@ include '../NavBar/nav.php';
             <div class="footer-col">
                 <h4>Treakers</h4>
                 <ul>
-                    <li><a href="#">about us</a></li>
-                    <li><a href="#">our products</a></li>
+                    <li><a href="../AboutUsPage/aboutus.php">about us</a></li>
+                    <li><a href="../ProductPage/products-page.php">our products</a></li>
                     <li><a href="#">privacy policy</a></li>
                 </ul>
             </div>
@@ -100,16 +100,16 @@ include '../NavBar/nav.php';
                 <h4>get help</h4>
                 <ul>
                     <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="../ContactUsPage/contactus.php">Contact Us</a></li>
                     <li><a href="#">returns</a></li>
-                    <li><a href="#">Basket</a></li>
+                    <li><a href="../BasketPage/basket.php">Basket</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>online shop</h4>
                 <ul>
-                    <li><a href="#">Sneakers</a></li>
-                    <li><a href="#">Trainers</a></li>
+                    <li><a href="../../index.php">Sneakers</a></li>
+                    <li><a href="../../index.php">Trainers</a></li>
                 </ul>
             </div>
             <div class="footer-col">

@@ -49,7 +49,9 @@ function getProductDetails($productId) {
     <link rel="stylesheet" href="basket.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="../NavBar/nav.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
 <?php include("../NavBar/nav.php"); ?>
@@ -65,7 +67,6 @@ function getProductDetails($productId) {
         <h3>Remove</h3>
     </div>
 
-    <!-- Display cart items -->
     <?php
     if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
         foreach ($_SESSION['cart'] as $productId => $item) {
@@ -83,7 +84,6 @@ function getProductDetails($productId) {
     }
     ?>
 
-    <!-- Display cart subtotal -->
     <div class="total-price">Total Price: £<?= number_format(calculateCartSubtotal(), 2) ?></div>
 
     <form action="payment.php" method="post">
@@ -128,4 +128,43 @@ function getProductDetails($productId) {
     });
 </script>
 </body>
+<footer class="footer">
+    <div class="fcontainer">
+        <div class="row">
+            <div class="footer-col">
+                <h4>Treakers</h4>
+                <ul>
+                    <li><a href="../AboutUsPage/aboutus.php">about us</a></li>
+                    <li><a href="../ProductPage/products-page.php">our products</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="../ContactUsPage/contactus.php">Contact Us</a></li>
+                    <li><a href="#">returns</a></li>
+                    <li><a href="../BasketPage/basket.php">Basket</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>online shop</h4>
+                <ul>
+                    <li><a href="../../index.php">Sneakers</a></li>
+                    <li><a href="../../index.php">Trainers</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>follow us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 </html>
