@@ -60,16 +60,15 @@ h1 {
   margin-bottom: 150px;
 }
 
-/* Adjust font size for smaller screens */
+
 @media screen and (max-width: 768px) {
   h1, p {
     font-size: 2em;
   }
 }
 
-/* Add styles for smaller screens if needed */
+
 @media screen and (max-width: 480px) {
-  /* Additional styles for screens smaller than 480px */
 }
 
 * {
@@ -84,13 +83,13 @@ h1 {
   top: 0;
   left: 0;
   width: 100%;
-  background: #e7e4e4; /* Use a muted background color */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter box shadow */
+  background: #e7e4e4;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px; /* Slightly increased padding for better spacing */
+  padding: 10px 20px;
 }
 
 .navbar-left {
@@ -99,7 +98,7 @@ h1 {
 }
 
 .logo img {
-  height: 40px; /* Slightly smaller logo */
+  height: 40px;
 }
 
 .navbar-center {
@@ -114,30 +113,30 @@ h1 {
 }
 
 .nav-links li {
-  margin: 0 15px; /* Increased margin for better spacing */
+  margin: 0 15px;
 }
 
 .nav-links li a {
   color: #333;
-  font-size: 18px; /* Slightly smaller font size */
+  font-size: 18px;
   font-weight: 500;
   text-decoration: none;
-  position: relative; /* Added for the underline effect */
+  position: relative;
 }
 
 .nav-links li a:before {
   content: "";
   position: absolute;
-  bottom: -2px; /* Adjust the distance from the text */
+  bottom: -2px;
   left: 0;
-  height: 2px; /* Underline height */
+  height: 2px;
   width: 0;
-  background: #0c6291; /* Use an accent color for the underline */
-  transition: width 0.2s ease; /* Smooth width transition */
+  background: #0c6291;
+  transition: width 0.2s ease;
 }
 
 .nav-links li a:hover:before {
-  width: 100%; /* Display full width on hover */
+  width: 100%;
 }
 
 .navbar-right {
@@ -161,7 +160,7 @@ h1 {
 .login-signup,
 .basket {
   padding: 8px 12px;
-  background: #0c6291; /* Use a minimalistic accent color */
+  background: #0c6291;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -182,7 +181,7 @@ h1 {
 
 .search-button {
   padding: 8px 12px;
-  background: #0c6291; /* Use the same accent color for the search button */
+  background: #0c6291;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -214,28 +213,18 @@ button:hover {
 
 
 
-/* Footer styles */
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-}
-
-/* Trending items section */
-
 body {
-  background: #16222a; /* fallback for old browsers */
+  background: #16222a;
   background: -webkit-linear-gradient(
     to right,
     #fbfcfd,
     #0290ee
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  );
   background: linear-gradient(
     to bottom,
     #f8fafb,
     #f9fbfc
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  );
 }
 
 section {
@@ -264,7 +253,7 @@ section a {
   transition: 0.3s ease-in-out;
 
   position: absolute;
-  bottom: 65px; /* Adjust this value to position it at the desired distance from the bottom */
+  bottom: 65px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -324,9 +313,6 @@ section a {
   opacity: 1;
 }
 
-/* Trending product images go here (START) */
-/* If you've added any new items into the HTML file,
-please copy and paste any of these css styles and make changes accordingly, thank you :) */
 
 .swiper-slide-1 {
   /* Air Jordan 5 */
@@ -358,7 +344,7 @@ please copy and paste any of these css styles and make changes accordingly, than
     url("Images/AJ1HighBlueChill.webp") no-repeat 50% 50% / cover;
 }
 
-/* Trending product images go here (END) */
+
 
 /* Trending Section Text */
 .trending-section {
@@ -375,8 +361,8 @@ please copy and paste any of these css styles and make changes accordingly, than
 
 .trending-section h1 {
   font-size: 2em;
-  color: #0b0000; /* Set header text color as needed */
-  margin-bottom: 0px; /* Adjust margin as needed */
+  color: #0b0000;
+  margin-bottom: 0px;
 }
 
 /*FOOTER*/

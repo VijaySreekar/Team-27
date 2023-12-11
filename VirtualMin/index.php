@@ -55,7 +55,7 @@
         </div>
     </div>
 </nav>
-<!--Text on 1st picture-->
+
 
 <section>
   <div class="bg" style="background-image: url('Images/Sneaker Wallpaper.jpeg')"></div>
@@ -63,7 +63,7 @@
   <p>Welcomes you to the family</p>
 </section>
 
-<!--Trending products section start-->
+
 
 <body>
 <section class="trending-section">
@@ -114,14 +114,11 @@
   </div>
 </section>
 
-<!-- Add other swiper-slide elements as needed (DON'T FORGET TO ADD CSS TO ANY SLIDES ADDED HERE)-->
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 </body>
 
-<!--Trending items section end-->
 
-<!--Text on 3rd picture-->
 <section>
   <div class="bg" style="background-image: url('Images/Air Jordan 11.jpg.avif')"></div>
   <h1>Join us today</h1>
@@ -139,7 +136,6 @@
 
 <script src="JS/HomePage.js"></script>
 
-<!--Footer Section-->
 
 <footer class="footer">
     <div class="fcontainer">
