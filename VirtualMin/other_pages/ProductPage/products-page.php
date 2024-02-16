@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,9 +9,34 @@ session_start();
     <link rel="stylesheet" href="../NavBar/nav.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- The script below basically works so that when a category link is clicked, it loops
-    through all product categories and either shows or hides them based on whether their
-    ID matches the selected category (and if all is selected, then all are shown)-->
+    <style>
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .pagination a {
+            color: #333;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            border: 1px solid #ccc;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+
+        .pagination a.active {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+    </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 
@@ -201,19 +222,26 @@ session_start();
     $selectedCategory = isset($_GET['category']) ? mysqli_real_escape_string($conn, $_GET['category']) : 'all';
     $sortOrder = isset($_GET['sort_order']) && $_GET['sort_order'] === 'high_to_low' ? 'DESC' : 'ASC';
 
+    // Pagination
+    $itemsPerPage = 12; // Adjust as needed
+    $currentPage = isset($_GET['page']) ? intval($_GET['page']) : 1;
+    $offset = ($currentPage - 1) * $itemsPerPage;
+
     if ($selectedCategory == 'all') {
         $productSql = "SELECT p.product_id, p.name, p.description, p.price, p.image_link, c.name AS category_name
                FROM product p
                LEFT JOIN product_category pc ON p.product_id = pc.product_id
                LEFT JOIN category c ON pc.category_id = c.category_id
-               ORDER BY p.price $sortOrder";
+               ORDER BY p.price $sortOrder
+               LIMIT $offset, $itemsPerPage";
     } else {
         $productSql = "SELECT p.product_id, p.name, p.description, p.price, p.image_link, c.name AS category_name
                FROM product p
                LEFT JOIN product_category pc ON p.product_id = pc.product_id
                LEFT JOIN category c ON pc.category_id = c.category_id
                WHERE c.name = '$selectedCategory'
-               ORDER BY p.price $sortOrder";
+               ORDER BY p.price $sortOrder
+               LIMIT $offset, $itemsPerPage";
     }
 
     // Displaying products in a grid layout
@@ -240,6 +268,25 @@ session_start();
     }
     ?>
 </div>
+<?php
+// Pagination links
+$totalProductsSql = "SELECT COUNT(*) AS total FROM product";
+$totalResult = $conn->query($totalProductsSql);
+$totalProducts = $totalResult->fetch_assoc()['total'];
+$totalPages = ceil($totalProducts / $itemsPerPage);
+
+echo "<div class='pagination'>";
+if ($currentPage > 1) {
+    echo "<a href='products-page.php?category=$selectedCategory&page=" . ($currentPage - 1) . "' class='prev'>Previous</a>";
+}
+for ($i = 1; $i <= $totalPages; $i++) {
+    echo "<a href='products-page.php?category=$selectedCategory&page=$i' class='" . ($i == $currentPage ? 'active' : '') . "'>$i</a>";
+}
+if ($currentPage < $totalPages) {
+    echo "<a href='products-page.php?category=$selectedCategory&page=" . ($currentPage + 1) . "' class='next'>Next</a>";
+}
+echo "</div>";
+?>
 <?php
 $conn->close();
 ?>

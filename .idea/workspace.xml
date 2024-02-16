@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbf2f922-5ce0-4d3b-977e-7c8bbdfdd3ac" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/VirtualMin/HomePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/HomePage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/TrendingItems.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/TrendingItems.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/products lineup/Yeezy-Boost-350-V2-Beige-Black-HP7870-featured-image.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/products lineup/adidas-mens-ultra-boost-20-EF1043-side.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/products lineup/nikeairforce107.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/products lineup/nikeairjordan1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/products-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/products-page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/productstyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/productstyles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,11 +179,13 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/xampp/htdocs/Website/Team-27/VirtualMin/other_pages/ContactUsPage",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -222,6 +228,7 @@
       <workItem from="1702188062455" duration="109000" />
       <workItem from="1702188192677" duration="1805000" />
       <workItem from="1702227429497" duration="14491000" />
+      <workItem from="1708117399454" duration="1058000" />
     </task>
     <servers />
   </component>
