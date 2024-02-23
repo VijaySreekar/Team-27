@@ -66,7 +66,7 @@ include("../../edit_user.php");
               echo "<p>".$name."</p>";
               echo "<p> Price: £".$price.".</p>";
               echo "<br/><br/>";
-            
+              echo "<button><a href=\"../ReviewPage/review.php\">Leave a review</a></button>";
               }
             }
             echo "</div>";
