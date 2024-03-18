@@ -51,7 +51,7 @@ include '../NavBar/nav.php';
                         </div>
                         <a href="forgot_password.php" class="forgot-password-link">Forgot Password?</a>
                         <div class="button input-box">
-                            <input type="submit" value="Login">
+                            <input type="submit" value="Login" name="login_button">
                         </div>
                         <div class="text sign-up-text">Don't have an account? <label for="change">Signup now</label></div>
                     </div>
@@ -64,18 +64,26 @@ include '../NavBar/nav.php';
                     <div class="input-boxes">
                         <div class="input-box">
                             <i class="fas fa-user"></i>
-                            <input type="text" name="reg_name" placeholder="Enter your name" required>
+                            <input type="text" name="reg_name" placeholder="Enter your Name" required>
+                        </div>
+                        <div class="input-box">
+                            <i class="fas fa-phone"></i>
+                            <input type="number" name="reg_phone"  placeholder="Enter your Phone Number" required>
                         </div>
                         <div class="input-box">
                             <i class="fas fa-envelope"></i>
-                            <input type="text" name="reg_email"  placeholder="Enter your email" required>
+                            <input type="email" name="reg_email"  placeholder="Enter your E-Mail" required>
                         </div>
                         <div class="input-box">
                             <i class="fas fa-lock"></i>
                             <input type="password" name="reg_password"  placeholder="Enter your password" required>
                         </div>
+                        <div class="input-box">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" name="reg_confirmpassword"  placeholder="Confirm password" required>
+                        </div>
                         <div class="button input-box">
-                            <input type="submit" value="Register">
+                            <input type="submit" value="Register" name="register_btn">
                         </div>
                         <div class="text sign-up-text">Already have an account? <label for="change">Login now</label></div>
                     </div>
@@ -128,8 +136,7 @@ include '../NavBar/nav.php';
 <script>
     $(document).ready(function(){
         $("#login-form").on("submit", function(event){
-            event.preventDefault();
-            console.log("Form submitted");
+            event.preventDefault(); // Prevent the form from submitting through the standard HTTP request
 
             $.ajax({
                 url: "VerifyUser.php",
@@ -138,31 +145,46 @@ include '../NavBar/nav.php';
                 dataType: "json",
                 success: function(response){
                     if(response.success){
-                        window.location.href = 'dashboard.php';
+                        $("#error-message").text("Login successful. Redirecting in 3 seconds...");
+                        // Start the countdown
+                        var counter = 3;
+                        setInterval(function() {
+                            counter--;
+                            if (counter <= 0) {
+                                window.location.href = '../../index.php';
+                            } else {
+                                $("#error-message").text("Login successful. Redirecting in " + counter + " seconds...");
+                            }
+                        }, 1000);
                     } else {
                         $("#error-message").text(response.message);
                     }
                 },
                 error: function(xhr, status, error){
                     console.error("AJAX error: " + status + ": " + error); // Log AJAX errors
+                    $("#error-message").text("An error occurred. Please try again later.");
                 }
             });
         });
     });
+
 
     $(document).ready(function(){
         $("#signup-form").on("submit", function(event){
             event.preventDefault();
             console.log("Signup form submitted");
 
+            var formData = $(this).serialize() + "&register_btn=Register";
+
             $.ajax({
                 url: "RegisterUser.php",
                 type: "post",
-                data: $(this).serialize(),
+                data: formData,
                 dataType: "json",
                 success: function(response){
                     if(response.success){
-                        alert("Registration successful!"); // Or handle as needed
+                        alert("Registration successful!");
+                        $("#change").prop("checked", !$("#change").prop("checked"));
                     } else {
                         $("#signup-error-message").text(response.message);
                     }

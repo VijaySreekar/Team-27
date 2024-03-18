@@ -15,32 +15,55 @@ if (!$conn) {
     exit; // Exit the script
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST["reg_name"];
-    $email = $_POST["reg_email"];
-    $password = password_hash($_POST["reg_password"], PASSWORD_BCRYPT); // Hash the password
+if (isset($_POST['register_btn'])) {
+    // Assuming $conn is your database connection established earlier in your script
+    $name = mysqli_real_escape_string($conn, $_POST['reg_name']);
+    $phone = mysqli_real_escape_string($conn, $_POST['reg_phone']);
+    $email = mysqli_real_escape_string($conn, $_POST['reg_email']);
+    $password = mysqli_real_escape_string($conn, $_POST['reg_password']);
+    $confirmpassword = mysqli_real_escape_string($conn, $_POST['reg_confirmpassword']);
 
-    // Prepare the SQL statement
-    $sql = "INSERT INTO user (username, passwordhash, email) VALUES (?, ?, ?)";
-    $stmt = $conn->prepare($sql);
+    if ($password === $confirmpassword) {
+        // Hash the password before storing it
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    if (!$stmt) {
-        echo json_encode(["success" => false, "message" => "Error in preparing statement: " . $conn->error]);
-        $conn->close();
-        exit;
-    }
+        // Check if the email already exists
+        $stmt = $conn->prepare("SELECT email FROM user WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($result->num_rows > 0) {
+            echo json_encode(["success" => false, "message" => "Email already exists!"]);
+            $stmt->close();
+            $conn->close();
+            exit;
+        }
 
-    $stmt->bind_param("sss", $name, $password, $email);
+        // Prepare the insert statement
+        $stmt = $conn->prepare("INSERT INTO user (username, phone, email, passwordhash) VALUES (?, ?, ?, ?)");
+        if (!$stmt) {
+            echo json_encode(["success" => false, "message" => "Error in preparing statement: " . $conn->error]);
+            $conn->close();
+            exit;
+        }
 
-    if ($stmt->execute()) {
-        echo json_encode(["success" => true, "message" => "User registered successfully."]);
+        // Bind the parameters and execute
+        $stmt->bind_param("ssss", $name, $phone, $email, $hashedPassword);
+
+        if ($stmt->execute()) {
+            echo json_encode(["success" => true, "message" => "User registered successfully."]);
+        } else {
+            echo json_encode(["success" => false, "message" => "Error executing statement: " . $stmt->error]);
+        }
+
+        $stmt->close();
     } else {
-        echo json_encode(["success" => false, "message" => "Error: " . $stmt->error]);
+        echo json_encode(["success" => false, "message" => "Password and Confirm Password do not match!"]);
     }
 
-    $stmt->close();
     $conn->close();
 } else {
     echo json_encode(["success" => false, "message" => "Invalid request"]);
 }
+
 ?>

@@ -5,9 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbf2f922-5ce0-4d3b-977e-7c8bbdfdd3ac" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/Includes/footer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/Includes/header.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/Includes/navbar.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/Includes/sidebar.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/adminpage.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/assets/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/assets/js/perfect-scrollbar.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/assets/js/smooth-scrollbar.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/assets/material-dashboard.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/assets/nucleo-icons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/assets/nucleo-svg.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/products-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/products-page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/productstyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/productstyles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,12 +186,13 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/Website/Team-27/VirtualMin/other_pages/ContactUsPage&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/Website/Team-27/VirtualMin/other_pages/AdminPage/assets&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -192,18 +203,18 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\other_pages\AdminPage\assets" />
+      <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\other_pages\AdminPage\assets\js" />
       <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\other_pages\ContactUsPage" />
       <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin" />
       <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\Images" />
-      <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\other_pages\AboutUsPage" />
-      <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\other_pages\ProductPage" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\other_pages" />
       <recent name="C:\xampp\htdocs\Website\Team-27\OldFormat" />
       <recent name="C:\xampp\htdocs\Website\Team-27" />
       <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\other_pages\BasketPage" />
       <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin" />
-      <recent name="C:\xampp\htdocs\Website\Team-27\ContactPage" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -226,6 +237,10 @@
       <workItem from="1702227429497" duration="14491000" />
       <workItem from="1708117399454" duration="1058000" />
       <workItem from="1710531917799" duration="55000" />
+      <workItem from="1710531987245" duration="9914000" />
+      <workItem from="1710596046949" duration="3024000" />
+      <workItem from="1710770566213" duration="2000" />
+      <workItem from="1710770982485" duration="56000" />
     </task>
     <servers />
   </component>
