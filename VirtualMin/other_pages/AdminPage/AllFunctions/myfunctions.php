@@ -16,4 +16,12 @@ function getAll($table)
     $query = "SELECT * FROM $table";
     return $query_run = mysqli_query($conn, $query);
 }
+
+function getItembyID($table, $id)
+{
+    global $conn;
+    $query = "SELECT * FROM $table WHERE category_id = $id";
+    return $query_run = mysqli_query($conn, $query);
+}
 ?>
+
