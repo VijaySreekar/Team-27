@@ -1,94 +1,60 @@
 <?php
 session_start();
 include 'Includes/header.php';
+include 'AllFunctions/myfunctions.php';
 ?>
 
 
 <div class="container">
-    <?php if (isset($_SESSION['message'])): ?>
-        <div class="alert alert-success alert-dismissible fade show position-fixed top-5 end-0 m-3" role="alert">
-            <?php echo $_SESSION['message']; ?>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        <?php unset($_SESSION['message']); ?>
-    <?php endif; ?>
     <div class="row">
         <div class="col-md-12">
-            <div class="row">
-                <div class="col-lg-5 col-sm-5">
-                    <div class="card  mb-2">
-                        <div class="card-header p-3 pt-2">
-                            <div class="icon icon-lg icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-xl mt-n4 position-absolute">
-                                <i class="material-icons opacity-10">weekend</i>
-                            </div>
-                            <div class="text-end pt-1">
-                                <p class="text-sm mb-0 text-capitalize">Bookings</p>
-                                <h4 class="mb-0">281</h4>
-                            </div>
-                        </div>
-
-                        <hr class="dark horizontal my-0">
-                        <div class="card-footer p-3">
-                            <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+55% </span>than last week</p>
-                        </div>
-                    </div>
-
-                    <div class="card  mb-2">
-                        <div class="card-header p-3 pt-2">
-                            <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary shadow text-center border-radius-xl mt-n4 position-absolute">
-                                <i class="material-icons opacity-10">leaderboard</i>
-                            </div>
-                            <div class="text-end pt-1">
-                                <p class="text-sm mb-0 text-capitalize">Today's Users</p>
-                                <h4 class="mb-0">2,300</h4>
-                            </div>
-                        </div>
-
-                        <hr class="dark horizontal my-0">
-                        <div class="card-footer p-3">
-                            <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+3% </span>than last month</p>
-                        </div>
-                    </div>
-
+            <div class="card">
+                <div class="card-header bg-transparent">
+                    <h3 class="mb-0">Categories</h3>
                 </div>
-                <div class="col-lg-5 col-sm-5 mt-sm-0 mt-4">
-                    <div class="card  mb-2">
-                        <div class="card-header p-3 pt-2 bg-transparent">
-                            <div class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
-                                <i class="material-icons opacity-10">store</i>
-                            </div>
-                            <div class="text-end pt-1">
-                                <p class="text-sm mb-0 text-capitalize ">Revenue</p>
-                                <h4 class="mb-0 ">34k</h4>
-                            </div>
-                        </div>
+                <div class="card-body">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Category ID</th>
+                                <th>Category Name</th>
+                                <th>Category Image</th>
+                                <th>Category Status</th>
+                                <th>Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $categories = getAll('category');
 
-                        <hr class="horizontal my-0 dark">
-                        <div class="card-footer p-3">
-                            <p class="mb-0 "><span class="text-success text-sm font-weight-bolder">+1% </span>than yesterday</p>
-                        </div>
-                    </div>
+                            if(mysqli_num_rows($categories) > 0)
+                            {
+                                foreach ($categories as $category) {
+                                    ?>
+                                    <tr>
+                                        <td><?= $category['category_id'] ?></td>
+                                        <td><?= $category['name'] ?></td>
+                                        <td>
+                                            <img src="<?= $category['image'] ?>" alt="<?= $category['name'] ?>">
+                                        </td>
+                                        <td>
+                                            <?= $category['status'] == '1' ? "Visible" : "Hidden" ?>
+                                        </td>
+                                        <td>
+                                            <a href="#" class="btn btn-primary">Edit</a>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                }
+                            }
+                            else{
+                                echo "No categories found!";
+                            }
+                            ?>
+                            <tr>
+                        </tbody>
+                    </table>
 
-                    <div class="card ">
-                        <div class="card-header p-3 pt-2 bg-transparent">
-                            <div class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
-                                <i class="material-icons opacity-10">person_add</i>
-                            </div>
-                            <div class="text-end pt-1">
-                                <p class="text-sm mb-0 text-capitalize ">Followers</p>
-                                <h4 class="mb-0 ">+91</h4>
-                            </div>
-                        </div>
-
-                        <hr class="horizontal my-0 dark">
-                        <div class="card-footer p-3">
-                            <p class="mb-0 ">Just updated</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 <?php include 'Includes/Footer.php'; ?>

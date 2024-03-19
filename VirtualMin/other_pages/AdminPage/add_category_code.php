@@ -21,8 +21,8 @@ if (isset($_POST['add_categorybtn'])) {
     $meta_title = $_POST['meta_title'];
     $meta_description = $_POST['meta_description'];
     $meta_keywords = $_POST['meta_keywords'];
-    $status = isset($_POST['status']) ? 1 : 0;
-    $popular = isset($_POST['popular']) ? 1 : 0;
+    $status = ($_POST['status'] == "1") ? 1 : 0;
+    $popular = ($_POST['popular'] == "1") ? 1 : 0;
     $image = $_FILES['image']['name'];
 
     $path = __DIR__ . "/"; // Path to the directory containing the PHP script
