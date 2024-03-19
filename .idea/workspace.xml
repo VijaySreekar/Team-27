@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="dbf2f922-5ce0-4d3b-977e-7c8bbdfdd3ac" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/1710873837_pngtree-business-user-profile-vector-png-image_1541960.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/AllFunctions/myfunctions.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/AllFunctions/myfunctions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/add_category_code.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/add_category_code.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/edit-category.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/edit-category.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -234,6 +236,7 @@
       <workItem from="1710771044706" duration="20152000" />
       <workItem from="1710857555383" duration="11684000" />
       <workItem from="1710874304893" duration="2080000" />
+      <workItem from="1710889672538" duration="2170000" />
     </task>
     <servers />
   </component>

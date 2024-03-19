@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'AllFunctions/myfunctions.php';
 
 $host = "localhost";
 $username = "u-230185247";
@@ -50,6 +51,53 @@ if (isset($_POST['add_categorybtn'])) {
         $_SESSION['message'] = "Category Not Added";
         header('Location: add_category.php');
         exit();
+    }
+}
+else if(isset($_POST['save_categorybtn']))
+{
+    $category_id = $_POST['category_id'];
+    $name = $_POST['name'];
+    $slug = $_POST['slug'];
+    $description = $_POST['description'];
+    $meta_title = $_POST['meta_title'];
+    $meta_description = $_POST['meta_description'];
+    $meta_keywords = $_POST['meta_keywords'];
+    $status = ($_POST['status'] == "1") ? 1 : 0;
+    $popular = ($_POST['popular'] == "1") ? 1 : 0;
+
+    $new_image = $_FILES['image']['name'];
+    $old_image = $_POST['old_image'];
+
+    if($new_image != "")
+    {
+        $update_filename = $new_image;
+    }
+    else
+    {
+        $update_filename = $old_image;
+    }
+
+    $path = __DIR__ . "/";
+    $update_query = "UPDATE category SET name = '$name', slug = '$slug', description = '$description', image = '$update_filename', 
+                    meta_title = '$meta_title', meta_description = '$meta_description', meta_keywords = '$meta_keywords',
+                    status = '$status', popular = '$popular' WHERE category_id = $category_id";
+
+    $update_query_run = mysqli_query($conn, $update_query);
+
+    if($update_query_run)
+    {
+        if ($_FILES['image']['name'] != "") {
+            $destination = $path . $update_filename;
+            move_uploaded_file($_FILES['image']['tmp_name'], $destination);
+            if (file_exists($path . $old_image)) {
+                unlink($path . $old_image);
+            }
+        }
+        redirect("edit-category.php?id=$category_id", "Category Updated");
+    }
+    else
+    {
+        redirect("edit-category.php?id=$category_id", "Category Not Updated");
     }
 }
 ?>

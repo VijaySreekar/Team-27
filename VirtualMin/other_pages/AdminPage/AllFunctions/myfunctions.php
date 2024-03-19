@@ -23,5 +23,15 @@ function getItembyID($table, $id)
     $query = "SELECT * FROM $table WHERE category_id = $id";
     return $query_run = mysqli_query($conn, $query);
 }
+
+function redirect($url, $message)
+{
+    $_SESSION['message'] = $message;
+    header('Location: ' . $url);
+    exit();
+}
+{
+
+}
 ?>
 
