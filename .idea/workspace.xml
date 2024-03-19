@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbf2f922-5ce0-4d3b-977e-7c8bbdfdd3ac" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/add_category.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/add_category_code.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/adminauth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/VerifyUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/VerifyUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/login_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/login_page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/Includes/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/Includes/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/Includes/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/Includes/sidebar.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,11 +204,11 @@
       <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\Images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\other_pages\AdminPage" />
       <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\other_pages" />
       <recent name="C:\xampp\htdocs\Website\Team-27\OldFormat" />
       <recent name="C:\xampp\htdocs\Website\Team-27" />
       <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\other_pages\BasketPage" />
-      <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -231,7 +235,7 @@
       <workItem from="1710596046949" duration="3024000" />
       <workItem from="1710770566213" duration="2000" />
       <workItem from="1710770982485" duration="56000" />
-      <workItem from="1710771044706" duration="13181000" />
+      <workItem from="1710771044706" duration="20021000" />
     </task>
     <servers />
   </component>
