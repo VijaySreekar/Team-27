@@ -35,7 +35,7 @@ include 'AllFunctions/myfunctions.php';
                                         <td><?= $category['category_id'] ?></td>
                                         <td><?= $category['name'] ?></td>
                                         <td>
-                                            <img src="<?= $category['image'] ?>" alt="<?= $category['name'] ?>">
+                                            <img src="<?= $category['image'] ?>" width="50px" height="50px" alt="<?= $category['name'] ?>">
                                         </td>
                                         <td>
                                             <?= $category['status'] == '1' ? "Visible" : "Hidden" ?>
