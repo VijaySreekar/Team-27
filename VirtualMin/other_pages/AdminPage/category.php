@@ -41,7 +41,7 @@ include 'AllFunctions/myfunctions.php';
                                             <?= $category['status'] == '1' ? "Visible" : "Hidden" ?>
                                         </td>
                                         <td>
-                                            <a href="#" class="btn btn-primary">Edit</a>
+                                            <a href="edit-category.php?id=<?= $category['category_id']; ?>"  class="btn btn-primary">Edit</a>
                                         </td>
                                     </tr>
                                     <?php
