@@ -145,15 +145,28 @@ include '../NavBar/nav.php';
                 dataType: "json",
                 success: function(response){
                     if(response.success){
-                        $("#error-message").text("Login successful. Redirecting in 3 seconds...");
+                        // Construct a personalized welcome message based on the user's role
+                        var welcomeMessage = "Login successful. ";
+                        if(response.role === "admin"){
+                            welcomeMessage += "Welcome, Admin " + response.username + ". "; // Assuming 'username' is sent in the response
+                        }
+                        welcomeMessage += "Redirecting in 3 seconds...";
+                        $("#error-message").text(welcomeMessage);
+
                         // Start the countdown
                         var counter = 3;
+                        var redirectUrl = response.role === "admin" ? '../AdminPage/adminpage.php' : '../../index.php'; // Decide the redirect URL based on the user's role
                         setInterval(function() {
                             counter--;
                             if (counter <= 0) {
-                                window.location.href = '../../index.php';
+                                window.location.href = redirectUrl;
                             } else {
-                                $("#error-message").text("Login successful. Redirecting in " + counter + " seconds...");
+                                // Update the message during the countdown
+                                var countdownMessage = "Redirecting in " + counter + " seconds...";
+                                if(response.role === "admin"){
+                                    countdownMessage = "Welcome, Admin " + response.username + ". " + countdownMessage; // Update message for admin
+                                }
+                                $("#error-message").text(countdownMessage);
                             }
                         }, 1000);
                     } else {
@@ -167,6 +180,8 @@ include '../NavBar/nav.php';
             });
         });
     });
+
+
 
 
     $(document).ready(function(){

@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dbf2f922-5ce0-4d3b-977e-7c8bbdfdd3ac" name="Changes" comment="" />
+    <list default="true" id="dbf2f922-5ce0-4d3b-977e-7c8bbdfdd3ac" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/VerifyUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/VerifyUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/login_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/login_page.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -227,7 +231,7 @@
       <workItem from="1710596046949" duration="3024000" />
       <workItem from="1710770566213" duration="2000" />
       <workItem from="1710770982485" duration="56000" />
-      <workItem from="1710771044706" duration="10245000" />
+      <workItem from="1710771044706" duration="13181000" />
     </task>
     <servers />
   </component>

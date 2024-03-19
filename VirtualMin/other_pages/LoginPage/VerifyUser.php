@@ -19,9 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $login_email = mysqli_real_escape_string($conn, $_POST["login_email"]);
         $login_password = $_POST["login_password"];
 
-        // Validate user credentials
-        // Add username in the SELECT clause
-        $sql = "SELECT user_id, passwordhash, email, username FROM user WHERE email = ?";
+        // Prepare the SQL statement
+        $sql = "SELECT user_id, passwordhash, email, username, role FROM user WHERE email = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("s", $login_email);
         $stmt->execute();
@@ -31,25 +30,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $row = $result->fetch_assoc();
             $stored_password = $row["passwordhash"];
             $user_id = $row["user_id"];
-            // Use the actual username from the database
             $username = $row["username"];
+            $role = $row["role"];
 
-            // Verify the provided password against the stored hash
             if (password_verify($login_password, $stored_password)) {
-                echo json_encode(["success" => true, "message" => "Login successful"]);
-
-                // Set session variables for user_id and username
                 $_SESSION["user_id"] = $user_id;
-                $_SESSION["username"] = $username; // This now uses the username from the database
+                $_SESSION["username"] = $username;
+                $_SESSION["role"] = $role;
 
-                // Redirect or perform other actions
+                // Send JSON response indicating success along with role and username
+                echo json_encode(["success" => true, "message" => "Login successful", "role" => $role, "username" => $username]);
             } else {
+                // Send JSON response for incorrect password
                 echo json_encode(["success" => false, "message" => "Incorrect password. Please try again."]);
             }
         } else {
-            echo json_encode(["success" => false, "message" => "User not found. Please check your username."]);
+            // Send JSON response for user not found
+            echo json_encode(["success" => false, "message" => "User not found. Please check your email."]);
         }
         $stmt->close();
     }
 }
+
 ?>
