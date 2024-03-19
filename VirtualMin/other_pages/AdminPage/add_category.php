@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <?php include 'Includes/header.php'; ?>
 
 <div class="container">

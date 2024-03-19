@@ -38,16 +38,16 @@ if (isset($_POST['add_categorybtn'])) {
     if ($category_query_run) {
         $destination = $path . $filename;
         if (move_uploaded_file($_FILES['image']['tmp_name'], $destination)) {
-            $_SESSION['success'] = "Category Added";
+            $_SESSION['message'] = "Category Added";
             header('Location: adminpage.php');
             exit();
         } else {
-            $_SESSION['status'] = "Error moving file";
+            $_SESSION['message'] = "Error moving file";
             header('Location: add_category.php');
             exit();
         }
     } else {
-        $_SESSION['status'] = "Category Not Added";
+        $_SESSION['message'] = "Category Not Added";
         header('Location: add_category.php');
         exit();
     }

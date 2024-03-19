@@ -21,6 +21,7 @@ session_start(); // Start the session
 <?php
 include '../NavBar/nav.php';
 ?>
+
 <div class="container">
     <input type="checkbox" id="change">
     <div class="cover">
