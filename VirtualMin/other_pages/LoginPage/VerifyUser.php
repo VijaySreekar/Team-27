@@ -11,49 +11,45 @@ $conn = mysqli_connect($host, $username, $password, $dbname);
 
 // Check connection
 if (!$conn) {
-    echo json_encode(["success" => false, "message" => "Connection failed: " . mysqli_connect_error()]);
-    exit; // Exit the script if connection failed
+    die("Connection failed: " . mysqli_connect_error());
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login_email"]) && isset($_POST["login_password"])) {
-    $login_email = mysqli_real_escape_string($conn, $_POST["login_email"]);
-    $login_password = mysqli_real_escape_string($conn, $_POST["login_password"]);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST["login_email"]) && isset($_POST["login_password"])) {
+        $login_email = mysqli_real_escape_string($conn, $_POST["login_email"]);
+        $login_password = $_POST["login_password"];
 
-    // Validate user credentials
-    $stmt = $conn->prepare("SELECT user_id, passwordhash, email FROM user WHERE email = ?");
-    if (!$stmt) {
-        echo json_encode(["success" => false, "message" => "Error in preparing statement: " . $conn->error]);
-        $conn->close();
-        exit;
-    }
+        // Validate user credentials
+        // Add username in the SELECT clause
+        $sql = "SELECT user_id, passwordhash, email, username FROM user WHERE email = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $login_email);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-    $stmt->bind_param("s", $login_email);
-    $stmt->execute();
-    $result = $stmt->get_result();
+        if ($result->num_rows == 1) {
+            $row = $result->fetch_assoc();
+            $stored_password = $row["passwordhash"];
+            $user_id = $row["user_id"];
+            // Use the actual username from the database
+            $username = $row["username"];
 
-    if ($result->num_rows == 1) {
-        $row = $result->fetch_assoc();
-        $stored_password = $row["passwordhash"];
-        $user_id = $row["user_id"];
+            // Verify the provided password against the stored hash
+            if (password_verify($login_password, $stored_password)) {
+                echo json_encode(["success" => true, "message" => "Login successful"]);
 
-        // Verify the provided password against the stored hash
-        if (password_verify($login_password, $stored_password)) {
-            $_SESSION["user_id"] = $user_id;
-            $_SESSION["username"] = $login_email; // Assuming username is the email
+                // Set session variables for user_id and username
+                $_SESSION["user_id"] = $user_id;
+                $_SESSION["username"] = $username; // This now uses the username from the database
 
-            echo json_encode(["success" => true, "message" => "Login successful"]);
-            // Perform other actions or redirect
-            // header("Location: dashboard.php");
+                // Redirect or perform other actions
+            } else {
+                echo json_encode(["success" => false, "message" => "Incorrect password. Please try again."]);
+            }
         } else {
-            echo json_encode(["success" => false, "message" => "Incorrect password. Please try again."]);
+            echo json_encode(["success" => false, "message" => "User not found. Please check your username."]);
         }
-    } else {
-        echo json_encode(["success" => false, "message" => "User not found. Please check your email."]);
+        $stmt->close();
     }
-    $stmt->close();
-} else {
-    echo json_encode(["success" => false, "message" => "Invalid request"]);
 }
-
-$conn->close();
 ?>

@@ -25,19 +25,26 @@
         <div class="navbar-right">
             <div class="buttons">
                 <?php
-                // Check if the user is logged in and has a valid session
-                if (isset($_SESSION['user_id'])) {
-                    // Display the user-signed buttons with the same style as basket and search buttons
-                    //echo '<button class="navbar-button"><i class="fas fa-user"></i> ' . $_SESSION['name'] . '</button>';
-
-                    echo "<button>";
-                    echo "<a href='../ProfilePage/profile.php'>Your Profile";
-                    echo "</a></button>";
-
-                    echo "<button><a href=\"../NavBar/logout.php\">Log out</a></button>";
-                } else {
-                    // Display the "Login/Signup" button with a class
-                    echo '<button class="navbar-button"><a href=\'../LoginPage/login_page.php\'><i class="fas fa-user"></i> Login/Signup</a></button>';
+                if(isset($_SESSION['authentication']))
+                {
+                    ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user"></i> <?php echo $_SESSION['authentication_user']['name']; ?>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="../ProfilePage/profile.php">Your Profile</a></li>
+                            <li><a class="dropdown-item" href="../LoginPage/logout.php">Log out</a></li>
+                        </ul>
+                    </li>
+                    }
+                    else
+                    {
+                    ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../LoginPage/login_page.php"><i class="fas fa-user"></i> Login/Signup</a>
+                    </li>
+                    <?php
                 }
                 ?>
                 <a href="../BasketPage/basket.php">
@@ -55,3 +62,7 @@
 </section>
 </body>
 </html>
+
+
+
+

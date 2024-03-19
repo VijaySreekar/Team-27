@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +19,51 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Dropdown styling */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 120px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Adjustments for responsiveness */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .dropdown {
+                display: inline-block;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: none;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -27,25 +76,38 @@
     </div>
     <div class="navbar-center">
         <ul class="nav-links">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="other_pages/ProductPage/products-page.php">Products</a></li>
-            <li><a href="other_pages/AboutUsPage/aboutus.php">About</a></li>
-            <li><a href="other_pages/ContactUsPage/contactus.php">Contact Us</a></li>
+            <li><a href="../../index.php">Home</a></li>
+            <li><a href="../ProductPage/products-page.php">Products</a></li>
+            <li><a href="../AboutUsPage/aboutus.php">About</a></li>
+            <li><a href="../ContactUsPage/contactus.php">Contact Us</a></li>
         </ul>
     </div>
     <div class="navbar-right">
         <div class="buttons">
             <?php
-            // Check if the user is logged in and has a valid session
-            if (isset($_SESSION['user_id']) && isset($_SESSION['name'])) {
-                // Display the user-signed buttons with the same style as basket and search buttons
-                echo '<button class="navbar-button"><i class="fas fa-user"></i> ' . $_SESSION['name'] . '</button>';
+            if(isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
+                ?>
+                <div class="dropdown">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-user"></i> <?php echo $_SESSION['username']; ?>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="../ProfilePage/profile.php">Your Profile</a>
+                        <a href="other_pages/LoginPage/logout.php">Log out</a>
+                    </div>
+                </div>
+                <?php
             } else {
-                // Display the "Login/Signup" button with a class
-                echo '<button class="navbar-button"><i class="fas fa-user"></i> Login/Signup</button>';
+                ?>
+                <div class="nav-item">
+                    <a class="nav-link" href="other_pages/LoginPage/login_page.php">
+                        <i class="fas fa-user"></i> Login/Signup
+                    </a>
+                </div>
+                <?php
             }
             ?>
-            <a href="other_pages/BasketPage/basket.php">
+            <a href="../BasketPage/basket.php">
                 <button class="navbar-button">
                     <i class="fas fa-shopping-basket"></i>
                 </button>
@@ -57,6 +119,7 @@
         </div>
     </div>
 </nav>
+
 
 
 <section>

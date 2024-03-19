@@ -5,19 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbf2f922-5ce0-4d3b-977e-7c8bbdfdd3ac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/Includes/footer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/Includes/header.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/Includes/navbar.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/Includes/sidebar.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/adminpage.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/assets/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/assets/js/perfect-scrollbar.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/assets/js/smooth-scrollbar.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/assets/material-dashboard.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/assets/nucleo-icons.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/assets/nucleo-svg.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/logout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/VerifyUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/VerifyUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar/nav.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,6 +233,7 @@
       <workItem from="1710596046949" duration="3024000" />
       <workItem from="1710770566213" duration="2000" />
       <workItem from="1710770982485" duration="56000" />
+      <workItem from="1710771044706" duration="9828000" />
     </task>
     <servers />
   </component>
