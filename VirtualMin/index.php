@@ -92,7 +92,7 @@ session_start();
                         <i class="fas fa-user"></i> <?php echo $_SESSION['username']; ?>
                     </a>
                     <div class="dropdown-content">
-                        <a href="../ProfilePage/profile.php">Your Profile</a>
+                        <a href="other_pages/ProfilePage/profile.php">Your Profile</a>
                         <a href="other_pages/LoginPage/logout.php">Log out</a>
                     </div>
                 </div>
