@@ -123,4 +123,59 @@ else if(isset($_POST['delete_categorybtn']))
     }
 
 }
+else if(isset($_POST['addproduct_btn']))
+{
+    $category_id = $_POST['category_id'];
+    $name = $_POST['name'];
+    $description = $_POST['description'];
+    $original_price = $_POST['original_price'];
+    $discounted_price = $_POST['discounted_price'];
+    $quantity = $_POST['quantity'];
+    $status = ($_POST['status'] == "1") ? 1 : 0;
+    $trending = ($_POST['trending'] == "1") ? 1 : 0;
+
+    $image = $_FILES['image']['name'];
+
+    $path = __DIR__ . "/"; // Path to the directory containing the PHP script
+
+    $image_extension = pathinfo($image, PATHINFO_EXTENSION);
+    $filename = time() . "_" . $image;
+
+    if($category_id != "" && $name != "" && $description != "" && $original_price != "" && $discounted_price != "" && $quantity != "" && $status != "" && $trending != "" && $image != "")
+    {
+        $product_query = "INSERT INTO product (category_id, name, description, image, original_price, discounted_price, quantity, status, trending) 
+        VALUES ('$category_id', '$name', '$description', '$filename', '$original_price', '$discounted_price', '$quantity', '$status', '$trending')";
+
+        $product_query_run = mysqli_query($conn, $product_query);
+
+        if($product_query_run)
+        {
+            $destination = $path . $filename;
+            if(move_uploaded_file($_FILES['image']['tmp_name'], $destination))
+            {
+                $_SESSION['message'] = "Product Added";
+                header('Location: allproducts.php');
+                exit();
+            }
+            else
+            {
+                $_SESSION['message'] = "Error moving file";
+                header('Location: add_productsss.php');
+                exit();
+            }
+        }
+        else
+        {
+            $_SESSION['message'] = "Product Not Added";
+            header('Location: add_products.php');
+            exit();
+        }
+    }
+    else
+    {
+        $_SESSION['message'] = "Please fill all the fields";
+        header('Location: add_products.php');
+        exit();
+    }
+}
 ?>
