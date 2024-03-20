@@ -29,7 +29,23 @@
 
         <input type="submit" value="Submit">
     </form>
-</div>
+
+    <!-- Button to trigger the pop-up -->
+    <button id="reviewButton" name="reviewButton" onclick="showReviewPopup()">Review Our Website</button>
+
+    <!-- Hidden pop-up modal -->
+    <div id="reviewModal" class="modal">
+    <div class="modal-content">
+     <span class="close" onclick="hideReviewPopup()">&times;</span>
+     <h2>Review Our Website</h2>
+     <form id="reviewForm" action="process_website_review.php" method="post">
+          <label for="review">Have you experienced any issues with the website? Please let us know:</label>
+          <textarea id="review" name="review" rows="4"></textarea>
+          <input type="submit" value="Submit Review">
+         </form>
+     </div>
+    </div>
+</div>  
 <footer class="footer">
     <div class="fcontainer">
         <div class="row">
@@ -69,6 +85,32 @@
         </div>
     </div>
 </footer>
+
+<?php
+// PHP code to handle the review submission
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get the review data
+    $review = $_POST["review"];
+
+    // Process the review as needed (store it in the database, send an email, etc.)
+
+    // Redirect back to the Contact Us page or any other appropriate page
+    header("Location: contactus.php");
+    exit();
+}
+?>
+
+<script>
+// JavaScript function to show the pop-up modal
+function showReviewPopup() {
+    document.getElementById("reviewModal").style.display = "block";
+}
+
+// JavaScript function to hide the pop-up modal
+function hideReviewPopup() {
+    document.getElementById("reviewModal").style.display = "none";
+}
+</script>
 </body>
 
 </html>
