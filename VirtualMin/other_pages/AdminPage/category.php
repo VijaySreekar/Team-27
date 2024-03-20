@@ -49,16 +49,18 @@ include 'AllFunctions/myfunctions.php';
                                         </td>
                                     </tr>
                                     <?php
-                                }
-                            }
-                            else{
-                                echo "No categories found!";
-                            }
-                            ?>
+                                        }
+                                    }
+                                    else{
+                                        echo "No categories found!";
+                                    }
+                                    ?>
                             <tr>
                         </tbody>
                     </table>
-
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <?php include 'Includes/Footer.php'; ?>

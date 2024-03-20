@@ -50,8 +50,6 @@ include 'AllFunctions/myfunctions.php';
                                         }
 
                                     ?>
-
-
                                 </select>
                             </div>
                             <div class="col-md-12">
