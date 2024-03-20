@@ -24,6 +24,12 @@ function getItembyID($table, $id)
     return $query_run = mysqli_query($conn, $query);
 }
 
+function getAllActive($table)
+{
+    global $conn;
+    $query = "SELECT * FROM $table WHERE status = '1' ";
+    return $query_run = mysqli_query($conn, $query);
+}
 function getProductItembyID($table, $id)
 {
     global $conn;
@@ -37,8 +43,7 @@ function redirect($url, $message)
     header('Location: ' . $url);
     exit();
 }
-{
 
-}
+
 ?>
 

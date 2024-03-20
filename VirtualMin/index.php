@@ -120,8 +120,6 @@ session_start();
     </div>
 </nav>
 
-
-
 <section>
   <div class="bg" style="background-image: url('Images/Sneaker Wallpaper.jpeg')"></div>
   <h1>Treakers</h1>
