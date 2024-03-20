@@ -2,6 +2,11 @@
 
 session_start();
 include '../AdminPage/AllFunctions/myfunctions.php';
+
+$category_slug = $_GET['category'];
+$category_data = getSlugActive('category', $category_slug);
+$category = mysqli_fetch_assoc($category_data);
+$category_id = $category['category_id'];
 ?>
 
 <!DOCTYPE html>
@@ -285,35 +290,35 @@ include '../AdminPage/AllFunctions/myfunctions.php';
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1>Our Categories</h1>
+                        <h1>Category: <?= $category['name']; ?></h1>
                         <hr>
                         <div class="row">
 
                             <?php
-                                $category = getAllActive('category');
+                            $products = getProductCategory($category_id);
 
-                                if(mysqli_num_rows($category) > 0)
+                            if(mysqli_num_rows($products) > 0)
+                            {
+                                foreach($products as $item)
                                 {
-                                    foreach($category as $item)
-                                    {
-                                        ?>
-                                            <div class="col-md-3 mb-3">
-                                                <a href="products_page.php?category=<?= $item['slug']; ?>">
-                                                    <div class="card shadow">
-                                                        <div class="card-body">
-                                                            <img src="../AdminPage/<?= $item['image']; ?>" alt="Category Image" class="w-100">
-                                                            <h4 class="text-center"><?= $item['name']; ?></h4>
-                                                        </div>
-                                                    </div>
-                                                </a>
+                                    ?>
+                                    <div class="col-md-3 mb-3">
+                                        <a href="#">
+                                            <div class="card shadow">
+                                                <div class="card-body">
+                                                    <img src="../AdminPage/<?= $item['image']; ?>" alt="Product Image" class="w-100">
+                                                    <h4 class="text-center"><?= $item['name']; ?></h4>
+                                                </div>
                                             </div>
-                                        <?php
-                                    }
+                                        </a>
+                                    </div>
+                                    <?php
                                 }
-                                else
-                                {
-                                    echo "<h3>No Categories Found</h3>";
-                                }
+                            }
+                            else
+                            {
+                                echo "<h3>No Categories Found</h3>";
+                            }
                             ?>
                         </div>
 

@@ -129,6 +129,7 @@ else if(isset($_POST['addproduct_btn']))
 {
     $category_id = $_POST['category_id'];
     $name = $_POST['name'];
+    $slug = $_POST['slug'];
     $description = $_POST['description'];
     $original_price = $_POST['original_price'];
     $discounted_price = $_POST['discounted_price'];
@@ -143,10 +144,10 @@ else if(isset($_POST['addproduct_btn']))
     $image_extension = pathinfo($image, PATHINFO_EXTENSION);
     $filename = time() . "_" . $image;
 
-    if($category_id != "" && $name != "" && $description != "" && $original_price != "" && $discounted_price != "" && $quantity != "" && $status != "" && $trending != "" && $image != "")
+    if($category_id != "" && $name != "" && $slug != "" && $description != "" && $original_price != "" && $discounted_price != "" && $quantity != "" && $status != "" && $trending != "" && $image != "")
     {
-        $product_query = "INSERT INTO product (category_id, name, description, image, original_price, discounted_price, quantity, status, trending) 
-        VALUES ('$category_id', '$name', '$description', '$filename', '$original_price', '$discounted_price', '$quantity', '$status', '$trending')";
+        $product_query = "INSERT INTO product (category_id, name, slug, description, image, original_price, discounted_price, quantity, status, trending) 
+        VALUES ('$category_id', '$name', '$slug', '$description', '$filename', '$original_price', '$discounted_price', '$quantity', '$status', '$trending')";
 
         $product_query_run = mysqli_query($conn, $product_query);
 

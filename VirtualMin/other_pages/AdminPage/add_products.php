@@ -52,9 +52,13 @@ include 'AllFunctions/myfunctions.php';
                                     ?>
                                 </select>
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <label class="mb-0">Name</label>
                                 <input type="text" required class="form-control mb-3" name="name" placeholder="Enter Category Name">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="mb-0">Slug</label>
+                                <input type="text" required class="form-control mb-3" name="slug" placeholder="Enter Slug">
                             </div>
                             <div class="col-md-12">
                                 <label class="mb-0">Description</label>
