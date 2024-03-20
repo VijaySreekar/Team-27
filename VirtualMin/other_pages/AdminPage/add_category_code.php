@@ -178,4 +178,58 @@ else if(isset($_POST['addproduct_btn']))
         exit();
     }
 }
+else if(isset($_POST['editproduct_btn']))
+{
+    $product_id = $_POST['product_id'];
+    $category_id = $_POST['category_id'];
+    $name = $_POST['name'];
+    $description = $_POST['description'];
+    $original_price = $_POST['original_price'];
+    $discounted_price = $_POST['discounted_price'];
+    $quantity = $_POST['quantity'];
+    $status = ($_POST['status'] == "1") ? 1 : 0;
+    $trending = ($_POST['trending'] == "1") ? 1 : 0;
+
+    $new_image = $_FILES['image']['name'];
+    $old_image = $_POST['old_image'];
+    $path = __DIR__ . "/";
+
+    if($new_image != "")
+    {
+
+        $update_filename = $new_image;
+    }
+    else
+    {
+        $update_filename = $old_image;
+    }
+
+    $update_product_query = "UPDATE product SET category_id = '$category_id', name = '$name', description = '$description', image = '$update_filename', 
+                    original_price = '$original_price', discounted_price = '$discounted_price', quantity = '$quantity', status = '$status', trending = '$trending' WHERE product_id = $product_id";
+    $update_product_query_run = mysqli_query($conn, $update_product_query);
+
+    if($update_product_query_run)
+    {
+        if ($_FILES['image']['name'] != "") {
+            $destination = $path . $update_filename;
+            move_uploaded_file($_FILES['image']['tmp_name'], $destination);
+            if (file_exists($path . $old_image)) {
+                unlink($path . $old_image);
+            }
+        }
+        $_SESSION['message'] = "Product Updated";
+        header("Location: edit-product.php?id=$product_id");
+        exit();
+    }
+    else
+    {
+        $_SESSION['message'] = "Product Not Updated";
+        header("Location: edit-product.php?id=$product_id");
+
+    }
+}
+else
+{
+    header('Location: adminpage.php');
+}
 ?>

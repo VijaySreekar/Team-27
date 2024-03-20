@@ -24,6 +24,13 @@ function getItembyID($table, $id)
     return $query_run = mysqli_query($conn, $query);
 }
 
+function getProductItembyID($table, $id)
+{
+    global $conn;
+    $query = "SELECT * FROM $table WHERE product_id = $id";
+    return $query_run = mysqli_query($conn, $query);
+}
+
 function redirect($url, $message)
 {
     $_SESSION['message'] = $message;

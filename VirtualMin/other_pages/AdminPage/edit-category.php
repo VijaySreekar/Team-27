@@ -20,7 +20,9 @@ include 'AllFunctions/myfunctions.php';
                         ?>
                             <div class="card">
                             <div class="card-header">
-                                <h4>Edit Category</h4>
+                                <h4>Edit Category
+                                    <a href="category.php" class="btn btn-primary float-end">Back</a>
+                                </h4>
                             </div>
                             <div class="card-body">
                                 <form action="add_category_code.php" method="POST" enctype="multipart/form-data">
