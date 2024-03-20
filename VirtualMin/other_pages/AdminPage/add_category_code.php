@@ -127,13 +127,13 @@ else if(isset($_POST['delete_categorybtn']))
 }
 else if(isset($_POST['addproduct_btn']))
 {
-    $category_id = $_POST['category_id'];
-    $name = $_POST['name'];
-    $slug = $_POST['slug'];
-    $description = $_POST['description'];
-    $original_price = $_POST['original_price'];
-    $discounted_price = $_POST['discounted_price'];
-    $quantity = $_POST['quantity'];
+    $category_id = mysqli_real_escape_string($conn, $_POST['category_id']);
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $slug = mysqli_real_escape_string($conn, $_POST['slug']);
+    $description = mysqli_real_escape_string($conn, $_POST['description']);
+    $original_price = mysqli_real_escape_string($conn, $_POST['original_price']);
+    $discounted_price = mysqli_real_escape_string($conn, $_POST['discounted_price']);
+    $quantity = mysqli_real_escape_string($conn, $_POST['quantity']);
     $status = ($_POST['status'] == "1") ? 1 : 0;
     $trending = ($_POST['trending'] == "1") ? 1 : 0;
 

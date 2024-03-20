@@ -90,7 +90,7 @@ include 'AllFunctions/myfunctions.php';
                                 </div>
                                 <div class="col-md-4">
                                     <label class="mb-0">Trending</label>
-                                    <select class="form-control mb-3" name="popular">
+                                    <select class="form-control mb-3" name="trending">
                                         <option value="1">Yes</option>
                                         <option value="0">No</option>
                                     </select>
