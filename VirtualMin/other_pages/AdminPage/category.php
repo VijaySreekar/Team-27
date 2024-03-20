@@ -12,7 +12,7 @@ include 'AllFunctions/myfunctions.php';
                 <div class="card-header bg-transparent">
                     <h3 class="mb-0">Categories</h3>
                 </div>
-                <div class="card-body">
+                <div class="card-body" id="category_table">
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -42,10 +42,12 @@ include 'AllFunctions/myfunctions.php';
                                         </td>
                                         <td>
                                             <a href="edit-category.php?id=<?= $category['category_id']; ?>"  class="btn btn-primary">Edit</a>
-                                            <form action="add_category_code.php" method="POST">
-                                                <input type="hidden" name="category_ids" value="<?= $category['category_id'] ?>">
-                                                <button type="submit" class="btn btn-danger" name="delete_categorybtn">Delete</button>
-                                            </form>
+                                            <button type="button" class="btn btn-danger delete_categorybtn" data-category_id="<?= $category['category_id']; ?>">Delete</button>
+<!--                                            <form action="add_category_code.php" method="POST">-->
+<!--                                                <input type="hidden" name="category_ids" value="--><?php //= $category['category_id'] ?><!--">-->
+<!--                                                <button type="submit" class="btn btn-danger" name="delete_categorybtn">Delete</button>-->
+<!--                                            </form>-->
+
                                         </td>
                                     </tr>
                                     <?php

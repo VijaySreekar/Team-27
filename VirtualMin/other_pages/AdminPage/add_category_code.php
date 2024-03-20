@@ -111,15 +111,17 @@ else if(isset($_POST['delete_categorybtn']))
 
     if($delete_query_run)
     {
-        $_SESSION['message'] = "Category Deleted";
-        header('Location: category.php');
-        exit();
+//        $_SESSION['message'] = "Category Deleted";
+//        header('Location: category.php');
+//        exit();
+        echo 200;
     }
     else
     {
-        $_SESSION['message'] = "Category Not Deleted";
-        header('Location: category.php');
-        exit();
+//        $_SESSION['message'] = "Category Not Deleted";
+//        header('Location: category.php');
+//        exit();
+        echo 500;
     }
 
 }
@@ -226,6 +228,28 @@ else if(isset($_POST['editproduct_btn']))
         $_SESSION['message'] = "Product Not Updated";
         header("Location: edit-product.php?id=$product_id");
 
+    }
+}
+else if(isset($_POST['deleteproduct_btn']))
+{
+    $product_id = mysqli_real_escape_string($conn, $_POST['product_id']);
+
+    $product_delete_query = "DELETE FROM product WHERE product_id = $product_id";
+    $product_delete_query_run = mysqli_query($conn, $product_delete_query);
+
+    if($product_delete_query_run)
+    {
+//        $_SESSION['message'] = "Product Deleted Successfully";
+//        header('Location: category.php');
+//        exit();
+        echo 200;
+    }
+    else
+    {
+//        $_SESSION['message'] = "Category Not Deleted";
+//        header('Location: category.php');
+//        exit();
+        echo 500;
     }
 }
 else

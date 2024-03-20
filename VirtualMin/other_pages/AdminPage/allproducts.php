@@ -12,7 +12,7 @@ include 'AllFunctions/myfunctions.php';
                 <div class="card-header bg-transparent">
                     <h3 class="mb-0">Products</h3>
                 </div>
-                <div class="card-body">
+                <div class="card-body" id="product_table">
                     <table class="table table-bordered table-striped">
                         <thead>
                         <tr>
@@ -43,10 +43,7 @@ include 'AllFunctions/myfunctions.php';
                                     </td>
                                     <td>
                                         <a href="edit-product.php?id=<?= $item['product_id']; ?>"  class="btn btn-primary">Edit</a>
-                                        <form action="add_category_code.php" method="POST">
-                                            <input type="hidden" name="product_ids" value="<?= $item['product_id'] ?>">
-                                            <button type="submit" class="btn btn-danger" name="delete_productbtn">Delete</button>
-                                        </form>
+                                        <button type="button" class="btn btn-danger deleteproduct_btn" data-product_id="<?= $item['product_id']; ?>">Delete</button>
                                     </td>
                                 </tr>
                                 <?php
