@@ -1,6 +1,5 @@
 <?php
 session_start();
-include 'AllFunctions/myfunctions.php';
 
 $host = "localhost";
 $username = "u-230185247";
@@ -93,11 +92,35 @@ else if(isset($_POST['save_categorybtn']))
                 unlink($path . $old_image);
             }
         }
-        redirect("edit-category.php?id=$category_id", "Category Updated");
+        $_SESSION['message'] = "Category Updated";
+        header("Location: edit-category.php?id=$category_id");
+        exit();
     }
     else
     {
-        redirect("edit-category.php?id=$category_id", "Category Not Updated");
+        $_SESSION['message'] = "Category Not Updated";
+        header("Location: edit-category.php?id=$category_id");
     }
+}
+else if(isset($_POST['delete_categorybtn']))
+{
+    $category_id = mysqli_real_escape_string($conn, $_POST['category_ids']);
+
+    $delete_query = "DELETE FROM category WHERE category_id = $category_id";
+    $delete_query_run = mysqli_query($conn, $delete_query);
+
+    if($delete_query_run)
+    {
+        $_SESSION['message'] = "Category Deleted";
+        header('Location: category.php');
+        exit();
+    }
+    else
+    {
+        $_SESSION['message'] = "Category Not Deleted";
+        header('Location: category.php');
+        exit();
+    }
+
 }
 ?>
