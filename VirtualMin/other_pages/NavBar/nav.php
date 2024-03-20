@@ -52,10 +52,12 @@
                         <i class="fas fa-shopping-basket"></i>
                     </button>
                 </a>
-            </div>
+        </div>
             <div class="search-bar">
-                <input type="text" placeholder="Search">
-                <button class="search-button"><i class="fas fa-search"></i></button>
+                <form action="../other_pages/ProductPage/products-page.php" method="GET">
+                    <input type="text" name="search" placeholder="Search" required>
+                    <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+                </form>
             </div>
         </div>
     </nav>
