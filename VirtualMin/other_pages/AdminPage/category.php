@@ -20,7 +20,7 @@ include 'AllFunctions/myfunctions.php';
                                 <th>Category Name</th>
                                 <th>Category Image</th>
                                 <th>Category Status</th>
-                                <th>Edit</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -42,6 +42,9 @@ include 'AllFunctions/myfunctions.php';
                                         </td>
                                         <td>
                                             <a href="edit-category.php?id=<?= $category['category_id']; ?>"  class="btn btn-primary">Edit</a>
+                                            <form action="add_category_code.php" method="POST" style="display: inline-block;">
+                                                <button type="submit" class="btn btn-danger" name="delete_categorybtn">Delete</button>
+                                            </form>
                                         </td>
                                     </tr>
                                     <?php
