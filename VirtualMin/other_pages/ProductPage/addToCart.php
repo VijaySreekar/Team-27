@@ -26,7 +26,7 @@ if(isset($_SESSION['authenticated']))
 
                 $user_id = $_SESSION['auth_user']['user_id'];
 
-                $insert_query = "INSERT INTO basket_item (user_id, product_id, quantity) VALUES ('$user_id', '$product_id', '$product_quantity')";
+                $insert_query = "INSERT INTO cart (user_id, product_id, quantity) VALUES ('$user_id', '$product_id', '$product_quantity')";
                 $insert_result = mysqli_query($conn, $insert_query);
 
                 if ($insert_result)

@@ -75,7 +75,7 @@ $(document).ready(function() {
     $('.addToCartButton').click(function(e) {
         e.preventDefault();
 
-        var quantity = $(this).closest('.row').find('input[type="number"]').val();
+        var quantity = $('input[name="quantity"]').val();
         var product_id = $(this).val()
 
 

@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbf2f922-5ce0-4d3b-977e-7c8bbdfdd3ac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/addToCart.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/product.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Team-27.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Team-27.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/Includes/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/Includes/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/assets/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/assets/js/custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/VerifyUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/VerifyUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/category_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/category_page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/products_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/products_page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/addToCart.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/addToCart.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/view_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/view_product.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -251,7 +244,7 @@
       <workItem from="1710938047677" duration="4669000" />
       <workItem from="1710943112298" duration="11558000" />
       <workItem from="1710958164036" duration="8083000" />
-      <workItem from="1710969620941" duration="17302000" />
+      <workItem from="1710969620941" duration="18265000" />
     </task>
     <servers />
   </component>

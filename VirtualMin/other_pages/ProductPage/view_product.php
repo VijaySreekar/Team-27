@@ -48,6 +48,7 @@ if(isset($_GET['product']))
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
                 <!-- SweetAlert2 JS file -->
                 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                <script src="../AdminPage/assets/js/custom.js"></script>
 
 
                 <link rel="stylesheet" href="product.css">
@@ -80,14 +81,14 @@ if(isset($_GET['product']))
                                     </a>
                                     <div class="dropdown-content">
                                         <a href="other_pages/ProfilePage/profile.php">Your Profile</a>
-                                        <a href="other_pages/LoginPage/logout.php">Log out</a>
+                                        <a href="../LoginPage/logout.php">Log out</a>
                                     </div>
                                 </div>
                                 <?php
                             } else {
                                 ?>
                                 <div class="nav-item">
-                                    <a class="nav-link" href="other_pages/LoginPage/login_page.php">
+                                    <a class="nav-link" href="../LoginPage/login_page.php">
                                         <i class="fas fa-user"></i> Login/Signup
                                     </a>
                                 </div>
@@ -132,7 +133,7 @@ if(isset($_GET['product']))
                                 <div class="col-md-4">
                                     <div class="input-group mb-3">
                                         <h7 class="mr-3 mt-1">Quantity: </h7>
-                                        <input type="number" class="form-control" value="1" min="1" max="10">
+                                        <input type="number" name="quantity" class="form-control" value="1" min="1" max="10">
                                     </div>
                                 </div>
                             </div>
@@ -216,7 +217,6 @@ if(isset($_GET['product']))
             <script src="../AdminPage/assets/js/smooth-scrollbar.min.js"></script>
             <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-            <script src="../AdminPage/assets/js/custom.js"></script>
 
 </body>
 </html>
