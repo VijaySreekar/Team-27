@@ -1,11 +1,11 @@
 <?php
-    //session_start(); // Start the session
+    session_start(); // Start the session
     include("../../connectdb.php");
 
     if(isset($_GET['pid'])){
         require_once "../../connectdb.php";
-        
-        $pid = mysqli_real_escape_string($mysqli, $_GET['pid']);
+
+        $pid = $_GET['pid'];
         $uid = $_SESSION['user_id'];
 
     	$sql = "SELECT * 
@@ -15,22 +15,21 @@
         $row = mysqli_fetch_array($result);    
     }
 
-    if(isset($_POST['submit'])){
+    if($_SERVER["REQUEST_METHOD"] === "POST"){
     	require_once "../../connectdb.php";
         $rating = $_POST['rating'];
         $comment = $_POST['comment'];
 		
-    	$rating = mysql_real_escape_string($rating);
-		$comment  = mysql_real_escape_string($comment);
-    	$uid = mysql_real_escape_string($uid);
-		$pid = mysql_real_escape_string($pid);
+    	//$rating = mysql_real_escape_string($rating);
+		//$comment  = mysql_real_escape_string($comment);
+    	//$uid = mysql_real_escape_string($uid);
+		//$pid = mysql_real_escape_string($pid);
 
-         $sql = "INSERT INTO user_review
-         		 (user_id, product_id, rating, comment)
-                 VALUES
-                 ('$uid', '$pid', '$rating', '$comment')";
+        $sql = "INSERT INTO `user_review` 
+         		(`user_id`, `product_id`, `rating`, `comment`) 
+         		VALUES ('$uid', '$pid', '$rating', '$comment')";
     	 
-         $result = mysqli_query($mysqli, $sql);
+        $result = mysqli_query($mysqli, $sql) or die("bad query");
         //$stmt = $mysqli->stmt_init();
 
         // if(!$stmt->prepare($sql)){
@@ -70,12 +69,13 @@
             <h2><?php echo $row['name']?></h2>
             <h3><?php echo $row['price']?></h3>
         </div>
+        <!--<p><?php echo $pid?></p>-->            
+        <!--<p><?php echo $uid?></p>-->
         <main id ="mainform">
-            <form method="POST">
+            <form method="POST" id="mainform">
                 <label>Rating:</label>
                 <input type="text" name="rating" id="rating" required>
                 <br/><br/>
-                <label>Comment:</label>
                 <textarea rows="7" cols="55" name="comment" id="comment"></textarea>
                 <br/><br/>
                 <button type="submit" class="button" name="submit">Submit Review</button>
