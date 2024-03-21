@@ -230,8 +230,6 @@ if(isset($_GET['product']))
                         color: #24262b;
                         background-color: #ffffff;
                     }
-
-
                 </style>
             </head>
 
@@ -289,49 +287,50 @@ if(isset($_GET['product']))
                     </div>
                 </nav>
 
-                <div class="bg-gradient-light py-4">
-                    <div class="container mt-5 mb-5">
+                <div class="container mt-5 mb-5">
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="shadow">
+                        <div class="col-md-6">
+                            <div class="shadow-danger">
                                 <img src="../AdminPage/<?= $product['image']; ?>" alt="Product Image" class="w-100">
                             </div>
                         </div>
-                        <div class="col-md-8">
-                            <h3><?= $product['name']; ?>
-                                <span class="float text-danger fs-6 font-weight-lighter"><?php if($product['trending']){ echo "#Trending";} ?></span>
-                            </h3>
+                        <div class="col-md-6 shadow-dark">
+                            <h2 class="fw-bold"><?= $product['name']; ?></h2>
+                            <?php if($product['trending']): ?>
+                                <span class="text-danger fs-6 font-weight-lighter">#Trending</span>
+                            <?php endif; ?>
                             <hr>
-                            <div class="row">
+                            <div class="row mb-3">
                                 <div class="col-md-6">
                                     <h4>Sale Price: £<?= $product['discounted_price']; ?></h4>
                                 </div>
                                 <div class="col-md-6">
-                                    <h5>Original Price: <s class="text-danger"> £<?= $product['original_price']; ?> </s></h5>
+                                    <h5>Original Price: <s class="text-danger">£<?= $product['original_price']; ?></s></h5>
                                 </div>
                             </div>
-
                             <div class="row">
                                 <div class="col-md-4">
-                                    <input type="text">
+                                    <div class="input-group mb-3">
+                                        <h7 class="mr-3 mt-1">Quantity: </h7>
+                                        <input type="number" class="form-control" value="1" min="1" max="10">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row mt-3">
+
+                            <div class="row mb-3">
                                 <div class="col-md-6">
-                                    <button class="btn btn-outline-primary px-4"><i class="fa fa-shopping-cart me-2"></i> Add to Basket</button>
+                                    <button class="btn btn-primary btn-lg btn-block"><i class="fa fa-shopping-cart me-2"></i> Add to Basket</button>
                                 </div>
                                 <div class="col-md-6">
-                                    <button class="btn btn-outline-dark-blue px-4"><i class="fa fa-heart me-2"></i>Add to Wish List</button>
+                                    <button class="btn btn-dark btn-lg btn-block"><i class="fa fa-heart me-2"></i>Add to Wish List</button>
                                 </div>
+                            </div>
                             <hr>
-
-
-                            <h6>Product Description:</h6>
+                            <h4 class="fw-bold mb-3">Product Description:</h4>
                             <p><?= $product['description']; ?></p>
                         </div>
                     </div>
                 </div>
-            </div>
         <?php
     }
     else
