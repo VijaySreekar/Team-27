@@ -86,20 +86,6 @@
     </div>
 </footer>
 
-<?php
-// PHP code to handle the review submission
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get the review data
-    $review = $_POST["review"];
-
-    // Process the review as needed (store it in the database, send an email, etc.)
-
-    // Redirect back to the Contact Us page or any other appropriate page
-    header("Location: contactus.php");
-    exit();
-}
-?>
-
 <script>
 // JavaScript function to show the pop-up modal
 function showReviewPopup() {
