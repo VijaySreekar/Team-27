@@ -3,6 +3,7 @@
 session_start();
 include '../AdminPage/AllFunctions/myfunctions.php';
 
+
 if(isset($_GET['product']))
 {
 
@@ -43,194 +44,13 @@ if(isset($_GET['product']))
                 <!-- CSS Files -->
                 <link id="pagestyle" href="../AdminPage/assets/material-dashboard.min.css" rel="stylesheet" />
 
-                <!-- Alertify JS -->
-                <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
-                <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+                <!-- SweetAlert2 CSS file -->
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+                <!-- SweetAlert2 JS file -->
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
-                <style>
-                    @import url('https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap');
-
-                    *, h1 {
-                        font-family: 'Roboto', sans-serif;
-                        font-weight: 700;
-                    }
-
-                    .form-control {
-                        border: 1px solid #b3a1a1 !important;
-                        padding: 8px 10px;
-                    }
-                    .form-select {
-                        border: 1px solid #b3a1a1 !important;
-                        padding: 8px 10px;
-                    }
-                    .navbar {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        font-size: larger;
-                    }
-
-                    .navbar-left {
-                        display: flex;
-                        align-items: center;
-                    }
-
-                    .navbar-right {
-                        display: flex;
-                        align-items: center;
-                    }
-
-                    .logo-img {
-                        max-width: 100px; /* Adjust the max-width according to your preference */
-                        height: auto;
-                    }
-
-                    .nav-links {
-                        list-style-type: none;
-                        padding: 0;
-                        margin: 0;
-                        display: flex;
-                        font-size: larger;
-                    }
-
-                    .nav-links li {
-                        margin-right: 20px; /* Adjust spacing between links */
-                    }
-
-                    .nav-link {
-                        font-size: 20px; /* Adjust font size */
-                        padding: 15px 25px; /* Adjust padding */
-                    }
-
-                    .nav-links li a {
-                        text-decoration: none;
-                        color: #000; /* Adjust link color */
-                    }
-
-                    .buttons {
-                        display: flex;
-                        align-items: center;
-                    }
-
-                    .dropdown {
-                        position: relative;
-                        margin-right: 20px; /* Adjust spacing between dropdown and basket */
-                    }
-
-                    .dropdown-content {
-                        display: none;
-                        position: absolute;
-                        background-color: #f9f9f9;
-                        min-width: 120px;
-                        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                        z-index: 1;
-                    }
-
-                    .dropdown-content a {
-                        color: black;
-                        padding: 12px 16px;
-                        text-decoration: none;
-                        display: block;
-                    }
-
-                    .dropdown:hover .dropdown-content {
-                        display: block;
-                    }
-
-                    .search-bar {
-                        display: flex;
-                        align-items: center;
-                    }
-
-                    .search-input {
-                        padding: 8px;
-                        border-radius: 4px;
-                        border: 1px solid #ccc;
-                        margin-right: 10px; /* Adjust spacing between input and button */
-                    }
-
-                    .search-button {
-                        background-color: #ddd;
-                        border: none;
-                        padding: 8px;
-                        border-radius: 4px;
-                        cursor: pointer;
-                    }
-
-                    .search-button:hover {
-                        background-color: #ccc;
-                    }
-
-                    .footer {
-                        background-color: #0c6291;
-                        color: #ffffff;
-                        padding: 20px 0;
-                        width: 100%;
-                    }
-
-                    .footer-col {
-                        padding: 0 15px;
-                    }
-
-                    .footer-col h4 {
-                        font-size: 18px;
-                        color: #ffffff;
-                        text-transform: capitalize;
-                        margin-bottom: 35px;
-                        font-weight: 500;
-                        position: relative;
-                    }
-
-                    .footer-col h4::before {
-                        content: '';
-                        position: absolute;
-                        left: 0;
-                        bottom: -10px;
-                        background-color: #a63446;
-                        height: 2px;
-                        box-sizing: border-box;
-                        width: 50px;
-                    }
-
-                    .footer-col ul li:not(:last-child) {
-                        margin-bottom: 10px;
-                    }
-
-                    .footer-col ul li a {
-                        font-size: 16px;
-                        text-transform: capitalize;
-                        color: #ffffff;
-                        text-decoration: none;
-                        font-weight: 300;
-                        color: #bbbbbb;
-                        display: block;
-                        transition: all 0.3s ease;
-                    }
-
-                    .footer-col ul li a:hover {
-                        color: #ffffff;
-                        padding-left: 8px;
-                    }
-
-                    .footer-col .social-links a {
-                        display: inline-block;
-                        height: 40px;
-                        width: 40px;
-                        background-color: rgba(255, 255, 255, 0.2);
-                        margin: 0 10px 10px 0;
-                        text-align: center;
-                        line-height: 40px;
-                        border-radius: 50%;
-                        color: #ffffff;
-                        transition: all 0.5s ease;
-                    }
-
-                    .footer-col .social-links a:hover {
-                        color: #24262b;
-                        background-color: #ffffff;
-                    }
-                </style>
+                <link rel="stylesheet" href="product.css">
             </head>
 
             <body class="g-sidenav-show  bg-gray-200">
@@ -319,7 +139,7 @@ if(isset($_GET['product']))
 
                             <div class="row mb-3">
                                 <div class="col-md-6">
-                                    <button class="btn btn-primary btn-lg btn-block"><i class="fa fa-shopping-cart me-2"></i> Add to Basket</button>
+                                    <button class="btn btn-primary btn-lg btn-block addToCartButton" value="<?= $product['product_id']; ?>"><i class="fa fa-shopping-cart me-2"></i> Add to Basket</button>
                                 </div>
                                 <div class="col-md-6">
                                     <button class="btn btn-dark btn-lg btn-block"><i class="fa fa-heart me-2"></i>Add to Wish List</button>
@@ -394,9 +214,9 @@ if(isset($_GET['product']))
             <script src="../AdminPage/assets/js/bootstrap.bundle.min.js"></script>
             <script src="../AdminPage/assets/js/perfect-scrollbar.min.js"></script>
             <script src="../AdminPage/assets/js/smooth-scrollbar.min.js"></script>
-            <script src="../AdminPage/https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-            <script src="../AdminPage/assets/js/custom.js"></script>
             <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="../AdminPage/assets/js/custom.js"></script>
+
 </body>
 </html>

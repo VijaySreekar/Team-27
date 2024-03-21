@@ -34,9 +34,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $role = $row["role"];
 
             if (password_verify($login_password, $stored_password)) {
+                $_SESSION['authenticated'] = true;
                 $_SESSION["user_id"] = $user_id;
                 $_SESSION["username"] = $username;
                 $_SESSION["role"] = $role;
+
+                $_SESSION['auth_user'] = [
+                    "user_id" => $user_id,
+                    "username" => $username,
+                    "role" => $role
+                ];
 
                 // Send JSON response indicating success along with role and username
                 echo json_encode(["success" => true, "message" => "Login successful", "role" => $role, "username" => $username]);

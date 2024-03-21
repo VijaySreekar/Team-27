@@ -71,4 +71,49 @@ $(document).ready(function() {
             }
         });
     });
+
+    $('.addToCartButton').click(function(e) {
+        e.preventDefault();
+
+        var quantity = $(this).closest('.row').find('input[type="number"]').val();
+        var product_id = $(this).val()
+
+
+        $.ajax({
+            method: "POST",
+            url: "addToCart.php",
+            data: {
+                'product_id': product_id,
+                'quantity': quantity,
+                'scope': 'add'
+            },
+            success: function (response) {
+                if (response == 201) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success!',
+                        text: 'Product added to cart successfully',
+                        timer: 3000, // Auto-close after 3 seconds
+                        timerProgressBar: true
+                    });
+                } else if (response == 401) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Login Required',
+                        text: 'Login to Continue!',
+                        timer: 3000,
+                        timerProgressBar: true
+                    });
+                } else if (response == 500) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong! Please try again later',
+                        timer: 3000,
+                        timerProgressBar: true
+                    });
+                }
+            }
+        });
+    });
 });
