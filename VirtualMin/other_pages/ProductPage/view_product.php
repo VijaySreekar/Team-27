@@ -13,7 +13,9 @@ if(isset($_GET['product']))
     $product = mysqli_fetch_assoc($product_data);
 
     if($product)
-    {	
+    {
+        $product_id = $product['product_id'];
+        echo "Product Id: ", $product_id;
         ?>
             <!DOCTYPE html>
             <html lang="en">

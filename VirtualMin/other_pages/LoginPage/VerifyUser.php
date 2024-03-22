@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 
 $host = "localhost";
 $username = "u-230185247";

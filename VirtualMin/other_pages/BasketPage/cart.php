@@ -37,7 +37,6 @@ include '../AdminPage/AllFunctions/myfunctions.php';
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../AdminPage/assets/js/custom.js"></script>
 
-
     <link rel="stylesheet" href="../ProductPage/product.css">
 </head>
 
@@ -114,36 +113,39 @@ include '../AdminPage/AllFunctions/myfunctions.php';
                                 <h6>Actions</h6>
                             </div>
                         </div>
-                        <?php $items = myCartItems();
+                        <div id="MyCartItems" class="MyCartItems">
+                            <?php $items = myCartItems();
 
-                        foreach ($items as $cartitem)
-                        {
-                        ?>
-                            <div class="card shadow-sm">
-                                <div class="row align-items-center">
-                                    <div class="col-md-2">
-                                        <img src="../AdminPage/<?= $cartitem['image'] ?>" alt="Product Image" width="100px">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <h4><?= $cartitem['name'] ?></h4>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <h4>£<?= $cartitem['discounted_price'] ?></h4>
-                                    </div>
-                                    <div class="col-md-2" >
-                                        <div class="input-group mb-3">
-                                            <h7 class="mr-3 mt-1">Quantity: </h7>
-                                            <input type="number" name="quantity" class="form-control" value="<?= $cartitem['quantity'] ?>" min="1" max="10">
+                            foreach ($items as $cartitem)
+                            {
+                            ?>
+                                <div class="card shadow-sm">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-2">
+                                            <img src="../AdminPage/<?= $cartitem['image'] ?>" alt="Product Image" width="100px">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <h4><?= $cartitem['name'] ?></h4>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <h4>£<?= $cartitem['discounted_price'] ?></h4>
+                                        </div>
+                                        <div class="col-md-2" >
+                                            <input type="hidden" class="product_id" value="<?= $cartitem['product_id'] ?>">
+                                            <div class="input-group mb-3">
+                                                <h7 class="mr-3 mt-1">Quantity: </h7>
+                                                <input type="number" name="quantity" class="form-control updateQuantity" value="<?= $cartitem['quantity'] ?>" min="1" max="10">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <button class="btn btn-danger btn-sm deleteItem" value="<?= $cartitem['cid'] ?>"><i class="fa fa-trash"></i> Remove</button>
                                         </div>
                                     </div>
-                                    <div class="col-md-2">
-                                        <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Remove</button>
-                                    </div>
                                 </div>
-                            </div>
-                        <?php
-                        }
-                        ?>
+                            <?php
+                            }
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>
