@@ -13,6 +13,8 @@ if(isset($_GET['product']))
 
     if($product)
     {
+        $product_id = $product['product_id'];
+        echo "Product Id: ", $product_id;
         ?>
             <!DOCTYPE html>
             <html lang="en">

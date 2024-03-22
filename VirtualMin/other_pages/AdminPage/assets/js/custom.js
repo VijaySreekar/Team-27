@@ -72,7 +72,7 @@ $(document).ready(function() {
         });
     });
 
-    $('.addToCartButton').click(function(e) {
+    $(document).on('click','.addToCartButton',function (e) {
         e.preventDefault();
 
         var quantity = $('input[name="quantity"]').val();
@@ -105,6 +105,85 @@ $(document).ready(function() {
                         timerProgressBar: true
                     });
                 } else if (response == 500) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong! Please try again later',
+                        timer: 3000,
+                        timerProgressBar: true
+                    });
+                }
+            }
+        });
+    });
+
+    $(document).on('click','.updateQuantity',function () {
+
+        var $parentRow = $(this).closest('.row');
+
+        var quantity = $parentRow.find('input[name="quantity"]').val();
+        // Since product_id uses class, we need to adjust the selector
+        var product_id = $parentRow.find('.product_id').val();
+
+        $.ajax({
+            method: "POST",
+            url: "../ProductPage/addToCart.php",
+            data: {
+                'product_id': product_id,
+                'quantity': quantity,
+                'scope': 'update'
+            },
+            success: function (response) {
+                if (response == 201) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success!',
+                        text: 'Quantity updated successfully',
+                        timer: 3000, // Auto-close after 3 seconds
+                        timerProgressBar: true
+                    });
+                } else if (response == 401){
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Login Required',
+                        text: 'Login to Continue!',
+                        timer: 3000,
+                        timerProgressBar: true
+                    });
+                } else if (response == 500){
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong! Please try again later',
+                        timer: 3000,
+                        timerProgressBar: true
+                    });
+                }
+            }
+        });
+    });
+
+    $(document).on('click','.deleteItem',function () {
+        var cart_id = $(this).val();
+
+        $.ajax({
+            method: "POST",
+            url: "../ProductPage/addToCart.php",
+            data: {
+                'cart_id': cart_id,
+                'scope': 'delete'
+            },
+            success: function (response) {
+                if (response == 200){
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success!',
+                        text: 'Item deleted successfully',
+                        timer: 3000, // Auto-close after 3 seconds
+                        timerProgressBar: true
+                    });
+                    $('.MyCartItems').load(location.href + ' .MyCartItems');
+                }else if (response == 500){
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
