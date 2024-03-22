@@ -36,7 +36,24 @@ if(isset($_SESSION['authenticated']))
         {
             $totalPrice += $cartitem['discounted_price'] * $cartitem['quantity'];
         }
+        $updatedStocks = [];
+        foreach ($cartItems as $cartitem)
+        {
+            $product_id = $cartitem['product_id'];
+            $quantity = $cartitem['quantity'];
 
+            $query = "SELECT stock FROM product WHERE product_id = $product_id";
+            $result = mysqli_query($conn, $query);
+            $row = mysqli_fetch_assoc($result);
+            $currentStock = $row['stock'];
+
+            $updatedStock = $currentStock - $quantity;
+            $updatedStocks[$product_id] = $updatedStock;
+
+            $update_query = "UPDATE product SET stock = $updatedStock WHERE product_id = $product_id";
+            mysqli_query($conn, $update_query);
+        }
+        
         $tracking_no = "treakers".rand(100000, 999999).substr($name, 0, 3);
         $insert_query = "INSERT INTO orders (tracking_no, user_id, name, email, phone, address, pincode, total_price, payment_mode,
                     payment_id) VALUES ('$tracking_no', '$user_id', '$name', '$email', '$phone', '$address', '$pincode',
