@@ -96,67 +96,73 @@ include '../AdminPage/AllFunctions/myfunctions.php';
 
     <div class="py-5">
         <div class="container">
-            <div class="card card-body shadow">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div id="MyCartItems" class="MyCartItems">
-                        <?php
-                            $items = myCartItems();
+            <div class="card">
+                <div class="card card-body shadow">
+                    <form action="placeorder.php" method="POST">
+                        <div class="row">
+                        <div class="col-md-7">
+                            <h4>Order Summary</h4>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="fw-bold">Name</label>
+                                    <input type="text" name="name" required class="form-control" placeholder="Enter your Full Name">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="fw-bold">Email</label>
+                                    <input type="email" name="email" required class="form-control" placeholder="Enter your Email">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="fw-bold">Phone Number</label>
+                                    <input type="text" name="phone" required class="form-control" placeholder="Enter your Phone Number">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="fw-bold">Pin Code</label>
+                                    <input type="text" name="pincode" required class="form-control" placeholder="Enter your Pin Code">
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label class="fw-bold">Address</label>
+                                    <textarea name="address" class="form-control" required rows='4' placeholder="Enter your Address"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <h4>Order Details</h4>
 
-                            if(mysqli_num_rows($items)>0) {
-                                ?>
-                                <div id="MyCartItems" class="MyCartItems">
-                                <?php
-                                $items = myCartItems();
-                                if(mysqli_num_rows($items)>0)
+                                <?php $items = myCartItems();
+                                $totalPrice = 0;
                                 foreach ($items as $cartitem)
                                 {
-                                ?>
+                                    ?>
                                     <div class="card shadow-sm">
                                         <div class="row align-items-center">
-                                            <div class="col-md-2">
+                                            <div class="col-md-4">
                                                 <img src="../AdminPage/<?= $cartitem['image'] ?>" alt="Product Image" width="100px">
                                             </div>
                                             <div class="col-md-3">
-                                                <h4><?= $cartitem['name'] ?></h4>
+                                                <h6><?= $cartitem['name'] ?></h6>
                                             </div>
-                                            <div class="col-md-3">
-                                                <h4>£<?= $cartitem['discounted_price'] ?></h4>
-                                            </div>
-                                            <div class="col-md-2" >
-                                                <input type="hidden" class="product_id" value="<?= $cartitem['product_id'] ?>">
-                                                <div class="input-group mb-3">
-                                                    <h7 class="mr-3 mt-1">Quantity: </h7>
-                                                    <input type="number" name="quantity" class="form-control updateQuantity" value="<?= $cartitem['quantity'] ?>" min="1" max="10">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <button class="btn btn-danger btn-sm deleteItem" value="<?= $cartitem['cid'] ?>"><i class="fa fa-trash"></i> Remove</button>
+                                            <div class="col-md-5">
+                                                <h6>x<?= $cartitem['quantity'] ?></h6>
                                             </div>
                                         </div>
                                     </div>
-                                <?php
+                                    <?php
+                                    $totalPrice += $cartitem['discounted_price'] * $cartitem['quantity'];
                                 }
                                 ?>
-                                </div>
-                                <div class="float-end mt-4">
-                                    <a href="checkout.php" class="btn btn-outline-primary">Proceed to Checkout</a>
-                                </div>
-                            <?php
-                            }else {
-                                ?>
-                                <div class="card card-body shadow text-center">
-                                    <h4>Your cart is empty.</h4>
-                                </div>
-                                <?php
-                            }
-                            ?>
+                            <h5 class="mt-3">Total: <span class="float-end" id="totalPrice">£<?= $totalPrice?></span></h5>
+                            <div class="">
+                                <input type="hidden" name="payment_mode" value="Card">
+                                <button type='submit' name="placeOrderButton" class="btn btn-primary mt-3 w-60" id="placeOrder">Place Order</button>
+                            </div>
                         </div>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+
 
     <footer class="footer">
         <div class="container">
