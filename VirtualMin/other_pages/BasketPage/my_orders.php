@@ -99,6 +99,51 @@ include '../AdminPage/AllFunctions/myfunctions.php';
             <div class="card card-body shadow">
                 <div class="row">
                     <div class="col-md-12">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>OrderID</th>
+                                    <th>Tracking No</th>
+                                    <th>Price</th>
+                                    <th>Order Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                    $orders = myOrders();
+
+                                    if(mysqli_num_rows($orders) > 0)
+                                    {
+                                        foreach ($orders as $order)
+                                        {
+                                        ?>
+                                            <tr>
+                                                <td><?= $order['id']; ?></td>
+                                                <td><?= $order['tracking_no']; ?></td>
+                                                <td><?= $order['total_price']; ?></td>
+                                                <td><?= $order['created_at']; ?></td>
+                                                <td><a href="view_order.php?t=<?= $order['tracking_no']; ?>" class="btn btn-primary">View Details</a></td>
+
+
+                                            </tr>
+                                        <?php
+
+
+                                        }
+                                    }else
+                                    {
+                                        ?>
+                                            <tr>
+                                                <td colspan="5">No Orders Yet</td>
+                                            </tr>
+                                        <?php
+
+                                    }
+                                ?>
+
+                            </tbody>
+                        </table>
 
                     </div>
                 </div>

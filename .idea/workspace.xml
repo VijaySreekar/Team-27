@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbf2f922-5ce0-4d3b-977e-7c8bbdfdd3ac" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/stock.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/view_order.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/placeorder.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/placeorder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/view_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/view_product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/AllFunctions/myfunctions.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/AllFunctions/myfunctions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/my_orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/my_orders.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +186,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/Website/Team-27/VirtualMin/other_pages/AdminPage/assets&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/Website/Team-27/VirtualMin/other_pages/AdminPage&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -203,11 +204,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\other_pages\AdminPage" />
       <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\other_pages\AdminPage\assets" />
       <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\other_pages\AdminPage\assets\js" />
       <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\other_pages\ContactUsPage" />
       <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin" />
-      <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\Images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\other_pages\ProductPage" />
@@ -259,7 +260,8 @@
       <workItem from="1711023053066" duration="15631000" />
       <workItem from="1711096078723" duration="7588000" />
       <workItem from="1711122485016" duration="1575000" />
-      <workItem from="1711124080666" duration="14903000" />
+      <workItem from="1711124080666" duration="17565000" />
+      <workItem from="1711142726460" duration="3798000" />
     </task>
     <servers />
   </component>
