@@ -100,6 +100,7 @@ include '../AdminPage/AllFunctions/myfunctions.php';
                 <div class="row">
                     <div class="col-md-12">
                         <div id="MyCartItems" class="MyCartItems">
+                            <h3 class="text-center">Your Cart</h3>
                         <?php
                             $items = myCartItems();
 

@@ -60,33 +60,65 @@ if(isset($_SESSION['authenticated']))
                     '$totalPrice', '$payment_mode', '$payment_id')";
         $insert_result = mysqli_query($conn, $insert_query);
 
-        if($insert_result)
-        {
+        if ($insert_result) {
             $order_id = mysqli_insert_id($conn);
-            foreach ($cartItems as $cartitem)
-            {
+            $allItemsAvailable = true; // Assume all items are available at the start
+
+            foreach ($cartItems as $cartitem) {
                 $product_id = $cartitem['product_id'];
                 $quantity = $cartitem['quantity'];
-                $price = $cartitem['discounted_price'];
-                $insert_items_query = "INSERT INTO order_items (order_id, product_id, quantity, price) VALUES ('$order_id', $product_id, $quantity, $price)";
-                $insert_items_result = mysqli_query($conn, $insert_items_query);
+
+                // Check stock availability
+                $product_query = "SELECT quantity FROM product WHERE product_id = '$product_id' LIMIT 1";
+                $product_result = mysqli_query($conn, $product_query);
+                $product_data = mysqli_fetch_assoc($product_result);
+                $current_stock = $product_data['quantity'];
+
+                if ($current_stock >= $quantity) { // Sufficient stock available
+                    $price = $cartitem['discounted_price'];
+                    $insert_items_query = "INSERT INTO order_items (order_id, product_id, quantity, price) VALUES ('$order_id', $product_id, $quantity, $price)";
+                    $insert_items_result = mysqli_query($conn, $insert_items_query);
+
+                    $new_stock = $current_stock - $quantity;
+                    $update_stock_query = "UPDATE product SET quantity = '$new_stock' WHERE product_id = '$product_id'";
+                    $update_stock_result = mysqli_query($conn, $update_stock_query);
+                } else {
+                    $allItemsAvailable = false;
+                    break;
+                }
             }
 
-            $delete_cart_query = "DELETE FROM cart WHERE user_id = '$user_id'";
-            $delete_cart_result = mysqli_query($conn, $delete_cart_query);
+            if ($allItemsAvailable) {
+                $delete_cart_query = "DELETE FROM cart WHERE user_id = '$user_id'";
+                $delete_cart_result = mysqli_query($conn, $delete_cart_query);
 
-            echo "<script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>";
-            echo "<script>
-                    swal({
-                        title: 'Order Placed Successfully!',
-                        text: 'Your order has been placed and is being processed.',
-                        icon: 'success',
-                        button: 'OK',
-                    }).then(() => {
-                        window.location.href = 'my_orders.php';
-                    });
-                  </script>";
+                // Success message
+                echo "<script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>";
+                echo "<script>
+                swal({
+                    title: 'Order Placed Successfully!',
+                    text: 'Your order has been placed and is being processed.',
+                    icon: 'success',
+                    button: 'OK',
+                }).then(() => {
+                    window.location.href = 'my_orders.php';
+                });
+              </script>";
+            } else {
+                echo "<script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>";
+                echo "<script>
+                swal({
+                    title: 'Order Not Placed!',
+                    text: 'One or more items in your cart are out of stock or unavailable in the desired quantity.',
+                    icon: 'error',
+                    button: 'OK',
+                }).then(() => {
+                    window.location.href = 'cart.php'; // Redirect back to cart for review
+                });
+              </script>";
+            }
         }
+
 
     }
 }

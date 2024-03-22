@@ -2,7 +2,7 @@
 
 session_start();
 include '../AdminPage/AllFunctions/myfunctions.php';
-include '../../../connectdb.php';
+include '../../connectdb.php';
 
 
 if(isset($_GET['product']))
@@ -15,7 +15,6 @@ if(isset($_GET['product']))
     if($product)
     {
         $product_id = $product['product_id'];
-        echo "Product Id: ", $product_id;
         ?>
             <!DOCTYPE html>
             <html lang="en">
