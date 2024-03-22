@@ -30,14 +30,14 @@
         <input type="submit" value="Submit">
     </form>
 
-    <!-- Button to trigger the pop-up -->
-    <button id="reviewButton" name="reviewButton" onclick="showReviewPopup()">Review Our Website</button>
+    <!-- Button to trigger the pop-up for reviews -->
+    <button id="reviewButton" name="reviewButton" onclick="showReviewPopup()">Review the Treakers website</button>
 
     <!-- Hidden pop-up modal -->
     <div id="reviewModal" class="modal">
     <div class="modal-content">
      <span class="close" onclick="hideReviewPopup()">&times;</span>
-     <h2>Review Our Website</h2>
+     <h2>Review the Treakers website</h2>
      <form id="reviewForm" action="process_website_review.php" method="post">
           <label for="review">Have you experienced any issues with the website? Please let us know:</label>
           <textarea id="review" name="review" rows="4"></textarea>
