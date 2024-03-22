@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbf2f922-5ce0-4d3b-977e-7c8bbdfdd3ac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/checkout.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/my_orders.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/placeorder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/placeorder.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/placeorder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/view_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/view_product.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,7 +259,7 @@
       <workItem from="1711023053066" duration="15631000" />
       <workItem from="1711096078723" duration="7588000" />
       <workItem from="1711122485016" duration="1575000" />
-      <workItem from="1711124080666" duration="10971000" />
+      <workItem from="1711124080666" duration="14903000" />
     </task>
     <servers />
   </component>
