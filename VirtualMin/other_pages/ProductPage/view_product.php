@@ -2,6 +2,7 @@
 
 session_start();
 include '../AdminPage/AllFunctions/myfunctions.php';
+include '../../../connectdb.php';
 
 
 if(isset($_GET['product']))
@@ -39,7 +40,8 @@ if(isset($_GET['product']))
                 <!-- Nucleo Icons -->
                 <link href="../AdminPage/assets/nucleo-icons.css" rel="stylesheet" />
                 <link href="../AdminPage/assets/nucleo-svg.css" rel="stylesheet" />
-                <!-- Font Awesome Icons -->
+                
+        		<!-- Font Awesome Icons -->
                 <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
                 <!-- Material Icons -->
                 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
@@ -51,7 +53,7 @@ if(isset($_GET['product']))
                 <!-- SweetAlert2 JS file -->
                 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
                 <script src="../AdminPage/assets/js/custom.js"></script>
-
+				
 
                 <link rel="stylesheet" href="product.css">
             </head>
@@ -152,6 +154,34 @@ if(isset($_GET['product']))
                             <h4 class="fw-bold mb-3">Product Description:</h4>
                             <p><?= $product['description']; ?></p>
                         </div>
+                    </div>
+                    <br/><br/>
+                    <div class="col-md-12 shadow-dark">
+                   
+                        <?php
+  
+              				$pid = $product['product_id'];
+                        	//echo "<p>".$pid."</p>";
+    						
+                        	$sql = "SELECT * FROM user_review WHERE
+                            		product_id=$pid";
+    						
+    						$query = mysqli_query($mysqli, $sql);
+    						$count = mysqli_num_rows($query);
+    						
+    						if($count == 0){
+                            	echo "<p> No reviews yet! </p>";
+                            } else {
+                            	echo "<h3>".$count." reviews:</h3>";
+                            	while($row = mysqli_fetch_assoc($query)){
+                            		echo "<div class=\"review-card\">";
+                           			echo "<p>".$row['user_id']."</p>";
+                            		echo "<p>".$row['rating']."</p>";
+                            		echo "<p>".$row['comment']."</p>";
+                                	echo "</div>";
+                            	}
+                            }
+                        ?>
                     </div>
                 </div>
         <?php
