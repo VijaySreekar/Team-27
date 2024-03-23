@@ -123,6 +123,11 @@
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
         <?php include("../NavBar_Footer/new_nav.php"); ?>
 
+        <nav class="breadcrumbs">
+            <a href="../../index.php" class="breadcrumbs__item">Home</a>
+            <a href="../ContactUsPage/contactus.php" class="breadcrumbs__item is-active">ContactUs</a>
+        </nav>
+
         <div class="py-5">
             <div class="container">
                 <div class="card">

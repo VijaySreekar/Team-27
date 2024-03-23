@@ -5,6 +5,15 @@ include '../AdminPage/AllFunctions/myfunctions.php';
 include '../../connectdb.php';
 
 
+function getCategoryName(mixed $category_id)
+{
+    global $mysqli;
+    $sql = "SELECT name FROM category WHERE category_id = $category_id";
+    $result = mysqli_query($mysqli, $sql);
+    $category = mysqli_fetch_assoc($result);
+    return $category['name'];
+}
+
 if(isset($_GET['product']))
 {
 
@@ -15,6 +24,8 @@ if(isset($_GET['product']))
     if($product)
     {
         $product_id = $product['product_id'];
+        $category_id = $product['category_id'];
+        $category_name = getCategoryName($category_id);
         ?>
             <!DOCTYPE html>
             <html lang="en">
@@ -39,76 +50,32 @@ if(isset($_GET['product']))
                 <!-- Nucleo Icons -->
                 <link href="../AdminPage/assets/nucleo-icons.css" rel="stylesheet" />
                 <link href="../AdminPage/assets/nucleo-svg.css" rel="stylesheet" />
-                
-        		<!-- Font Awesome Icons -->
+                <!-- Font Awesome Icons -->
                 <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
                 <!-- Material Icons -->
                 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
                 <!-- CSS Files -->
                 <link id="pagestyle" href="../AdminPage/assets/material-dashboard.min.css" rel="stylesheet" />
 
-                <!-- SweetAlert2 CSS file -->
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-                <!-- SweetAlert2 JS file -->
-                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-                <script src="../AdminPage/assets/js/custom.js"></script>
-				
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
 
-                <link rel="stylesheet" href="product.css">
+
+                <!-- Alertify JS -->
+                <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+                <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+
+                <link rel="stylesheet" href="../NavBar_Footer/new_nav.css">
             </head>
 
             <body class="g-sidenav-show  bg-gray-200">
             <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
-                <nav class="navbar">
-                    <div class="navbar-left">
-                        <div class="logo">
-                            <img src="../../Images/Treakers%20Logo.png" alt="Company Logo" class="logo-img">
-                        </div>
-                        <div class="navbar-center ml-5">
-                            <ul class="nav-links">
-                                <li><a href="../../index.php">Home</a></li>
-                                <li><a href="../ProductPage/products-page.php">Products</a></li>
-                                <li><a href="../AboutUsPage/aboutus.php">About</a></li>
-                                <li><a href="../ContactUsPage/contactus.php">Contact Us</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="navbar-right ml-3">
-                        <div class="buttons">
-                            <?php
-                            if(isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
-                                ?>
-                                <div class="dropdown">
-                                    <a href="#" class="nav-link">
-                                        <i class="fas fa-user"></i> <?php echo $_SESSION['username']; ?>
-                                    </a>
-                                    <div class="dropdown-content">
-                                        <a href="other_pages/ProfilePage/profile.php">Your Profile</a>
-                                        <a href="../LoginPage/logout.php">Log out</a>
-                                    </div>
-                                </div>
-                                <?php
-                            } else {
-                                ?>
-                                <div class="nav-item">
-                                    <a class="nav-link" href="../LoginPage/login_page.php">
-                                        <i class="fas fa-user"></i> Login/Signup
-                                    </a>
-                                </div>
-                                <?php
-                            }
-                            ?>
-                            <a href="../BasketPage/basket.php" class="basket-link mr-3">
-                                <button class="navbar-button">
-                                    <i class="fas fa-shopping-basket"></i>
-                                </button>
-                            </a>
-                        </div>
-                        <div class="search-bar">
-                            <input type="text" placeholder="Search" class="search-input">
-                            <button class="search-button"><i class="fas fa-search"></i></button>
-                        </div>
-                    </div>
+                <?php include '../NavBar_Footer/new_nav.php'; ?>
+
+                <nav class="breadcrumbs">
+                    <a href="../../index.php" class="breadcrumbs__item">Home</a>
+                    <a href="../ProductPage/category_page.php" class="breadcrumbs__item">Categories</a>
+                    <a href="../ProductPage/products_page.php?category=<?= $category_name ?>" class="breadcrumbs__item">Products</a>
+                    <a href="../ProductPage/view_product.php" class="breadcrumbs__item is-active"><?= $product['name'] ?></a>
                 </nav>
 
                 <div class="container mt-5 mb-5">

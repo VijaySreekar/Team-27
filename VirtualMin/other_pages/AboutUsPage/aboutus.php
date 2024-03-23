@@ -37,6 +37,11 @@
 
         <?php include("../NavBar_Footer/new_nav.php"); ?>
 
+        <nav class="breadcrumbs">
+            <a href="../../index.php" class="breadcrumbs__item">Home</a>
+            <a href="../AboutUsPage/aboutus.php" class="breadcrumbs__item is-active">About Us</a>
+        </nav>
+
         <div class="container-fluid py-5">
             <div class="row">
                 <div class="col-lg-5 d-flex justify-content-center align-items-center">

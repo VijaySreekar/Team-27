@@ -49,6 +49,12 @@ include '../AdminPage/AllFunctions/myfunctions.php';
 
         <?php include '../NavBar_Footer/new_nav.php'; ?>
 
+        <nav class="breadcrumbs">
+            <a href="../../index.php" class="breadcrumbs__item">Home</a>
+            <a href="../ProductPage/category_page.php" class="breadcrumbs__item is-active">Categories</a>
+        </nav>
+
+
         <div class="py-5">
             <div class="container">
                 <div class="row">
