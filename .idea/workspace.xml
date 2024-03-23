@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbf2f922-5ce0-4d3b-977e-7c8bbdfdd3ac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/stock.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/view_order.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/allorders.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/order_history.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/view_order_admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/AllFunctions/myfunctions.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/AllFunctions/myfunctions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/my_orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/my_orders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/Includes/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/Includes/sidebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/add_category_code.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/add_category_code.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,8 +213,8 @@
       <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\other_pages\ProductPage" />
       <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\other_pages\AdminPage" />
+      <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\other_pages\ProductPage" />
       <recent name="C:\xampp\htdocs\Website\Team-27\VirtualMin\other_pages" />
       <recent name="C:\xampp\htdocs\Website\Team-27\OldFormat" />
       <recent name="C:\xampp\htdocs\Website\Team-27" />
@@ -261,7 +263,7 @@
       <workItem from="1711096078723" duration="7588000" />
       <workItem from="1711122485016" duration="1575000" />
       <workItem from="1711124080666" duration="17565000" />
-      <workItem from="1711142726460" duration="3798000" />
+      <workItem from="1711142726460" duration="10704000" />
     </task>
     <servers />
   </component>
