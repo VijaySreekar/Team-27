@@ -5,33 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbf2f922-5ce0-4d3b-977e-7c8bbdfdd3ac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar_Footer/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar_Footer/new_nav.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar_Footer/new_nav.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Team-27.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Team-27.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/HomePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/HomePage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AboutUsPage/aboutus.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AboutUsPage/aboutus.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AboutUsPage/aboutus.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/AllFunctions/myfunctions.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/AllFunctions/myfunctions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/basket.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/basket.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/checkout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/payment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ContactUsPage/contactus.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ContactUsPage/contactus.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/forgot_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/forgot_password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/login_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/login_page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar_Footer/logout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar/nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar_Footer/nav.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar_Footer/nav.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/category_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/category_page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/products-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/products-page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/products_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/products_page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/view_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/view_product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProfilePage/edit_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProfilePage/edit_user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProfilePage/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProfilePage/profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ReviewPage/review.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ReviewPage/review.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -286,7 +262,7 @@
       <workItem from="1711142726460" duration="11490000" />
       <workItem from="1711158603573" duration="5985000" />
       <workItem from="1711164748542" duration="1613000" />
-      <workItem from="1711198990411" duration="9595000" />
+      <workItem from="1711198990411" duration="16135000" />
     </task>
     <servers />
   </component>
