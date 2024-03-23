@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbf2f922-5ce0-4d3b-977e-7c8bbdfdd3ac" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/forgot_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/forgot_password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AboutUsPage/aboutus.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/basket.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/basket.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/payment.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/remove_from_cart.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/update_cart.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar_Footer/logout.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar_Footer/nav.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar_Footer/nav.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,7 +268,7 @@
       <workItem from="1711142726460" duration="11490000" />
       <workItem from="1711158603573" duration="5985000" />
       <workItem from="1711164748542" duration="1613000" />
-      <workItem from="1711198990411" duration="17717000" />
+      <workItem from="1711198990411" duration="18046000" />
     </task>
     <servers />
   </component>
