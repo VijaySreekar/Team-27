@@ -19,6 +19,7 @@ include 'AllFunctions/myfunctions.php';
                             <th>user ID</th>
                             <th>Username</th>
                             <th>User email</th>
+                            <th>Status</th>
                             <th>Actions</th>
                         </tr>
                         </thead>
@@ -37,7 +38,7 @@ include 'AllFunctions/myfunctions.php';
                                     <td><?= $item['email'] ?></td>
                                     <td><?= $item['status'] == '1' ? "Visible" : "Hidden" ?></td>
                                     <td>
-                                        <a href="edit_user.php?id=<?= $item['user_id']; ?>"  class="btn btn-primary">Edit</a>
+                                        <a href="../ProfilePage/edit_user.php?id=<?= $item['user_id']; ?>"  class="btn btn-primary">Edit</a>
                                         <button type="button" class="btn btn-danger deleteuser_btn" data-user_id="<?= $item['user_id']; ?>">Delete</button>
                                     </td>
                                 </tr>
