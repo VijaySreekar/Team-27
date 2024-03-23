@@ -3,7 +3,6 @@ session_start();
 include 'Includes/header.php';
 include 'AllFunctions/myfunctions.php';
 
-
 $products = getAll('product');
 
 ?>
@@ -16,6 +15,11 @@ $products = getAll('product');
                     <h3 class="mb-0">Inventory Management</h3>
                 </div>
                 <div class="card-body" id="product_table">
+                    <?php
+                    // Initialize array to store low stock items
+                    $low_stock_items = array();
+
+                    ?>
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -29,18 +33,27 @@ $products = getAll('product');
                             <?php
                             if(mysqli_num_rows($products) > 0) {
                                 foreach ($products as $product) {
-                                    $stock = 100; 
-                                    $stockStatus = 'In Stock'; 
-                                    
+                                    // Set different stock levels for specific products
+                                    $stock = 50; // Default stock
+                                    if ($product['product_id'] == 1 || $product['product_id'] == 2) {
+                                        $stock = 10; // Low stock for specific products
+                                    }
 
+                                    // Check if product is in cart and adjust stock accordingly
                                     if(isset($_SESSION['cart'][$product['product_id']])) {
                                         $stock -= $_SESSION['cart'][$product['product_id']]['quantity'];
-            
-                                        if($stock == 0) {
-                                            $stockStatus = 'Out of Stock';
-                                        } elseif($stock <= 50) {
-                                            $stockStatus = 'Low Stock';
-                                        }
+                                    }
+
+                                    // Determine stock status
+                                    $stockStatus = '';
+                                    if($stock == 0) {
+                                        $stockStatus = 'Out of Stock';
+                                    } elseif($stock <= 10) {
+                                        $stockStatus = 'Low Stock';
+                                        // Add low stock item to array
+                                        $low_stock_items[] = $product['name'];
+                                    } else {
+                                        $stockStatus = 'In Stock';
                                     }
 
                                     echo '<tr>';
@@ -56,6 +69,15 @@ $products = getAll('product');
                             ?>
                         </tbody>
                     </table>
+
+                    <?php
+                    // Display alert for low stock items
+                    if (!empty($low_stock_items)) {
+                        echo '<div class="alert alert-warning" role="alert">';
+                        echo 'Low in stock items: ' . implode(', ', $low_stock_items);
+                        echo '</div>';
+                    }
+                    ?>
                 </div>
             </div>
         </div>
