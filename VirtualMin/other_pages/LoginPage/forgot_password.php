@@ -12,14 +12,14 @@ session_start(); // Start the session
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../NavBar/nav.css">
+    <link rel="stylesheet" href="../NavBar_Footer/nav.css">
 
 
 </head>
 
 <body>
 <?php
-include '../NavBar/nav.php';
+include '../NavBar_Footer/nav.php';
 ?>
 <div class="container">
     <input type="checkbox" id="change">

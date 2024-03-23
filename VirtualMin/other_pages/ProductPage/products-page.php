@@ -6,7 +6,7 @@
         <title>Treakers</title>
         <link rel="icon" type="image/x-icon" href="">
         <link rel="stylesheet" type="text/css" href="productstyles.css">
-        <link rel="stylesheet" href="../NavBar/nav.css">
+        <link rel="stylesheet" href="../NavBar_Footer/nav.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <style>
@@ -197,7 +197,7 @@
     <body>
         <div class="main-container">
             <header>
-                <?php include '../NavBar/nav.php'; ?>
+                <?php include '../NavBar_Footer/nav.php'; ?>
             </header>
             <section class="product-page">
                 <header class="page-header">

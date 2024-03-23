@@ -38,6 +38,7 @@ include '../AdminPage/AllFunctions/myfunctions.php';
     <script src="../AdminPage/assets/js/custom.js"></script>
 
     <link rel="stylesheet" href="../ProductPage/product.css">
+
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
@@ -97,52 +98,51 @@ include '../AdminPage/AllFunctions/myfunctions.php';
     <div class="py-5">
         <div class="container">
             <div class="card">
-                <div class="card card-body shadow">
+                <div class="card-body shadow">
                     <form action="placeorder.php" method="POST">
                         <div class="row">
-                        <div class="col-md-7">
-                            <h4>Order Summary</h4>
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label class="fw-bold">Name</label>
-                                    <input type="text" name="name" required class="form-control" placeholder="Enter your Full Name">
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label class="fw-bold">Email</label>
-                                    <input type="email" name="email" required class="form-control" placeholder="Enter your Email">
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label class="fw-bold">Phone Number</label>
-                                    <input type="text" name="phone" required class="form-control" placeholder="Enter your Phone Number">
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label class="fw-bold">Pin Code</label>
-                                    <input type="text" name="pincode" required class="form-control" placeholder="Enter your Pin Code">
-                                </div>
-                                <div class="col-md-12 mb-3">
-                                    <label class="fw-bold">Address</label>
-                                    <textarea name="address" class="form-control" required rows='4' placeholder="Enter your Address"></textarea>
+                            <div class="col-md-7">
+                                <h4>Order Summary</h4>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label fw-bold">Name</label>
+                                        <input type="text" name="name" required class="form-control" placeholder="Enter your Full Name">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label fw-bold">Email</label>
+                                        <input type="email" name="email" required class="form-control" placeholder="Enter your Email">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label fw-bold">Phone Number</label>
+                                        <input type="text" name="phone" required class="form-control" placeholder="Enter your Phone Number">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label fw-bold">Pin Code</label>
+                                        <input type="text" name="pincode" required class="form-control" placeholder="Enter your Pin Code">
+                                    </div>
+                                    <div class="col-md-12 mb-3">
+                                        <label class="form-label fw-bold">Address</label>
+                                        <textarea name="address" class="form-control" required rows='4' placeholder="Enter your Address"></textarea>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-5">
-                            <h4>Order Details</h4>
-
+                            <div class="col-md-5">
+                                <h4>Order Details</h4>
                                 <?php $items = myCartItems();
                                 $totalPrice = 0;
                                 foreach ($items as $cartitem)
                                 {
                                     ?>
-                                    <div class="card shadow-sm">
-                                        <div class="row align-items-center">
+                                    <div class="card mb-3 border-0">
+                                        <div class="row align-items-center g-0">
                                             <div class="col-md-4">
-                                                <img src="../AdminPage/<?= $cartitem['image'] ?>" alt="Product Image" width="100px">
+                                                <img src="../AdminPage/<?= $cartitem['image'] ?>" alt="Product Image" class="img-fluid rounded-start" style="max-height: 100px;">
                                             </div>
-                                            <div class="col-md-3">
-                                                <h6><?= $cartitem['name'] ?></h6>
-                                            </div>
-                                            <div class="col-md-5">
-                                                <h6>x<?= $cartitem['quantity'] ?></h6>
+                                            <div class="col-md-8">
+                                                <div class="card-body py-2">
+                                                    <h6 class="card-title mb-1"><?= $cartitem['name'] ?></h6>
+                                                    <p class="card-text mb-0">Quantity: <?= $cartitem['quantity'] ?></p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -150,67 +150,19 @@ include '../AdminPage/AllFunctions/myfunctions.php';
                                     $totalPrice += $cartitem['discounted_price'] * $cartitem['quantity'];
                                 }
                                 ?>
-                            <h5 class="mt-3">Total: <span class="float-end" id="totalPrice">£<?= $totalPrice?></span></h5>
-                            <div class="">
+                                <h5 class="mt-3">Total: <span class="float-end" id="totalPrice">£<?= $totalPrice?></span></h5>
                                 <input type="hidden" name="payment_mode" value="Card">
-                                <button type='submit' name="placeOrderButton" class="btn btn-primary mt-3 w-60" id="placeOrder">Place Order</button>
+                                <button type='submit' name="placeOrderButton" class="btn btn-primary mt-3 w-100" id="placeOrder">Place Order</button>
                             </div>
                         </div>
-                    </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
-
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 footer-col">
-                    <h4>Treakers</h4>
-                    <ul>
-                        <li><a href="../AboutUsPage/aboutus.php">about us</a></li>
-                        <li><a href="../ProductPage/products-page.php">our products</a></li>
-                        <li><a href="#">privacy policy</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 footer-col">
-                    <h4>get help</h4>
-                    <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="../ContactUsPage/contactus.php">Contact Us</a></li>
-                        <li><a href="#">returns</a></li>
-                        <li><a href="../BasketPage/basket.php">Basket</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 footer-col">
-                    <h4>online shop</h4>
-                    <ul>
-                        <li><a href="../../index.php">Sneakers</a></li>
-                        <li><a href="../../index.php">Trainers</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 footer-col">
-                    <h4>follow us</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include("../NavBar_Footer/footer.html"); ?>
 
 </main>
-<script src="../AdminPage/assets/js/jquery-3.7.1.js"></script>
-<script src="../AdminPage/assets/js/bootstrap.bundle.min.js"></script>
-<script src="../AdminPage/assets/js/perfect-scrollbar.min.js"></script>
-<script src="../AdminPage/assets/js/smooth-scrollbar.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>

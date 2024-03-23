@@ -32,7 +32,7 @@ if(isset($_GET['category']))
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Truncleta:wght@400&display=swap">
 
             <!--    <link rel="stylesheet" type="text/css" href="productstyles.css">-->
-            <link rel="stylesheet" href="../NavBar/nav.css">
+            <link rel="stylesheet" href="../NavBar_Footer/nav.css">
 
             <!-- Nucleo Icons -->
             <link href="../AdminPage/assets/nucleo-icons.css" rel="stylesheet" />

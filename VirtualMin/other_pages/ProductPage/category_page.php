@@ -22,7 +22,7 @@ include '../AdminPage/AllFunctions/myfunctions.php';
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Truncleta:wght@400&display=swap">
 
     <!--    <link rel="stylesheet" type="text/css" href="productstyles.css">-->
-    <link rel="stylesheet" href="../NavBar/nav.css">
+    <link rel="stylesheet" href="../NavBar_Footer/nav.css">
 
     <!-- Nucleo Icons -->
     <link href="../AdminPage/assets/nucleo-icons.css" rel="stylesheet" />
@@ -34,252 +34,20 @@ include '../AdminPage/AllFunctions/myfunctions.php';
     <!-- CSS Files -->
     <link id="pagestyle" href="../AdminPage/assets/material-dashboard.min.css" rel="stylesheet" />
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+
+
     <!-- Alertify JS -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
 
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap');
-
-        *, h1 {
-            font-family: 'Roboto', sans-serif;
-            font-weight: 700;
-        }
-
-        .form-control {
-            border: 1px solid #b3a1a1 !important;
-            padding: 8px 10px;
-        }
-        .form-select {
-            border: 1px solid #b3a1a1 !important;
-            padding: 8px 10px;
-        }
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: larger;
-        }
-
-        .navbar-left {
-            display: flex;
-            align-items: center;
-        }
-
-        .navbar-right {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo-img {
-            max-width: 100px; /* Adjust the max-width according to your preference */
-            height: auto;
-        }
-
-        .nav-links {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            font-size: larger;
-        }
-
-        .nav-links li {
-            margin-right: 20px; /* Adjust spacing between links */
-        }
-
-        .nav-link {
-            font-size: 20px; /* Adjust font size */
-            padding: 15px 25px; /* Adjust padding */
-        }
-
-        .nav-links li a {
-            text-decoration: none;
-            color: #000; /* Adjust link color */
-        }
-
-        .buttons {
-            display: flex;
-            align-items: center;
-        }
-
-        .dropdown {
-            position: relative;
-            margin-right: 20px; /* Adjust spacing between dropdown and basket */
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 120px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .search-bar {
-            display: flex;
-            align-items: center;
-        }
-
-        .search-input {
-            padding: 8px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            margin-right: 10px; /* Adjust spacing between input and button */
-        }
-
-        .search-button {
-            background-color: #ddd;
-            border: none;
-            padding: 8px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .search-button:hover {
-            background-color: #ccc;
-        }
-
-        .footer {
-            background-color: #0c6291;
-            color: #ffffff;
-            padding: 20px 0;
-            width: 100%;
-        }
-
-        .footer-col {
-            padding: 0 15px;
-        }
-
-        .footer-col h4 {
-            font-size: 18px;
-            color: #ffffff;
-            text-transform: capitalize;
-            margin-bottom: 35px;
-            font-weight: 500;
-            position: relative;
-        }
-
-        .footer-col h4::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -10px;
-            background-color: #a63446;
-            height: 2px;
-            box-sizing: border-box;
-            width: 50px;
-        }
-
-        .footer-col ul li:not(:last-child) {
-            margin-bottom: 10px;
-        }
-
-        .footer-col ul li a {
-            font-size: 16px;
-            text-transform: capitalize;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 300;
-            color: #bbbbbb;
-            display: block;
-            transition: all 0.3s ease;
-        }
-
-        .footer-col ul li a:hover {
-            color: #ffffff;
-            padding-left: 8px;
-        }
-
-        .footer-col .social-links a {
-            display: inline-block;
-            height: 40px;
-            width: 40px;
-            background-color: rgba(255, 255, 255, 0.2);
-            margin: 0 10px 10px 0;
-            text-align: center;
-            line-height: 40px;
-            border-radius: 50%;
-            color: #ffffff;
-            transition: all 0.5s ease;
-        }
-
-        .footer-col .social-links a:hover {
-            color: #24262b;
-            background-color: #ffffff;
-        }
-
-
-    </style>
+    <link rel="stylesheet" href="../NavBar_Footer/new_nav.css">
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
-        <nav class="navbar">
-            <div class="navbar-left">
-                <div class="logo">
-                    <img src="../../Images/Treakers%20Logo.png" alt="Company Logo" class="logo-img">
-                </div>
-                <div class="navbar-center ml-5">
-                    <ul class="nav-links">
-                        <li><a href="../../index.php">Home</a></li>
-                        <li><a href="../ProductPage/products-page.php">Products</a></li>
-                        <li><a href="../AboutUsPage/aboutus.php">About</a></li>
-                        <li><a href="../ContactUsPage/contactus.php">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="navbar-right ml-3">
-                <div class="buttons">
-                    <?php
-                    if(isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
-                        ?>
-                        <div class="dropdown">
-                            <a href="#" class="nav-link">
-                                <i class="fas fa-user"></i> <?php echo $_SESSION['username']; ?>
-                            </a>
-                            <div class="dropdown-content">
-                                <a href="other_pages/ProfilePage/profile.php">Your Profile</a>
-                                <a href="other_pages/LoginPage/logout.php">Log out</a>
-                            </div>
-                        </div>
-                        <?php
-                    } else {
-                        ?>
-                        <div class="nav-item">
-                            <a class="nav-link" href="other_pages/LoginPage/login_page.php">
-                                <i class="fas fa-user"></i> Login/Signup
-                            </a>
-                        </div>
-                        <?php
-                    }
-                    ?>
-                    <a href="../BasketPage/basket.php" class="basket-link mr-3">
-                        <button class="navbar-button">
-                            <i class="fas fa-shopping-basket"></i>
-                        </button>
-                    </a>
-                </div>
-                <div class="search-bar">
-                    <input type="text" placeholder="Search" class="search-input">
-                    <button class="search-button"><i class="fas fa-search"></i></button>
-                </div>
-            </div>
-        </nav>
 
+        <?php include '../NavBar_Footer/new_nav.php'; ?>
 
         <div class="py-5">
             <div class="container">

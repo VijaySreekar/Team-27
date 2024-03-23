@@ -59,7 +59,7 @@ $conn->close();
     <meta charset="UTF-8">
     <title>Payment Details</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="../NavBar/nav.css">
+    <link rel="stylesheet" href="../NavBar_Footer/nav.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -266,7 +266,7 @@ $conn->close();
 </head>
 <body>
 <?php
-include "../NavBar/nav.php";
+include "../NavBar_Footer/nav.php";
 ?>
 <div class="container">
     <div class="payment-container">

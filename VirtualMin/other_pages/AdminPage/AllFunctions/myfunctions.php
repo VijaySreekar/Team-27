@@ -103,6 +103,13 @@ function getOrderHistory()
 
 }
 
+function getAllTrending()
+{
+    global $conn;
+    $query = "SELECT * FROM product WHERE trending = '1' AND status = '1' ";
+    return mysqli_query($conn, $query);
+}
+
 
 //function redirect($url, $message)
 //{
