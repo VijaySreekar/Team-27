@@ -19,7 +19,6 @@ include 'AllFunctions/myfunctions.php';
                             <th>user ID</th>
                             <th>Username</th>
                             <th>User email</th>
-                            <th>password_hash</th>
                             <th>Actions</th>
                         </tr>
                         </thead>
@@ -35,7 +34,7 @@ include 'AllFunctions/myfunctions.php';
                                 <tr>
                                     <td><?= $item['user_id'] ?></td>
                                     <td><?= $item['username'] ?></td>
-                                    <td><?= $user['email'] ?></td>
+                                    <td><?= $item['email'] ?></td>
                                     <td><?= $item['status'] == '1' ? "Visible" : "Hidden" ?></td>
                                     <td>
                                         <a href="edit_user.php?id=<?= $item['user_id']; ?>"  class="btn btn-primary">Edit</a>
