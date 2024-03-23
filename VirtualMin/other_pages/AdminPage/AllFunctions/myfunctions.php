@@ -81,6 +81,29 @@ function checkTrackingNo($tracking_no)
     return mysqli_query($conn, $query);
 }
 
+function AdmincheckTrackingNo($tracking_no)
+{
+    global $conn;
+    $query = "SELECT * FROM orders WHERE tracking_no = '$tracking_no'";
+    return mysqli_query($conn, $query);
+}
+
+function getAllOrders() {
+    global $conn;
+    // Corrected the JOIN condition here
+    $query = "SELECT * FROM orders  WHERE status < '3' ORDER BY id DESC";
+    return mysqli_query($conn, $query);
+}
+
+function getOrderHistory()
+{
+    global $conn;
+    $query = "SELECT * FROM orders  WHERE status >= '2' ORDER BY id DESC";
+    return mysqli_query($conn, $query);
+
+}
+
+
 //function redirect($url, $message)
 //{
 //    $_SESSION['message'] = $message;

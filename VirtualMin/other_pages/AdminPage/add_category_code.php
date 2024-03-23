@@ -253,6 +253,27 @@ else if(isset($_POST['deleteproduct_btn']))
         echo 500;
     }
 }
+else if(isset($_POST['updateOrderButton']))
+{
+    $tracking_no = $_POST['tracking_no'];
+    $order_status = $_POST['order_status'];
+
+    $update_order_query = "UPDATE orders SET status = '$order_status' WHERE tracking_no = '$tracking_no'";
+    $update_order_query_run = mysqli_query($conn, $update_order_query);
+
+    if($update_order_query_run)
+    {
+        $_SESSION['message'] = "Order Status Updated";
+        header('Location: view_order_admin.php?t='.$tracking_no);
+        exit();
+    }
+    else
+    {
+        $_SESSION['message'] = "Order Status Not Updated";
+        header('Location: view_order_admin.php?t='.$tracking_no);
+        exit();
+    }
+}
 else
 {
     header('Location: adminpage.php');
