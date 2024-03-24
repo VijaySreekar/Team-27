@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Category Page</title>
+    <title>Contact Us</title>
 
     <!-- Fonts and icons -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
@@ -12,120 +12,34 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Truncleta:wght@400&display=swap">
-    <link rel="stylesheet" href="../NavBar_Footer/nav.css">
+    <link rel="stylesheet" href="../../Assets/CSS/nav.css">
 
     <!-- Nucleo Icons -->
-    <link href="../AdminPage/assets/nucleo-icons.css" rel="stylesheet" />
-    <link href="../AdminPage/assets/nucleo-svg.css" rel="stylesheet" />
+    <link href="../../Assets/CSS/nucleo-icons.css" rel="stylesheet" />
+    <link href="../../Assets/CSS/nucleo-svg.css" rel="stylesheet" />
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <!-- CSS Files -->
-    <link id="pagestyle" href="../AdminPage/assets/material-dashboard.min.css" rel="stylesheet">
+    <link id="pagestyle" href="../../Assets/CSS/material-dashboard.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Alertify JS -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
 
-    <link rel="stylesheet" href="../NavBar_Footer/new_nav.css">
-    <style>
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-
-        .modal-content {
-            background-color: rgba(255, 255, 255, 0.7); /* Adjust opacity if needed */
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(8px); /* Adjust blur amount if needed */
-            margin: 15% auto;
-            max-width: 80%;
-        }
-
-        .modal-content h2 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            position: relative;
-            color: #a63446; /* Adjust color if needed */
-        }
-
-        .modal-content h2::after {
-            content: "";
-            display: block;
-            width: 30%;
-            height: 2px;
-            background-color: #3498db; /* Adjust color if needed */
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-        }
-
-        .modal-content label {
-            font-size: 16px;
-            margin-bottom: 5px;
-            color: #333; /* Adjust color if needed */
-        }
-
-        .modal-content textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 15px;
-            font-size: 16px;
-        }
-
-        .modal-content input[type="submit"] {
-            background-color: #a63446; /* Adjust color if needed */
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .modal-content input[type="submit"]:hover {
-            background-color: #3498db; /* Adjust color if needed */
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-        }
-    </style>
+    <link rel="stylesheet" href="../../Assets/CSS/nav.css">
+    <link rel="stylesheet" href="../../Assets/CSS/contactus.css">
 </head>
 
 <body class="g-sidenav-show bg-gray-200">
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
-        <?php include("../NavBar_Footer/new_nav.php"); ?>
+        <?php include("../../Includes/nav.php"); ?>
 
         <nav class="breadcrumbs">
-            <a href="../../index.php" class="breadcrumbs__item">Home</a>
-            <a href="../ContactUsPage/contactus.php" class="breadcrumbs__item is-active">ContactUs</a>
+            <a href="../../index.php" class="breadcrumbs__item"><i class="bi bi-house"></i> Home</a>
+            <a href="../ContactUsPage/contactus.php" class="breadcrumbs__item is-active"><i class="bi bi-envelope"></i> Contact Us</a>
         </nav>
 
         <div class="py-5">
@@ -171,7 +85,14 @@
             </div>
         </div>
 
-        <?php include("../NavBar_Footer/footer.html"); ?>
+        <?php include("../../Includes/footer.php"); ?>
     </main>
+    <script src="../../Assets/JS/jquery-3.7.1.js"></script>
+    <script src="../../Assets/JS/bootstrap.bundle.min.js"></script>
+    <script src="../../Assets/JS/perfect-scrollbar.min.js"></script>
+    <script src="../../Assets/JS/smooth-scrollbar.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../Assets/JS/login.js"></script>
 </body>
 </html>

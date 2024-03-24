@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include '../AdminPage/AllFunctions/myfunctions.php';
+include '../../Assets/Functions/myfunctions.php';
 
 if(isset($_GET['category']))
 {
@@ -12,56 +12,51 @@ if(isset($_GET['category']))
     if($category)
     {
         $category_id = $category['category_id'];
-?>
-
-        <!DOCTYPE html>
-        <html lang="en">
+    ?>
 
         <head>
             <meta charset="utf-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
             <title>
-                Category Page
+                <?php
+                echo $category['name'];
+                ?>
             </title>
-            <!--     Fonts and icons     -->
+
+            <!-- Fonts and icons -->
             <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
             <!-- Include Bootstrap CSS -->
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Truncleta:wght@400&display=swap">
-
-            <!--    <link rel="stylesheet" type="text/css" href="productstyles.css">-->
-            <link rel="stylesheet" href="../NavBar_Footer/nav.css">
+            <link rel="stylesheet" href="../../Assets/CSS/nav.css">
 
             <!-- Nucleo Icons -->
-            <link href="../AdminPage/assets/nucleo-icons.css" rel="stylesheet" />
-            <link href="../AdminPage/assets/nucleo-svg.css" rel="stylesheet" />
+            <link href="../../Assets/CSS/nucleo-icons.css" rel="stylesheet" />
+            <link href="../../Assets/CSS/nucleo-svg.css" rel="stylesheet" />
             <!-- Font Awesome Icons -->
             <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
             <!-- Material Icons -->
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
             <!-- CSS Files -->
-            <link id="pagestyle" href="../AdminPage/assets/material-dashboard.min.css" rel="stylesheet" />
-
+            <link id="pagestyle" href="../../Assets/CSS/material-dashboard.min.css" rel="stylesheet">
             <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
-
 
             <!-- Alertify JS -->
             <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
             <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
 
-            <link rel="stylesheet" href="../NavBar_Footer/new_nav.css">
+            <link rel="stylesheet" href="../../Assets/CSS/nav.css">
         </head>
 
         <body class="g-sidenav-show  bg-gray-200">
         <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
-            <?php include '../NavBar_Footer/new_nav.php'; ?>
+            <?php include("../../Includes/nav.php"); ?>
 
             <nav class="breadcrumbs">
-                <a href="../../index.php" class="breadcrumbs__item">Home</a>
-                <a href="../ProductPage/category_page.php" class="breadcrumbs__item">Categories</a>
-                <a href="../ProductPage/products_page.php" class="breadcrumbs__item is-active">Products</a>
+                <a href="../../index.php" class="breadcrumbs__item"><i class="bi bi-house"></i> Home</a>
+                <a href="../ProductPage/category_page.php" class="breadcrumbs__item"><i class="bi bi-list"></i> Categories</a>
+                <a href="../ProductPage/products_page.php" class="breadcrumbs__item is-active"><i class="bi bi-box"></i><?= $category['name'] ?></a>
             </nav>
 
             <div class="py-3">
@@ -105,56 +100,28 @@ if(isset($_GET['category']))
                 </div>
             </div>
 
-            <footer class="footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 footer-col">
-                            <h4>Treakers</h4>
-                            <ul>
-                                <li><a href="../AboutUsPage/aboutus.php">about us</a></li>
-                                <li><a href="../ProductPage/products-page.php">our products</a></li>
-                                <li><a href="#">privacy policy</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-3 footer-col">
-                            <h4>get help</h4>
-                            <ul>
-                                <li><a href="#">FAQ</a></li>
-                                <li><a href="../ContactUsPage/contactus.php">Contact Us</a></li>
-                                <li><a href="#">returns</a></li>
-                                <li><a href="../BasketPage/basket.php">Basket</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-3 footer-col">
-                            <h4>online shop</h4>
-                            <ul>
-                                <li><a href="../../index.php">Sneakers</a></li>
-                                <li><a href="../../index.php">Trainers</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-3 footer-col">
-                            <h4>follow us</h4>
-                            <div class="social-links">
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            <?php include("../../Includes/footer.php"); ?>
 
         </main>
-        <script src="../AdminPage/assets/js/jquery-3.7.1.js"></script>
-        <script src="../AdminPage/assets/js/bootstrap.bundle.min.js"></script>
-        <script src="../AdminPage/assets/js/perfect-scrollbar.min.js"></script>
-        <script src="../AdminPage/assets/js/smooth-scrollbar.min.js"></script>
+        <script src="../../Assets/JS/jquery-3.7.1.js"></script>
+        <script src="../../Assets/JS/bootstrap.bundle.min.js"></script>
+        <script src="../../Assets/JS/perfect-scrollbar.min.js"></script>
+        <script src="../../Assets/JS/smooth-scrollbar.min.js"></script>
         <script src="../AdminPage/https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script src="../AdminPage/assets/js/custom.js"></script>
+        <script src="../../Assets/JS/custom.js"></script>
         <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
+        <script type="text/javascript">
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+                var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+                s1.async=true;
+                s1.src='https://embed.tawk.to/65ff54951ec1082f04da7f5c/1hpmm4q27';
+                s1.charset='UTF-8';
+                s1.setAttribute('crossorigin','*');
+                s0.parentNode.insertBefore(s1,s0);
+            })();
+        </script>
         <script>
             <?php
             if(isset($_SESSION['message']))

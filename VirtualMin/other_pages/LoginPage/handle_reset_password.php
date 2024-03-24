@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+include '../../Assets/Database/connectdb.php';
+
 // Check if the user is logged in
 if (!isset($_SESSION['user_id'])) {
     // Redirect to the login page or any other appropriate action
@@ -8,19 +10,6 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-
-$host = "localhost";
-$username = "u-230185247";
-$password = "z3mlfs8WdS1hxvH";
-$dbname = "u_230185247_treaker";
-
-// Create database connection
-$conn = mysqli_connect($host, $username, $password, $dbname);
-
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
 
 // Check if the form was submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

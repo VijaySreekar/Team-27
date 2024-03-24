@@ -1,19 +1,8 @@
 <?php
 session_start();
-ob_start();
+include '../../Assets/Database/connectdb.php';
 
-$host = "localhost";
-$username = "u-230185247";
-$password = "z3mlfs8WdS1hxvH";
-$dbname = "u_230185247_treaker";
 
-// Create database connection
-$conn = mysqli_connect($host, $username, $password, $dbname);
-
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["login_email"]) && isset($_POST["login_password"])) {

@@ -2,16 +2,7 @@
 
 session_start();
 
-$host = "localhost";
-$username = "u-230185247";
-$password = "z3mlfs8WdS1hxvH";
-$dbname = "u_230185247_treaker";
-
-// Create database connection
-$conn = mysqli_connect($host, $username, $password, $dbname);
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+include '../../Assets/Database/connectdb.php';
 
 if(isset($_SESSION['authenticated']))
 {

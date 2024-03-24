@@ -1,19 +1,7 @@
 <?php
 session_start();
 
-$host = "localhost";
-$username = "u-230185247";
-$password = "z3mlfs8WdS1hxvH";
-$dbname = "u_230185247_treaker";
-
-// Create database connection
-$conn = mysqli_connect($host, $username, $password, $dbname);
-
-// Check connection
-if (!$conn) {
-    echo json_encode(["success" => false, "message" => "Connection failed: " . mysqli_connect_error()]);
-    exit; // Exit the script
-}
+include '../../Assets/Database/connectdb.php';
 
 if (isset($_POST['register_btn'])) {
     // Assuming $conn is your database connection established earlier in your script

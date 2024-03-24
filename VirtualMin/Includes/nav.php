@@ -1,7 +1,7 @@
 <nav class="navbar bg-gradient-light ">
     <div class="navbar-left">
         <div class="logo">
-            <img src="../../Images/Treakers%20Logo.png" alt="Company Logo" class="logo-img" width="70px">
+            <img src="../../Assets/Images/Treakers%20Logo.png" alt="Company Logo" class="logo-img" width="70px">
         </div>
         <div class="navbar-center ml-5">
             <ul class="nav-links">

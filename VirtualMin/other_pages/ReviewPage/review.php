@@ -1,9 +1,9 @@
 <?php
     session_start(); // Start the session
-    include("../../connectdb.php");
+    include("../../Assets/Database/connectdb.php");
 
     if(isset($_GET['pid'])){
-        require_once "../../connectdb.php";
+        require_once "../../Assets/connectdb.php";
 
         $pid = $_GET['pid'];
         $uid = $_SESSION['user_id'];
@@ -16,7 +16,7 @@
     }
 
     if($_SERVER["REQUEST_METHOD"] === "POST"){
-    	require_once "../../connectdb.php";
+    	require_once "../../Assets/Database/connectdb.php";
         $rating = $_POST['rating'];
         $comment = $_POST['comment'];
 		
@@ -52,16 +52,14 @@
     <head>
         <meta charset="UTF-8">
         <title>Leave A Review</title>
-        <link rel="stylesheet" href="review.css">
-        <link rel="stylesheet" href="../NavBar_Footer/nav.css">
+        <link rel="stylesheet" href="../../Assets/CSS/review.css">
+        <link rel="stylesheet" href="../../Assets/CSS/nav.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
     <body>
-        <?php 
-            include '../NavBar_Footer/nav.php';
-        ?>
+        <?php include("../../Includes/nav.php"); ?>
         <div class ="container">
             <h2>Leave a review!</h2>
         </div>
@@ -81,5 +79,8 @@
                 <button type="submit" class="button" name="submit">Submit Review</button>
             </form>
         </main>
+        <?php
+            include("../../Includes/footer.php");
+        ?>
     </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'Includes/header.php';
+include 'Includes/admin_header.php';
 
 
 ?>
@@ -99,4 +99,4 @@ include 'Includes/header.php';
         </div>
     </div>
 </div>
-<?php include 'Includes/Footer.php'; ?>
+<?php include 'Includes/admin_footer.php'; ?>

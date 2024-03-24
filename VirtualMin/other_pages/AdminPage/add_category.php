@@ -2,7 +2,7 @@
 session_start();
 ?>
 
-<?php include 'Includes/header.php'; ?>
+<?php include 'Includes/admin_header.php'; ?>
 
 <div class="container">
     <div class="row">
@@ -66,6 +66,6 @@ session_start();
         </div>
     </div>
 </div>
-<?php include 'Includes/Footer.php'; ?>
+<?php include 'Includes/admin_footer.php'; ?>
 
 

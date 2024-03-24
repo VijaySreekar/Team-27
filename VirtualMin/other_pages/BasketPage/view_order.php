@@ -1,17 +1,8 @@
 <?php
 session_start();
-include '../AdminPage/AllFunctions/myfunctions.php';
+include '../../Assets/Functions/myfunctions.php';
 
-$host = "localhost";
-$username = "u-230185247";
-$password = "z3mlfs8WdS1hxvH";
-$dbname = "u_230185247_treaker";
-
-// Create database connection
-$conn = mysqli_connect($host, $username, $password, $dbname);
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+include "../../Assets/Database/connectdb.php";
 if(isset($_GET['t']))
 {
     $tracking_no = $_GET['t'];
@@ -37,94 +28,49 @@ else
 $order_data = mysqli_fetch_array($order_details);
 ?>
 
-    <!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>
-        Category Page
-    </title>
-    <!--     Fonts and icons     -->
+    <title>My Orders</title>
+
+    <!-- Fonts and icons -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Truncleta:wght@400&display=swap">
+    <link rel="stylesheet" href="../../Assets/CSS/nav.css">
 
     <!-- Nucleo Icons -->
-    <link href="../AdminPage/assets/nucleo-icons.css" rel="stylesheet" />
-    <link href="../AdminPage/assets/nucleo-svg.css" rel="stylesheet" />
+    <link href="../../Assets/CSS/nucleo-icons.css" rel="stylesheet" />
+    <link href="../../Assets/CSS/nucleo-svg.css" rel="stylesheet" />
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <!-- CSS Files -->
-    <link id="pagestyle" href="../AdminPage/assets/material-dashboard.min.css" rel="stylesheet" />
+    <link id="pagestyle" href="../../Assets/CSS/material-dashboard.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- SweetAlert2 CSS file -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-    <!-- SweetAlert2 JS file -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../AdminPage/assets/js/custom.js"></script>
+    <!-- Alertify JS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
 
-    <link rel="stylesheet" href="../ProductPage/product.css">
+    <link rel="stylesheet" href="../../Assets/CSS/nav.css">
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
 <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
-    <nav class="navbar">
-        <div class="navbar-left">
-            <div class="logo">
-                <img src="../../Images/Treakers%20Logo.png" alt="Company Logo" class="logo-img">
-            </div>
-            <div class="navbar-center ml-5">
-                <ul class="nav-links">
-                    <li><a href="../../index.php">Home</a></li>
-                    <li><a href="../ProductPage/products-page.php">Products</a></li>
-                    <li><a href="../AboutUsPage/aboutus.php">About</a></li>
-                    <li><a href="../ContactUsPage/contactus.php">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="navbar-right ml-3">
-            <div class="buttons">
-                <?php
-                if(isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
-                    ?>
-                    <div class="dropdown">
-                        <a href="#" class="nav-link">
-                            <i class="fas fa-user"></i> <?php echo $_SESSION['username']; ?>
-                        </a>
-                        <div class="dropdown-content">
-                            <a href="other_pages/ProfilePage/profile.php">Your Profile</a>
-                            <a href="../LoginPage/logout.php">Log out</a>
-                        </div>
-                    </div>
-                    <?php
-                } else {
-                    ?>
-                    <div class="nav-item">
-                        <a class="nav-link" href="../LoginPage/login_page.php">
-                            <i class="fas fa-user"></i> Login/Signup
-                        </a>
-                    </div>
-                    <?php
-                }
-                ?>
-                <a href="../BasketPage/basket.php" class="basket-link mr-3">
-                    <button class="navbar-button">
-                        <i class="fas fa-shopping-basket"></i>
-                    </button>
-                </a>
-            </div>
-            <div class="search-bar">
-                <input type="text" placeholder="Search" class="search-input">
-                <button class="search-button"><i class="fas fa-search"></i></button>
-            </div>
-        </div>
+    <?php include("../../Includes/nav.php"); ?>
+
+    <nav class="breadcrumbs">
+        <a href="../../index.php" class="breadcrumbs__item"><i class="bi bi-house"></i> Home</a>
+        <a href="../ProfilePage/profile.php" class="breadcrumbs__item"><i class="bi bi-person"></i> Profile</a>
+        <a href="../BasketPage/my_orders.php" class="breadcrumbs__item"><i class="bi bi-clock-history"></i> Order History</a>
+        <a href="#" class="breadcrumbs__item is-active"><i class="bi bi-bag-check"></i> Order Details</a>
     </nav>
 
     <div class="py-5">
@@ -261,53 +207,15 @@ $order_data = mysqli_fetch_array($order_details);
         </div>
     </div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 footer-col">
-                    <h4>Treakers</h4>
-                    <ul>
-                        <li><a href="../AboutUsPage/aboutus.php">about us</a></li>
-                        <li><a href="../ProductPage/products-page.php">our products</a></li>
-                        <li><a href="#">privacy policy</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 footer-col">
-                    <h4>get help</h4>
-                    <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="../ContactUsPage/contactus.php">Contact Us</a></li>
-                        <li><a href="#">returns</a></li>
-                        <li><a href="../BasketPage/basket.php">Basket</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 footer-col">
-                    <h4>online shop</h4>
-                    <ul>
-                        <li><a href="../../index.php">Sneakers</a></li>
-                        <li><a href="../../index.php">Trainers</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 footer-col">
-                    <h4>follow us</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include("../../Includes/footer.php"); ?>
 
 </main>
-<script src="../AdminPage/assets/js/jquery-3.7.1.js"></script>
-<script src="../AdminPage/assets/js/bootstrap.bundle.min.js"></script>
-<script src="../AdminPage/assets/js/perfect-scrollbar.min.js"></script>
-<script src="../AdminPage/assets/js/smooth-scrollbar.min.js"></script>
+<script src="../../Assets/JS/jquery-3.7.1.js"></script>
+<script src="../../Assets/JS/bootstrap.bundle.min.js"></script>
+<script src="../../Assets/JS/perfect-scrollbar.min.js"></script>
+<script src="../../Assets/JS/smooth-scrollbar.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
-    </html><?php
+</html>

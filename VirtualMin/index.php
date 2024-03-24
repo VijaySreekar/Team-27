@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'other_pages/AdminPage/AllFunctions/myfunctions.php';
+include 'Assets/Functions/myfunctions.php';
 ?>
 
 <!DOCTYPE html>
@@ -17,9 +17,9 @@ include 'other_pages/AdminPage/AllFunctions/myfunctions.php';
 
     <!-- Fonts and icons -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700">
-    <link id="pagestyle" href="other_pages/AdminPage/assets/material-dashboard.min.css" rel="stylesheet">
-    <link href="other_pages/AdminPage/assets/nucleo-icons.css" rel="stylesheet">
-    <link href="other_pages/AdminPage/assets/nucleo-svg.css" rel="stylesheet">
+    <link id="pagestyle" href="Assets/CSS/material-dashboard.min.css" rel="stylesheet">
+    <link href="Assets/CSS/nucleo-icons.css" rel="stylesheet">
+    <link href="Assets/CSS/nucleo-svg.css" rel="stylesheet">
 
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
@@ -28,8 +28,8 @@ include 'other_pages/AdminPage/AllFunctions/myfunctions.php';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="HomePage.css">
-    <link rel="stylesheet" href="other_pages/NavBar_Footer/new_nav.css">
+    <link rel="stylesheet" href="Assets/CSS/HomePage.css">
+    <link rel="stylesheet" href="Assets/CSS/nav.css">
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -39,7 +39,7 @@ include 'other_pages/AdminPage/AllFunctions/myfunctions.php';
         <nav class="navbar bg-gradient-light ">
             <div class="navbar-left">
                 <div class="logo">
-                    <img src="Images/Treakers%20Logo.png" alt="Company Logo" class="logo-img" width="70px">
+                    <img src="Assets/Images/Treakers%20Logo.png" alt="Company Logo" class="logo-img" width="70px">
                 </div>
                 <div class="navbar-center ml-5">
                     <ul class="nav-links">
@@ -62,15 +62,15 @@ include 'other_pages/AdminPage/AllFunctions/myfunctions.php';
                                 </a>
                             </button>
                             <div class="dropdown-content">
-                                <a href="../ProfilePage/profile.php">Your Profile</a>
-                                <a href="../LoginPage/logout.php">Log out</a>
+                                <a href="other_pages/ProfilePage/profile.php">Your Profile</a>
+                                <a href="other_pages/LoginPage/logout.php">Log out</a>
                             </div>
                         </div>
                         <?php
                     } else {
                         ?>
                         <button class="btn logged-button bg-gradient-primary rounded fs-5 mr-3 mt-3">
-                            <a class="nav-link text-white" href="../LoginPage/login_page.php">
+                            <a class="nav-link text-white" href="other_pages/LoginPage/login_page.php">
                                 <i class="bi bi-person fs-5 mr-1"></i>Login/Signup
                             </a>
                         </button>
@@ -80,7 +80,7 @@ include 'other_pages/AdminPage/AllFunctions/myfunctions.php';
                 </div>
                 <div class="basket-icon">
                     <button class="btn basket-button bg-gradient-primary rounded fs-5 mr-3 mt-3">
-                        <a href="../BasketPage/cart.php"><i class="bi bi-cart4 text-white"></i></a>
+                        <a href="other_pages/BasketPage/cart.php"><i class="bi bi-cart4 text-white"></i></a>
                     </button>
                 </div>
                 <div class="search-bar">
@@ -91,7 +91,7 @@ include 'other_pages/AdminPage/AllFunctions/myfunctions.php';
         </nav>
 
     <section>
-      <div class="bg" style="background-image: url('Images/DALL·E 2024-03-23 13.58.42 - Create another minimalistic sketch of a different style of shoe or trainers, suitable as a wallpaper for a website homepage, now incorporating subtle -fotor-20240323141854.jpg')"></div>
+      <div class="bg" style="background-image: url('Assets/Images/mainwallpaper.jpg')"></div>
       <h1 class="fs-1 bg-gradient-faded-dark-blue text-white rounded mr-0 p-2">Treakers</h1>
       <h1 class="bg-gradient-faded-primary text-white p-2 rounded">Embrace your UrbanSole!</h1>
     </section>
@@ -118,7 +118,7 @@ include 'other_pages/AdminPage/AllFunctions/myfunctions.php';
 
 
     <section>
-        <div class="bg" style="background-image: url('Images/shoe slant.jpg')"></div>
+        <div class="bg" style="background-image: url('Assets/Images/shoe slant.jpg')"></div>
         <h1 class="bg-gradient-faded-primary text-white p-2 rounded">Join us today</h1>
     </section>
 
@@ -128,8 +128,8 @@ include 'other_pages/AdminPage/AllFunctions/myfunctions.php';
                 <div class="col-md-3 footer-col">
                     <h4>Treakers</h4>
                     <ul>
-                        <li><a href="../AboutUsPage/aboutus.php">about us</a></li>
-                        <li><a href="../ProductPage/products-page.php">our products</a></li>
+                        <li><a href="other_pages/AboutUsPage/aboutus.php">about us</a></li>
+                        <li><a href="other_pages/ProductPage/products-page.php">our products</a></li>
                         <li><a href="#">privacy policy</a></li>
                     </ul>
                 </div>
@@ -137,16 +137,16 @@ include 'other_pages/AdminPage/AllFunctions/myfunctions.php';
                     <h4>get help</h4>
                     <ul>
                         <li><a href="#">FAQ</a></li>
-                        <li><a href="../ContactUsPage/contactus.php">Contact Us</a></li>
+                        <li><a href="other_pages/ContactUsPage/contactus.php">Contact Us</a></li>
                         <li><a href="#">returns</a></li>
-                        <li><a href="../BasketPage/basket.php">Basket</a></li>
+                        <li><a href="other_pages/BasketPage/cart.php">Basket</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 footer-col">
                     <h4>online shop</h4>
                     <ul>
-                        <li><a href="../../index.php">Sneakers</a></li>
-                        <li><a href="../../index.php">Trainers</a></li>
+                        <li><a href="#">Sneakers</a></li>
+                        <li><a href="#">Trainers</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 footer-col">
@@ -163,7 +163,7 @@ include 'other_pages/AdminPage/AllFunctions/myfunctions.php';
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="JS/HomePage.js"></script>
+    <script src="Assets/JS/HomePage.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
 </body>

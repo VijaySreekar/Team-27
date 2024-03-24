@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'Includes/header.php';
+include 'Includes/admin_header.php';
 include 'AllFunctions/myfunctions.php';
 
 
@@ -62,7 +62,7 @@ $products = getAll('product');
     </div>
 </div>
 
-<?php include 'Includes/Footer.php'; ?>
+<?php include 'Includes/admin_footer.php'; ?>
 <style>
 
 .instock-status {

@@ -13,39 +13,39 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Truncleta:wght@400&display=swap">
-    <link rel="stylesheet" href="../NavBar_Footer/nav.css">
+    <link rel="stylesheet" href="../../Assets/CSS/nav.css">
 
     <!-- Nucleo Icons -->
-    <link href="../AdminPage/assets/nucleo-icons.css" rel="stylesheet" />
-    <link href="../AdminPage/assets/nucleo-svg.css" rel="stylesheet" />
+    <link href="../../Assets/CSS/nucleo-icons.css" rel="stylesheet" />
+    <link href="../../Assets/CSS/nucleo-svg.css" rel="stylesheet" />
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <!-- CSS Files -->
-    <link id="pagestyle" href="../AdminPage/assets/material-dashboard.min.css" rel="stylesheet">
+    <link id="pagestyle" href="../../Assets/CSS/material-dashboard.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Alertify JS -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
 
-    <link rel="stylesheet" href="../NavBar_Footer/new_nav.css">
+    <link rel="stylesheet" href="../../Assets/CSS/nav.css">
 </head>
 <body class="g-sidenav-show bg-gray-200">
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
 
-        <?php include("../NavBar_Footer/new_nav.php"); ?>
+        <?php include("../../Includes/nav.php"); ?>
 
         <nav class="breadcrumbs">
-            <a href="../../index.php" class="breadcrumbs__item">Home</a>
-            <a href="../AboutUsPage/aboutus.php" class="breadcrumbs__item is-active">About Us</a>
+            <a href="../../index.php" class="breadcrumbs__item"><i class="bi bi-house"></i> Home</a>
+            <a href="../AboutUsPage/aboutus.php" class="breadcrumbs__item is-active"><i class="bi bi-info-circle"></i> About Us</a>
         </nav>
 
         <div class="container-fluid py-5">
             <div class="row">
                 <div class="col-lg-5 d-flex justify-content-center align-items-center">
-                    <img class="main-img img-fluid rounded" src="../../Images/SneakerSketch.png" alt="Sneaker Sketch" style="max-height: 75vh;">
+                    <img class="main-img img-fluid rounded" src="../../Assets/Images/SneakerSketch.png" alt="Sneaker Sketch" style="max-height: 75vh;">
                 </div>
                 <div class="col-lg-7 d-flex align-items-center">
                     <div class="content px-3">
@@ -99,7 +99,7 @@
             </div>
         </div>
 
-        <?php include("../NavBar_Footer/footer.html"); ?>
+        <?php include("../NavBar_Footer/admin_footer.php"); ?>
 
     </main>
 </body>

@@ -1,5 +1,16 @@
 <?php
-session_start(); // Start the session
+session_start();
+
+include '../../Assets/Functions/myfunctions.php';
+
+$user = $_SESSION['auth_user'];
+
+if($user){
+    $login_link = "../../index.php";
+}
+else{
+    $login_link = "login_page.php";
+}
 ?>
 
 <!DOCTYPE html>
@@ -7,44 +18,51 @@ session_start(); // Start the session
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Category Page</title>
+    <title>Login/Signup</title>
 
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../../Assets/CSS/login.css">
     <!-- Fonts and icons -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Truncleta:wght@400&display=swap">
-    <link rel="stylesheet" href="../NavBar_Footer/new_nav.css">
+    <link rel="stylesheet" href="../../Assets/CSS/nav.css">
 
     <!-- Nucleo Icons -->
-    <link href="../AdminPage/assets/nucleo-icons.css" rel="stylesheet" />
-    <link href="../AdminPage/assets/nucleo-svg.css" rel="stylesheet" />
+    <link href="../../Assets/CSS/nucleo-icons.css" rel="stylesheet" />
+    <link href="../../Assets/CSS/nucleo-svg.css" rel="stylesheet" />
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <!-- CSS Files -->
-    <link id="pagestyle" href="../AdminPage/assets/material-dashboard.min.css" rel="stylesheet">
+    <link id="pagestyle" href="../../Assets/CSS/material-dashboard.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Alertify JS -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
 
-    <link rel="stylesheet" href="../NavBar_Footer/new_nav.css">
+    <link rel="stylesheet" href="../../Assets/CSS/nav.css">
+    <link rel="stylesheet" href="../../Assets/CSS/login.css">
 </head>
 <body class="g-sidenav-show bg-gray-200">
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-        <?php include '../NavBar_Footer/new_nav.php'; ?>
+        <?php include("../../Includes/nav.php"); ?>
+
+        <nav class="breadcrumbs">
+            <a href="../../index.php" class="breadcrumbs__item"><i class="bi bi-house"></i> Home</a>
+            <a href="<?php echo $login_link; ?>" class="breadcrumbs__item is-active"><i class="bi bi-person"></i> Login</a>
+        </nav>
+
         <div class="container mt-6 mb-6">
             <input type="checkbox" id="change" style="display: none;">
             <div class="cover">
                 <div class="login">
-                    <img class="backImg" src="../../Images/Shoe%201%20(Login).png" alt="" style="object-fit: cover; width: 100%; height: 100%;"></div>
+                    <img class="backImg" src="../../Assets/Images/Shoe%201%20(Login).png" alt="" style="object-fit: cover; width: 100%; height: 100%;"></div>
                 <div class="register" style="transform: rotateY(180deg); position: absolute; width: 100%; height: 100%;">
-                    <img class="backImg" src="../../Images/Shoe%202%20(Registration).png" alt="" style="object-fit: cover; width: 100%; height: 100%;">
+                    <img class="backImg" src="../../Assets/Images/Shoe%202%20(Registration).png" alt="" style="object-fit: cover; width: 100%; height: 100%;">
                 </div>
             </div>
             <div class="loginregister_form pt-6" style="background: rgba(251,254,249,0);">
@@ -105,90 +123,15 @@ session_start(); // Start the session
                 </div>
             </div>
         </div>
-        <?php include '../NavBar_Footer/footer.html'; ?>
+
+        <?php include("../../Includes/footer.php"); ?>
     </main>
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-    $(document).ready(function(){
-        $("#login-form").on("submit", function(event){
-            event.preventDefault(); // Prevent the form from submitting through the standard HTTP request
-
-            $.ajax({
-                url: "VerifyUser.php",
-                type: "post",
-                data: $(this).serialize(),
-                dataType: "json",
-                success: function(response){
-                    if(response.success){
-                        // Construct a personalized welcome message based on the user's role
-                        var welcomeMessage = "Login successful. ";
-                        if(response.role === "admin"){
-                            welcomeMessage += "Welcome, Admin " + response.username + ". "; // Assuming 'username' is sent in the response
-                        }
-                        welcomeMessage += "Redirecting in 3 seconds...";
-                        $("#error-message").text(welcomeMessage);
-
-                        // Start the countdown
-                        var counter = 3;
-                        var redirectUrl = response.role === "admin" ? '../AdminPage/adminpage.php' : '../../index.php'; // Decide the redirect URL based on the user's role
-                        setInterval(function() {
-                            counter--;
-                            if (counter <= 0) {
-                                window.location.href = redirectUrl;
-                            } else {
-                                // Update the message during the countdown
-                                var countdownMessage = "Redirecting in " + counter + " seconds...";
-                                if(response.role === "admin"){
-                                    countdownMessage = "Welcome, Admin " + response.username + ". " + countdownMessage; // Update message for admin
-                                }
-                                $("#error-message").text(countdownMessage);
-                            }
-                        }, 1000);
-                    } else {
-                        $("#error-message").text(response.message);
-                    }
-                },
-                error: function(xhr, status, error){
-                    console.error("AJAX error: " + status + ": " + error); // Log AJAX errors
-                    $("#error-message").text("An error occurred. Please try again later.");
-                }
-            });
-        });
-    });
-
-
-
-
-    $(document).ready(function(){
-        $("#signup-form").on("submit", function(event){
-            event.preventDefault();
-            console.log("Signup form submitted");
-
-            var formData = $(this).serialize() + "&register_btn=Register";
-
-            $.ajax({
-                url: "RegisterUser.php",
-                type: "post",
-                data: formData,
-                dataType: "json",
-                success: function(response){
-                    if(response.success){
-                        alert("Registration successful!");
-                        $("#change").prop("checked", !$("#change").prop("checked"));
-                    } else {
-                        $("#signup-error-message").text(response.message);
-                    }
-                },
-                error: function(xhr, status, error){
-                    console.error("AJAX error: " + status + ": " + error);
-                    $("#signup-error-message").text("An error occurred during registration.");
-                }
-            });
-        });
-    });
-</script>
+    <script src="../../Assets/JS/jquery-3.7.1.js"></script>
+    <script src="../../Assets/JS/bootstrap.bundle.min.js"></script>
+    <script src="../../Assets/JS/perfect-scrollbar.min.js"></script>
+    <script src="../../Assets/JS/smooth-scrollbar.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../Assets/JS/login.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'Includes/header.php';
+include 'Includes/admin_header.php';
 include 'AllFunctions/myfunctions.php';
 
 $products = getAll('product');
