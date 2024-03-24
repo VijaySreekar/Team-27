@@ -106,25 +106,35 @@ else if(isset($_POST['delete_categorybtn']))
 {
     $category_id = mysqli_real_escape_string($conn, $_POST['category_ids']);
 
+    // Retrieve the old image filename
+    $get_image_query = "SELECT image FROM category WHERE category_id = $category_id";
+    $get_image_result = mysqli_query($conn, $get_image_query);
+
+    if($get_image_result && mysqli_num_rows($get_image_result) > 0) {
+        $row = mysqli_fetch_assoc($get_image_result);
+        $image_filename = $row['image'];
+
+        // Delete the image file from the server directory
+        $path = __DIR__ . "/../../Assets/Images/Category_Images/";
+        $image_path = $path . $image_filename;
+        if (file_exists($image_path)) {
+            unlink($image_path);
+        }
+    }
+
     $delete_query = "DELETE FROM category WHERE category_id = $category_id";
     $delete_query_run = mysqli_query($conn, $delete_query);
 
     if($delete_query_run)
     {
-//        $_SESSION['message'] = "Category Deleted";
-//        header('Location: category.php');
-//        exit();
-        echo 200;
+        echo 200; // Success response code
     }
     else
     {
-//        $_SESSION['message'] = "Category Not Deleted";
-//        header('Location: category.php');
-//        exit();
-        echo 500;
+        echo 500; // Error response code
     }
-
 }
+
 else if(isset($_POST['addproduct_btn']))
 {
     $category_id = mysqli_real_escape_string($conn, $_POST['category_id']);
@@ -139,7 +149,7 @@ else if(isset($_POST['addproduct_btn']))
 
     $image = $_FILES['image']['name'];
 
-    $path = __DIR__ . "/"; // Path to the directory containing the PHP script
+    $path = __DIR__ . "/../../Assets/Images/Product_Images/";
 
     $image_extension = pathinfo($image, PATHINFO_EXTENSION);
     $filename = time() . "_" . $image;
@@ -235,24 +245,35 @@ else if(isset($_POST['deleteproduct_btn']))
 {
     $product_id = mysqli_real_escape_string($conn, $_POST['product_id']);
 
+    // Retrieve the product's image filename
+    $get_image_query = "SELECT image FROM product WHERE product_id = $product_id";
+    $get_image_result = mysqli_query($conn, $get_image_query);
+
+    if($get_image_result && mysqli_num_rows($get_image_result) > 0) {
+        $row = mysqli_fetch_assoc($get_image_result);
+        $image_filename = $row['image'];
+
+        // Delete the image file from the server directory
+        $path = __DIR__ . "/../../Assets/Images/Product_Images/";
+        $image_path = $path . $image_filename;
+        if (file_exists($image_path)) {
+            unlink($image_path);
+        }
+    }
+
     $product_delete_query = "DELETE FROM product WHERE product_id = $product_id";
     $product_delete_query_run = mysqli_query($conn, $product_delete_query);
 
     if($product_delete_query_run)
     {
-//        $_SESSION['message'] = "Product Deleted Successfully";
-//        header('Location: category.php');
-//        exit();
-        echo 200;
+        echo 200; // Success response code
     }
     else
     {
-//        $_SESSION['message'] = "Category Not Deleted";
-//        header('Location: category.php');
-//        exit();
-        echo 500;
+        echo 500; // Error response code
     }
 }
+
 else if(isset($_POST['updateOrderButton']))
 {
     $tracking_no = $_POST['tracking_no'];

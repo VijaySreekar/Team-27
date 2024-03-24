@@ -36,7 +36,7 @@ include '../../Assets/Functions/myfunctions.php';
                                     <td><?= $item['product_id'] ?></td>
                                     <td><?= $item['name'] ?></td>
                                     <td>
-                                        <img src="<?= $item['image'] ?>" width="50px" height="50px" alt="<?= $item['name'] ?>">
+                                        <img src="../../Assets/Images/Product_Images/<?= $item['image'] ?>" width="50px" height="50px" alt="<?= $item['name'] ?>">
                                     </td>
                                     <td>
                                         <?= $item['status'] == '1' ? "Visible" : "Hidden" ?>

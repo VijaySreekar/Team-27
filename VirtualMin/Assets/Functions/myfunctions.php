@@ -147,6 +147,44 @@ function getViewRecentOrders($userId) {
     }
 }
 
+function getCategories() {
+    global $conn;
+    $sql = "SELECT * FROM category WHERE status = 1"; // Assuming status = 1 means active categories
+    $result = $conn->query($sql);
+    $categories = [];
+
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $categories[] = $row;
+        }
+    }
+
+    return $categories;
+}
+
+function getProductsWithCategory($categorySlug, $sortOrder = 'ASC') {
+    global $conn;
+    $categoryCondition = $categorySlug !== 'all' ? "AND c.slug = '".$conn->real_escape_string($categorySlug)."'" : "";
+    $orderBy = strtolower($sortOrder) === 'desc' ? 'DESC' : 'ASC';
+
+    $sql = "SELECT p.* FROM product p
+            JOIN category c ON p.category_id = c.category_id
+            WHERE p.status = 1 $categoryCondition
+            ORDER BY p.discounted_price $orderBy"; // Assuming status = 1 means active products
+
+    $result = $conn->query($sql);
+    $products = [];
+
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $products[] = $row;
+        }
+    }
+
+    return $products;
+}
+
+
 
 
 //function redirect($url, $message)

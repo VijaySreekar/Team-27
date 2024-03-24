@@ -45,7 +45,7 @@ include '../../Assets/Functions/myfunctions.php';
                                             <input type="file" class="form-control" name="image">
                                             <label for="category"> Current Image</label>
                                             <input type="hidden" name="old_image" value="<?= $data['image'] ?>">
-                                            <img src="<?= $data['image'] ?>" height="75px" width="75px" alt="">
+                                            <img src="../../Assets/Images/Category_Images/<?= $data['image'] ?>" height="75px" width="75px" alt="">
                                         </div>
                                         <div class="col-md-12">
                                             <label for="meta_title">Meta Title</label>
