@@ -126,7 +126,7 @@ $products = getProductsWithCategory($categorySlug, $sortOrder);
             <?php if (count($products) > 0): ?>
                 <?php foreach ($products as $product): ?>
                     <div class='product-item' onclick='showProductDetail(<?= htmlspecialchars($product["product_id"], ENT_QUOTES) ?>)'>
-                        <img src='../AdminPage/<?= htmlspecialchars($product["image_link"], ENT_QUOTES) ?>' alt='<?= htmlspecialchars($product["name"], ENT_QUOTES) ?>' class='w-100' />
+                        <img src='../../Assets/Images/Product_Images/<?= htmlspecialchars($product["image"], ENT_QUOTES) ?>' alt='<?= htmlspecialchars($product["name"], ENT_QUOTES) ?>' class='w-100' />
                         <div class='product-info'>
                             <h4><?= htmlspecialchars($product["name"], ENT_QUOTES) ?></h4>
                             <?php if ($product["discounted_price"] < $product["original_price"]): ?>

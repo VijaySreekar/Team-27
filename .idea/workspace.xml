@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbf2f922-5ce0-4d3b-977e-7c8bbdfdd3ac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/allproductsuser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/Assets/Functions/myfunctions.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/Functions/myfunctions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/Assets/Images/Category_Images/multiracial-group-of-hikers-walking-by-forest.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/add_category_code.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/add_category_code.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/allproducts.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/allproducts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/edit-category.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/edit-category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/edit-product.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/edit-product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/1711282906_SneakerSketch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/allproductsuser.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/allproductsuser.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProfilePage/edit_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProfilePage/edit_user.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ReviewPage/review.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ReviewPage/review.php" afterDir="false" />
     </list>
@@ -272,7 +266,7 @@
       <workItem from="1711198990411" duration="22215000" />
       <workItem from="1711233395541" duration="5869000" />
       <workItem from="1711254032435" duration="5217000" />
-      <workItem from="1711281219179" duration="3309000" />
+      <workItem from="1711281219179" duration="3651000" />
     </task>
     <servers />
   </component>
