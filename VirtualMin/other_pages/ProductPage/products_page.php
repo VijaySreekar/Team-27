@@ -13,6 +13,9 @@ if(isset($_GET['category']))
     {
         $category_id = $category['category_id'];
     ?>
+        <!DOCTYPE html>
+        <html lang="en">
+
 
         <head>
             <meta charset="utf-8" />

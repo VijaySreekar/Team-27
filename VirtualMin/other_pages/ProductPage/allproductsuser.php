@@ -3,97 +3,65 @@ session_start();
 include '../../Assets/Functions/myfunctions.php';
 include '../../Assets/Database/connectdb.php';
 
-// Assuming getCategories() fetches an array of categories from the database
-$categories = getCategories(); // You'll need to implement this function
-
-// Assuming getProductsWithCategory() fetches products based on category and sort order
-$categorySlug = isset($_GET['category']) ? $_GET['category'] : 'all';
-$sortOrder = isset($_GET['sort_order']) ? $_GET['sort_order'] : 'ASC';
+$categories = getCategories(); // Assume implementation elsewhere
+$categorySlug = $_GET['category'] ?? 'all';
+$sortOrder = $_GET['sort_order'] ?? 'ASC';
 $products = getProductsWithCategory($categorySlug, $sortOrder);
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Categories</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Categories</title>
+
     <!-- Fonts and icons -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
-    <!-- Bootstrap CSS (Keep existing version) -->
+    <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Navigation CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Truncleta:wght@400&display=swap">
     <link rel="stylesheet" href="../../Assets/CSS/nav.css">
-    <!-- Page specific CSS -->
-    <link rel="stylesheet" href="productstyles.css">
-    <!-- Custom CSS -->
+
+    <!-- Nucleo Icons -->
+    <link href="../../Assets/CSS/nucleo-icons.css" rel="stylesheet" />
+    <link href="../../Assets/CSS/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <!-- CSS Files -->
+    <link id="pagestyle" href="../../Assets/CSS/material-dashboard.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Alertify JS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+
+    <link rel="stylesheet" href="../../Assets/CSS/nav.css">
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f8f9fa;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
         .category-links {
-            margin-bottom: 20px;
+            overflow-x: auto;
+            white-space: nowrap;
         }
+
         .category-link {
-            color: #007bff;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            color: #333;
             text-decoration: none;
-            margin-right: 10px;
-            font-size: 16px;
+            border-radius: 0.25rem;
+            transition: background-color 0.3s;
         }
-        .category-link:hover {
-            text-decoration: underline;
-        }
-        #price-sort {
-            margin-left: 10px;
-            padding: 5px 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 14px;
-            background-color: #fff;
-        }
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .product-item {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .product-item:hover {
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .product-info {
-            margin-top: 10px;
-        }
-        .product-price {
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-        .original-price {
-            color: #999;
-            text-decoration: line-through;
-            margin-left: 5px;
-        }
-        .btn-primary {
+
+        .category-link.active {
             background-color: #007bff;
-            border: none;
             color: #fff;
-            padding: 8px 16px;
-            font-size: 14px;
-            border-radius: 5px;
-            cursor: pointer;
         }
-        .btn-primary:hover {
-            background-color: #0056b3;
+
+        #price-sort {
+            width: 200px; /* Adjust width as needed */
         }
     </style>
 </head>
@@ -103,54 +71,67 @@ $products = getProductsWithCategory($categorySlug, $sortOrder);
 
     <nav class="breadcrumbs">
         <a href="../../index.php" class="breadcrumbs__item"><i class="bi bi-house"></i> Home</a>
-        <a href="../ProductPage/products_page.php" class="breadcrumbs__item is-active"><i class="bi bi-box"></i> All Products</a>
+        <a href="#" class="breadcrumbs__item is-active"> <i class="bi bi-diagram-3"></i>  All Products</a>
     </nav>
 
-    <section class="product-page container">
-        <header class="page-header">
-            <h1>Our Product Collection</h1>
-            <div class="category-links">
-                <!-- Dynamically generate category links -->
-                <a href="?category=all" class="category-link" data-category="all">All Categories</a>
-                <?php foreach($categories as $cat): ?>
-                    <a href="?category=<?= htmlspecialchars($cat['slug'], ENT_QUOTES) ?>" class="category-link" data-category="<?= htmlspecialchars($cat['slug'], ENT_QUOTES) ?>"><?= htmlspecialchars($cat['name'], ENT_QUOTES) ?></a>
-                <?php endforeach; ?>
-                <select id="price-sort" onchange="updateSortOrder(this.value);">
-                    <option value="low_to_high">Price: Low to High</option>
-                    <option value="high_to_low">Price: High to Low</option>
-                </select>
-            </div>
-        </header>
-
-        <div class='product-grid'>
-            <?php if (count($products) > 0): ?>
-                <?php foreach ($products as $product): ?>
-                    <div class='product-item' onclick='showProductDetail(<?= htmlspecialchars($product["product_id"], ENT_QUOTES) ?>)'>
-                        <img src='../../Assets/Images/Product_Images/<?= htmlspecialchars($product["image"], ENT_QUOTES) ?>' alt='<?= htmlspecialchars($product["name"], ENT_QUOTES) ?>' class='w-100' />
-                        <div class='product-info'>
-                            <h4><?= htmlspecialchars($product["name"], ENT_QUOTES) ?></h4>
-                            <?php if ($product["discounted_price"] < $product["original_price"]): ?>
-                                <p class='product-price'>Sale: £<?= htmlspecialchars($product["discounted_price"], ENT_QUOTES) ?> <span class='original-price'>£<?= htmlspecialchars($product["original_price"], ENT_QUOTES) ?></span></p>
-                            <?php else: ?>
-                                <p class='product-price'>Price: £<?= htmlspecialchars($product["discounted_price"], ENT_QUOTES) ?></p>
-                            <?php endif; ?>
-                            <button onclick='addToCart(<?= $product["product_id"] ?>, 1)' class='btn btn-primary'>Add to Cart</button>
-                        </div>
+    <div class="container py-5">
+        <div class="card">
+            <div class="card card-header">
+                <h1 class="mb-4">All Products</h1>
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div class="category-links">
+                        <a href="?category=all" class="category-link <?= empty($_GET['category']) ? 'active' : '' ?>" data-category="all">All Categories</a>
+                        <?php foreach($categories as $cat): ?>
+                            <a href="?category=<?= htmlspecialchars($cat['slug'], ENT_QUOTES) ?>" class="category-link <?= ($_GET['category'] ?? 'all') === $cat['slug'] ? 'active' : '' ?>" data-category="<?= htmlspecialchars($cat['slug'], ENT_QUOTES) ?>"><?= htmlspecialchars($cat['name'], ENT_QUOTES) ?></a>
+                        <?php endforeach; ?>
                     </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <p>No products found.</p>
-            <?php endif; ?>
+                    <div class="form-group mb-0">
+                        <select class="form-control" id="price-sort" onchange="updateSortOrder(this.value);">
+                            <option value="low_to_high">Price: Low to High</option>
+                            <option value="high_to_low">Price: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+            <div class="card-body">
+                <div class="row">
+                    <?php if (count($products) > 0): ?>
+                        <?php foreach ($products as $product): ?>
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100">
+                                    <img src="../../Assets/Images/Product_Images/<?= htmlspecialchars($product["image"], ENT_QUOTES) ?>" class="card-img-top" alt="<?= htmlspecialchars($product["name"], ENT_QUOTES) ?>">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?= htmlspecialchars($product["name"], ENT_QUOTES) ?></h5>
+                                        <?php if ($product["discounted_price"] < $product["original_price"]): ?>
+                                            <p class="card-text">Sale: £<?= htmlspecialchars($product["discounted_price"], ENT_QUOTES) ?><span class="original-price"> £<?= htmlspecialchars($product["original_price"], ENT_QUOTES) ?></span></p>
+                                        <?php else: ?>
+                                            <p class="card-text">Price: £<?= htmlspecialchars($product["discounted_price"], ENT_QUOTES) ?></p>
+                                        <?php endif; ?>
+                                        <button onclick="addToCart(<?= $product["product_id"] ?>, 1)" class="btn btn-primary">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <div class="col">
+                            <p>No products found.</p>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
         </div>
-    </section>
-
+    </div>
+</div>
     <?php include("../../Includes/footer.php"); ?>
+
+
 </main>
-<script src="../../Assets/JS/jquery-3.5.1.min.js "></script>
-<script src="../../Assets/JS/bootstrap.bundle.min.js "></script>
+<script src="../../Assets/JS/jquery-3.5.1.min.js"></script>
+<script src="../../Assets/JS/bootstrap.bundle.min.js"></script>
 <script>
     function updateSortOrder(sortOrder) {
+        // Retrieve the current category or default to 'all'
         const category = new URLSearchParams(window.location.search).get('category') || 'all';
+        // Update the URL with the new sort order, maintaining the current category selection
         window.location.href = `products_page.php?category=${category}&sort_order=${sortOrder}`;
     }
 </script>

@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbf2f922-5ce0-4d3b-977e-7c8bbdfdd3ac" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/1711282906_SneakerSketch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/allproductsuser.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/allproductsuser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/products_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/products_page.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProfilePage/edit_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProfilePage/edit_user.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ReviewPage/review.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ReviewPage/review.php" afterDir="false" />
     </list>
@@ -266,7 +267,7 @@
       <workItem from="1711198990411" duration="22215000" />
       <workItem from="1711233395541" duration="5869000" />
       <workItem from="1711254032435" duration="5217000" />
-      <workItem from="1711281219179" duration="3651000" />
+      <workItem from="1711281219179" duration="5539000" />
     </task>
     <servers />
   </component>
