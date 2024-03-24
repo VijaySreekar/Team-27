@@ -19,8 +19,6 @@ include '../../Assets/Functions/myfunctions.php';
                             <th>user ID</th>
                             <th>Username</th>
                             <th>User email</th>
-                            <th>Password hash</th>
-                            <th>Status</th>
                             <th>Actions</th>
                         </tr>
                         </thead>
@@ -37,8 +35,6 @@ include '../../Assets/Functions/myfunctions.php';
                                     <td><?= $item['user_id'] ?></td>
                                     <td><?= $item['username'] ?></td>
                                     <td><?= $item['email'] ?></td>
-                                    <td><?= $item['password'] ?></td>
-                                    <td><?= $item['status'] == '1' ? "Visible" : "Hidden" ?></td>
                                     <td>
                                         <a href="../ProfilePage/edit_user.php?id=<?= $item['user_id']; ?>"  class="btn btn-primary">Edit</a>
                                         <button type="button" class="btn btn-danger deleteuser_btn" data-user_id="<?= $item['user_id']; ?>">Delete</button>
