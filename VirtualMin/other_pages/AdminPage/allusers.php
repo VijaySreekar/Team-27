@@ -12,13 +12,14 @@ include '../../Assets/Functions/myfunctions.php';
                 <div class="card-header bg-transparent">
                     <h3 class="mb-0">Users</h3>
                 </div>
-                <div class="card-body" id="product_table">
+                <div class="card-body" id="user_table">
                     <table class="table table-bordered table-striped">
                         <thead>
                         <tr>
                             <th>user ID</th>
                             <th>Username</th>
                             <th>User email</th>
+                            <th>User phone number</th>
                             <th>Actions</th>
                         </tr>
                         </thead>
@@ -35,8 +36,9 @@ include '../../Assets/Functions/myfunctions.php';
                                     <td><?= $item['user_id'] ?></td>
                                     <td><?= $item['username'] ?></td>
                                     <td><?= $item['email'] ?></td>
+                                    <td><?= $item['phone'] ?></td>
                                     <td>
-                                        <a href="../ProfilePage/edit_user.php?id=<?= $item['user_id']; ?>"  class="btn btn-primary">Edit</a>
+                                        <a href="edituser.php?id=<?= $item['user_id']; ?>"  class="btn btn-primary">Edit</a>
                                         <button type="button" class="btn btn-danger deleteuser_btn" data-user_id="<?= $item['user_id']; ?>">Delete</button>
                                     </td>
                                 </tr>

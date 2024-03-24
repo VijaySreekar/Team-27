@@ -241,6 +241,31 @@ else if(isset($_POST['editproduct_btn']))
 
     }
 }
+
+else if(isset($_POST['edituser_btn']))
+{
+    $user_id = $_POST['user_id'];
+    $name = $_POST['username'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+
+    $update_user_query = "UPDATE user SET user_id = '$user_id', username = '$name', email = '$email', phone = '$phone', 
+                     WHERE user_id = $user_id"; //maybe needs to be deleted idk about 'where' part
+    $update_user_query_run = mysqli_query($conn, $update_user_query);
+
+    if($update_product_query_run)
+    {        
+        $_SESSION['message'] = "UserUpdated";
+        header("Location: edituser.php?id=$user_id");
+        exit();
+    }
+    else
+    {
+        $_SESSION['message'] = "User Not Updated";
+        header("Location: edituser.php?id=$user_id");
+
+    }
+}
 else if(isset($_POST['deleteproduct_btn']))
 {
     $product_id = mysqli_real_escape_string($conn, $_POST['product_id']);
@@ -297,7 +322,7 @@ else if(isset($_POST['updateOrderButton']))
 }
 else if(isset($_POST['deleteuser_btn']))
 {
-    $user_id = mysqli_real_escape_string($conn, $_POST['user_ids']);
+    $user_id = mysqli_real_escape_string($conn, $_POST['user_id']);
 
 
     $delete_query = "DELETE FROM user WHERE user_id = $user_id";

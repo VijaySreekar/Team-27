@@ -72,6 +72,43 @@ $(document).ready(function() {
         });
     });
 
+    $(document).on('click', '.deleteuser_btn', function(e) {
+        e.preventDefault();
+    
+        var user_id = $(this).data('user_id');
+    
+        Swal.fire({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this file!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    method: "POST",
+                    url: "add_category_code.php",
+                    data: {
+                        'user_id': user_id, 
+                        deleteuser_btn: true
+                    },
+                    success: function(response) {
+                        if (response == 200) {
+                            Swal.fire("Success!", "Category Deleted Successfully", "success");
+                            $("#user_table").load(location.href + " #user_table");
+                        } else if (response == 500) {
+                            Swal.fire("Error!", "Internal Server Error", "error");
+                        }
+                    }
+                });
+            }
+        });
+    });
+    
+
     $(document).on('click','.addToCartButton',function (e) {
         e.preventDefault();
 
@@ -196,3 +233,4 @@ $(document).ready(function() {
         });
     });
 });
+
