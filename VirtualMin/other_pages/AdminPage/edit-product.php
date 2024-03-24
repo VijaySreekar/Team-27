@@ -1,9 +1,9 @@
 <?php
 session_start();
-include 'AllFunctions/myfunctions.php';
+include '../../Assets/Functions/myfunctions.php';
 ?>
 
-<?php include 'Includes/admin_header.php'; ?>
+<?php include '../../Includes/admin_header.php'; ?>
 
 <div class="container">
     <?php
@@ -132,5 +132,5 @@ include 'AllFunctions/myfunctions.php';
         </div>
     </div>
 </div>
-<?php include 'Includes/admin_footer.php'; ?>
+<?php include '../../Includes/admin_footer.php'; ?>
 

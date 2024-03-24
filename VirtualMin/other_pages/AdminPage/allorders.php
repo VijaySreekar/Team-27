@@ -1,7 +1,7 @@
 <?php
 session_start();
-include 'Includes/admin_header.php';
-include 'AllFunctions/myfunctions.php';
+include '../../Includes/admin_header.php';
+include '../../Assets/Functions/myfunctions.php';
 ?>
 
 <div class="container">
@@ -65,6 +65,6 @@ include 'AllFunctions/myfunctions.php';
         </div>
     </div>
 </div>
-<?php include 'Includes/admin_footer.php'; ?>
+<?php include '../../Includes/admin_footer.php'; ?>
 
 

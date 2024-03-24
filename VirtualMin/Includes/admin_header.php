@@ -14,14 +14,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- Nucleo Icons -->
-  <link href="assets/nucleo-icons.css" rel="stylesheet" />
-  <link href="assets/nucleo-svg.css" rel="stylesheet" />
+  <link href="../../Assets/CSS/nucleo-icons.css" rel="stylesheet" />
+  <link href="../../Assets/CSS/assets/nucleo-svg.css" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <!-- CSS Files -->
-  <link id="pagestyle" href="assets/material-dashboard.min.css" rel="stylesheet" />
+  <link id="pagestyle" href="../../Assets/CSS/material-dashboard.min.css" rel="stylesheet" />
 
   <!-- Alertify JS -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>

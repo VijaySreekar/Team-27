@@ -1,18 +1,9 @@
 <?php
 session_start();
-include 'Includes/admin_header.php';
-include 'AllFunctions/myfunctions.php';
+include '../../Includes/admin_header.php';
+include '../../Assets/Functions/myfunctions.php';
+include '../../Assets/Database/connectdb.php';
 
-$host = "localhost";
-$username = "u-230185247";
-$password = "z3mlfs8WdS1hxvH";
-$dbname = "u_230185247_treaker";
-
-// Create database connection
-$conn = mysqli_connect($host, $username, $password, $dbname);
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
 if(isset($_GET['t']))
 {
     $tracking_no = $_GET['t'];

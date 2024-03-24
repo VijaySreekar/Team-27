@@ -142,7 +142,10 @@
     <orderEntry type="library" name="alertify" level="application" />
     <orderEntry type="library" name="toastr.js" level="application" />
     <orderEntry type="library" name="bootstrap" level="application" />
-    <orderEntry type="library" name="swiper" level="application" />
     <orderEntry type="library" name="bootstrap-icons" level="application" />
+    <orderEntry type="library" name="swiper" level="application" />
+    <orderEntry type="library" name="jquery" level="application" />
+    <orderEntry type="library" name="alertify" level="application" />
+    <orderEntry type="library" name="bootstrap" level="application" />
   </component>
 </module>

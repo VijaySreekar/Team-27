@@ -5,86 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbf2f922-5ce0-4d3b-977e-7c8bbdfdd3ac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/VirtualMin/Assets/CSS/review.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VirtualMin/Assets/JS/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/HomePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/CSS/HomePage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/Images/AF1White.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/Images/AF1White.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/Images/AJ1HighBlueChill.webp" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/Images/AJ1HighBlueChill.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/Images/AJ4Neon.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/Images/AJ4Neon.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/Images/AJ5Navy.webp" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/Images/AJ5Navy.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/Images/AJ6Travis.webp" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/Images/AJ6Travis.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/Images/Air Jordan 11.jpg.avif" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/Images/Air Jordan 11.jpg.avif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/Images/Air Jordan 6.jpg.webp" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/Images/Air Jordan 6.jpg.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/Images/DALL·E 2024-03-23 13.58.42 - Create another minimalistic sketch of a different style of shoe or trainers, suitable as a wallpaper for a website homepage, now incorporating subtle -fotor-20240323141854.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/Images/DALL·E 2024-03-23 13.58.42 - Create another minimalistic sketch of a different style of shoe or trainers, suitable as a wallpaper for a website homepage, now incorporating subtle .webp" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/Images/DALL·E 2024-03-23 13.58.42 - Create another minimalistic sketch of a different style of shoe or trainers, suitable as a wallpaper for a website homepage, now incorporating subtle .webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/Images/R7ef87d51280cfed5edee29357c97b19d.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/Images/R7ef87d51280cfed5edee29357c97b19d.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/Images/Shoe 1 (Login).png" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/Images/Shoe 1 (Login).png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/Images/Shoe 2 (Registration).png" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/Images/Shoe 2 (Registration).png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/Images/Sneaker Wallpaper.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/Images/Sneaker Wallpaper.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/Images/SneakerSketch.png" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/Images/SneakerSketch.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/Images/Treakers Logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/Images/Treakers Logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/Images/jordan-shoes-4k-b2jdj8vbdz8s5fel.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/Images/jordan-shoes-4k-b2jdj8vbdz8s5fel.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/Images/shoe slant.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/Images/shoe slant.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/Images/sneakerwallpa.webp" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/Images/sneakerwallpa.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/JS/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/JS/HomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/TrendingItems.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/connectdb.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/Database/connectdb.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages - Shortcut.lnk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AboutUsPage/aboutus.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AboutUsPage/aboutus.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/AllFunctions/myfunctions.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/Functions/myfunctions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/Includes/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Includes/admin_footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/Includes/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Includes/admin_header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/Includes/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Includes/admin_navbar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/Includes/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Includes/admin_sidebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Team-27.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Team-27.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/Includes/admin_footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Includes/admin_footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/Includes/admin_header.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Includes/admin_header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/add_category.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/add_category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/add_category_code.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/add_category_code.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/add_products.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/add_products.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/adminpage.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/adminpage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/allorders.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/allorders.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/allproducts.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/allproducts.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/allusers.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/allusers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/assets/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/JS/bootstrap.bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/assets/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/JS/custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/assets/js/jquery-3.7.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/JS/jquery-3.7.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/assets/js/perfect-scrollbar.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/JS/perfect-scrollbar.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/assets/js/smooth-scrollbar.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/JS/smooth-scrollbar.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/assets/material-dashboard.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/CSS/material-dashboard.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/assets/nucleo-icons.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/CSS/nucleo-icons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/assets/nucleo-svg.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/CSS/nucleo-svg.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/category.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/category.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/edit-category.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/edit-category.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/edit-product.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/edit-product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/order_history.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/order_history.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/stock.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/stock.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/view_order_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/view_order_admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/checkout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/my_orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/my_orders.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/placeorder.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/placeorder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/view_order.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/view_order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ContactUsPage/contactus.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ContactUsPage/contactus.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/InventoryManagementPage/stock.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/InventoryManagementPage/stock.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/RegisterUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/RegisterUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/VerifyUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/VerifyUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/forgot_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/forgot_password.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/handle_reset_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/handle_reset_password.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/CSS/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/login_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/login_page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar_Footer/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Includes/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar_Footer/new_nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/CSS/nav.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/NavBar_Footer/new_nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Includes/nav.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/addToCart.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/addToCart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/category_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/category_page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/products_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/products_page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/CSS/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/view_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/view_product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProfilePage/edit_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProfilePage/edit_user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProfilePage/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/CSS/profile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProfilePage/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProfilePage/profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ReviewPage/review.css" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Assets/CSS/contactus.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ReviewPage/review.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ReviewPage/review.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/testing/loginTest.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -341,6 +281,7 @@
       <workItem from="1711164748542" duration="1613000" />
       <workItem from="1711198990411" duration="22215000" />
       <workItem from="1711233395541" duration="5869000" />
+      <workItem from="1711254032435" duration="4582000" />
     </task>
     <servers />
   </component>

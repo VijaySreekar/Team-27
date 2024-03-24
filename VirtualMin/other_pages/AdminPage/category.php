@@ -1,7 +1,7 @@
 <?php
 session_start();
-include 'Includes/admin_header.php';
-include 'AllFunctions/myfunctions.php';
+include '../../Includes/admin_header.php';
+include '../../Assets/Functions/myfunctions.php';
 ?>
 
 
@@ -35,7 +35,7 @@ include 'AllFunctions/myfunctions.php';
                                         <td><?= $category['category_id'] ?></td>
                                         <td><?= $category['name'] ?></td>
                                         <td>
-                                            <img src="<?= $category['image'] ?>" width="50px" height="50px" alt="<?= $category['name'] ?>">
+                                            <img src="../../Assets/Images/Category_Images/<?= $category['image'] ?>" width="50px" height="50px" alt="<?= $category['name'] ?>">
                                         </td>
                                         <td>
                                             <?= $category['status'] == '1' ? "Visible" : "Hidden" ?>
@@ -65,6 +65,6 @@ include 'AllFunctions/myfunctions.php';
         </div>
     </div>
 </div>
-<?php include 'Includes/admin_footer.php'; ?>
+<?php include '../../Includes/admin_footer.php'; ?>
 
 

@@ -25,7 +25,7 @@ if (isset($_POST['add_categorybtn'])) {
     $popular = ($_POST['popular'] == "1") ? 1 : 0;
     $image = $_FILES['image']['name'];
 
-    $path = __DIR__ . "/"; // Path to the directory containing the PHP script
+    $path = __DIR__ . "/../../Assets/Images/Category_Images/";
 
     $image_extension = pathinfo($image, PATHINFO_EXTENSION);
     $filename = time() . "_" . $image;
@@ -76,7 +76,7 @@ else if(isset($_POST['save_categorybtn']))
         $update_filename = $old_image;
     }
 
-    $path = __DIR__ . "/";
+    $path = __DIR__ . "/../../Assets/Images/Category_Images/";
     $update_query = "UPDATE category SET name = '$name', slug = '$slug', description = '$description', image = '$update_filename', 
                     meta_title = '$meta_title', meta_description = '$meta_description', meta_keywords = '$meta_keywords',
                     status = '$status', popular = '$popular' WHERE category_id = $category_id";
