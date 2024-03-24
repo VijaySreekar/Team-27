@@ -25,6 +25,7 @@ $products = getAll('product');
                             <tr>
                                 <th>Product Name</th>
                                 <th>Product Image</th>
+                                <th>quantity</th>
                                 <th>Stock Status</th>
                             </tr>
                         </thead>
