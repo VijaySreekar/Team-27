@@ -25,7 +25,7 @@ $products = getAll('product');
                             <tr>
                                 <th>Product Name</th>
                                 <th>Product Image</th>
-                                <th>Stock</th>
+                                <th>quantity</th>
                                 <th>Stock Status</th>
                             </tr>
                         </thead>
@@ -34,9 +34,9 @@ $products = getAll('product');
                             if(mysqli_num_rows($products) > 0) {
                                 foreach ($products as $product) {
                                     // Set different stock levels for specific products
-                                    $stock = 50; // Default stock
+                                    $quantity = 50; // Default stock
                                     if ($product['product_id'] == 1 || $product['product_id'] == 2) {
-                                        $stock = 10; // Low stock for specific products
+                                        $quantity = 10; // Low stock for specific products
                                     }
 
                                     // Check if product is in cart and adjust stock accordingly
@@ -46,12 +46,12 @@ $products = getAll('product');
 
                                     // Determine stock status
                                     $stockStatus = '';
-                                    if($stock == 0) {
+                                    if($quantity == 0) {
                                         $stockStatus = 'Out of Stock';
-                                    } elseif($stock <= 10) {
+                                    } elseif($quantity<= 10) {
                                         $stockStatus = 'Low Stock';
                                         // Add low stock item to array
-                                        $low_stock_items[] = $product['name'];
+                                        $low_quantity_items[] = $product['name'];
                                     } else {
                                         $stockStatus = 'In Stock';
                                     }
@@ -59,7 +59,7 @@ $products = getAll('product');
                                     echo '<tr>';
                                     echo '<td>' . $product['name'] . '</td>';
                                     echo '<td><img src="' . $product['image'] . '" width="50px" height="50px" alt="' . $product['name'] . '"></td>';
-                                    echo '<td>' . $stock . '</td>';
+                                    echo '<td>' . $quantity . '</td>';
                                     echo '<td>' . $stockStatus . '</td>';
                                     echo '</tr>';
                                 }
@@ -72,9 +72,9 @@ $products = getAll('product');
 
                     <?php
                     // Display alert for low stock items
-                    if (!empty($low_stock_items)) {
+                    if (!empty($low_quantity_items)) {
                         echo '<div class="alert alert-warning" role="alert">';
-                        echo 'Low in stock items: ' . implode(', ', $low_stock_items);
+                        echo 'Low in stock items: ' . implode(', ', $low_quantity_items);
                         echo '</div>';
                     }
                     ?>
