@@ -130,7 +130,7 @@ if(isset($_GET['product']))
               				$pid = $product['product_id'];
                         	//echo "<p>".$pid."</p>";
     						
-                        	$sql = "SELECT * FROM user_review WHERE
+                        	$sql = "SELECT * FROM user_review, user WHERE
                             		product_id=$pid";
     						
     						$query = mysqli_query($mysqli, $sql);
@@ -142,7 +142,7 @@ if(isset($_GET['product']))
                             	echo "<h3>".$count." reviews:</h3>";
                             	while($row = mysqli_fetch_assoc($query)){
                             		echo "<div class=\"review-card\">";
-                           			echo "<p>".$row['user_id']."</p>";
+                           			echo "<p>".$row['username']."</p>";
                             		echo "<p>".$row['rating']."</p>";
                             		echo "<p>".$row['comment']."</p>";
                                 	echo "</div>";
