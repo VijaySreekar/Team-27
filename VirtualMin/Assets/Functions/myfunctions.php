@@ -110,6 +110,44 @@ function getAllTrending()
     return mysqli_query($conn, $query);
 }
 
+function getUserDetails($userId) {
+    global $conn;
+    $sql = "SELECT username, email, phone FROM user WHERE user_id = ?";
+
+    if ($stmt = $conn->prepare($sql)) {
+        $stmt->bind_param("i", $userId);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($result->num_rows == 1) {
+            return $result->fetch_assoc(); // Return user details as associative array
+        } else {
+            return false; // User not found or error
+        }
+    } else {
+        return false; // Error in query preparation
+    }
+}
+
+function getViewRecentOrders($userId) {
+    global $conn; // Assuming $conn is your mysqli connection object
+    $sql = "SELECT *     FROM orders WHERE user_id = ? ORDER BY created_at DESC LIMIT 3";
+
+    $orders = [];
+
+    if ($stmt = $conn->prepare($sql)) {
+        $stmt->bind_param("i", $userId);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        while ($row = $result->fetch_assoc()) {
+            $orders[] = $row; // Append each order to the orders array
+        }
+        return $orders; // Return array of orders
+    } else {
+        return false; // Error in query preparation or execution
+    }
+}
+
+
 
 //function redirect($url, $message)
 //{

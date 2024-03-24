@@ -3,14 +3,6 @@ session_start();
 
 include '../../Assets/Functions/myfunctions.php';
 
-$user = $_SESSION['auth_user'];
-
-if($user){
-    $login_link = "../../index.php";
-}
-else{
-    $login_link = "login_page.php";
-}
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +45,7 @@ else{
 
         <nav class="breadcrumbs">
             <a href="../../index.php" class="breadcrumbs__item"><i class="bi bi-house"></i> Home</a>
-            <a href="<?php echo $login_link; ?>" class="breadcrumbs__item is-active"><i class="bi bi-person"></i> Login</a>
+            <a href="#>" class="breadcrumbs__item is-active"><i class="bi bi-person"></i> Login</a>
         </nav>
 
         <div class="container mt-6 mb-6">
