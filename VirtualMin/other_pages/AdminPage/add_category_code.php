@@ -213,7 +213,7 @@ else if(isset($_POST['editproduct_btn']))
 
     $new_image = $_FILES['image']['name'];
     $old_image = $_POST['old_image'];
-    $path = __DIR__ . "/../../Assets/Images/Category_Images/";
+    $path = __DIR__ . "/../../Assets/Images/Product_Images/";
 
     if($new_image != "")
     {

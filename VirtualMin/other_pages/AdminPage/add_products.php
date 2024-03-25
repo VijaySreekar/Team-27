@@ -13,7 +13,7 @@ include 'adminauth.php';
                     <h4 class="card-title">Add Product</h4>
                 </div>
                 <div class="card-body">
-                    <form action="add_product_code.php" method="POST" enctype="multipart/form-data">
+                    <form action="add_category_code.php" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="category_id">Category</label>
                             <select name="category_id" class="form-select">
