@@ -25,7 +25,7 @@ function getItembyID($table, $id)
 function getUserbyID($table, $id)
 {
     global $conn;
-    $query = "SELECT * FROM $table WHERE user_id = $id";
+    $query = "SELECT * FROM user WHERE user_id = $id";
     return $query_run = mysqli_query($conn, $query);
 }
 
