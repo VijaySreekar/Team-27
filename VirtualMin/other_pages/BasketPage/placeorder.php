@@ -66,18 +66,7 @@ if(isset($_SESSION['authenticated']))
                 $delete_cart_query = "DELETE FROM cart WHERE user_id = '$user_id'";
                 $delete_cart_result = mysqli_query($conn, $delete_cart_query);
 
-                // Success message
-                echo "<script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>";
-                echo "<script>
-                swal({
-                    title: 'Order Placed Successfully!',
-                    text: 'Your order has been placed and is being processed.',
-                    icon: 'success',
-                    button: 'OK',
-                }).then(() => {
-                    window.location.href = 'my_orders.php';
-                });
-              </script>";
+                echo 201;
             } else {
                 echo "<script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>";
                 echo "<script>
