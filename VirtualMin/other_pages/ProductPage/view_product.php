@@ -124,30 +124,32 @@ if(isset($_GET['product']))
                     </div>
                     <br/><br/>
                     <div class="col-md-12 shadow-dark">
-                   
                         <?php
-  
-              				$pid = $product['product_id'];
-                        	//echo "<p>".$pid."</p>";
-    						
-                        	$sql = "SELECT * FROM user_review, user WHERE
-                            		product_id=$pid";
-    						
-    						$query = mysqli_query($mysqli, $sql);
-    						$count = mysqli_num_rows($query);
-    						
-    						if($count == 0){
-                            	echo "<p> No reviews yet! </p>";
-                            } else {
-                            	echo "<h3>".$count." reviews:</h3>";
-                            	while($row = mysqli_fetch_assoc($query)){
-                            		echo "<div class=\"review-card\">";
-                           			echo "<p>".$row['username']."</p>";
-                            		echo "<p>".$row['rating']."</p>";
-                            		echo "<p>".$row['comment']."</p>";
-                                	echo "</div>";
-                            	}
+                        $pid = $product['product_id'];
+                        // Adjust the SQL query to include a join with the orders table if you want to display reviews specifically for this user's orders.
+                        // Note: This assumes you want to show all reviews for the product, not filtered by the current user's orders. Adjust accordingly if needed.
+                        $sql = "SELECT ur.*, u.username FROM user_review ur 
+            JOIN user u ON ur.user_id = u.user_id 
+            WHERE ur.product_id = ?";
+
+                        $stmt = $mysqli->prepare($sql);
+                        $stmt->bind_param("i", $pid);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+                        $count = $result->num_rows;
+
+                        if ($count == 0) {
+                            echo "<p> No reviews yet! </p>";
+                        } else {
+                            echo "<h3>" . $count . " reviews:</h3>";
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<div class=\"review-card\">";
+                                echo "<p>" . htmlspecialchars($row['username']) . "</p>";
+                                echo "<p>Rating: " . htmlspecialchars($row['rating']) . "</p>";
+                                echo "<p>" . htmlspecialchars($row['comment']) . "</p>";
+                                echo "</div>";
                             }
+                        }
                         ?>
                     </div>
                 </div>

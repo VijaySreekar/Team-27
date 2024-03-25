@@ -62,23 +62,28 @@ include '../../Assets/Functions/myfunctions.php';
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label class="form-label fw-bold">Name</label>
-                                        <input type="text" name="name" required class="form-control" placeholder="Enter your Full Name">
+                                        <input type="text" name="name"  id="name" required class="form-control" placeholder="Enter your Full Name">
+                                        <small class="text-danger name"></small>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label class="form-label fw-bold">Email</label>
-                                        <input type="email" name="email" required class="form-control" placeholder="Enter your Email">
+                                        <input type="email" name="email" id="email" required class="form-control" placeholder="Enter your Email">
+                                        <small class="text-danger email"></small>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label class="form-label fw-bold">Phone Number</label>
-                                        <input type="text" name="phone" required class="form-control" placeholder="Enter your Phone Number">
+                                        <input type="text" name="phone" id="phone" required class="form-control" placeholder="Enter your Phone Number">
+                                        <small class="text-danger phone"></small>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label class="form-label fw-bold">Pin Code</label>
-                                        <input type="text" name="pincode" required class="form-control" placeholder="Enter your Pin Code">
+                                        <input type="text" name="pincode" id="pincode" required class="form-control" placeholder="Enter your Pin Code">
+                                        <small class="text-danger pincode"></small>
                                     </div>
                                     <div class="col-md-12 mb-3">
                                         <label class="form-label fw-bold">Address</label>
-                                        <textarea name="address" class="form-control" required rows='4' placeholder="Enter your Address"></textarea>
+                                        <textarea name="address" id="address" class="form-control" required rows='4' placeholder="Enter your Address"></textarea>
+                                        <small class="text-danger address"></small>
                                     </div>
                                 </div>
                             </div>
@@ -97,7 +102,7 @@ include '../../Assets/Functions/myfunctions.php';
                                             <div class="col-md-8">
                                                 <div class="card-body py-2">
                                                     <h6 class="card-title mb-1"><?= $cartitem['name'] ?></h6>
-                                                    <p class="card-text mb-0">Quantity: <?= $cartitem['quantity'] ?></p>
+                                                    <p class="card-text mb-0">Quantity: <?= $cartitem['quantity'] ?>   Price: £<?= $cartitem['discounted_price'] ?></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -109,6 +114,9 @@ include '../../Assets/Functions/myfunctions.php';
                                 <h5 class="mt-3">Total: <span class="float-end" id="totalPrice">£<?= $totalPrice?></span></h5>
                                 <input type="hidden" name="payment_mode" value="Card">
                                 <button type='submit' name="placeOrderButton" class="btn btn-primary mt-3 w-100" id="placeOrder">Place Order</button>
+                                <div id="paypal-button-container">
+
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -127,5 +135,108 @@ include '../../Assets/Functions/myfunctions.php';
 <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../../Assets/JS/custom.js"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=AUco1UA8mfq_-Mhe_7lZV1TVQeiJbmp0PB11-pn-YPm3XVwrCLqkIRmTYMzz_AoxoRYDHY9AilI4liPd&currency=GBP"></script>
+<script>
+
+    paypal.Buttons({
+        onClick: function() {
+
+            var name = $('#name').val();
+            var email = $('#email').val();
+            var phone = $('#phone').val();
+            var pincode = $('#pincode').val();
+            var address = $('#address').val();
+
+            if(name.length == 0)
+            {
+                $('.name').text('*Please fill out this field');
+            }else {
+                $('.name').text('');
+            }
+            if(email.length == 0)
+            {
+                $('.email').text('*Please fill out this field');
+            }
+            else {
+                $('.email').text('');
+            }
+            if(phone.length == 0)
+            {
+                $('.phone').text('*Please fill out this field');
+            }
+            else {
+                $('.phone').text('');
+            }
+            if(pincode.length == 0)
+            {
+                $('.pincode').text('*Please fill out this field');
+            }
+            else {
+                $('.pincode').text('');
+            }
+            if(address.length == 0)
+            {
+                $('.address').text('*Please fill out this field');
+            }
+            else {
+                $('.address').text('');
+            }
+
+            if(name.length == 0 || email.length == 0 || phone.length == 0 || pincode.length == 0 || address.length == 0)
+            {
+                return false;
+            }
+        },
+        createOrder: function(data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: '<?= $totalPrice ?>'
+                    }
+                }]
+            });
+        },
+        onApprove: (data, actions) => {
+            return actions.order.capture().then(function(orderData) {
+                const transaction = orderData.purchase_units[0].payments.captures[0];
+
+                var name = $('#name').val();
+                var email = $('#email').val();
+                var phone = $('#phone').val();
+                var pincode = $('#pincode').val();
+                var address = $('#address').val();
+
+
+                var data = {
+                    'name' : name,
+                    'email' : email,
+                    'phone' : phone,
+                    'pincode' : pincode,
+                    'address' : address,
+                    'payment_mode' : 'Paypal',
+                    'payment_id' : transaction.id,
+                    'placeOrderButton' : true
+                };
+
+                $.ajax({
+                    method: 'POST',
+                    url: 'placeorder.php',
+                    data: data,
+                    success: function(response) {
+                        Swal.fire({
+                            title: 'Order Placed!',
+                            text: 'Your order has been placed successfully!',
+                            icon: 'success',
+                            confirmButtonText: 'OK'
+                        }).then(function() {
+                            window.location.href = '../ProfilePage/profile.php';
+                        });
+                    },
+                })
+            });
+        }
+    }).render('#paypal-button-container');
+
+</script>
 </body>
 </html>

@@ -149,9 +149,8 @@ $order_data = mysqli_fetch_array($order_details);
 
                                                 if(mysqli_num_rows($order_items) > 0)
                                                 {
-                                                    foreach ($order_items as $item) {
-
-                                                    }
+                                                    foreach ($order_items as $item)
+                                                    {
                                                         ?>
                                                             <tr>
                                                                 <td class="align-middle">
@@ -165,8 +164,8 @@ $order_data = mysqli_fetch_array($order_details);
                                                                     <?= $item['order_quantity']; ?>
                                                                 </td>
                                                             </tr>
-
                                                     <?php
+                                                    }
                                                 }
                                                 ?>
                                             </tbody>

@@ -1,86 +1,74 @@
 <?php
-    session_start(); // Start the session
-    include("../../Assets/Database/connectdb.php");
+session_start();
+include "../../Assets/Database/connectdb.php";
 
-    if(isset($_GET['pid'])){
-        require_once "../../Assets/connectdb.php";
+$order_id = $_GET['orderId'] ?? null;
 
-        $pid = $_GET['pid'];
-        $uid = $_SESSION['user_id'];
+if (!$order_id) {
+    echo "Order ID is required.";
+    exit;
+}
 
-    	$sql = "SELECT * 
-        		FROM product 
-                WHERE product_id='$pid'";
-        $result = mysqli_query($mysqli, $sql);
-        $row = mysqli_fetch_array($result);    
-    }
+// Fetch products in the order
+$sql = "SELECT p.product_id, p.name FROM order_items oi JOIN product p ON oi.product_id = p.product_id WHERE oi.order_id = ?";
+$stmt = $mysqli->prepare($sql);
+$stmt->bind_param("i", $order_id);
+$stmt->execute();
+$products = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 
-    if($_SERVER["REQUEST_METHOD"] === "POST"){
-    	require_once "../../Assets/Database/connectdb.php";
-        $rating = $_POST['rating'];
-        $comment = $_POST['comment'];
-		
-    	//$rating = mysql_real_escape_string($rating);
-		//$comment  = mysql_real_escape_string($comment);
-    	//$uid = mysql_real_escape_string($uid);
-		//$pid = mysql_real_escape_string($pid);
 
-        $sql = "INSERT INTO `user_review` 
-         		(`user_id`, `product_id`, `rating`, `comment`) 
-         		VALUES ('$uid', '$pid', '$rating', '$comment')";
-    	 
-        $result = mysqli_query($mysqli, $sql) or die("bad query");
-        //$stmt = $mysqli->stmt_init();
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $product_id = $_POST['product_id'];
+    $rating = $_POST['rating'];
+    $comment = $_POST['comment'];
+    $user_id = $_SESSION['user_id']; // Assuming user_id is stored in the session
 
-        // if(!$stmt->prepare($sql)){
-        //     die("SQL error:".$mysqli->error);
-        // }
+    // Insert review into the database
+    $sql = "INSERT INTO user_review (user_id, product_id, order_id, rating, comment) VALUES (?, ?, ?, ?, ?)";
+    $stmt = $mysqli->prepare($sql);
+    $stmt->bind_param("iiiis", $user_id, $product_id, $order_id, $rating, $comment);
+    $stmt->execute();
 
-        // $stmt->bind_param("iiis",
-        //                    $_SESSION['user_id'],
-        //                    $pid,
-        //                    $_POST["rating"],
-        //                    $_POST["comment"]);
-        // $stmt->execute();
+    // Redirect or display a success message
+    echo "Review submitted successfully!";
+}
 
-        //header("Location:../../profile.php");
-    }
 ?>
-
+?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Leave A Review</title>
-        <link rel="stylesheet" href="../../Assets/CSS/review.css">
-        <link rel="stylesheet" href="../../Assets/CSS/nav.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    </head>
-    <body>
-        <?php include("../../Includes/nav.php"); ?>
-        <div class ="container">
-            <h2>Leave a review!</h2>
+<head>
+    <meta charset="UTF-8">
+    <title>Leave A Review</title>
+    <!-- Include your CSS here (e.g., Bootstrap) -->
+</head>
+<body>
+<div class="container">
+    <h2>Leave a Review</h2>
+    <form action="" method="post">
+        <div class="form-group">
+            <label for="product">Select Product:</label>
+            <select name="product_id" id="product" class="form-control" required>
+                <option value="">--Select a Product--</option>
+                <?php foreach ($products as $product): ?>
+                    <option value="<?= htmlspecialchars($product['product_id']) ?>">
+                        <?= htmlspecialchars($product['name']) ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
         </div>
-        <div class ="container">
-            <h2><?php echo $row['name']?></h2>
-            <h3><?php echo $row['price']?></h3>
+        <div class="form-group">
+            <label for="rating">Rating (1-5):</label>
+            <input type="number" name="rating" id="rating" class="form-control" min="1" max="5" required>
         </div>
-        <!--<p><?php echo $pid?></p>-->            
-        <!--<p><?php echo $uid?></p>-->
-        <main id ="mainform">
-            <form method="POST" id="mainform">
-                <label>Rating:</label>
-                <input type="text" name="rating" id="rating" required>
-                <br/><br/>
-                <textarea rows="7" cols="55" name="comment" id="comment"></textarea>
-                <br/><br/>
-                <button type="submit" class="button" name="submit">Submit Review</button>
-            </form>
-        </main>
-        <?php
-            include("../../Includes/footer.php");
-        ?>
-    </body>
+        <div class="form-group">
+            <label for="comment">Comment:</label>
+            <textarea name="comment" id="comment" rows="5" class="form-control" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Review</button>
+    </form>
+</div>
+
+<!-- Include your JS here (e.g., jQuery, Bootstrap) -->
+</body>
 </html>

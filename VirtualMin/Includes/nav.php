@@ -6,7 +6,8 @@
         <div class="navbar-center ml-5">
             <ul class="nav-links">
                 <li><a href="../../index.php">Home</a></li>
-                <li><a href="../ProductPage/category_page.php">Products</a></li>
+                <li><a href="../ProductPage/category_page.php">Categories</a></li>
+                <li><a href="../ProductPage/allproductsuser.php">Products</a></li>
                 <li><a href="../AboutUsPage/aboutus.php">About</a></li>
                 <li><a href="../ContactUsPage/contactus.php">Contact Us</a></li>
             </ul>
