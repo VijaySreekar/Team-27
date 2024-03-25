@@ -22,6 +22,13 @@ function getItembyID($table, $id)
     return $query_run = mysqli_query($conn, $query);
 }
 
+function getUserbyID($table, $id)
+{
+    global $conn;
+    $query = "SELECT * FROM $table WHERE user_id = $id";
+    return $query_run = mysqli_query($conn, $query);
+}
+
 function getItemActive($table, $id)
 {
     global $conn;
