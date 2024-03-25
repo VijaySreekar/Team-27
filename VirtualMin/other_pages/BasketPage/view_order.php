@@ -11,7 +11,7 @@ if(isset($_GET['t']))
     if(mysqli_num_rows($order_details) == 0)
     {
         ?>
-            <h4>No Orderss Found</h4>
+            <h4>No Orders Found</h4>
         <?php
         die();
     }
@@ -149,9 +149,8 @@ $order_data = mysqli_fetch_array($order_details);
 
                                                 if(mysqli_num_rows($order_items) > 0)
                                                 {
-                                                    foreach ($order_items as $item) {
-
-                                                    }
+                                                    foreach ($order_items as $item)
+                                                    {
                                                         ?>
                                                             <tr>
                                                                 <td class="align-middle">
@@ -165,8 +164,8 @@ $order_data = mysqli_fetch_array($order_details);
                                                                     <?= $item['order_quantity']; ?>
                                                                 </td>
                                                             </tr>
-
                                                     <?php
+                                                    }
                                                 }
                                                 ?>
                                             </tbody>

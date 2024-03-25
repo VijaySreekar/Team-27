@@ -102,7 +102,7 @@ include '../../Assets/Functions/myfunctions.php';
                                             <div class="col-md-8">
                                                 <div class="card-body py-2">
                                                     <h6 class="card-title mb-1"><?= $cartitem['name'] ?></h6>
-                                                    <p class="card-text mb-0">Quantity: <?= $cartitem['quantity'] ?></p>
+                                                    <p class="card-text mb-0">Quantity: <?= $cartitem['quantity'] ?>   Price: £<?= $cartitem['discounted_price'] ?></p>
                                                 </div>
                                             </div>
                                         </div>
