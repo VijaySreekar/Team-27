@@ -2,6 +2,7 @@
 session_start();
 include '../../Includes/admin_header.php';
 include '../../Assets/Functions/myfunctions.php';
+include 'adminauth.php';
 ?>
 
 
@@ -43,11 +44,6 @@ include '../../Assets/Functions/myfunctions.php';
                                         <td>
                                             <a href="edit-category.php?id=<?= $category['category_id']; ?>"  class="btn btn-primary">Edit</a>
                                             <button type="button" class="btn btn-danger delete_categorybtn" data-category_id="<?= $category['category_id']; ?>">Delete</button>
-<!--                                            <form action="add_category_code.php" method="POST">-->
-<!--                                                <input type="hidden" name="category_ids" value="--><?php //= $category['category_id'] ?><!--">-->
-<!--                                                <button type="submit" class="btn btn-danger" name="delete_categorybtn">Delete</button>-->
-<!--                                            </form>-->
-
                                         </td>
                                     </tr>
                                     <?php

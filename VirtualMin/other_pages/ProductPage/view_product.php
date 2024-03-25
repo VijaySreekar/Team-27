@@ -83,7 +83,7 @@ if(isset($_GET['product']))
                     <div class="row">
                         <div class="col-md-6">
                             <div class="shadow-danger">
-                                <img src="../AdminPage/<?= $product['image']; ?>" alt="Product Image" class="w-100">
+                                <img src="../../Assets/Images/Product_Images/<?= $product['image']; ?>" alt="Product Image" class="w-100">
                             </div>
                         </div>
                         <div class="col-md-6 shadow-dark">

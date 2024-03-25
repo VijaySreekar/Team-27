@@ -68,7 +68,7 @@ include '../../Assets/Functions/myfunctions.php';
                                                 <a href="products_page.php?category=<?= $item['slug']; ?>">
                                                     <div class="card shadow">
                                                         <div class="card-body">
-                                                            <img src="../AdminPage/<?= $item['image']; ?>" alt="Category Image" class="w-100">
+                                                            <img src="../../Assets/Images/Category_Images/<?= $item['image']; ?>" alt="Category Image" class="w-100">
                                                             <h4 class="text-center"><?= $item['name']; ?></h4>
                                                         </div>
                                                     </div>

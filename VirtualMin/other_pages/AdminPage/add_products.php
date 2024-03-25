@@ -1,6 +1,8 @@
 <?php
 session_start();
 include '../../Assets/Functions/myfunctions.php';
+include 'adminauth.php';
+
 ?>
 
 <?php include '../../Includes/admin_header.php'; ?>

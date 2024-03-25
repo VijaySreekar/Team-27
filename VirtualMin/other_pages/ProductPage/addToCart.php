@@ -80,7 +80,7 @@ if(isset($_SESSION['authenticated']))
                     if(mysqli_affected_rows($conn) > 0) {
                         echo 200; // Successfully deleted
                     } else {
-                        echo 'not_existingssssss'; // No rows were affected, meaning the cart item didn't exist
+                        echo 'not_existings'; // No rows were affected, meaning the cart item didn't exist
                     }
                 } else {
                     echo 500; // Query execution failed

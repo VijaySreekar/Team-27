@@ -2,6 +2,7 @@
 session_start();
 include '../../Includes/admin_header.php';
 include '../../Assets/Database/connectdb.php';
+include 'adminauth.php';
 
 $sql = "SELECT COUNT(id) AS total_bookings FROM orders";
 $result = mysqli_query($conn, $sql);
