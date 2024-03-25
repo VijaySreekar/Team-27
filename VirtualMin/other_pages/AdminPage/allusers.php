@@ -39,7 +39,7 @@ include 'adminauth.php';
                                     <td><?= $item['email'] ?></td>
                                     <td><?= $item['phone'] ?></td>
                                     <td>
-                                        <a href="edituser.php?id=<?= $item['user_id']; ?>"  class="btn btn-primary">Edit</a>
+                                        <a href="edituser.php?user_id=<?= $item['user_id']; ?>"  class="btn btn-primary">Edit</a>
                                         <button type="button" class="btn btn-danger deleteuser_btn" data-user_id="<?= $item['user_id']; ?>">Delete</button>
                                     </td>
                                 </tr>

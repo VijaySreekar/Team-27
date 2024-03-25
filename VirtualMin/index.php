@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['searchQuery'])) {
                 </div>
                 <div class="navbar-center ml-5">
                     <ul class="nav-links">
-                        <li><a href="../../index.php">Home</a></li>
+                        <li><a href="/Team-27/VirtualMin/index.php">Home</a></li>
                         <li><a href="other_pages/ProductPage/category_page.php">Products</a></li>
                         <li><a href="other_pages/AboutUsPage/aboutus.php">About</a></li>
                         <li><a href="other_pages/ContactUsPage/contactus.php">Contact Us</a></li>

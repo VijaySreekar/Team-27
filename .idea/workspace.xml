@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbf2f922-5ce0-4d3b-977e-7c8bbdfdd3ac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/return_order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/Includes/admin_sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/Includes/admin_sidebar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualMin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/stock.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/stock.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/view_order_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/view_order_admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/placeorder.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/placeorder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/view_order.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/view_order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ContactUsPage/contactus.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ContactUsPage/contactus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/allusers.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/allusers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/edituser.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/edituser.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,6 +283,11 @@
     </option>
     <option name="TAB_STATES">
       <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
         <entry key="bf4a30f6-fbf3-4359-afae-22a9452ad845">
           <value>
             <State>
