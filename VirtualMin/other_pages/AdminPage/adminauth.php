@@ -1,5 +1,5 @@
 <?php
-session_start();
+include '../../Assets/Database/connectdb.php';
 
 
 if(isset($_SESSION['role'])) {
@@ -14,5 +14,4 @@ if(isset($_SESSION['role'])) {
     header("Location: ../LoginPage/login_page.php");
     exit();
 }
-?>
 ?>

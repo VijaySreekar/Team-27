@@ -82,7 +82,7 @@ if(isset($_GET['category']))
                                             <a href="view_product.php?product=<?= $item['slug']; ?>">
                                                 <div class="card shadow">
                                                     <div class="card-body">
-                                                        <img src="../AdminPage/<?= $item['image']; ?>" alt="Product Image" class="w-100">
+                                                        <img src="../../Assets/Images/Product_Images/<?= $item['image']; ?>" alt="Product Image" class="w-100">
                                                         <h4 class="text-center"><?= $item['name']; ?></h4>
                                                     </div>
                                                 </div>

@@ -22,7 +22,6 @@ include '../../Assets/Functions/myfunctions.php';
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <!-- SweetAlert2 JS file -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../AdminPage/assets/js/custom.js"></script>
     <!-- Nucleo Icons -->
     <link href="../../Assets/CSS/nucleo-icons.css" rel="stylesheet" />
     <link href="../../Assets/CSS/nucleo-svg.css" rel="stylesheet" />
@@ -93,7 +92,7 @@ include '../../Assets/Functions/myfunctions.php';
                                     <div class="card mb-3 border-0">
                                         <div class="row align-items-center g-0">
                                             <div class="col-md-4">
-                                                <img src="../AdminPage/<?= $cartitem['image'] ?>" alt="Product Image" class="img-fluid rounded-start" style="max-height: 100px;">
+                                                <img src="../../Assets/Images/Product_Images/<?= $cartitem['image'] ?>" alt="Product Image" class="img-fluid rounded-start" style="max-height: 100px;">
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="card-body py-2">

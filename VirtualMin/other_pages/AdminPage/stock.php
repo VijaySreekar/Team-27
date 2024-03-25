@@ -45,7 +45,7 @@ $products = getAll('product');
 
                                     echo '<tr>';
                                     echo '<td>' . $product['name'] . '</td>';
-                                    echo '<td><img src="' . $product['image'] . '" width="50px" height="50px" alt="' . $product['name'] . '"></td>';
+                                    echo '<td><img src="../../Assets/Images/Product_Images/' . $product['image'] . '" width="50px" height="50px" alt="' . $product['name'] . '"></td>';
                                     echo '<td>' . $stock . '</td>';
                                     echo '<td>' . $stockStatus . '</td>';
                                     echo '</tr>';

@@ -34,7 +34,7 @@ $order_data = mysqli_fetch_array($order_details);
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>My Orders</title>
+    <title>View Order</title>
 
     <!-- Fonts and icons -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
@@ -155,7 +155,7 @@ $order_data = mysqli_fetch_array($order_details);
                                                         ?>
                                                             <tr>
                                                                 <td class="align-middle">
-                                                                    <img src="../AdminPage/<?= $item['image']; ?>" alt="<?= $item['name']; ?>" style="width: 50px;">
+                                                                    <img src="../../Assets/Images/Product_Images/<?= $item['image']; ?>" alt="<?= $item['name']; ?>" style="width: 50px;">
                                                                     <?= $item['name']; ?>
                                                                 </td>
                                                                 <td class="align-middle">

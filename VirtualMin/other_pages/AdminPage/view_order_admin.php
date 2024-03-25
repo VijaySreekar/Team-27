@@ -3,6 +3,7 @@ session_start();
 include '../../Includes/admin_header.php';
 include '../../Assets/Functions/myfunctions.php';
 include '../../Assets/Database/connectdb.php';
+include 'adminauth.php';
 
 if(isset($_GET['t']))
 {
@@ -110,7 +111,7 @@ $order_data = mysqli_fetch_array($order_details);
                                                         ?>
                                                             <tr>
                                                                 <td class="align-middle">
-                                                                    <img src="../AdminPage/<?= $item['image']; ?>" alt="<?= $item['name']; ?>" style="width: 50px;">
+                                                                    <img src="../../Assets/Images/Product_Images<?= $item['image']; ?>" alt="<?= $item['name']; ?>" style="width: 50px;">
                                                                     <?= $item['name']; ?>
                                                                 </td>
                                                                 <td class="align-middle">

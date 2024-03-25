@@ -2,8 +2,8 @@
 session_start();
 include '../../Includes/admin_header.php';
 include '../../Assets/Functions/myfunctions.php';
+include 'adminauth.php';
 ?>
-
 
 <div class="container">
     <div class="row">

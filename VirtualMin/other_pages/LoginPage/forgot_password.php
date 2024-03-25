@@ -7,7 +7,7 @@ session_start(); // Start the session
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Category Page</title>
+    <title>Forgot Password? </title>
 
     <link rel="stylesheet" href="../../Assets/CSS/login.css">
     <!-- Fonts and icons -->

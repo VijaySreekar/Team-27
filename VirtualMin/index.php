@@ -104,7 +104,7 @@ include 'Assets/Functions/myfunctions.php';
                 $trendingProducts = getAllTrending();
                 echo mysqli_num_rows($trendingProducts);
                 foreach ($trendingProducts as $product): ?>
-                    <div class="swiper-slide" style="background: url('other_pages/AdminPage/<?php echo $product['image']; ?>') no-repeat 50% 50% / cover;">
+                    <div class="swiper-slide" style="background: url('Assets/Images/Product_Images/<?php echo $product['image']; ?>') no-repeat 50% 50% / cover;">
                         <div>
                             <h2 class="text-white bg-gradient-faded-dark rounded p-2"><?php echo $product['name']; ?></h2>
                             <a href="other_pages/ProductPage/view_product.php?product=<?php echo $product['name']; ?>">Buy Now</a>

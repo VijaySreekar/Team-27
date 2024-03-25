@@ -1,13 +1,7 @@
 <?php
 session_start();
 
-$host = "localhost";
-$username = "u-230185247";
-$password = "z3mlfs8WdS1hxvH";
-$dbname = "u_230185247_treaker";
-
-// Create database connection
-$conn = mysqli_connect($host, $username, $password, $dbname);
+include '../../Assets/Database/connectdb.php';
 
 // Check connection
 if (!$conn) {
@@ -205,7 +199,7 @@ else if(isset($_POST['editproduct_btn']))
 
     $new_image = $_FILES['image']['name'];
     $old_image = $_POST['old_image'];
-    $path = __DIR__ . "/";
+    $path = __DIR__ . "/../../Assets/Images/Category_Images/";
 
     if($new_image != "")
     {

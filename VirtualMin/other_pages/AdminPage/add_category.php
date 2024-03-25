@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'adminauth.php';
 ?>
 
 <?php include '../../Includes/admin_header.php'; ?>
