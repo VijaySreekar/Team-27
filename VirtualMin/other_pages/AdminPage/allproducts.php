@@ -2,12 +2,34 @@
 session_start();
 include '../../Includes/admin_header.php';
 include '../../Assets/Functions/myfunctions.php';
+
+//Check if the form is submitted
+if(isset($_GET['search'])){
+    $search_query = $_GET['search'];
+    // Filter products based on the search query
+    $product = searchProducts($search_query);
+} else {
+    // If search form is not submitted, get all products
+    $product = getAll('product');
+}
 ?>
 
 
 <div class="container">
     <div class="row">
         <div class="col-md-12">
+            <!-- Search Form -->
+            <form method="GET" action="">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="search" placeholder="Search products">
+                </div>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+            <br>
+            <div class="card">
+                <div class="card-header bg-transparent">
+                    <h3 class="mb-0">Products</h3>
+                </div>
             <div class="card">
                 <div class="card-header bg-transparent">
                     <h3 class="mb-0">Products</h3>

@@ -184,7 +184,24 @@ function getProductsWithCategory($categorySlug, $sortOrder = 'ASC') {
     return $products;
 }
 
+function searchProducts($searchTerm) {
+    global $conn;
 
+    // Escape the search term to prevent SQL injection
+    $searchTerm = mysqli_real_escape_string($conn, $searchTerm);
+
+    // SQL query to search for products by name
+    $sql = "SELECT * FROM product WHERE name LIKE '%$searchTerm%'";
+
+    $result = mysqli_query($conn, $sql);
+
+    if ($result) {
+        return $result;
+    } else {
+        // Handle query errors
+        return false;
+    }
+}
 
 
 //function redirect($url, $message)
