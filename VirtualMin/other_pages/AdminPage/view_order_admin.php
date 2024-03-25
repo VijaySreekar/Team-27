@@ -130,7 +130,7 @@ $order_data = mysqli_fetch_array($order_details);
                                     </table>
                                     <hr>
                                     <h4>Total Price: <span class="float-end">£<?= $order_data['total_price']; ?></span></h4>
-                                    
+
                                     <label class="fw-bold fs-6 mb-1 mt-2">Payment Mode:</label>
                                     <div class="border p-3">
                                         <?= $order_data['payment_mode']; ?>

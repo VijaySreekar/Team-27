@@ -6,7 +6,7 @@ include '../../Assets/Database/connectdb.php';
 // Check if the user is logged in
 if (!isset($_SESSION['user_id'])) {
     // Redirect to the login page or any other appropriate action
-    header("Location: login.php"); // Replace "login.php" with your login page URL
+    header("Location: login_page.php"); // Replace "login.php" with your login page URL
     exit();
 }
 

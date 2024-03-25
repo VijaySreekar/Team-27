@@ -6,9 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="dbf2f922-5ce0-4d3b-977e-7c8bbdfdd3ac" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/allusers.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/allusers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/edituser.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/edituser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/view_order_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/AdminPage/view_order_admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/checkout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/my_orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/my_orders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/view_order.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/BasketPage/view_order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ContactUsPage/contactus.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ContactUsPage/contactus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/InventoryManagementPage/stock.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/forgot_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/forgot_password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/handle_reset_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/handle_reset_password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/login_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/LoginPage/login_page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/allproductsuser.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/allproductsuser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/category_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/category_page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/products_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/products_page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/view_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProductPage/view_product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProfilePage/edit_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProfilePage/edit_user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirtualMin/other_pages/ProfilePage/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualMin/other_pages/ProfilePage/profile.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
