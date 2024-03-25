@@ -9,12 +9,14 @@ include 'adminauth.php';
     <div class="row">
         <div class="col-md-12">
             <!-- Search Form -->
-            <form method="GET" action="">
-                <div class="form-group">
-                    <input type="text" class="form-control" name="search" placeholder="Search products">
-                </div>
-                <button type="submit" class="btn btn-primary">Search</button>
-            </form>
+            <form action="" method="GET">
+    <div class="input-group">
+        <input type="text" name="search" class="form-control" placeholder="Search products" value="<?= $searchTerm ?>">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
+        </div>
+    </div>
+</form>
             <br>
             <div class="card">
                 <div class="card-header bg-transparent">
