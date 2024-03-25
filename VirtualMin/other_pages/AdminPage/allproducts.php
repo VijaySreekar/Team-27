@@ -2,26 +2,30 @@
 session_start();
 include '../../Includes/admin_header.php';
 include '../../Assets/Functions/myfunctions.php';
+include '../../Assets/Database/connectdb.php';
 include 'adminauth.php';
+
+// Define variables for pagination
+$records_per_page = 10;
+$page = isset($_GET['page']) ? $_GET['page'] : 1;
+$offset = ($page - 1) * $records_per_page;
+
+// Get search term if provided
+$searchTerm = isset($_GET['search']) ? $_GET['search'] : '';
+
+// Fetch products with pagination
+$query = "SELECT * FROM product";
+if (!empty($searchTerm)) {
+    $query .= " WHERE name LIKE '%$searchTerm%'";
+}
+$query .= " LIMIT $offset, $records_per_page";
+$product = mysqli_query($conn, $query);
+
 ?>
 
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <!-- Search Form -->
-            <form action="" method="GET">
-    <div class="input-group">
-        <input type="text" name="search" class="form-control" placeholder="Search products" value="<?= $searchTerm ?>">
-        <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="submit">Search</button>
-        </div>
-    </div>
-</form>
-            <br>
-            <div class="card">
-                <div class="card-header bg-transparent">
-                    <h3 class="mb-0">Products</h3>
-                </div>
             <div class="card">
                 <div class="card-header bg-transparent">
                     <h3 class="mb-0">Products</h3>
@@ -39,12 +43,8 @@ include 'adminauth.php';
                         </thead>
                         <tbody>
                         <?php
-                        $product = getAll('product');
-
-                        if(mysqli_num_rows($product) > 0)
-                        {
-                            foreach ($product as $item)
-                            {
+                        if (mysqli_num_rows($product) > 0) {
+                            while ($item = mysqli_fetch_assoc($product)) {
                                 ?>
                                 <tr>
                                     <td><?= $item['product_id'] ?></td>
@@ -56,25 +56,44 @@ include 'adminauth.php';
                                         <?= $item['status'] == '1' ? "Visible" : "Hidden" ?>
                                     </td>
                                     <td>
-                                        <a href="edit-product.php?id=<?= $item['product_id']; ?>"  class="btn btn-primary">Edit</a>
+                                        <a href="edit-product.php?id=<?= $item['product_id']; ?>" class="btn btn-primary">Edit</a>
                                         <button type="button" class="btn btn-danger deleteproduct_btn" data-product_id="<?= $item['product_id']; ?>">Delete</button>
                                     </td>
                                 </tr>
                                 <?php
                             }
-                        }
-                        else{
-                            echo "No products found!";
+                        } else {
+                            echo "<tr><td colspan='5'>No products found!</td></tr>";
                         }
                         ?>
-                        <tr>
                         </tbody>
                     </table>
+
+                    <!-- Pagination links -->
+                    <?php
+                    $total_query = "SELECT COUNT(*) as total FROM product";
+                    if (!empty($searchTerm)) {
+                        $total_query .= " WHERE name LIKE '%$searchTerm%'";
+                    }
+                    $total_result = mysqli_query($conn, $total_query);
+                    $total_row = mysqli_fetch_assoc($total_result);
+                    $total_products = $total_row['total'];
+                    $total_pages = ceil($total_products / $records_per_page);
+
+                    if ($total_pages > 1) {
+                        ?>
+                        <ul class="pagination justify-content-center">
+                            <?php for ($i = 1; $i <= $total_pages; $i++) { ?>
+                                <li class="page-item <?= ($page == $i) ? 'active' : ''; ?>">
+                                    <a class="page-link" href="?page=<?= $i ?>&search=<?= $searchTerm ?>"><?= $i ?></a>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    <?php } ?>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <?php include '../../Includes/admin_footer.php'; ?>
-
-

@@ -37,6 +37,22 @@
             border: 1px solid #b3a1a1 !important;
             padding: 8px 10px;
         }
+        .bg-lightblue {
+            background-color: #e0f7fa; /* Light Blue */
+        }
+
+        .bg-lightgreen {
+            background-color: #e8f5e9; /* Light Green */
+        }
+
+        .bg-lightyellow {
+            background-color: #fffde7; /* Light Yellow */
+        }
+
+        .bg-lightpurple {
+            background-color: #f3e5f5; /* Light Purple */
+        }
+
     </style>
 </head>
 

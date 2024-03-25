@@ -15,28 +15,40 @@ $recent_orders = getViewRecentOrders($user_id);
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Profile</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Categories</title>
 
     <!-- Fonts and icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
-    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+    <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Truncleta:wght@400&display=swap">
+    <link rel="stylesheet" href="../../Assets/CSS/nav.css">
+
+    <!-- Nucleo Icons -->
+    <link href="../../Assets/CSS/nucleo-icons.css" rel="stylesheet" />
+    <link href="../../Assets/CSS/nucleo-svg.css" rel="stylesheet" />
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-    <!-- Custom CSS -->
-    <link href="../../Assets/CSS/material-dashboard.min.css" rel="stylesheet">
-    <link href="../../Assets/CSS/nav.css" rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <!-- CSS Files -->
+    <link id="pagestyle" href="../../Assets/CSS/material-dashboard.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Alertify JS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+
+    <link rel="stylesheet" href="../../Assets/CSS/nav.css">
 </head>
+
 <body class="g-sidenav-show bg-gray-200">
-
-<?php include("../../Includes/nav.php"); ?>
-
-<main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
+    <?php include("../../Includes/nav.php"); ?>
     <!-- Breadcrumbs -->
     <nav class="breadcrumbs">
         <a href="../../index.php" class="breadcrumbs__item"><i class="bi bi-house"></i> Home</a>
@@ -117,7 +129,7 @@ $recent_orders = getViewRecentOrders($user_id);
         </div>
     </div>
     <?php include("../../Includes/footer.php"); ?>
-</main>
+    </main>
 
 <!-- Include Bootstrap JS and other necessary JavaScript libraries -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

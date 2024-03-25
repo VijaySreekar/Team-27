@@ -106,137 +106,87 @@ $resultOrders = mysqli_query($conn, $sqlOrders);
 
 <?php include '../../Includes/admin_header.php'; ?>
 <div class="container">
-    <?php
-        if(isset($_SESSION['message'])):
-        {
-            ?>
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <?php if(isset($_SESSION['message'])): ?>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
             <strong>Hey!</strong> <?= $_SESSION['message'] ?>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            <?php
-            unset($_SESSION['message']);
-        }
-        ?>
+        </div>
+        <?php unset($_SESSION['message']); ?>
     <?php endif; ?>
+
     <div class="row">
-        <div class="col-md-12">
-            <div class="row">
-                <div class="col-lg-5 col-sm-5">
-                    <div class="card  mb-2">
-                        <div class="card-header p-3 pt-2">
-                            <div class="icon icon-lg icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-xl mt-n4 position-absolute">
-                                <i class="material-icons opacity-10">weekend</i>
-                            </div>
-                            <div class="text-end pt-1">
-                                <p class="text-sm mb-0 text-capitalize">Bookings</p>
-                                <h4 class="mb-0"><?php echo $totalBookings; ?></h4>
-                            </div>
-                        </div>
-
-                        <hr class="dark horizontal my-0">
-                        <div class="card-footer p-3">
-                            <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+<?php echo $percentageChange; ?>% </span>than last week</p>
-                        </div>
-                    </div>
-
-                    <div class="card  mb-2">
-                        <div class="card-header p-3 pt-2">
-                            <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary shadow text-center border-radius-xl mt-n4 position-absolute">
-                                <i class="material-icons opacity-10">leaderboard</i>
-                            </div>
-                            <div class="text-end pt-1">
-                                <p class="text-sm mb-0 text-capitalize">Today's Users</p>
-                                <h4 class="mb-0"><?php echo $todayUsersCount; ?></h4>
-                            </div>
-                        </div>
-
-                        <hr class="dark horizontal my-0">
-                        <div class="card-footer p-3">
-                            <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+<?php echo round($percentageChangeTodayUsers); ?>% </span>than last month</p>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-lg-5 col-sm-5 mt-sm-0 mt-4">
-                    <div class="card  mb-2">
-                        <div class="card-header p-3 pt-2 bg-transparent">
-                            <div class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
-                                <i class="material-icons opacity-10">store</i>
-                            </div>
-                            <div class="text-end pt-1">
-                                <p class="text-sm mb-0 text-capitalize ">Revenue</p>
-                                <h4 class="mb-0 "><?php echo $totalRevenue; ?></h4>
-                            </div>
-                        </div>
-
-                        <hr class="horizontal my-0 dark">
-                        <div class="card-footer p-3">
-                            <p class="mb-0 "><span class="text-success text-sm font-weight-bolder">+<?php echo $percentageChangeRevenue; ?>% </span>than yesterday</p>
-                        </div>
-                    </div>
-
-                    <div class="card ">
-                        <div class="card-header p-3 pt-2 bg-transparent">
-                            <div class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
-                                <i class="material-icons opacity-10">inventory</i>
-                            </div>
-                            <div class="text-end pt-1">
-                                <p class="text-sm mb-0 text-capitalize ">Inventory Value</p>
-                                <h4 class="mb-0">£<?php echo number_format($totalInventoryValue, 2); ?></h4>
-                            </div>
-                        </div>
-
-                        <hr class="horizontal my-0 dark">
-                        <div class="card-footer p-3">
-                            <p class="mb-0 ">Total Quantity: <?php echo $totalQuantity; ?></p>
-                        </div>
-                    </div>
+        <!-- Bookings Card - Light Blue -->
+        <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card border-0 shadow-sm bg-lightblue">
+                <div class="card-body">
+                    <h5 class="card-title">Bookings</h5>
+                    <h2><?= $totalBookings; ?></h2>
+                    <p class="text-success">+<?= $percentageChange; ?>% than last week</p>
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6">
-            <div class="card h-100">
-                <div class="card-header pb-0">
-                    <h6>Orders overview</h6>
-                    <p class="text-sm">
-                        <i class="fa fa-arrow-up text-success" aria-hidden="true"></i>
-                        <span class="font-weight-bold">24%</span> this month
-                    </p>
-                </div>
-                <div class="card-body p-3">
-                    <div class="timeline timeline-one-side">
-                        <?php
-                        // Check if there are any orders
-                        if ($resultOrders && mysqli_num_rows($resultOrders) > 0) {
-                            // Loop through each order
-                            while ($rowOrder = mysqli_fetch_assoc($resultOrders)) {
-                                ?>
-                                <div class="timeline-block mb-3">
-                            <span class="timeline-step">
-                                <i class="material-icons text-success text-gradient">notifications</i>
-                            </span>
-                                    <div class="timeline-content">
-                                        <h6 class="text-dark text-sm font-weight-bold mb-0"><?php echo $rowOrder['product_name']; ?> - $<?php echo $rowOrder['total_price']; ?></h6>
-                                        <p class="text-secondary font-weight-bold text-xs mt-1 mb-0"><?php echo date('d M H:i A', strtotime($rowOrder['created_at'])); ?></p>
-                                        <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">Ordered by: <?php echo $rowOrder['username']; ?></p>
-                                    </div>
-                                </div>
-                                <?php
-                            }
-                        } else {
-                            // If no orders found or error in query
-                            echo "<p>No recent orders</p>";
-                            if (!$resultOrders) {
-                                echo "Error: " . mysqli_error($conn);
-                            }
-                        }
-                        ?>
-                    </div>
+
+        <!-- Today's Users Card - Light Green -->
+        <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card border-0 shadow-sm bg-lightgreen">
+                <div class="card-body">
+                    <h5 class="card-title">Today's Users</h5>
+                    <h2><?= $todayUsersCount; ?></h2>
+                    <p class="text-success">+<?= round($percentageChangeTodayUsers); ?>% than last month</p>
                 </div>
             </div>
         </div>
-    </div>
+
+        <!-- Revenue Card - Light Yellow -->
+        <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card border-0 shadow-sm bg-lightyellow">
+                <div class="card-body">
+                    <h5 class="card-title">Revenue</h5>
+                    <h2><?= $totalRevenue; ?></h2>
+                    <p class="text-success">+<?= $percentageChangeRevenue; ?>% than yesterday</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inventory Value Card - Light Purple -->
+        <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card border-0 shadow-sm bg-lightpurple">
+                <div class="card-body">
+                    <h5 class="card-title">Inventory Value</h5>
+                    <h2>£<?= number_format($totalInventoryValue, 2); ?></h2>
+                    <p>Total Quantity: <?= $totalQuantity; ?></p>
+                </div>
+            </div>
+        </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-header">
+                    <h6>Orders Overview</h6>
+                    <p class="text-success"><i class="fas fa-arrow-up"></i> 24% this month</p>
+                </div>
+                <div class="card-body">
+                    <?php if($resultOrders && mysqli_num_rows($resultOrders) > 0): ?>
+                    <div class="list-group">
+                        <?php while($rowOrder = mysqli_fetch_assoc($resultOrders)): ?>
+                        <div class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1"><?= $rowOrder['product_name']; ?> - £<?= $rowOrder['total_price']; ?></h5>
+                                <small><?= date('d M H:i A', strtotime($rowOrder['created_at'])); ?></small>
+                            </div>
+                            <p class="mb-1">Ordered by: <?= $rowOrder['username']; ?></p
+                            </p>
+                        </div>
+                        <?php endwhile; ?>
+                    </div>
+                    <?php else: ?>
+                        <p class="text-muted">No recent orders</p>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
 <?php include '../../Includes/admin_footer.php'; ?>

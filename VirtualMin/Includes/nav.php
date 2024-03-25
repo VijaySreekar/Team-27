@@ -49,6 +49,7 @@
         <div class="search-bar">
             <input type="text" class="form-control search-input" placeholder="Search">
             <button class="btn search-button bg-gradient-primary"><i class="bi bi-search"></i></button>
+            <div class="search-suggestions"></div> <!-- Container for search suggestions -->
         </div>
     </div>
 </nav>
