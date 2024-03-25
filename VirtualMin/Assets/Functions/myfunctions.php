@@ -22,7 +22,7 @@ function getItembyID($table, $id)
     return $query_run = mysqli_query($conn, $query);
 }
 
-function getUserbyID($table, $id)
+function getUserbyID( $id)
 {
     global $conn;
     $query = "SELECT * FROM user WHERE user_id = $id";
