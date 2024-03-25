@@ -1,5 +1,6 @@
 <?php
-     include("../../connectdb.php");
+session_start();
+     include("../../Assets/Database/connectdb.php");
      $id = $_GET['updateid'];
 
      $sql="SELECT * FROM user WHERE user_id=$id";
@@ -8,7 +9,7 @@
      $username=$row['username'];
      $email=$row['email'];
      $phone=$row['phone'];
-     $password=$row['password'];
+     $password=$row['passwordhash'];
 
     //if($_SERVER["REQUEST_METHOD"] === "POST"){
     if(isset($_POST['submit'])){
@@ -26,16 +27,39 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="../../Assets/CSS/profile.css">
-        <link rel="stylesheet" href="../../Assets/CSS/nav.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Categories</title>
+
+    <!-- Fonts and icons -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Truncleta:wght@400&display=swap">
+    <link rel="stylesheet" href="../../Assets/CSS/nav.css">
+
+    <!-- Nucleo Icons -->
+    <link href="../../Assets/CSS/nucleo-icons.css" rel="stylesheet" />
+    <link href="../../Assets/CSS/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <!-- CSS Files -->
+    <link id="pagestyle" href="../../Assets/CSS/material-dashboard.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Alertify JS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+
+    <link rel="stylesheet" href="../../Assets/CSS/nav.css">
+</head>
     <body>
     <?php 
-    include '../NavBar_Footer/nav.php';
+    include '../../Includes/nav.php';
     ?>
         <div class="container">
             <form id="update" method="POST">
@@ -54,5 +78,7 @@
                 <button type="submit" class="button" name="submit">Update</button>
             </form>
         </div>
+    <?php include("../../Includes/footer.php"); ?>
+}
     </body>
 </html>
