@@ -1,3 +1,4 @@
+<?php include '../../Assets/Database/connectdb.php' ?>
 <nav class="navbar bg-gradient-light ">
     <div class="navbar-left">
         <div class="logo">
@@ -21,7 +22,7 @@
                 <div class="dropdown bg-gradient-secondary rounded">
                     <button class="logged-button btn bg-gradient-primary rounded fs-5 mr-3">
                         <a href="#" class="nav-link text-white">
-                            <span class="text-white"><i class="bi bi-person-check fs-5"></i><?php echo $_SESSION['username']; ?></span>
+                            <span class="text-white"><i class="bi bi-person-check fs-5"></i> <?php echo $_SESSION['username']; ?></span>
                         </a>
                     </button>
                     <div class="dropdown-content">
@@ -40,6 +41,35 @@
                 <?php
             }
             ?>
+        </div>
+        <div>
+            <?php
+            if(isset($_SESSION['user_id'])) {
+                $userID = $_SESSION['user_id'];
+                $stmt = $conn->prepare("SELECT role FROM user WHERE user_id = ?");
+                $stmt->bind_param("i", $userID);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                if($result->num_rows > 0) {
+                    $user = $result->fetch_assoc();
+                    $isAdmin = ($user['role'] == 'admin');
+                } else {
+                    $isAdmin = false;
+                }
+                $stmt->close();
+            } else {
+                $isAdmin = false;
+            }
+            ?>
+            <div class = "access-admin-side">
+                <?php if($isAdmin): ?>
+                    <button class = "logged-button btn bg-gradient-primary rounded fs-5 mr-3 mt-3">
+                        <a class="nav-link text-white" href="../AdminPage/adminpage.php">
+                            <i class="bi bi-gear fs-5 mr-1"></i>Access Admin Side
+                        </a>
+                    </button>
+                <?php endif; ?>
+            </div>
         </div>
         <div class="basket-icon">
             <button class="btn basket-button bg-gradient-primary rounded fs-5 mr-3 mt-3">
