@@ -29,7 +29,7 @@ $products = getAll('product');
                             <?php
                             if(mysqli_num_rows($products) > 0) {
                                 foreach ($products as $product) {
-                                    $stock = 100; 
+                                    $stock = $product['quantity'];
                                     $stockStatus = 'In Stock'; 
                                     
 

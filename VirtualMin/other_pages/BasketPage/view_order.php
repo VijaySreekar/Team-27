@@ -181,27 +181,25 @@ $order_data = mysqli_fetch_array($order_details);
                                         <label class="fw-bold fs-6 mb-1 mt-2">Order Status:</label>
                                         <div class="border p-3">
                                             <?php
-                                                if($order_data['status'] == 0)
-                                                {
-                                                    echo "Order Placed";
-                                                }else if($order_data['status'] == 1)
-                                                {
-                                                    echo "Order Shipped";
-                                                }
-                                                else if($order_data['status'] == 2)
-                                                {
-                                                    echo "Order Delivered";
-
-                                                } ?>
-
-                                            <!-- Return Order Button -->
-                                            <!-- Return Order form <form action = "form_path.php" method = "post">                                            -->
-
-                                            <?php
-                                                else if($order_data['status'] == 3)
-                                                {
-                                                    echo "Order Cancelled";
-                                                }
+                                            if ($order_data['status'] == 0) {
+                                                echo "Order Placed";
+                                            } else if ($order_data['status'] == 1) {
+                                                echo "Order Shipped";
+                                            } else if ($order_data['status'] == 2) {
+                                                echo "Order Delivered";
+                                                ?>
+                                                <!-- Return Order Button -->
+                                                <form action="return_order.php" method="post">
+                                                    <input type="hidden" name="id" value="<?= htmlspecialchars($order_data['id']); ?>">
+                                                    <button type="submit" name="return_button" class="btn btn-danger">Return Order</button>
+                                                    <input type="hidden" name="tracking_no" value="<?= $tracking_no ?>">
+                                                </form>
+                                                <?php
+                                            } else if ($order_data['status'] == 3) {
+                                                echo "Order Cancelled";
+                                            } else if ($order_data['status'] == 4) {
+                                                echo "Order Returned";
+                                            }
                                             ?>
                                         </div>
 

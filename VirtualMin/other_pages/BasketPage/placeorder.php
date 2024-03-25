@@ -13,7 +13,7 @@ if(isset($_SESSION['authenticated']))
         $pincode = mysqli_real_escape_string($conn, $_POST['pincode']);
         $address = mysqli_real_escape_string($conn, $_POST['address']);
         $payment_mode = mysqli_real_escape_string($conn, $_POST['payment_mode']);
-        $payment_id = mysqli_real_escape_string($conn, $_POST['payment_id']);
+        $payment_id = mysqli_real_escape_string($conn, $_POST['payment_id']); //Undefined
         $user_id = $_SESSION['auth_user']['user_id'];
 
         if ($name == '' || $email == '' || $phone == '' || $pincode == '' || $address == '')
