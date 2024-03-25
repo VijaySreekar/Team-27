@@ -137,7 +137,7 @@ function getUserDetails($userId) {
 
 function getViewRecentOrders($userId) {
     global $conn; // Assuming $conn is your mysqli connection object
-    $sql = "SELECT *     FROM orders WHERE user_id = ? ORDER BY created_at DESC LIMIT 3";
+    $sql = "SELECT * FROM `orders` WHERE user_id = ? ORDER BY created_at DESC LIMIT 3";
 
     $orders = [];
 

@@ -11,7 +11,7 @@ if(isset($_GET['t']))
     if(mysqli_num_rows($order_details) == 0)
     {
         ?>
-            <h4>No Orderss Found</h4>
+            <h4>No Orders Found</h4>
         <?php
         die();
     }
@@ -187,10 +187,18 @@ $order_data = mysqli_fetch_array($order_details);
                                                 }else if($order_data['status'] == 1)
                                                 {
                                                     echo "Order Shipped";
-                                                }else if($order_data['status'] == 2)
+                                                }
+                                                else if($order_data['status'] == 2)
                                                 {
                                                     echo "Order Delivered";
-                                                }else if($order_data['status'] == 3)
+
+                                                } ?>
+
+                                            <!-- Return Order Button -->
+                                            <!-- Return Order form <form action = "form_path.php" method = "post">                                            -->
+
+                                            <?php
+                                                else if($order_data['status'] == 3)
                                                 {
                                                     echo "Order Cancelled";
                                                 }
