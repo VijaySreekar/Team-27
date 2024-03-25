@@ -26,6 +26,8 @@ if(isset($_GET['category']))
                 ?>
             </title>
 
+            <link rel="icon" type="image/png" sizes="76x76" href="../../Assets/Images/Treakersfavicon.png">
+
             <!-- Fonts and icons -->
             <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
             <!-- Include Bootstrap CSS -->
@@ -110,8 +112,9 @@ if(isset($_GET['category']))
         <script src="../../Assets/JS/bootstrap.bundle.min.js"></script>
         <script src="../../Assets/JS/perfect-scrollbar.min.js"></script>
         <script src="../../Assets/JS/smooth-scrollbar.min.js"></script>
-        <script src="../AdminPage/https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="../../Assets/JS/custom.js"></script>
+        <script src="../../Assets/JS/searchbar.js"></script>
         <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script type="text/javascript">
@@ -124,18 +127,6 @@ if(isset($_GET['category']))
                 s1.setAttribute('crossorigin','*');
                 s0.parentNode.insertBefore(s1,s0);
             })();
-        </script>
-        <script>
-            <?php
-            if(isset($_SESSION['message']))
-            {
-            ?>
-            alertify.set('notifier','position', 'top-right');
-            alertify.success('<?= $_SESSION['message']; ?>');
-            <?php
-            unset($_SESSION['message']);
-            }
-            ?>
         </script>
 
         <?php

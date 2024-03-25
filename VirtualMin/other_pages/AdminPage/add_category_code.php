@@ -8,6 +8,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+
 if (isset($_POST['add_categorybtn'])) {
     $name = $_POST['name'];
     $slug = $_POST['slug'];
@@ -33,18 +34,19 @@ if (isset($_POST['add_categorybtn'])) {
         $destination = $path . $filename;
         if (move_uploaded_file($_FILES['image']['tmp_name'], $destination)) {
             $_SESSION['message'] = "Category Added";
-            header('Location: adminpage.php');
-            exit();
+            $_SESSION['alert_type'] = "success";
         } else {
             $_SESSION['message'] = "Error moving file";
-            header('Location: add_category.php');
-            exit();
+            $_SESSION['alert_type'] = "error";
         }
     } else {
         $_SESSION['message'] = "Category Not Added";
-        header('Location: add_category.php');
-        exit();
+        $_SESSION['alert_type'] = "error";
     }
+
+    // Redirect to add_category.php if session message is not set
+    header('Location: category.php');
+    exit();
 }
 else if(isset($_POST['save_categorybtn']))
 {
@@ -81,21 +83,32 @@ else if(isset($_POST['save_categorybtn']))
     {
         if ($_FILES['image']['name'] != "") {
             $destination = $path . $update_filename;
-            move_uploaded_file($_FILES['image']['tmp_name'], $destination);
-            if (file_exists($path . $old_image)) {
-                unlink($path . $old_image);
+            if(move_uploaded_file($_FILES['image']['tmp_name'], $destination))
+            {
+                if (file_exists($path . $old_image)) {
+                    unlink($path . $old_image);
+                }
+            }
+            else
+            {
+                $_SESSION['message'] = "Error moving file";
+                $_SESSION['alert_type'] = "error";
             }
         }
         $_SESSION['message'] = "Category Updated";
-        header("Location: edit-category.php?id=$category_id");
-        exit();
+        $_SESSION['alert_type'] = "success";
     }
     else
     {
         $_SESSION['message'] = "Category Not Updated";
-        header("Location: edit-category.php?id=$category_id");
+        $_SESSION['alert_type'] = "error";
     }
+
+    // Redirect to edit-category.php with category ID in URL
+    header("Location: category.php");
+    exit();
 }
+
 else if(isset($_POST['delete_categorybtn']))
 {
     $category_id = mysqli_real_escape_string($conn, $_POST['category_ids']);
@@ -161,30 +174,31 @@ else if(isset($_POST['addproduct_btn']))
             if(move_uploaded_file($_FILES['image']['tmp_name'], $destination))
             {
                 $_SESSION['message'] = "Product Added";
-                header('Location: allproducts.php');
-                exit();
+                $_SESSION['alert_type'] = "success";
             }
             else
             {
                 $_SESSION['message'] = "Error moving file";
-                header('Location: add_productsss.php');
-                exit();
+                $_SESSION['alert_type'] = "error";
             }
         }
         else
         {
             $_SESSION['message'] = "Product Not Added";
-            header('Location: add_products.php');
-            exit();
+            $_SESSION['alert_type'] = "error";
         }
     }
     else
     {
         $_SESSION['message'] = "Please fill all the fields";
-        header('Location: add_products.php');
-        exit();
+        $_SESSION['alert_type'] = "error";
     }
+
+    // Redirect to add_products.php if session message is not set
+    header('Location: allproducts.php');
+    exit();
 }
+
 else if(isset($_POST['editproduct_btn']))
 {
     $product_id = $_POST['product_id'];
@@ -199,11 +213,10 @@ else if(isset($_POST['editproduct_btn']))
 
     $new_image = $_FILES['image']['name'];
     $old_image = $_POST['old_image'];
-    $path = __DIR__ . "/../../Assets/Images/Category_Images/";
+    $path = __DIR__ . "/../../Assets/Images/Product_Images/";
 
     if($new_image != "")
     {
-
         $update_filename = $new_image;
     }
     else
@@ -219,22 +232,32 @@ else if(isset($_POST['editproduct_btn']))
     {
         if ($_FILES['image']['name'] != "") {
             $destination = $path . $update_filename;
-            move_uploaded_file($_FILES['image']['tmp_name'], $destination);
-            if (file_exists($path . $old_image)) {
-                unlink($path . $old_image);
+            if(move_uploaded_file($_FILES['image']['tmp_name'], $destination))
+            {
+                if (file_exists($path . $old_image)) {
+                    unlink($path . $old_image);
+                }
+            }
+            else
+            {
+                $_SESSION['message'] = "Error moving file";
+                $_SESSION['alert_type'] = "error";
             }
         }
         $_SESSION['message'] = "Product Updated";
-        header("Location: edit-product.php?id=$product_id");
-        exit();
+        $_SESSION['alert_type'] = "success";
     }
     else
     {
         $_SESSION['message'] = "Product Not Updated";
-        header("Location: edit-product.php?id=$product_id");
-
+        $_SESSION['alert_type'] = "error";
     }
+
+    // Redirect to edit-product.php with product ID in URL
+    header("Location: allproducts.php");
+    exit();
 }
+
 
 else if(isset($_POST['edituser_btn']))
 {
@@ -243,23 +266,25 @@ else if(isset($_POST['edituser_btn']))
     $email = $_POST['email'];
     $phone = $_POST['phone'];
 
-    $update_user_query = "UPDATE user SET user_id = '$user_id', username = '$name', email = '$email', phone = '$phone', 
-                     WHERE user_id = $user_id"; //maybe needs to be deleted idk about 'where' part
+    $update_user_query = "UPDATE user SET username = '$name', email = '$email', phone = '$phone' WHERE user_id = $user_id";
     $update_user_query_run = mysqli_query($conn, $update_user_query);
 
-    if($update_product_query_run)
-    {        
-        $_SESSION['message'] = "UserUpdated";
-        header("Location: edituser.php?id=$user_id");
-        exit();
+    if($update_user_query_run)
+    {
+        $_SESSION['message'] = "User Updated";
+        $_SESSION['alert_type'] = "success";
     }
     else
     {
         $_SESSION['message'] = "User Not Updated";
-        header("Location: edituser.php?id=$user_id");
-
+        $_SESSION['alert_type'] = "error";
     }
+
+    // Redirect to edituser.php with user ID in URL
+    header("Location: allusers.php");
+    exit();
 }
+
 else if(isset($_POST['deleteproduct_btn']))
 {
     $product_id = mysqli_real_escape_string($conn, $_POST['product_id']);

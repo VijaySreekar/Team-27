@@ -6,91 +6,53 @@ include 'adminauth.php';
 
 <?php include '../../Includes/admin_header.php'; ?>
 
-    <div class="container">
-        <?php
-        if(isset($_SESSION['message'])):
-            {
-                ?>
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <strong>Hey!</strong> <?= $_SESSION['message'] ?>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
                 <?php
-                unset($_SESSION['message']);
-            }
-            ?>
-        <?php endif; ?>
-        <div class="row">
-            <div class="col-md-12">
-                <?php
-                if(isset($_GET['user_id']))
-                {
-                $id = $_GET['user_id'];
-                $user = getUserbyID('user', $id);
-                if(mysqli_num_rows($user) > 0)
-                {
-                $data = mysqli_fetch_array($user);
-                ?>
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Edit User
-                            <a href="allusers.php" class="btn btn-primary float-end">Back</a>
-                        </h4>
-                    </div>
-                    <div class="card-body">
-                        <form action="add_category_code.php" method="POST" enctype="multipart/form-data">
-                            <div class="row">
-                                <div class="col-md-12">
-
-                                    <input type="hidden" name="user_id" value="<?= $data['user_id']; ?>">
-
-                                    <div class="col-md-12">
-
-                                        <label class="mb-0">Name</label>
-
-                                        <input type="text" required class="form-control mb-3" value="<?= $data['username']; ?>" name="username" placeholder="Enter User Name">
-
-                                    </div>
-
-                                    <div class="col-md-12">
-
-                                        <label class="mb-0">Email</label>
-
-                                        <textarea class="form-control mb-3" required name="email" placeholder="Enter User Email"><?= $data['email']; ?></textarea>
-
-                                    </div>
-
-                                    <div class="col-md-6">
-
-                                        <label class="mb-0">Phone number</label>
-
-                                        <input type="text" class="form-control mb-3" required name="phone" value="<?= $data['phone']; ?>" placeholder="Enter User Phone Number">
-
-
+                if(isset($_GET['user_id'])) {
+                    $id = $_GET['user_id'];
+                    $user = getUserbyID('user', $id);
+                    if(mysqli_num_rows($user) > 0) {
+                        $data = mysqli_fetch_array($user);
+                        ?>
+                        <div class="card-header">
+                            <h4>Edit User
+                                <a href="allusers.php" class="btn btn-primary float-end">Back</a>
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <form action="update_user_code.php" method="POST" enctype="multipart/form-data">
+                                <input type="hidden" name="user_id" value="<?= $data['user_id']; ?>">
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input type="text" class="form-control" name="username" value="<?= $data['username']; ?>" placeholder="Enter User Name" required>
                                 </div>
-                            </div>
-
-                            <div class="col-md-12">
-                                <button type='submit' class="btn btn-primary mt-3" name="edituser_btn">Update</button>
-                            </div>
-                    </div>
-                    </form>
-                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" class="form-control" name="email" value="<?= $data['email']; ?>" placeholder="Enter User Email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="text" class="form-control" name="phone" value="<?= $data['phone']; ?>" placeholder="Enter User Phone Number" required>
+                                </div>
+                                <div class="form-group mt-4">
+                                    <button type="submit" class="btn btn-primary" name="edituser_btn">Update</button>
+                                </div>
+                            </form>
+                        </div>
+                        <?php
+                    } else {
+                        echo "<div class='alert alert-danger' role='alert'>Cannot find user with this ID!</div>";
+                    }
+                } else {
+                    echo "<div class='alert alert-danger' role='alert'>ID is not set!</div>";
+                }
+                ?>
             </div>
-            <?php
-            }
-            else
-            {
-                echo "Cannot find user with this ID!";
-            }
-
-            }
-            else
-            {
-                echo "Id is not set!";
-            }
-            ?>
         </div>
     </div>
-    </div>
+</div>
+
 <?php include '../../Includes/admin_footer.php'; ?>

@@ -48,6 +48,20 @@
         document.getElementById("reviewModal").style.display = "none";
     }
 </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        <?php if(isset($_SESSION['message'])): ?>
+        Swal.fire({
+            icon: '<?php echo $_SESSION['alert_type']; ?>',
+            title: '<?php echo $_SESSION['message']; ?>',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        <?php unset($_SESSION['message']); ?>
+        <?php unset($_SESSION['alert_type']); ?>
+        <?php endif; ?>
+    });
+</script>
 <script src="../Assets/JS/jquery-3.7.1.js"></script>
 <script src="../Assets/JS/bootstrap.bundle.min.js"></script>
 <script src="../Assets/JS/perfect-scrollbar.min.js"></script>

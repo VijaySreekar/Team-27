@@ -64,7 +64,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['searchQuery'])) {
                 <div class="navbar-center ml-5">
                     <ul class="nav-links">
                         <li><a href="/Team-27/VirtualMin/index.php">Home</a></li>
-                        <li><a href="other_pages/ProductPage/category_page.php">Products</a></li>
+                        <li><a href="other_pages/ProductPage/category_page.php">Categories</a></li>
+                        <li><a href="other_pages/ProductPage/allproductsuser.php">Products</a></li>
                         <li><a href="other_pages/AboutUsPage/aboutus.php">About</a></li>
                         <li><a href="other_pages/ContactUsPage/contactus.php">Contact Us</a></li>
                     </ul>
@@ -119,9 +120,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['searchQuery'])) {
                     ?>
                     <div class = "access-admin-side">
                         <?php if($isAdmin): ?>
-                        <button class = "btn bg-gradient-primary rounded fs-5 mr-3 mt-3">
+                        <button class = "logged-button btn bg-gradient-primary rounded fs-5 mr-3 mt-3">
                             <a class="nav-link text-white" href="../VirtualMin/other_pages/AdminPage/adminpage.php">
-                                <i class="bi bi-person fs-5 mr-1"></i>Access Admin Side
+                                <i class="bi bi-gear fs-5 mr-1"></i>Access Admin Side
                             </a>
                         </button>
                         <?php endif; ?>

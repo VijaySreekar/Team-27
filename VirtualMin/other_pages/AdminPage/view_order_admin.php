@@ -82,6 +82,7 @@ $order_data = mysqli_fetch_array($order_details);
                                                 <?= $order_data['pincode']; ?>
                                             </div>
                                         </div>
+
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -99,30 +100,30 @@ $order_data = mysqli_fetch_array($order_details);
 
                                         <?php
 
+                                        $user_id = $_SESSION['auth_user']['user_id'];
                                         $order_query = "SELECT o.id as oid, o.tracking_no, o.user_id, oi.*, oi.quantity as order_quantity, p.* FROM orders o, order_items oi, product p
-                                                       WHERE oi.order_id = o.id AND p.product_id = oi.product_id AND o.tracking_no = '$tracking_no'";
+                                                       WHERE o.user_id = '$user_id' AND oi.order_id = o.id AND p.product_id = oi.product_id AND o.tracking_no = '$tracking_no'";
                                         $order_items = mysqli_query($conn, $order_query);
 
                                         if(mysqli_num_rows($order_items) > 0)
                                         {
-                                            foreach ($order_items as $item) {
-
+                                            foreach ($order_items as $item)
+                                            {
+                                                ?>
+                                                <tr>
+                                                    <td class="align-middle">
+                                                        <img src="../../Assets/Images/Product_Images/<?= $item['image']; ?>" alt="<?= $item['name']; ?>" style="width: 50px;">
+                                                        <?= $item['name']; ?>
+                                                    </td>
+                                                    <td class="align-middle">
+                                                        <?= $item['price']; ?>
+                                                    </td>
+                                                    <td class="align-middle">
+                                                        <?= $item['order_quantity']; ?>
+                                                    </td>
+                                                </tr>
+                                                <?php
                                             }
-                                            ?>
-                                            <tr>
-                                                <td class="align-middle">
-                                                    <img src="../../Assets/Images/Product_Images<?= $item['image']; ?>" alt="<?= $item['name']; ?>" style="width: 50px;">
-                                                    <?= $item['name']; ?>
-                                                </td>
-                                                <td class="align-middle">
-                                                    <?= $item['price']; ?>
-                                                </td>
-                                                <td class="align-middle">
-                                                    <?= $item['order_quantity']; ?>
-                                                </td>
-                                            </tr>
-
-                                            <?php
                                         }
                                         ?>
                                         </tbody>
