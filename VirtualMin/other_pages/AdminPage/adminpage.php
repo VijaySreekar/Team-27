@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../../Includes/admin_header.php';
+
 include '../../Assets/Database/connectdb.php';
 include 'adminauth.php';
 
@@ -104,7 +104,7 @@ $sqlOrders = "SELECT oh.*, p.name AS product_name, p.original_price AS total_pri
 $resultOrders = mysqli_query($conn, $sqlOrders);
 ?>
 
-
+<?php include '../../Includes/admin_header.php'; ?>
 <div class="container">
     <?php
         if(isset($_SESSION['message'])):
