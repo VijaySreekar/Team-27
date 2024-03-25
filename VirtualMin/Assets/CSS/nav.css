@@ -150,6 +150,48 @@
     background-color: #ccc;
 }
 
+.search-suggestions {
+    position: absolute;
+    top: calc(100% + 10px); /* Adjust as needed */
+    left: calc(100% + 50);
+    z-index: 1000;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    width: calc(100% - 50); /* Adjust as needed */
+    display: none; /* Hide suggestions by default */
+}
+
+.suggestion-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.suggestion-image {
+    width: 50px; /* Adjust as needed */
+    height: auto;
+    margin-right: 10px;
+}
+
+.suggestion-details {
+    flex: 1;
+}
+
+.suggestion-name {
+    font-weight: bold;
+}
+
+.suggestion-price {
+    color: #777;
+}
+
+.suggestion-item:hover {
+    background-color: #f5f5f5;
+}
+
 /* Button styles */
 .logged-button {
     background-color: #ddd;

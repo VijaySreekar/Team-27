@@ -1,6 +1,26 @@
 <?php
 session_start();
+include 'Assets/Database/connectdb.php';
 include 'Assets/Functions/myfunctions.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['searchQuery'])) {
+    $searchQuery = $mysqli->real_escape_string($_POST['searchQuery']);
+
+    // Prepare statement to prevent SQL injection
+    $stmt = $mysqli->prepare("SELECT product_id, name, slug, image, discounted_price FROM product WHERE name LIKE CONCAT('%', ?, '%') AND status = 1 LIMIT 10");
+    $stmt->bind_param("s", $searchQuery);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $products = [];
+    while ($row = $result->fetch_assoc()) {
+        $products[] = $row;
+    }
+
+    // Return results as JSON and exit script to prevent further HTML rendering
+    echo json_encode($products);
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -86,7 +106,9 @@ include 'Assets/Functions/myfunctions.php';
                 <div class="search-bar">
                     <input type="text" class="form-control search-input" placeholder="Search">
                     <button class="btn search-button bg-gradient-primary"><i class="bi bi-search"></i></button>
+                    <div class="search-suggestions"></div> <!-- Container for search suggestions -->
                 </div>
+
             </div>
         </nav>
 
@@ -164,7 +186,60 @@ include 'Assets/Functions/myfunctions.php';
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="Assets/JS/HomePage.js"></script>
+    <script src="Assets/JS/custom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                // Function to perform search
+                function performSearch() {
+                    var searchQuery = $('.search-input').val();
+                    if (searchQuery.length > 2) {
+                        $.ajax({
+                            url: 'index.php', // Or the URL where your PHP search handling code is
+                            type: 'POST',
+                            dataType: 'json',
+                            data: {searchQuery: searchQuery},
+                            success: function(products) {
+                                var suggestions = products.map(product =>
+                                    `<div class='suggestion-item' data-slug='${product.slug}'>
+            <img src='Assets/Images/Product_Images/${product.image}' class='suggestion-image'>
+            <div class='suggestion-details'>
+                <span class='suggestion-name'>${product.name}</span>
+                <span class='suggestion-price'>£: ${product.discounted_price}</span>
+            </div>
+        </div>`
+                                ).join('');
+                                $('.search-suggestions').html(suggestions).show();
+                            },
+                        });
+                    } else {
+                        $('.search-suggestions').hide();
+                    }
+                }
+
+                // Event listener for search input
+                $('.search-input').on('input', function() {
+                    performSearch();
+                });
+
+                // Event listener for search button
+                $('.search-button').on('click', function(e) {
+                    e.preventDefault(); // Prevent the form from submitting through the browser
+                    performSearch();
+                });
+
+                // Event listener for clicking on a suggestion
+                $(document).on('click', '.suggestion-item', function() {
+                    var slug = $(this).data('slug');
+                    window.location.href = `other_pages/ProductPage/view_product.php?product=${slug}`;
+                });
+            });
+        </script>
+
+
+
+
 </body>
 </html>
